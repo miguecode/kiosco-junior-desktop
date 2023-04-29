@@ -25,14 +25,9 @@ namespace Vista
         {
             usuarioActual = formLogin.UsuarioIngresado;
 
-            lbl_Datos.Text = usuarioActual.NombreCompleto;
+            //lbl_Datos.Text = usuarioActual.NombreCompleto;
+            sbl_NombreUsuario.Text = usuarioActual.NombreCompleto;
         }
-
-
-
-
-
-
 
     }
 }

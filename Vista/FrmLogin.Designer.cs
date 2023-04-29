@@ -64,7 +64,7 @@
             // 
             // btn_Ingresar
             // 
-            this.btn_Ingresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(180)))), ((int)(((byte)(49)))));
+            this.btn_Ingresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(91)))), ((int)(((byte)(176)))));
             this.btn_Ingresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Ingresar.FlatAppearance.BorderSize = 0;
             this.btn_Ingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -80,7 +80,7 @@
             // 
             // btn_Autocompletar
             // 
-            this.btn_Autocompletar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(100)))), ((int)(((byte)(27)))));
+            this.btn_Autocompletar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(149)))), ((int)(((byte)(165)))));
             this.btn_Autocompletar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Autocompletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Autocompletar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
