@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,19 +13,20 @@ namespace Vista
 {
     public partial class FrmPrincipal : Form
     {
-        public FrmPrincipal()
+        private Usuario? usuarioActual;
+        private FrmLogin formLogin;
+
+        public FrmPrincipal(FrmLogin formLoginRecibido)
         {
             InitializeComponent();
+            formLogin = formLoginRecibido;
         }
-
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            FrmLogin formLogin = new FrmLogin();
-            //lbl_Datos.Text = 
+            usuarioActual = formLogin.UsuarioIngresado;
+
+            lbl_Datos.Text = usuarioActual.NombreCompleto;
         }
-
-
-
 
 
 

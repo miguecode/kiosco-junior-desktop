@@ -14,20 +14,28 @@ namespace Entidades
         private string nombreUsuario;
         private string contrasenia;
 
-        public string Nombre { get => nombre; set => nombre = value; }
-        public string Apellido { get => apellido; set => apellido = value; }
-        public int Dni { get => dni; set => dni = value; }
-        public string NombreUsuario { get => nombreUsuario; set => nombreUsuario = value; }
-        public string Contrasenia { get => contrasenia; set => contrasenia = value; }
+        public string Nombre { get => nombre;}
+        public string Apellido { get => apellido;}
+        public int Dni { get => dni; }
+        public string NombreUsuario { get => nombreUsuario;}
+        public string Contrasenia { get => contrasenia;}
         public string NombreCompleto { get => $"{Nombre} {Apellido}"; }
+        public Usuario()
+        {
+            nombre = "No cargado";
+            apellido = "No cargado";
+            dni = 00000000;
+            nombreUsuario = "No cargado";
+            contrasenia = "No cargada";
+        }
 
         public Usuario(string nombre, string apellido, int dni, string nombreUsuario, string contrasenia)
         {
-            Nombre = nombre;
-            Apellido = apellido;
-            Dni = dni;
-            NombreUsuario = nombreUsuario;
-            Contrasenia = contrasenia;
+            this.nombre = nombre;
+            this.apellido = apellido;
+            this.dni = dni;
+            this.nombreUsuario = nombreUsuario;
+            this.contrasenia = contrasenia;
         }
     }
 }

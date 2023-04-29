@@ -15,10 +15,9 @@ namespace Helper
         {
             HardcodearUsuarios();
 
-
+            
 
         }
-
 
         static private List<Usuario> HardcodearUsuarios()
         {

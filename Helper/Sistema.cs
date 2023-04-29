@@ -10,28 +10,28 @@ namespace Helper
     public static class Sistema
     {
         private static List<Usuario> listaDeUsuarios;
+        public static List<Usuario> ListaDeUsuarios { get => listaDeUsuarios; }
 
         static Sistema()
         {
             listaDeUsuarios = Mock.listaDeUsuariosHardcodeada;
         }
 
-        public static bool ConfirmarIngreso(string nick, string contrasenia)
+        public static Usuario ConfirmarIngreso(string nick, string contrasenia)
         {
             if (!String.IsNullOrEmpty(nick) && !String.IsNullOrEmpty(contrasenia))
             {
-                Usuario? usuarioExistente = ValidarUsuarioExistente(nick, contrasenia);
+                var usuarioExistente = ValidarUsuarioExistente(nick, contrasenia);
 
                 if (usuarioExistente is not null)
-                {
-                    return true;
-                }
-                //throw new Exception("Usuario o contraseña incorrectos");
+                    return usuarioExistente;
+
+                else
+                    throw new Exception("Usuario o contraseña incorrectos");
             }
-            //throw new Exception(String.Empty);
-            return false;
+            throw new Exception(String.Empty);
         }
-        //Las excepciones funcionan pero el método debería devolver un Usuario (o sino, la excep)
+        //Si existe el usuario, lo devuelvo. Si no, devuelvo la excepción correspondiente
 
         private static Usuario? ValidarUsuarioExistente(string nick, string contrasenia)
         {
@@ -42,17 +42,7 @@ namespace Helper
                     return itemUsuario;
                 }
             }
-
             return null;
         }
-
-
-
-
-
-
-
-
-
     }
 }
