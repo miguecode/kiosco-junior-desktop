@@ -12,43 +12,42 @@ namespace Entidades
         private string marca;
         private string descripcion;
         private float precio;
-        //private tipo
+        private ETipo tipo;
         //private fechaDeVencimiento
         private int stock;
         private int id;
         private static int idActual;
 
+        //Constructor al que le paso solo los valores más importantes
+        public Producto(string nombre, ETipo tipo, float precio, int stock)
+        {
+            this.nombre = nombre;
+            this.tipo = tipo;
+            this.precio = precio;
+            this.stock = stock;
+            this.marca = "N/A";
+            this.descripcion = "N/A";
+            this.id = idActual;
+            idActual++;
+        }
+        //Constructor al que le paso todos los valores
+        public Producto(string nombre, ETipo tipo, string marca, string descripcion,
+                        float precio, int stock) :this(nombre, tipo, precio, stock)
+        {
+            this.marca = marca;
+            this.descripcion = descripcion;
+        }
         static Producto()
         {
             idActual = 1000;
         }
 
-        //Constructor al que le paso solo los valores más importantes
-        public Producto(string nombre, float precio, int stock)
-        {
-            Nombre = nombre;
-            Precio = precio;
-            Stock = stock;
-            Marca = "N/A";
-            Descripcion = "N/A";
-            Id = idActual;
-        }
-        //Constructor al que le paso todos los valores
-        public Producto(string nombre, string marca, string descripcion, float precio, int stock) :this(nombre, precio, stock)
-        {
-            //Nombre = nombre;
-            Marca = marca;
-            Descripcion = descripcion;
-            //Precio = precio;
-            //Stock = stock;
-        }
-
         public string Nombre { get => nombre; set => nombre = value; }
+        public ETipo Tipo { get => tipo; set => tipo = value; }
         public string Marca { get => marca; set => marca = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public float Precio { get => precio; set => precio = value; }
         public int Stock { get => stock; set => stock = value; }
-        public int Id { get => id; set => id = value; }
-        //public static int Id { get => id; set => id = value; }
+        public int Id { get => id; }
     }
 }

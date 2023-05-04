@@ -13,6 +13,7 @@ namespace Entidades
         private int dni;
         private string nombreUsuario;
         private string contrasenia;
+        private ERol rol;
 
         public string Nombre { get => nombre;}
         public string Apellido { get => apellido;}
@@ -20,6 +21,7 @@ namespace Entidades
         public string NombreUsuario { get => nombreUsuario;}
         public string Contrasenia { get => contrasenia;}
         public string NombreCompleto { get => $"{Nombre} {Apellido}"; }
+        public ERol Rol { get => rol; }
         public Usuario()
         {
             nombre = "No cargado";
@@ -27,15 +29,17 @@ namespace Entidades
             dni = 00000000;
             nombreUsuario = "No cargado";
             contrasenia = "No cargada";
+            rol = ERol.Cliente;
         }
 
-        public Usuario(string nombre, string apellido, int dni, string nombreUsuario, string contrasenia)
+        public Usuario(string nombre, string apellido, int dni, string nombreUsuario, string contrasenia, ERol rol)
         {
             this.nombre = nombre;
             this.apellido = apellido;
             this.dni = dni;
             this.nombreUsuario = nombreUsuario;
             this.contrasenia = contrasenia;
+            this.rol = rol;
         }
     }
 }

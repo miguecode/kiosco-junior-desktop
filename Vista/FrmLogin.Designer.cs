@@ -112,12 +112,12 @@
             // lbl_Error
             // 
             this.lbl_Error.AutoSize = true;
-            this.lbl_Error.BackColor = System.Drawing.Color.OrangeRed;
-            this.lbl_Error.ForeColor = System.Drawing.Color.SeaShell;
-            this.lbl_Error.Location = new System.Drawing.Point(52, 254);
+            this.lbl_Error.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Error.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lbl_Error.Location = new System.Drawing.Point(50, 258);
             this.lbl_Error.Name = "lbl_Error";
             this.lbl_Error.Padding = new System.Windows.Forms.Padding(2);
-            this.lbl_Error.Size = new System.Drawing.Size(99, 19);
+            this.lbl_Error.Size = new System.Drawing.Size(128, 23);
             this.lbl_Error.TabIndex = 6;
             this.lbl_Error.Text = "Mensaje de error";
             this.lbl_Error.Visible = false;
@@ -147,6 +147,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
             this.ClientSize = new System.Drawing.Size(413, 290);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pic_Login);

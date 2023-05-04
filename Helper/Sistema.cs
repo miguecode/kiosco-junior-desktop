@@ -10,11 +10,14 @@ namespace Helper
     public static class Sistema
     {
         private static List<Usuario> listaDeUsuarios;
+        private static List<Producto> listaDeProductos;
         public static List<Usuario> ListaDeUsuarios { get => listaDeUsuarios; }
+        public static List<Producto> ListaDeProductos { get => listaDeProductos; }
 
         static Sistema()
         {
             listaDeUsuarios = Mock.listaDeUsuariosHardcodeada;
+            listaDeProductos = Mock.listaDeProductosHardcodeada;
         }
 
         public static Usuario ConfirmarIngreso(string nick, string contrasenia)

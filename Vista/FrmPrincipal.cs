@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace Vista
     {
         private Usuario? usuarioActual;
         private FrmLogin formLogin;
+        private FrmProductos formProductos;
 
         public FrmPrincipal(FrmLogin formLoginRecibido)
         {
@@ -24,10 +26,91 @@ namespace Vista
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             usuarioActual = formLogin.UsuarioIngresado;
-
-            //lbl_Datos.Text = usuarioActual.NombreCompleto;
             sbl_NombreUsuario.Text = usuarioActual.NombreCompleto;
+
+
+
+            formProductos = new FrmProductos();
+            formProductos.MdiParent = this;
         }
+        private void smi_Cerrar_Click(object sender, EventArgs e)
+        {
+            formLogin.Close();
+            this.Close();
+        }
+
+        private void smi_Inicio_Click(object sender, EventArgs e)
+        {
+                //formProductos.BringToFront();
+        }
+
+
+        private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            /*if (formProductos == null || formProductos.IsDisposed)
+            {
+                formProductos = new FrmProductos();
+                formProductos.MdiParent = this;
+                formProductos.Size = this.Size;
+                formProductos.Show();
+                ActivateMdiChild(formProductos);
+                
+            }
+            else
+            {
+                formProductos.BringToFront();
+            }*/
+
+            mostrarFormularioHijo(typeof(FrmProductos));
+        }
+
+        private void agregarProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAltaProducto formAltaProducto = new FrmAltaProducto();
+
+            if (formAltaProducto.ShowDialog() == DialogResult.OK)
+            {
+                Sistema.ListaDeProductos.Add(formAltaProducto.ProductoCreado);
+                formProductos.ActualizarDataGrid(Sistema.ListaDeProductos);
+            }
+            else
+            {
+                formAltaProducto.Close();
+            }
+        }
+
+        private void mostrarFormularioHijo(Type tipoFormulario)
+        {
+            // Verificar si el formulario ya está abierto como formulario hijo
+            foreach (Form formulario in this.MdiChildren)
+            {
+                if (formulario.GetType() == tipoFormulario)
+                {
+                    formulario.Size = this.Size;
+                    formulario.Show();
+                    formulario.Activate();
+                    //return true;
+                }
+            }
+
+            /*
+            if (formulario == null || formulario.IsDisposed)
+            {
+                formulario = new FrmProductos();
+                formulario.MdiParent = this;
+                formulario.Size = this.Size;
+                formulario.Show();
+                ActivateMdiChild(formulario);
+            }
+            else
+            {
+                formulario.BringToFront();
+            }*/
+        }
+
+
+
+
 
     }
 }
