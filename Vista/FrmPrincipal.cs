@@ -17,20 +17,24 @@ namespace Vista
         private Usuario? usuarioActual;
         private FrmLogin formLogin;
         private FrmProductos formProductos;
+        private FrmInfoUsuario formInfoUsuario;
 
         public FrmPrincipal(FrmLogin formLoginRecibido)
         {
             InitializeComponent();
             formLogin = formLoginRecibido;
         }
+
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             usuarioActual = formLogin.UsuarioIngresado;
             sbl_NombreUsuario.Text = usuarioActual.NombreCompleto;
 
             formProductos = new FrmProductos();
+            formInfoUsuario = new FrmInfoUsuario(formLogin);
             formProductos.MdiParent = this;
         }
+
         private void smi_Cerrar_Click(object sender, EventArgs e)
         {
             formLogin.Close();
@@ -66,7 +70,16 @@ namespace Vista
 
         private void mostrarFormularioHijo(Type tipoFormulario)
         {
-            // Verificar si el formulario ya está abierto como formulario hijo
+            foreach (Form formulario in this.MdiChildren)
+            {
+                if(formulario.Name != tipoFormulario.Name)
+                {
+                    formulario.Hide();
+                }
+            }
+            //A analizar esto
+            
+
             foreach (Form formulario in this.MdiChildren)
             {
                 if (formulario.GetType() == tipoFormulario)
@@ -74,14 +87,15 @@ namespace Vista
                     formulario.Size = this.Size;
                     formulario.Show();
                     formulario.Activate();
-                    //return true;
                 }
             }
         }
 
-
-
-
-
+        private void verDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //FrmInfoUsuario formInfoUsuario = new FrmInfoUsuario(formLogin);
+            mostrarFormularioHijo(typeof(FrmInfoUsuario));
+            //.MdiParent = this;
+        }
     }
 }

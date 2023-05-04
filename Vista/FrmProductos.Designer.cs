@@ -127,7 +127,7 @@
             // 
             // btn_AltaProducto
             // 
-            this.btn_AltaProducto.Location = new System.Drawing.Point(12, 72);
+            this.btn_AltaProducto.Location = new System.Drawing.Point(12, 62);
             this.btn_AltaProducto.Name = "btn_AltaProducto";
             this.btn_AltaProducto.Size = new System.Drawing.Size(81, 63);
             this.btn_AltaProducto.TabIndex = 2;
@@ -137,7 +137,7 @@
             // 
             // btn_BajaProducto
             // 
-            this.btn_BajaProducto.Location = new System.Drawing.Point(12, 141);
+            this.btn_BajaProducto.Location = new System.Drawing.Point(12, 131);
             this.btn_BajaProducto.Name = "btn_BajaProducto";
             this.btn_BajaProducto.Size = new System.Drawing.Size(81, 63);
             this.btn_BajaProducto.TabIndex = 3;
@@ -147,7 +147,7 @@
             // 
             // btn_Modificar
             // 
-            this.btn_Modificar.Location = new System.Drawing.Point(12, 210);
+            this.btn_Modificar.Location = new System.Drawing.Point(12, 200);
             this.btn_Modificar.Name = "btn_Modificar";
             this.btn_Modificar.Size = new System.Drawing.Size(81, 63);
             this.btn_Modificar.TabIndex = 4;
@@ -157,7 +157,7 @@
             // 
             // btn_Detalles
             // 
-            this.btn_Detalles.Location = new System.Drawing.Point(12, 279);
+            this.btn_Detalles.Location = new System.Drawing.Point(12, 269);
             this.btn_Detalles.Name = "btn_Detalles";
             this.btn_Detalles.Size = new System.Drawing.Size(81, 63);
             this.btn_Detalles.TabIndex = 5;
@@ -170,7 +170,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ClientSize = new System.Drawing.Size(781, 386);
+            this.ClientSize = new System.Drawing.Size(777, 382);
             this.ControlBox = false;
             this.Controls.Add(this.btn_Detalles);
             this.Controls.Add(this.btn_Modificar);
