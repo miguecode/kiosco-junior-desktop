@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_Agregar = new System.Windows.Forms.Button();
+            this.btn_Confirmar = new System.Windows.Forms.Button();
             this.txt_Nombre = new System.Windows.Forms.TextBox();
             this.txt_Marca = new System.Windows.Forms.TextBox();
             this.cmb_Tipo = new System.Windows.Forms.ComboBox();
@@ -47,18 +47,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.nud_Precio)).BeginInit();
             this.SuspendLayout();
             // 
-            // btn_Agregar
+            // btn_Confirmar
             // 
-            this.btn_Agregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(143)))), ((int)(((byte)(16)))));
-            this.btn_Agregar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Agregar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Agregar.Location = new System.Drawing.Point(236, 182);
-            this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Size = new System.Drawing.Size(123, 42);
-            this.btn_Agregar.TabIndex = 0;
-            this.btn_Agregar.Text = "Agregar";
-            this.btn_Agregar.UseVisualStyleBackColor = false;
-            this.btn_Agregar.Click += new System.EventHandler(this.btn_Agregar_Click);
+            this.btn_Confirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(143)))), ((int)(((byte)(16)))));
+            this.btn_Confirmar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Confirmar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_Confirmar.Location = new System.Drawing.Point(236, 182);
+            this.btn_Confirmar.Name = "btn_Confirmar";
+            this.btn_Confirmar.Size = new System.Drawing.Size(123, 42);
+            this.btn_Confirmar.TabIndex = 0;
+            this.btn_Confirmar.Text = "Confirmar";
+            this.btn_Confirmar.UseVisualStyleBackColor = false;
+            this.btn_Confirmar.Click += new System.EventHandler(this.btn_Agregar_Click);
             // 
             // txt_Nombre
             // 
@@ -243,7 +243,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(50)))), ((int)(((byte)(143)))));
-            this.ClientSize = new System.Drawing.Size(767, 288);
+            this.ClientSize = new System.Drawing.Size(384, 288);
             this.ControlBox = false;
             this.Controls.Add(this.nud_Precio);
             this.Controls.Add(this.lbl_Precio);
@@ -259,13 +259,13 @@
             this.Controls.Add(this.cmb_Tipo);
             this.Controls.Add(this.txt_Marca);
             this.Controls.Add(this.txt_Nombre);
-            this.Controls.Add(this.btn_Agregar);
+            this.Controls.Add(this.btn_Confirmar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmAltaProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Alta Producto";
+            this.Text = "Ingresar datos";
             ((System.ComponentModel.ISupportInitialize)(this.nud_Stock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Precio)).EndInit();
             this.ResumeLayout(false);
@@ -275,7 +275,7 @@
 
         #endregion
 
-        private Button btn_Agregar;
+        private Button btn_Confirmar;
         private TextBox txt_Nombre;
         private TextBox txt_Marca;
         private ComboBox cmb_Tipo;

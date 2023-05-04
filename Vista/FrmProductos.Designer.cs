@@ -143,6 +143,7 @@
             this.btn_BajaProducto.TabIndex = 3;
             this.btn_BajaProducto.Text = "Eliminar";
             this.btn_BajaProducto.UseVisualStyleBackColor = true;
+            this.btn_BajaProducto.Click += new System.EventHandler(this.btn_BajaProducto_Click);
             // 
             // btn_Modificar
             // 
@@ -152,6 +153,7 @@
             this.btn_Modificar.TabIndex = 4;
             this.btn_Modificar.Text = "Modificar";
             this.btn_Modificar.UseVisualStyleBackColor = true;
+            this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
             // 
             // btn_Detalles
             // 
@@ -168,7 +170,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ClientSize = new System.Drawing.Size(789, 394);
+            this.ClientSize = new System.Drawing.Size(781, 386);
             this.ControlBox = false;
             this.Controls.Add(this.btn_Detalles);
             this.Controls.Add(this.btn_Modificar);

@@ -48,6 +48,16 @@ namespace Entidades
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public float Precio { get => precio; set => precio = value; }
         public int Stock { get => stock; set => stock = value; }
-        public int Id { get => id; }
+        public int Id { get => id; set => id = value; }
+
+        public static bool operator ==(Producto p1, Producto p2)
+        {
+            return p1.Id == p2.Id && p1.Nombre == p2.Nombre && p1.Marca == p2.Marca;
+        }
+
+        public static bool operator !=(Producto p1, Producto p2)
+        {
+            return !(p1.Id == p2.Id && p1.Nombre == p2.Nombre && p1.Marca == p2.Marca);
+        }
     }
 }

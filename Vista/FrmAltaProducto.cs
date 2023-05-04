@@ -14,7 +14,6 @@ namespace Vista
     public partial class FrmAltaProducto : Form
     {
         private Producto productoCreado;
-
         public Producto ProductoCreado { get => productoCreado; }
 
         public FrmAltaProducto()
