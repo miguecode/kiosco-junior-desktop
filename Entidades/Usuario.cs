@@ -41,5 +41,15 @@ namespace Entidades
             this.contrasenia = contrasenia;
             this.rol = rol;
         }
+
+        public static bool operator ==(Usuario u1, Usuario u2)
+        {
+            return u1.NombreUsuario == u2.NombreUsuario;
+        }
+
+        public static bool operator !=(Usuario u1, Usuario u2)
+        {
+            return !(u1.NombreUsuario == u2.NombreUsuario);
+        }
     }
 }

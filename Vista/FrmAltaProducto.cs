@@ -32,7 +32,7 @@ namespace Vista
                 ETipo tipoSeleccionado = (ETipo)Enum.Parse(typeof(ETipo), cmb_Tipo.SelectedItem.ToString());
 
                 productoCreado = new Producto(txt_Nombre.Text, tipoSeleccionado, txt_Marca.Text, 
-                                         rtb_Descripcion.Text, (float)nud_Precio.Value, (int)nud_Stock.Value);
+                            rtb_Descripcion.Text, (float)nud_Precio.Value, (int)nud_Stock.Value);
 
 
                 this.DialogResult = DialogResult.OK;
@@ -62,18 +62,17 @@ namespace Vista
 
         private bool ValidarStringDeProducto(string cadena)
         {
-            if (cadena.Length < 3 || cadena.Length > 23)
-            {
+            if (string.IsNullOrEmpty(cadena) || cadena.Length < 3 || cadena.Length > 23)
                 return false;
-            }
 
             foreach (char caracter in cadena)
             {
-                if (!Char.IsLetterOrDigit(caracter) && caracter != ' ' && caracter != '-')
+                if (!char.IsLetter(caracter) && caracter != ' ' && caracter != '-')
                 {
                     return false;
                 }
             }
+
             return true;
         }
 
