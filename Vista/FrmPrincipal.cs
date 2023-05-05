@@ -18,6 +18,7 @@ namespace Vista
         private FrmLogin formLogin;
         private FrmProductos? formProductos;
         private FrmInfoUsuario? formInfoUsuario;
+        private FrmGestionUsuario? formGestionUsuario;
 
         public FrmPrincipal(FrmLogin formLoginRecibido)
         {
@@ -34,6 +35,8 @@ namespace Vista
             formProductos.MdiParent = this;
             formInfoUsuario = new FrmInfoUsuario(formLogin);
             formInfoUsuario.MdiParent = this;
+            formGestionUsuario = new FrmGestionUsuario();
+            formGestionUsuario.MdiParent = this;
         }
 
         private void smi_Cerrar_Click(object sender, EventArgs e)
@@ -89,7 +92,6 @@ namespace Vista
         private void verDatosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             mostrarFormularioHijo(typeof(FrmInfoUsuario));
-
         }
 
         private void configurarMenuPorRol(Usuario usuarioRecibido)
@@ -124,7 +126,7 @@ namespace Vista
 
         private void smi_Usuarios_Click(object sender, EventArgs e)
         {
-
+            mostrarFormularioHijo(typeof(FrmGestionUsuario));
         }
     }
 }

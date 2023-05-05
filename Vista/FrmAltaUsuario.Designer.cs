@@ -1,6 +1,6 @@
 ﻿namespace Vista
 {
-    partial class AltaUsuario
+    partial class FrmAltaUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -147,11 +147,12 @@
             this.lbl_Error.AutoSize = true;
             this.lbl_Error.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_Error.ForeColor = System.Drawing.Color.Crimson;
-            this.lbl_Error.Location = new System.Drawing.Point(21, 365);
+            this.lbl_Error.Location = new System.Drawing.Point(21, 364);
             this.lbl_Error.Name = "lbl_Error";
             this.lbl_Error.Size = new System.Drawing.Size(124, 19);
             this.lbl_Error.TabIndex = 10;
             this.lbl_Error.Text = "Mensaje de error";
+            this.lbl_Error.Visible = false;
             // 
             // btn_Confirmar
             // 
@@ -190,7 +191,7 @@
             this.btn_VerContrasenia.Name = "btn_VerContrasenia";
             this.btn_VerContrasenia.Size = new System.Drawing.Size(38, 23);
             this.btn_VerContrasenia.TabIndex = 13;
-            this.btn_VerContrasenia.Text = "O.O";
+            this.btn_VerContrasenia.Text = "Ver";
             this.btn_VerContrasenia.UseVisualStyleBackColor = false;
             this.btn_VerContrasenia.Click += new System.EventHandler(this.btn_VerContrasenia_Click);
             // 
@@ -219,7 +220,7 @@
             this.lbl_Rol.TabIndex = 15;
             this.lbl_Rol.Text = "Rol";
             // 
-            // AltaUsuario
+            // FrmAltaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -245,7 +246,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "AltaUsuario";
+            this.Name = "FrmAltaUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Datos del Usuario";
             this.ResumeLayout(false);

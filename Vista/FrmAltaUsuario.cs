@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class AltaUsuario : Form
+    public partial class FrmAltaUsuario : Form
     {
         private Usuario usuarioCreado;
         public Usuario UsuarioCreado { get => usuarioCreado; }
 
-        public AltaUsuario()
+        public FrmAltaUsuario()
         {
             InitializeComponent();
         }
@@ -29,14 +29,12 @@ namespace Vista
 
                 //Buscar si el usuario ya existe
 
-                //ERol rolSeleccionado = (ERol)Enum.Parse(typeof(ETipo), cmb_Rol.SelectedItem.ToString());
+                ERol rolSeleccionado = (ERol)Enum.Parse(typeof(ERol), cmb_Rol.SelectedItem.ToString());
 
-                ERol rolSeleccionado = (ERol) cmb_Rol.SelectedItem;
-
+                //ERol rolSeleccionado = (ERol) cmb_Rol.SelectedItem;
 
                 usuarioCreado = new Usuario(txt_Nombre.Text, txt_Apellido.Text, int.Parse(txt_Dni.Text),
-                              txt_NombreDeUsuario.Text, txt_Contrasenia.Text, (ERol)cmb_Rol.SelectedItem);
-
+                              txt_NombreDeUsuario.Text, txt_Contrasenia.Text, rolSeleccionado);
 
                 this.DialogResult = DialogResult.OK;
             }
@@ -45,19 +43,6 @@ namespace Vista
                 lbl_Error.Visible = true;
                 lbl_Error.Text = ex.Message;
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
 
         private void ValidarDatosUsuario()
@@ -72,7 +57,7 @@ namespace Vista
 
         private bool ValidarStringDeUsuario(string cadena)
         {
-            if (string.IsNullOrEmpty(cadena) || cadena.Length < 14)
+            if (string.IsNullOrEmpty(cadena) || cadena.Length > 14)
                 return false;
 
             // Verifica si el nombre contiene caracteres no válidos.
