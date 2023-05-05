@@ -50,7 +50,8 @@
             // btn_Confirmar
             // 
             this.btn_Confirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(143)))), ((int)(((byte)(16)))));
-            this.btn_Confirmar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Confirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Confirmar.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Confirmar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_Confirmar.Location = new System.Drawing.Point(236, 182);
             this.btn_Confirmar.Name = "btn_Confirmar";
@@ -106,11 +107,12 @@
             // btn_Cancelar
             // 
             this.btn_Cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(45)))), ((int)(((byte)(0)))));
-            this.btn_Cancelar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Cancelar.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Cancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_Cancelar.Location = new System.Drawing.Point(236, 230);
             this.btn_Cancelar.Name = "btn_Cancelar";
-            this.btn_Cancelar.Size = new System.Drawing.Size(123, 29);
+            this.btn_Cancelar.Size = new System.Drawing.Size(123, 39);
             this.btn_Cancelar.TabIndex = 6;
             this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = false;
@@ -265,7 +267,7 @@
             this.MinimizeBox = false;
             this.Name = "FrmAltaProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Ingresar datos";
+            this.Text = "Datos del Producto";
             ((System.ComponentModel.ISupportInitialize)(this.nud_Stock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Precio)).EndInit();
             this.ResumeLayout(false);

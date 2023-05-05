@@ -56,6 +56,7 @@
             this.smi_Cerrar});
             this.msp_Principal.Location = new System.Drawing.Point(0, 0);
             this.msp_Principal.Name = "msp_Principal";
+            this.msp_Principal.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.msp_Principal.Size = new System.Drawing.Size(800, 40);
             this.msp_Principal.TabIndex = 4;
             this.msp_Principal.Text = "Menú Principal";
@@ -121,9 +122,10 @@
             // 
             // smi_Usuarios
             // 
-            this.smi_Usuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.smi_Usuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(202)))), ((int)(((byte)(51)))));
             this.smi_Usuarios.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.smi_Usuarios.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.smi_Usuarios.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(202)))), ((int)(((byte)(51)))));
+            this.smi_Usuarios.ImageTransparentColor = System.Drawing.Color.Fuchsia;
             this.smi_Usuarios.Name = "smi_Usuarios";
             this.smi_Usuarios.Size = new System.Drawing.Size(150, 36);
             this.smi_Usuarios.Text = "Gestión Usuarios";
@@ -177,6 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.HotTrack;
             this.BackgroundImage = global::Vista.Properties.Resources.inicio;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 455);
