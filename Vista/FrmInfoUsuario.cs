@@ -13,7 +13,6 @@ namespace Vista
 {
     public partial class FrmInfoUsuario : Form
     {
-        private Usuario? usuarioActual;
         private FrmLogin formLogin;
 
         public FrmInfoUsuario(FrmLogin formLoginRecibido)
@@ -24,10 +23,14 @@ namespace Vista
 
         private void FrmInfoUsuario_Load(object sender, EventArgs e)
         {
-            lbl_Nombre.Text = formLogin.UsuarioIngresado.Nombre;
-
-
-
+            if(formLogin is not null)
+            {
+                lbl_Nombre.Text = formLogin.UsuarioIngresado.Nombre;
+                lbl_Apellido.Text = formLogin.UsuarioIngresado.Apellido;
+                lbl_Dni.Text = formLogin.UsuarioIngresado.Dni.ToString();
+                lbl_NombreDeUsuario.Text = formLogin.UsuarioIngresado.NombreUsuario;
+                lbl_Rol.Text = formLogin.UsuarioIngresado.Rol.ToString();
+            }
         }
     }
 }

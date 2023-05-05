@@ -16,8 +16,8 @@ namespace Vista
     {
         private Usuario? usuarioActual;
         private FrmLogin formLogin;
-        private FrmProductos formProductos;
-        private FrmInfoUsuario formInfoUsuario;
+        private FrmProductos? formProductos;
+        private FrmInfoUsuario? formInfoUsuario;
 
         public FrmPrincipal(FrmLogin formLoginRecibido)
         {
@@ -28,11 +28,12 @@ namespace Vista
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             usuarioActual = formLogin.UsuarioIngresado;
-            sbl_NombreUsuario.Text = usuarioActual.NombreCompleto;
+            configurarMenuPorRol(usuarioActual);   
 
             formProductos = new FrmProductos();
-            formInfoUsuario = new FrmInfoUsuario(formLogin);
             formProductos.MdiParent = this;
+            formInfoUsuario = new FrmInfoUsuario(formLogin);
+            formInfoUsuario.MdiParent = this;
         }
 
         private void smi_Cerrar_Click(object sender, EventArgs e)
@@ -58,7 +59,7 @@ namespace Vista
         {            
             FrmAltaProducto formAltaProducto = new FrmAltaProducto();
 
-            if (formAltaProducto.ShowDialog() == DialogResult.OK)
+            if (formAltaProducto.ShowDialog() == DialogResult.OK && formProductos is not null)
             {
                 Sistema.ListaDeProductos.Add(formAltaProducto.ProductoCreado);
                 formProductos.ActualizarDataGrid(Sistema.ListaDeProductos);
@@ -70,32 +71,60 @@ namespace Vista
 
         private void mostrarFormularioHijo(Type tipoFormulario)
         {
+            //Recorro todos los formularios que ya sean hijos del Contenedor MDI
             foreach (Form formulario in this.MdiChildren)
             {
-                if(formulario.Name != tipoFormulario.Name)
+                if(formulario.GetType() != tipoFormulario) //Si no es el que le paso, lo oculto
                 {
                     formulario.Hide();
-                }
-            }
-            //A analizar esto
-            
-
-            foreach (Form formulario in this.MdiChildren)
-            {
-                if (formulario.GetType() == tipoFormulario)
+                }else                                    //Si es el que le paso,
                 {
-                    formulario.Size = this.Size;
-                    formulario.Show();
-                    formulario.Activate();
+                    //formulario.Size = this.Size;
+                    formulario.WindowState = FormWindowState.Maximized;
+                    formulario.Show();               //Lo muestro
                 }
             }
         }
 
         private void verDatosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //FrmInfoUsuario formInfoUsuario = new FrmInfoUsuario(formLogin);
             mostrarFormularioHijo(typeof(FrmInfoUsuario));
-            //.MdiParent = this;
+
+        }
+
+        private void configurarMenuPorRol(Usuario usuarioRecibido)
+        {
+            sbl_NombreUsuario.Text = usuarioRecibido.NombreCompleto;
+            sbl_DniUsuario.Text = $"DNI: {usuarioRecibido.Dni}";
+
+            if (usuarioRecibido.Rol == ERol.SuperUsuario)
+            {
+                smi_Usuarios.Visible = true;
+                //smi_Cerrar.Margin.Left = 470
+                sbl_NombreUsuario.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+                sbl_NombreUsuario.ForeColor = Color.FromArgb(234, 202, 51);
+            }
+            else if(usuarioRecibido.Rol == ERol.Cliente)
+            {
+                //smi_Comprar.Visible = true;
+                //smi_Cerrar.Margin.Left = 
+            }else
+            {
+                //Empleado
+                //smi_Cerrar.Margin.Left = 320
+            }
+        }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            formLogin.LimpiarPantalla();
+            formLogin.Show();
+            this.Close();
+        }
+
+        private void smi_Usuarios_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

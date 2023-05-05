@@ -23,10 +23,12 @@ namespace Helper
         static private List<Usuario> HardcodearUsuarios()
         {
             listaDeUsuariosHardcodeada = new List<Usuario>();
-            listaDeUsuariosHardcodeada.Add(new Usuario("Mario", "Rampi", 39576681, "rampi23", "rampi0001", ERol.Empleado));
-            listaDeUsuariosHardcodeada.Add(new Usuario("Mauro", "Luciano", 40874065, "MauuL", "contrasenia", ERol.Empleado));
-            listaDeUsuariosHardcodeada.Add(new Usuario("Juan", "Perez", 40288569, "juan0104", "expendedora111", ERol.Empleado));
-            listaDeUsuariosHardcodeada.Add(new Usuario("Lucia", "Gomez", 40022491, "99lulu", "cleancode5", ERol.Empleado));
+            listaDeUsuariosHardcodeada.Add(new Usuario("Mario", "Rampi", 39576681, "rampi23", "rampi0001", ERol.SuperUsuario));
+            listaDeUsuariosHardcodeada.Add(new Usuario("Mauro", "Luciano", 40874065, "MauuL", "contrasenia", ERol.SuperUsuario));
+            listaDeUsuariosHardcodeada.Add(new Usuario("Miguel", "Gil", 43596276, "miguebj", "moon0099", ERol.SuperUsuario));
+            listaDeUsuariosHardcodeada.Add(new Usuario("Lucia", "Gomez", 40022491, "lulu05", "cleancode5", ERol.Empleado));
+            listaDeUsuariosHardcodeada.Add(new Usuario("Bianca", "Siso", 42557016, "Laesse", "TYRA00", ERol.Empleado));
+            listaDeUsuariosHardcodeada.Add(new Usuario("Federico", "Messina", 43180251, "99lulu", "cleancode5", ERol.Empleado));
             return listaDeUsuariosHardcodeada;
         }
 

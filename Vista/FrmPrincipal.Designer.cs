@@ -36,9 +36,11 @@
             this.smi_Cuenta = new System.Windows.Forms.ToolStripMenuItem();
             this.verDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.smi_Usuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.smi_Cerrar = new System.Windows.Forms.ToolStripMenuItem();
             this.sta_Datos = new System.Windows.Forms.StatusStrip();
             this.sbl_NombreUsuario = new System.Windows.Forms.ToolStripStatusLabel();
+            this.sbl_DniUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.msp_Principal.SuspendLayout();
             this.sta_Datos.SuspendLayout();
             this.SuspendLayout();
@@ -50,10 +52,10 @@
             this.smi_Inicio,
             this.smi_Producto,
             this.smi_Cuenta,
+            this.smi_Usuarios,
             this.smi_Cerrar});
             this.msp_Principal.Location = new System.Drawing.Point(0, 0);
             this.msp_Principal.Name = "msp_Principal";
-            this.msp_Principal.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
             this.msp_Principal.Size = new System.Drawing.Size(800, 40);
             this.msp_Principal.TabIndex = 4;
             this.msp_Principal.Text = "Menú Principal";
@@ -106,25 +108,37 @@
             // verDatosToolStripMenuItem
             // 
             this.verDatosToolStripMenuItem.Name = "verDatosToolStripMenuItem";
-            this.verDatosToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.verDatosToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
             this.verDatosToolStripMenuItem.Text = "Ver datos";
             this.verDatosToolStripMenuItem.Click += new System.EventHandler(this.verDatosToolStripMenuItem_Click);
             // 
             // cerrarSesiónToolStripMenuItem
             // 
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar sesión";
+            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
+            // 
+            // smi_Usuarios
+            // 
+            this.smi_Usuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.smi_Usuarios.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.smi_Usuarios.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.smi_Usuarios.Name = "smi_Usuarios";
+            this.smi_Usuarios.Size = new System.Drawing.Size(150, 36);
+            this.smi_Usuarios.Text = "Gestión Usuarios";
+            this.smi_Usuarios.Visible = false;
+            this.smi_Usuarios.Click += new System.EventHandler(this.smi_Usuarios_Click);
             // 
             // smi_Cerrar
             // 
             this.smi_Cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(44)))), ((int)(((byte)(13)))));
             this.smi_Cerrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.smi_Cerrar.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.smi_Cerrar.Margin = new System.Windows.Forms.Padding(481, -2, 0, -2);
+            this.smi_Cerrar.Margin = new System.Windows.Forms.Padding(320, -2, 0, -2);
             this.smi_Cerrar.Name = "smi_Cerrar";
-            this.smi_Cerrar.Padding = new System.Windows.Forms.Padding(15, 0, 4, 15);
-            this.smi_Cerrar.Size = new System.Drawing.Size(79, 40);
+            this.smi_Cerrar.Padding = new System.Windows.Forms.Padding(15, 0, 15, 15);
+            this.smi_Cerrar.Size = new System.Drawing.Size(90, 40);
             this.smi_Cerrar.Text = "Cerrar";
             this.smi_Cerrar.Click += new System.EventHandler(this.smi_Cerrar_Click);
             // 
@@ -132,22 +146,32 @@
             // 
             this.sta_Datos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(91)))), ((int)(((byte)(176)))));
             this.sta_Datos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.sbl_NombreUsuario});
-            this.sta_Datos.Location = new System.Drawing.Point(0, 431);
+            this.sbl_NombreUsuario,
+            this.sbl_DniUsuario});
+            this.sta_Datos.Location = new System.Drawing.Point(0, 430);
             this.sta_Datos.Name = "sta_Datos";
             this.sta_Datos.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
-            this.sta_Datos.Size = new System.Drawing.Size(800, 24);
+            this.sta_Datos.Size = new System.Drawing.Size(800, 25);
             this.sta_Datos.SizingGrip = false;
             this.sta_Datos.TabIndex = 6;
             this.sta_Datos.Text = "Datos del usuario";
             // 
             // sbl_NombreUsuario
             // 
-            this.sbl_NombreUsuario.Font = new System.Drawing.Font("Gadugi", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.sbl_NombreUsuario.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.sbl_NombreUsuario.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.sbl_NombreUsuario.Name = "sbl_NombreUsuario";
-            this.sbl_NombreUsuario.Size = new System.Drawing.Size(139, 19);
+            this.sbl_NombreUsuario.Size = new System.Drawing.Size(139, 20);
             this.sbl_NombreUsuario.Text = "Nombre de Usuario";
+            // 
+            // sbl_DniUsuario
+            // 
+            this.sbl_DniUsuario.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.sbl_DniUsuario.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.sbl_DniUsuario.Margin = new System.Windows.Forms.Padding(25, 3, 0, 2);
+            this.sbl_DniUsuario.Name = "sbl_DniUsuario";
+            this.sbl_DniUsuario.Size = new System.Drawing.Size(101, 20);
+            this.sbl_DniUsuario.Text = "DNI 00000000";
             // 
             // FrmPrincipal
             // 
@@ -189,5 +213,7 @@
         private ToolStripMenuItem smi_Cuenta;
         private ToolStripMenuItem verDatosToolStripMenuItem;
         private ToolStripMenuItem cerrarSesiónToolStripMenuItem;
+        private ToolStripMenuItem smi_Usuarios;
+        private ToolStripStatusLabel sbl_DniUsuario;
     }
 }
