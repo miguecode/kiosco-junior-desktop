@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Vista
 {
@@ -27,19 +28,14 @@ namespace Vista
             try
             {
                 ValidarDatosUsuario();
-                //ValidarUsuarioExistente(UsuarioCreado);
-                //Buscar si el usuario ya existe
 
-                ERol rolSeleccionado = (ERol)Enum.Parse(typeof(ERol), cmb_Rol.SelectedItem.ToString());
-
-                //ERol rolSeleccionado = (ERol) cmb_Rol.SelectedItem;
+                _ = Enum.TryParse(cmb_Rol.SelectedItem.ToString(), out ERol rolSeleccionado);
 
                 usuarioCreado = new Usuario(txt_Nombre.Text, txt_Apellido.Text, int.Parse(txt_Dni.Text),
-                              txt_NombreDeUsuario.Text, txt_Contrasenia.Text, rolSeleccionado);
+                        txt_NombreDeUsuario.Text, txt_Contrasenia.Text, rolSeleccionado);
 
                 this.DialogResult = DialogResult.OK;
-            }
-            catch (Exception ex)
+            }catch (Exception ex)
             {
                 lbl_Error.Visible = true;
                 lbl_Error.Text = ex.Message;
@@ -48,68 +44,33 @@ namespace Vista
 
         private void ValidarDatosUsuario()
         {
-            if (!(ValidarRolDeUsuario() && ValidarStringDeUsuario(txt_Nombre.Text)
-                && ValidarStringDeUsuario(txt_Apellido.Text) && ValidarDniDeUsuario(txt_Dni.Text)
-                && ValidarStringDeUsuario(txt_NombreDeUsuario.Text) && ValidarContraseniaDeUsuario(txt_Contrasenia.Text)))
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("Datos no válidos:");
+
+            if (!Validador.ValidarItemEnumerado(cmb_Rol.SelectedItem, typeof(ERol)))
+                sb.AppendLine("- Rol");
+
+            if (!Validador.ValidarStringConLetraSinDigitoYRango(txt_Nombre.Text, 2, 24))
+                sb.AppendLine("- Nombre");
+
+            if (!Validador.ValidarStringConLetraSinDigitoYRango(txt_Apellido.Text, 2, 24))               
+                sb.AppendLine("- Apellido");
+
+            if (!Validador.ValidarStringNumericoRango(txt_Dni.Text, 7, 9))
+                sb.AppendLine("- DNI");
+
+            if (!Validador.ValidarStringConLetraDigitoYRango(txt_NombreDeUsuario.Text, 4, 17))
+                sb.AppendLine("- Nombre de Usuario");
+
+            if (!Validador.ValidarStringRango(txt_Contrasenia.Text, 7, 17))
+                sb.AppendLine("- Contraseña");
+
+            if (sb.Length > 19)
             {
-                throw new Exception("Datos invalidos");
+                throw new Exception(sb.ToString());
             }
         }
-
-        private bool ValidarStringDeUsuario(string cadena)
-        {
-            if (string.IsNullOrEmpty(cadena) || cadena.Length > 14)
-                return false;
-
-            // Verifica si el nombre contiene caracteres no válidos.
-            foreach (char caracter in cadena)
-            {
-                if (!char.IsLetter(caracter) && caracter != ' ' && caracter != '-')
-                {
-                    return false;
-                }
-            }
-
-            // Verifica si el nombre contiene más de un espacio seguido o un guión seguido.
-            for (int i = 0; i < cadena.Length - 1; i++)
-            {
-                if ((cadena[i] == ' ' && cadena[i + 1] == ' ') || (cadena[i] == '-' && cadena[i + 1] == '-'))
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
-        private bool ValidarContraseniaDeUsuario(string cadena)
-        {
-            if (string.IsNullOrEmpty(cadena) || cadena.Length > 14)
-                return false;
-
-            // Verifica si el nombre contiene caracteres no válidos.
-            foreach (char caracter in cadena)
-            {
-                if (!char.IsLetterOrDigit(caracter))
-                {
-                    return false;
-                }
-            }
-
-            return true;
-        }
-
-        private bool ValidarDniDeUsuario(string dniString)
-        {
-            return dniString.Length == 8 && int.TryParse(dniString, out _);
-            //Si es igual a 8 y se puede parsear a Int, devuelve true
-        }
-
-        private bool ValidarRolDeUsuario()
-        {
-            return cmb_Rol.SelectedItem != null;
-        }
-
+       
         private void btn_VerContrasenia_Click(object sender, EventArgs e)
         {
             if(!txt_Contrasenia.UseSystemPasswordChar)

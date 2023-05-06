@@ -56,9 +56,20 @@ namespace Helper
             return cantidad > minimo && cantidad < maximo;
         }
 
-        public static bool ValidarItemCombobox(Object itemSeleccionado)
+        public static bool ValidarStringNumericoRango(string cadena, int minimo, int maximo)
         {
-            return itemSeleccionado != null;
+            return cadena.Length > minimo && cadena.Length < maximo && int.TryParse(cadena, out _);
+        }
+
+        public static bool ValidarItemEnumerado(Object itemSeleccionado, Type tipoEnumerado)
+        {
+            if (itemSeleccionado is null)
+                return false;
+
+            if (!Enum.IsDefined(tipoEnumerado, itemSeleccionado))
+                return false;
+
+            return true;
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////

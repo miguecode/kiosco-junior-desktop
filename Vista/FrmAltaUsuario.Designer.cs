@@ -73,7 +73,7 @@
             this.lbl_NombreUsuario.AutoSize = true;
             this.lbl_NombreUsuario.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_NombreUsuario.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_NombreUsuario.Location = new System.Drawing.Point(63, 213);
+            this.lbl_NombreUsuario.Location = new System.Drawing.Point(332, 74);
             this.lbl_NombreUsuario.Name = "lbl_NombreUsuario";
             this.lbl_NombreUsuario.Size = new System.Drawing.Size(40, 20);
             this.lbl_NombreUsuario.TabIndex = 2;
@@ -84,7 +84,7 @@
             this.lbl_Contrasenia.AutoSize = true;
             this.lbl_Contrasenia.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_Contrasenia.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_Contrasenia.Location = new System.Drawing.Point(15, 257);
+            this.lbl_Contrasenia.Location = new System.Drawing.Point(284, 118);
             this.lbl_Contrasenia.Name = "lbl_Contrasenia";
             this.lbl_Contrasenia.Size = new System.Drawing.Size(88, 20);
             this.lbl_Contrasenia.TabIndex = 3;
@@ -95,7 +95,7 @@
             this.lbl_Dni.AutoSize = true;
             this.lbl_Dni.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_Dni.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_Dni.Location = new System.Drawing.Point(63, 166);
+            this.lbl_Dni.Location = new System.Drawing.Point(332, 27);
             this.lbl_Dni.Name = "lbl_Dni";
             this.lbl_Dni.Size = new System.Drawing.Size(37, 20);
             this.lbl_Dni.TabIndex = 4;
@@ -119,7 +119,7 @@
             // 
             // txt_Dni
             // 
-            this.txt_Dni.Location = new System.Drawing.Point(112, 163);
+            this.txt_Dni.Location = new System.Drawing.Point(381, 24);
             this.txt_Dni.MaxLength = 8;
             this.txt_Dni.Name = "txt_Dni";
             this.txt_Dni.Size = new System.Drawing.Size(151, 23);
@@ -127,16 +127,16 @@
             // 
             // txt_NombreDeUsuario
             // 
-            this.txt_NombreDeUsuario.Location = new System.Drawing.Point(113, 210);
-            this.txt_NombreDeUsuario.MaxLength = 14;
+            this.txt_NombreDeUsuario.Location = new System.Drawing.Point(382, 71);
+            this.txt_NombreDeUsuario.MaxLength = 16;
             this.txt_NombreDeUsuario.Name = "txt_NombreDeUsuario";
             this.txt_NombreDeUsuario.Size = new System.Drawing.Size(151, 23);
             this.txt_NombreDeUsuario.TabIndex = 8;
             // 
             // txt_Contrasenia
             // 
-            this.txt_Contrasenia.Location = new System.Drawing.Point(113, 254);
-            this.txt_Contrasenia.MaxLength = 14;
+            this.txt_Contrasenia.Location = new System.Drawing.Point(382, 115);
+            this.txt_Contrasenia.MaxLength = 16;
             this.txt_Contrasenia.Name = "txt_Contrasenia";
             this.txt_Contrasenia.Size = new System.Drawing.Size(151, 23);
             this.txt_Contrasenia.TabIndex = 9;
@@ -147,7 +147,7 @@
             this.lbl_Error.AutoSize = true;
             this.lbl_Error.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_Error.ForeColor = System.Drawing.Color.Crimson;
-            this.lbl_Error.Location = new System.Drawing.Point(21, 364);
+            this.lbl_Error.Location = new System.Drawing.Point(36, 162);
             this.lbl_Error.Name = "lbl_Error";
             this.lbl_Error.Size = new System.Drawing.Size(124, 19);
             this.lbl_Error.TabIndex = 10;
@@ -160,7 +160,7 @@
             this.btn_Confirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Confirmar.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Confirmar.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_Confirmar.Location = new System.Drawing.Point(21, 305);
+            this.btn_Confirmar.Location = new System.Drawing.Point(425, 162);
             this.btn_Confirmar.Name = "btn_Confirmar";
             this.btn_Confirmar.Size = new System.Drawing.Size(140, 45);
             this.btn_Confirmar.TabIndex = 11;
@@ -174,9 +174,9 @@
             this.btn_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cancelar.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Cancelar.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_Cancelar.Location = new System.Drawing.Point(204, 305);
+            this.btn_Cancelar.Location = new System.Drawing.Point(425, 213);
             this.btn_Cancelar.Name = "btn_Cancelar";
-            this.btn_Cancelar.Size = new System.Drawing.Size(104, 45);
+            this.btn_Cancelar.Size = new System.Drawing.Size(140, 34);
             this.btn_Cancelar.TabIndex = 12;
             this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = false;
@@ -187,7 +187,7 @@
             this.btn_VerContrasenia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
             this.btn_VerContrasenia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_VerContrasenia.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_VerContrasenia.Location = new System.Drawing.Point(270, 254);
+            this.btn_VerContrasenia.Location = new System.Drawing.Point(539, 115);
             this.btn_VerContrasenia.Name = "btn_VerContrasenia";
             this.btn_VerContrasenia.Size = new System.Drawing.Size(38, 23);
             this.btn_VerContrasenia.TabIndex = 13;
@@ -225,7 +225,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
-            this.ClientSize = new System.Drawing.Size(328, 402);
+            this.ClientSize = new System.Drawing.Size(592, 318);
             this.ControlBox = false;
             this.Controls.Add(this.lbl_Rol);
             this.Controls.Add(this.cmb_Rol);

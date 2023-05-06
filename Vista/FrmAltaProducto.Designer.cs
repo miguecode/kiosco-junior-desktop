@@ -53,7 +53,7 @@
             this.btn_Confirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Confirmar.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Confirmar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Confirmar.Location = new System.Drawing.Point(236, 182);
+            this.btn_Confirmar.Location = new System.Drawing.Point(28, 239);
             this.btn_Confirmar.Name = "btn_Confirmar";
             this.btn_Confirmar.Size = new System.Drawing.Size(123, 42);
             this.btn_Confirmar.TabIndex = 0;
@@ -110,7 +110,7 @@
             this.btn_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cancelar.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Cancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Cancelar.Location = new System.Drawing.Point(236, 230);
+            this.btn_Cancelar.Location = new System.Drawing.Point(28, 287);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(123, 39);
             this.btn_Cancelar.TabIndex = 6;
@@ -200,7 +200,7 @@
             this.lbl_Error.AutoSize = true;
             this.lbl_Error.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_Error.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Error.Location = new System.Drawing.Point(28, 240);
+            this.lbl_Error.Location = new System.Drawing.Point(239, 196);
             this.lbl_Error.Name = "lbl_Error";
             this.lbl_Error.Size = new System.Drawing.Size(124, 19);
             this.lbl_Error.TabIndex = 13;
@@ -245,7 +245,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(50)))), ((int)(((byte)(143)))));
-            this.ClientSize = new System.Drawing.Size(384, 288);
+            this.ClientSize = new System.Drawing.Size(384, 335);
             this.ControlBox = false;
             this.Controls.Add(this.nud_Precio);
             this.Controls.Add(this.lbl_Precio);
