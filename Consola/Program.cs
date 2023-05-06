@@ -13,8 +13,6 @@ namespace Consola
             //Archivo.EscribirEnArchivo();
 
             Archivo.Stream();
-
-
         }
     }
 }

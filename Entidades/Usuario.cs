@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Usuario
+    public class Usuario : Dato
     {
         private string nombre;
         private string apellido;
@@ -42,6 +42,16 @@ namespace Entidades
             this.rol = rol;
         }
 
+        public override bool ValidarDatos()
+        {
+            //
+
+
+
+
+            throw new NotImplementedException();
+        }
+        
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -55,6 +65,10 @@ namespace Entidades
 
             return sb.ToString();
         }
+
+
+
+
 
         public static bool operator ==(Usuario u1, Usuario u2)
         {

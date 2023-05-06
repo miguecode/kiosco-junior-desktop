@@ -30,11 +30,11 @@ namespace Vista
                 //ValidarProductoExistente(productoCreado);
                 //Buscar si el producto ya existe
 
-                ETipo tipoSeleccionado = (ETipo)Enum.Parse(typeof(ETipo), cmb_Tipo.SelectedItem.ToString());
+
+                ETipo tipoSeleccionado = (ETipo)Enum.Parse(typeof(ETipo), cmb_Tipo.SelectedItem.ToString());     
 
                 productoCreado = new Producto(txt_Nombre.Text, tipoSeleccionado, txt_Marca.Text, 
                             rtb_Descripcion.Text, (float)nud_Precio.Value, (int)nud_Stock.Value);
-
 
                 this.DialogResult = DialogResult.OK;
             }
