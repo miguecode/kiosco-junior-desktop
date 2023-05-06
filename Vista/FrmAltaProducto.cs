@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +27,7 @@ namespace Vista
             try
             {
                 ValidarDatosProducto();
-
+                //ValidarProductoExistente(productoCreado);
                 //Buscar si el producto ya existe
 
                 ETipo tipoSeleccionado = (ETipo)Enum.Parse(typeof(ETipo), cmb_Tipo.SelectedItem.ToString());
@@ -89,6 +90,16 @@ namespace Vista
         private bool ValidarDescripcionDeProducto(string descripcion)
         {
             return descripcion.Length > 5 && descripcion.Length <= 120;
+        }
+        private void ValidarProductoExistente(Producto productoRecibido)
+        {
+            foreach (Producto producto in Sistema.ListaDeProductos)
+            {
+                if (producto == productoRecibido)
+                {
+                    throw new Exception("Ese producto ya existe");
+                }
+            }
         }
 
         private void btn_Cancelar_Click(object sender, EventArgs e)

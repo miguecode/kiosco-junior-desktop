@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,7 +27,7 @@ namespace Vista
             try
             {
                 ValidarDatosUsuario();
-
+                //ValidarUsuarioExistente(UsuarioCreado);
                 //Buscar si el usuario ya existe
 
                 ERol rolSeleccionado = (ERol)Enum.Parse(typeof(ERol), cmb_Rol.SelectedItem.ToString());
@@ -48,8 +49,8 @@ namespace Vista
         private void ValidarDatosUsuario()
         {
             if (!(ValidarRolDeUsuario() && ValidarStringDeUsuario(txt_Nombre.Text)
-                && ValidarStringDeUsuario(txt_Apellido.Text) && ValidarDniUsuario(txt_Dni.Text)
-                && ValidarStringDeUsuario(txt_NombreDeUsuario.Text) && ValidarStringDeUsuario(txt_Contrasenia.Text)))
+                && ValidarStringDeUsuario(txt_Apellido.Text) && ValidarDniDeUsuario(txt_Dni.Text)
+                && ValidarStringDeUsuario(txt_NombreDeUsuario.Text) && ValidarContraseniaDeUsuario(txt_Contrasenia.Text)))
             {
                 throw new Exception("Datos invalidos");
             }
@@ -81,7 +82,24 @@ namespace Vista
             return true;
         }
 
-        private bool ValidarDniUsuario(string dniString)
+        private bool ValidarContraseniaDeUsuario(string cadena)
+        {
+            if (string.IsNullOrEmpty(cadena) || cadena.Length > 14)
+                return false;
+
+            // Verifica si el nombre contiene caracteres no válidos.
+            foreach (char caracter in cadena)
+            {
+                if (!char.IsLetterOrDigit(caracter))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        private bool ValidarDniDeUsuario(string dniString)
         {
             return dniString.Length == 8 && int.TryParse(dniString, out _);
             //Si es igual a 8 y se puede parsear a Int, devuelve true
@@ -94,7 +112,24 @@ namespace Vista
 
         private void btn_VerContrasenia_Click(object sender, EventArgs e)
         {
-            txt_Contrasenia.UseSystemPasswordChar = false;
+            if(!txt_Contrasenia.UseSystemPasswordChar)
+            {
+                txt_Contrasenia.UseSystemPasswordChar = true;
+            }else
+            {
+                txt_Contrasenia.UseSystemPasswordChar = false;
+            }           
+        }
+
+        private void ValidarUsuarioExistente(Usuario usuarioRecibido)
+        {
+            foreach (Usuario usuario in Sistema.ListaDeUsuarios)
+            {
+                if (usuario == usuarioRecibido)
+                {
+                    throw new Exception("Ese usuario ya existe");
+                }
+            }
         }
 
         private void btn_Cancelar_Click(object sender, EventArgs e)

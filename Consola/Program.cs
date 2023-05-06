@@ -9,8 +9,10 @@ namespace Consola
         {
             Console.WriteLine("Hello, World!");
 
-            Archivo.Auxiliares();
+            //Archivo.Auxiliares();
+            //Archivo.EscribirEnArchivo();
 
+            Archivo.Stream();
 
 
         }

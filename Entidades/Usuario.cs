@@ -42,6 +42,20 @@ namespace Entidades
             this.rol = rol;
         }
 
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine($"NOMBRE: {Nombre}");
+            sb.AppendLine($"APELLIDO: {Apellido}");
+            sb.AppendLine($"DNI: {Dni}");
+            sb.AppendLine($"NOMBRE USUARIO: {NombreUsuario}");
+            sb.AppendLine($"CONTRASEÑA: {Contrasenia}");
+            sb.AppendLine($"ROL: {Rol.ToString()}");
+
+            return sb.ToString();
+        }
+
         public static bool operator ==(Usuario u1, Usuario u2)
         {
             return u1.NombreUsuario == u2.NombreUsuario;

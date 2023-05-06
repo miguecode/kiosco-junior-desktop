@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -49,6 +50,19 @@ namespace Entidades
         public float Precio { get => precio; set => precio = value; }
         public int Stock { get => stock; set => stock = value; }
         public int Id { get => id; set => id = value; }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine($"NOMBRE: {Nombre}");
+            sb.AppendLine($"TIPO: {Tipo.ToString()}");
+            sb.AppendLine($"MARCA: {Marca}");
+            sb.AppendLine($"PRECIO: {Precio}");
+            sb.AppendLine($"STOCK: {Stock}");
+            sb.AppendLine($"DESCRIPCIÓN: {Descripcion}");
+            return sb.ToString();
+        }
 
         public static bool operator ==(Producto p1, Producto p2)
         {

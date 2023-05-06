@@ -70,7 +70,6 @@ namespace Vista
                 {
                     int indice = Sistema.ListaDeUsuarios.IndexOf(productoSeleccionado);
                     Sistema.ListaDeUsuarios.Remove(productoSeleccionado);
-                    //formAltaUsuario.UsuarioCreado.Id = productoSeleccionado.Id;
                     Sistema.ListaDeUsuarios.Insert(indice, formAltaUsuario.UsuarioCreado);
                     this.ActualizarDataGrid(Sistema.ListaDeUsuarios);
                 }
