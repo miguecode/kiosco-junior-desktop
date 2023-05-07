@@ -179,13 +179,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.BackgroundImage = global::Vista.Properties.Resources.inicio;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BackColor = System.Drawing.Color.Red;
+            this.BackgroundImage = global::Vista.Properties.Resources.inicioKiosco;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(800, 455);
             this.ControlBox = false;
             this.Controls.Add(this.sta_Datos);
             this.Controls.Add(this.msp_Principal);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.msp_Principal;

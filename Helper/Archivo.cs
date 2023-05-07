@@ -12,7 +12,7 @@ namespace Helper
         public Archivo()
         {
         }
-
+        
         public static void Auxiliares()
         {
             Console.WriteLine("Es Windows: {0}", OperatingSystem.IsWindows());
@@ -95,12 +95,45 @@ namespace Helper
         }
 
         //public static void GuardarListas(List<Parser> itemLista)
-
-
-        public static void LeerListas()
+        public static void GuardarListas(List<Parser> entidadLista, string path)
         {
+            StreamWriter sw = new StreamWriter(path);
 
+            foreach (Parser entidadLinea in entidadLista)
+            {
+                sw.WriteLine(entidadLinea.GetParser());
+            }
         }
+
+        public static void LeerListas(string path)
+        {
+            StreamReader sr = File.OpenText(path);
+
+            while(sr.Peek() != -1)
+            {
+                string[] divisiones = sr.ReadLine().Split(',');
+
+                if (divisiones[0] == "PRODUCTO")
+                {
+                    string nombre = divisiones[0];
+                    int stock = int.Parse(divisiones[1]);
+                    float precio = float.Parse(divisiones[2]);
+                    string descripcion = divisiones[3];
+                    //sistema.AgregarProducto(new Producto(nombre, stock, precio, descripcion));
+
+
+                }
+
+                //sr.ReadLine();
+            }
+
+            sr.Close();
+            sr.Dispose();
+        }
+
+
+
+
 
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Producto : Dato
+    public class Producto : Parser
     {
         private string nombre;
         private string marca;
@@ -50,14 +50,15 @@ namespace Entidades
         public int Stock { get => stock; set => stock = value; }
         public int Id { get => id; set => id = value; }
 
-        public override bool ValidarDatos()
+        /*public override bool ValidarDatos()
         {
             //
-
-
-
-
             throw new NotImplementedException();
+        }*/
+
+        public override string GetParser()
+        {
+            return $"PRODUCTO,{Id},{Nombre},{Tipo},{Marca},{Precio},{Stock}";
         }
 
         public override string ToString()
@@ -73,13 +74,6 @@ namespace Entidades
             return sb.ToString();
         }
 
-
-
-
-
-
-
-
         public static bool operator ==(Producto p1, Producto p2)
         {
             return p1.Id == p2.Id && p1.Nombre == p2.Nombre && p1.Marca == p2.Marca;
@@ -89,13 +83,5 @@ namespace Entidades
         {
             return !(p1.Id == p2.Id && p1.Nombre == p2.Nombre && p1.Marca == p2.Marca);
         }
-
-
-
-
-
-
-
-
     }
 }
