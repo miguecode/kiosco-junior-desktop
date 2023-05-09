@@ -18,24 +18,28 @@ namespace Entidades
         private int id;
         private static int idActual;
 
-        //Constructor al que le paso solo los valores más importantes
-        public Producto(string nombre, ETipo tipo, float precio, int stock)
+        public Producto()
+        {
+            this.nombre = String.Empty;
+            this.tipo = ETipo.Otros;
+            this.marca = String.Empty;
+            this.descripcion = String.Empty;
+            this.precio = 0;
+            this.stock = 0;
+            this.id = 0;
+        }
+
+        public Producto(string nombre, ETipo tipo, string marca, string descripcion,
+                        float precio, int stock)
         {
             this.nombre = nombre;
             this.tipo = tipo;
-            this.precio = precio;
-            this.stock = stock;
-            this.marca = "N/A";
-            this.descripcion = "N/A";
-            this.id = idActual;
-            idActual++;
-        }
-        //Constructor al que le paso todos los valores
-        public Producto(string nombre, ETipo tipo, string marca, string descripcion,
-                        float precio, int stock) :this(nombre, tipo, precio, stock)
-        {
             this.marca = marca;
             this.descripcion = descripcion;
+            this.precio = precio;
+            this.stock = stock;
+            this.id = idActual;
+            idActual++;
         }
         static Producto()
         {
@@ -50,15 +54,24 @@ namespace Entidades
         public int Stock { get => stock; set => stock = value; }
         public int Id { get => id; set => id = value; }
 
-        /*public override bool ValidarDatos()
-        {
-            //
-            throw new NotImplementedException();
-        }*/
-
         public override string GetParser()
         {
-            return $"PRODUCTO,{Id},{Nombre},{Tipo},{Marca},{Precio},{Stock}";
+            return $"{Id},{Nombre},{Tipo},{Descripcion},{Marca},{Precio},{Stock}";
+        }
+
+        public override Producto CrearEntidad(List<string> dato)
+        {
+            int id = int.Parse(dato[0]);
+            string nombre = dato[1];
+            _ = Enum.TryParse(dato[2], out ETipo tipo);
+            string descripcion = dato[3];
+            string marca = dato[4];
+            float precio = float.Parse(dato[5]);
+            int stock = int.Parse(dato[6]);
+
+            Producto productoCreado = new Producto(nombre, tipo, marca, descripcion, precio, stock);
+
+            return productoCreado;
         }
 
         public override string ToString()

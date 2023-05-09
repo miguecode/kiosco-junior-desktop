@@ -148,7 +148,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.ClientSize = new System.Drawing.Size(413, 290);
+            this.ClientSize = new System.Drawing.Size(664, 290);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pic_Login);
             this.Controls.Add(this.lbl_Error);

@@ -1,8 +1,11 @@
 ﻿using Entidades;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Helper
@@ -12,7 +15,72 @@ namespace Helper
         public Archivo()
         {
         }
+
+        public static void GuardarListas(List<Parser> entidadLista, string path)
+        {
+            //Console.WriteLine($"LLEGUE ACA y el path es: {path}");
+            StreamWriter sw = new StreamWriter(path, false);
+
+            foreach (Parser entidadLinea in entidadLista)
+            {
+                Console.WriteLine("LLEGUE ACA");
+                sw.WriteLine(entidadLinea.GetParser());
+            }
+
+            sw.Close();
+            sw.Dispose();
+        }
+
+        public static void CargarListas(string path, Parser entidad)
+        {
+            StreamReader sr = File.OpenText(path);
+
+            while (!sr.EndOfStream)
+            {
+                List<string> listaDeDatos = GetDatosDividosPorCaracter(sr, ',');
+
+                Parser entidadCreada = CrearEntidadPorDatos(listaDeDatos, entidad);
+
+                AgregarEntidadALista(entidadCreada);                
+            }
+
+            sr.Close();
+            sr.Dispose();
+        }
         
+        private static List<string> GetDatosDividosPorCaracter(StreamReader sr, char caracter)
+        {
+            List<string> listaDeDatos = new List<string>();
+
+            string[]? datoDividido = sr.ReadLine()?.Split(caracter);
+
+            if(datoDividido is not null)
+            {
+                listaDeDatos.AddRange(datoDividido);
+            }
+
+            return listaDeDatos;
+        }
+
+        private static Parser CrearEntidadPorDatos(List<string> dato, Parser entidad)
+        {
+            Parser entidadCreada = entidad.CrearEntidad(dato);
+
+            return entidadCreada;
+        }
+
+        private static void AgregarEntidadALista(Parser entidad)
+        {
+            if (entidad is Producto)
+                Sistema.ListaDeProductos.Add((Producto)entidad);
+
+            if (entidad is Usuario)
+                Sistema.ListaDeUsuarios.Add((Usuario)entidad);
+        }
+
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////
+        //////////////////////////////////////////////////////////////////////////////////////////////
         public static void Auxiliares()
         {
             Console.WriteLine("Es Windows: {0}", OperatingSystem.IsWindows());
@@ -93,47 +161,5 @@ namespace Helper
             streamWriter.Close(); //Cierra el archivo
             streamWriter.Dispose(); //Destruye el archivo
         }
-
-        //public static void GuardarListas(List<Parser> itemLista)
-        public static void GuardarListas(List<Parser> entidadLista, string path)
-        {
-            StreamWriter sw = new StreamWriter(path);
-
-            foreach (Parser entidadLinea in entidadLista)
-            {
-                sw.WriteLine(entidadLinea.GetParser());
-            }
-        }
-
-        public static void LeerListas(string path)
-        {
-            StreamReader sr = File.OpenText(path);
-
-            while(sr.Peek() != -1)
-            {
-                string[] divisiones = sr.ReadLine().Split(',');
-
-                if (divisiones[0] == "PRODUCTO")
-                {
-                    string nombre = divisiones[0];
-                    int stock = int.Parse(divisiones[1]);
-                    float precio = float.Parse(divisiones[2]);
-                    string descripcion = divisiones[3];
-                    //sistema.AgregarProducto(new Producto(nombre, stock, precio, descripcion));
-
-
-                }
-
-                //sr.ReadLine();
-            }
-
-            sr.Close();
-            sr.Dispose();
-        }
-
-
-
-
-
     }
 }

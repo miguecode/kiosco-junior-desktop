@@ -9,5 +9,8 @@ namespace Entidades
     public abstract class Parser
     {
         public abstract string GetParser();
+
+        public abstract Parser CrearEntidad(List<string> dato);
+
     }
 }

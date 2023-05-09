@@ -16,8 +16,13 @@ namespace Helper
 
         static Sistema()
         {
-            listaDeUsuarios = Mock.listaDeUsuariosHardcodeada;
-            listaDeProductos = Mock.listaDeProductosHardcodeada;
+            listaDeUsuarios = new List<Usuario>();
+            listaDeProductos = new List<Producto>();
+
+
+
+            //listaDeUsuarios = Mock.listaDeUsuariosHardcodeada;
+            //listaDeProductos = Mock.listaDeProductosHardcodeada;
         }
 
         public static Usuario ConfirmarIngreso(string nick, string contrasenia)
@@ -34,7 +39,6 @@ namespace Helper
             }
             throw new Exception(String.Empty);
         }
-        //Si existe el usuario, lo devuelvo. Si no, devuelvo la excepción correspondiente
 
         private static Usuario? ValidarUsuarioExistente(string nick, string contrasenia)
         {

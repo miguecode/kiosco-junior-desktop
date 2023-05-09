@@ -15,9 +15,7 @@ namespace Helper
         static Mock()
         {
             HardcodearUsuarios();
-            HardcodearProductos();
-            
-
+            HardcodearProductos();           
         }
 
         static private List<Usuario> HardcodearUsuarios()

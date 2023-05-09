@@ -42,17 +42,24 @@ namespace Entidades
             this.rol = rol;
         }
 
-        /*public override bool ValidarDatos()
-        {
-            //
-            throw new NotImplementedException();
-        }*/
-
         public override string GetParser()
         {
-            return $"USUARIO,{Rol},{NombreUsuario},{Contrasenia},{Dni},{Nombre},{Apellido}";
+            return $"{Rol},{NombreUsuario},{Contrasenia},{Dni},{Nombre},{Apellido}";
         }
 
+        public override Usuario CrearEntidad(List<string> dato)
+        {
+            _ = Enum.TryParse(dato[0], out ERol rol);
+            string nombreUsuario = dato[1];
+            string contrasenia = dato[2];
+            int dni = int.Parse(dato[3]);
+            string nombre = dato[4];
+            string apellido = dato[5];
+
+            Usuario usuarioCreado = new Usuario(nombre, apellido, dni, nombreUsuario, contrasenia, rol);
+
+            return usuarioCreado;
+        }
 
         public override string ToString()
         {

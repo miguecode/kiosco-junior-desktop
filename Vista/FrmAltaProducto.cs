@@ -30,18 +30,18 @@ namespace Vista
 
                 //Buscar si el producto ya existe
 
-                /*string nombreIngresado = txt_Nombre.Text;
+                _ = Enum.TryParse(cmb_Tipo.SelectedItem.ToString(), out ETipo tipoSeleccionado);
+                string nombreIngresado = txt_Nombre.Text;
                 string marcaIngresada = txt_Marca.Text;
                 string descripcion = rtb_Descripcion.Text;
                 float precio = (float)nud_Precio.Value;
-                int stock = (int)nud_Stock.Value;*/
-                _ = Enum.TryParse(cmb_Tipo.SelectedItem.ToString(), out ETipo tipoSeleccionado);
+                int stock = (int)nud_Stock.Value;
 
-
-                productoCreado = new Producto(txt_Nombre.Text, tipoSeleccionado, txt_Marca.Text,
-                                             rtb_Descripcion.Text, (float)nud_Precio.Value, (int)nud_Stock.Value);
+                productoCreado = new Producto(nombreIngresado, tipoSeleccionado, marcaIngresada,
+                                              descripcion, (float)precio, stock);
 
                 this.DialogResult = DialogResult.OK;
+
             }catch(Exception ex)
             {
                 lbl_Error.Visible = true;
