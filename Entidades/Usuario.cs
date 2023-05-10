@@ -15,11 +15,11 @@ namespace Entidades
         private string contrasenia;
         private ERol rol;
 
-        public string Nombre { get => nombre;}
-        public string Apellido { get => apellido;}
-        public int Dni { get => dni; }
-        public string NombreUsuario { get => nombreUsuario;}
-        public string Contrasenia { get => contrasenia;}
+        public string Nombre { get => nombre; set => nombre = value; }
+        public string Apellido { get => apellido; set => apellido = value; }
+        public int Dni { get => dni; set => dni = value; }
+        public string NombreUsuario { get => nombreUsuario; set => nombreUsuario = value; }
+        public string Contrasenia { get => contrasenia; set => contrasenia = value; }
         public string NombreCompleto { get => $"{Nombre} {Apellido}"; }
         public ERol Rol { get => rol; }
         public Usuario()
@@ -47,7 +47,7 @@ namespace Entidades
             return $"{Rol},{NombreUsuario},{Contrasenia},{Dni},{Nombre},{Apellido}";
         }
 
-        public override Usuario CrearEntidad(List<string> dato)
+        public override Usuario CrearEntidadPorLista(List<string> dato)
         {
             _ = Enum.TryParse(dato[0], out ERol rol);
             string nombreUsuario = dato[1];

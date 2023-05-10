@@ -18,12 +18,10 @@ namespace Helper
 
         public static void GuardarListas(List<Parser> entidadLista, string path)
         {
-            //Console.WriteLine($"LLEGUE ACA y el path es: {path}");
             StreamWriter sw = new StreamWriter(path, false);
 
             foreach (Parser entidadLinea in entidadLista)
             {
-                Console.WriteLine("LLEGUE ACA");
                 sw.WriteLine(entidadLinea.GetParser());
             }
 
@@ -41,7 +39,7 @@ namespace Helper
 
                 Parser entidadCreada = CrearEntidadPorDatos(listaDeDatos, entidad);
 
-                AgregarEntidadALista(entidadCreada);                
+                AgregarEntidadALista(entidadCreada);         
             }
 
             sr.Close();
@@ -62,9 +60,9 @@ namespace Helper
             return listaDeDatos;
         }
 
-        private static Parser CrearEntidadPorDatos(List<string> dato, Parser entidad)
+        private static Parser CrearEntidadPorDatos(List<string> listaDatos, Parser entidad)
         {
-            Parser entidadCreada = entidad.CrearEntidad(dato);
+            Parser entidadCreada = entidad.CrearEntidadPorLista(listaDatos);
 
             return entidadCreada;
         }

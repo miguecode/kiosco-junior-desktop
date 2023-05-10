@@ -10,7 +10,7 @@ namespace Entidades
     {
         public abstract string GetParser();
 
-        public abstract Parser CrearEntidad(List<string> dato);
+        public abstract Parser CrearEntidadPorLista(List<string> listaDatos);
 
     }
 }

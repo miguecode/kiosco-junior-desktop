@@ -41,6 +41,7 @@
             this.sta_Datos = new System.Windows.Forms.StatusStrip();
             this.sbl_NombreUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.sbl_DniUsuario = new System.Windows.Forms.ToolStripStatusLabel();
+            this.smi_Compras = new System.Windows.Forms.ToolStripMenuItem();
             this.msp_Principal.SuspendLayout();
             this.sta_Datos.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +53,7 @@
             this.smi_Inicio,
             this.smi_Producto,
             this.smi_Cuenta,
+            this.smi_Compras,
             this.smi_Usuarios,
             this.smi_Cerrar});
             this.msp_Principal.Location = new System.Drawing.Point(0, 0);
@@ -175,11 +177,20 @@
             this.sbl_DniUsuario.Size = new System.Drawing.Size(101, 20);
             this.sbl_DniUsuario.Text = "DNI 00000000";
             // 
+            // smi_Compras
+            // 
+            this.smi_Compras.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.smi_Compras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.smi_Compras.Name = "smi_Compras";
+            this.smi_Compras.Size = new System.Drawing.Size(89, 36);
+            this.smi_Compras.Text = "Compras";
+            this.smi_Compras.Click += new System.EventHandler(this.smi_Compras_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Red;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(150)))), ((int)(((byte)(234)))));
             this.BackgroundImage = global::Vista.Properties.Resources.inicioKiosco;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(800, 455);
@@ -219,5 +230,6 @@
         private ToolStripMenuItem cerrarSesiónToolStripMenuItem;
         private ToolStripMenuItem smi_Usuarios;
         private ToolStripStatusLabel sbl_DniUsuario;
+        private ToolStripMenuItem smi_Compras;
     }
 }

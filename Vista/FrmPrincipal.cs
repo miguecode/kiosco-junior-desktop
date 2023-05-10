@@ -14,29 +14,27 @@ namespace Vista
 {
     public partial class FrmPrincipal : Form
     {
-        private Usuario? usuarioActual;
+        private Usuario usuarioActual;
         private FrmLogin formLogin;
         private FrmProductos? formProductos;
         private FrmInfoUsuario? formInfoUsuario;
         private FrmGestionUsuario? formGestionUsuario;
+        private FrmCompras? formCompras;
 
         public FrmPrincipal(FrmLogin formLoginRecibido)
         {
             InitializeComponent();
+            usuarioActual = new Usuario();
             formLogin = formLoginRecibido;
         }
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             usuarioActual = formLogin.UsuarioIngresado;
-            configurarMenuPorRol(usuarioActual);   
+            
+            configurarMenuPorRol(usuarioActual);
 
-            formProductos = new FrmProductos();
-            formProductos.MdiParent = this;
-            formInfoUsuario = new FrmInfoUsuario(formLogin);
-            formInfoUsuario.MdiParent = this;
-            formGestionUsuario = new FrmGestionUsuario();
-            formGestionUsuario.MdiParent = this;
+            CrearFormulariosMdi();
         }
 
         private void smi_Cerrar_Click(object sender, EventArgs e)
@@ -108,9 +106,12 @@ namespace Vista
             }
             else if(usuarioRecibido.Rol == ERol.Cliente)
             {
-                //smi_Comprar.Visible = true;
+                smi_Compras.Visible = true;
+                smi_Producto.Visible = false;
+                verDatosToolStripMenuItem.Visible = false;
                 //smi_Cerrar.Margin.Left = 
-            }else
+            }
+            else
             {
                 //Empleado
                 //smi_Cerrar.Margin.Left = 320
@@ -128,5 +129,39 @@ namespace Vista
         {
             mostrarFormularioHijo(typeof(FrmGestionUsuario));
         }
+
+        private void smi_Compras_Click(object sender, EventArgs e)
+        {
+            mostrarFormularioHijo(typeof(FrmCompras));
+        }
+
+        private void CrearFormulariosMdi()
+        {
+            formProductos = new FrmProductos();
+            formProductos.MdiParent = this;
+            formInfoUsuario = new FrmInfoUsuario(usuarioActual);
+            formInfoUsuario.MdiParent = this;
+            formGestionUsuario = new FrmGestionUsuario();
+            formGestionUsuario.MdiParent = this;
+            formCompras = new FrmCompras(usuarioActual);
+            formCompras.MdiParent = this;
+        }
+
+        private void CrearCliente()
+        {
+            if(usuarioActual.Rol == ERol.Cliente)
+            {
+                Cliente clienteCreado = new Cliente(usuarioActual.Nombre, usuarioActual.Apellido, usuarioActual.Dni,
+                                        usuarioActual.NombreUsuario, usuarioActual.Contrasenia, usuarioActual.Rol);
+
+
+
+            }
+
+
+        }
+
+
+
     }
 }

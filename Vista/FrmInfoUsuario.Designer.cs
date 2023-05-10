@@ -38,19 +38,8 @@
             this.lbl_Dni = new System.Windows.Forms.Label();
             this.lbl_NombreDeUsuario = new System.Windows.Forms.Label();
             this.lbl_Rol = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.lbl_Titulo = new System.Windows.Forms.Label();
             this.btn_Modificar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lbl_TituloNombre
@@ -58,7 +47,7 @@
             this.lbl_TituloNombre.AutoSize = true;
             this.lbl_TituloNombre.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_TituloNombre.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_TituloNombre.Location = new System.Drawing.Point(141, 95);
+            this.lbl_TituloNombre.Location = new System.Drawing.Point(178, 80);
             this.lbl_TituloNombre.Name = "lbl_TituloNombre";
             this.lbl_TituloNombre.Size = new System.Drawing.Size(86, 25);
             this.lbl_TituloNombre.TabIndex = 0;
@@ -69,7 +58,7 @@
             this.lbl_TituloApellido.AutoSize = true;
             this.lbl_TituloApellido.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_TituloApellido.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_TituloApellido.Location = new System.Drawing.Point(141, 149);
+            this.lbl_TituloApellido.Location = new System.Drawing.Point(178, 134);
             this.lbl_TituloApellido.Name = "lbl_TituloApellido";
             this.lbl_TituloApellido.Size = new System.Drawing.Size(86, 25);
             this.lbl_TituloApellido.TabIndex = 1;
@@ -80,7 +69,7 @@
             this.lbl_TituloDni.AutoSize = true;
             this.lbl_TituloDni.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_TituloDni.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_TituloDni.Location = new System.Drawing.Point(141, 201);
+            this.lbl_TituloDni.Location = new System.Drawing.Point(178, 186);
             this.lbl_TituloDni.Name = "lbl_TituloDni";
             this.lbl_TituloDni.Size = new System.Drawing.Size(47, 25);
             this.lbl_TituloDni.TabIndex = 2;
@@ -91,7 +80,7 @@
             this.lbl_TituloNombreUsuario.AutoSize = true;
             this.lbl_TituloNombreUsuario.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_TituloNombreUsuario.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_TituloNombreUsuario.Location = new System.Drawing.Point(141, 253);
+            this.lbl_TituloNombreUsuario.Location = new System.Drawing.Point(178, 238);
             this.lbl_TituloNombreUsuario.Name = "lbl_TituloNombreUsuario";
             this.lbl_TituloNombreUsuario.Size = new System.Drawing.Size(187, 25);
             this.lbl_TituloNombreUsuario.TabIndex = 3;
@@ -102,7 +91,7 @@
             this.lbl_TituloRol.AutoSize = true;
             this.lbl_TituloRol.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_TituloRol.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_TituloRol.Location = new System.Drawing.Point(141, 305);
+            this.lbl_TituloRol.Location = new System.Drawing.Point(178, 290);
             this.lbl_TituloRol.Name = "lbl_TituloRol";
             this.lbl_TituloRol.Size = new System.Drawing.Size(144, 25);
             this.lbl_TituloRol.TabIndex = 4;
@@ -113,7 +102,7 @@
             this.lbl_Nombre.AutoSize = true;
             this.lbl_Nombre.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Nombre.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_Nombre.Location = new System.Drawing.Point(10, 96);
+            this.lbl_Nombre.Location = new System.Drawing.Point(414, 80);
             this.lbl_Nombre.Name = "lbl_Nombre";
             this.lbl_Nombre.Size = new System.Drawing.Size(81, 25);
             this.lbl_Nombre.TabIndex = 5;
@@ -124,7 +113,7 @@
             this.lbl_Apellido.AutoSize = true;
             this.lbl_Apellido.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Apellido.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_Apellido.Location = new System.Drawing.Point(10, 148);
+            this.lbl_Apellido.Location = new System.Drawing.Point(414, 134);
             this.lbl_Apellido.Name = "lbl_Apellido";
             this.lbl_Apellido.Size = new System.Drawing.Size(82, 25);
             this.lbl_Apellido.TabIndex = 6;
@@ -135,7 +124,7 @@
             this.lbl_Dni.AutoSize = true;
             this.lbl_Dni.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Dni.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_Dni.Location = new System.Drawing.Point(12, 200);
+            this.lbl_Dni.Location = new System.Drawing.Point(414, 186);
             this.lbl_Dni.Name = "lbl_Dni";
             this.lbl_Dni.Size = new System.Drawing.Size(92, 25);
             this.lbl_Dni.TabIndex = 7;
@@ -146,7 +135,7 @@
             this.lbl_NombreDeUsuario.AutoSize = true;
             this.lbl_NombreDeUsuario.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_NombreDeUsuario.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_NombreDeUsuario.Location = new System.Drawing.Point(10, 339);
+            this.lbl_NombreDeUsuario.Location = new System.Drawing.Point(414, 238);
             this.lbl_NombreDeUsuario.Name = "lbl_NombreDeUsuario";
             this.lbl_NombreDeUsuario.Size = new System.Drawing.Size(175, 25);
             this.lbl_NombreDeUsuario.TabIndex = 8;
@@ -157,36 +146,18 @@
             this.lbl_Rol.AutoSize = true;
             this.lbl_Rol.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Rol.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_Rol.Location = new System.Drawing.Point(377, 305);
+            this.lbl_Rol.Location = new System.Drawing.Point(414, 290);
             this.lbl_Rol.Name = "lbl_Rol";
             this.lbl_Rol.Size = new System.Drawing.Size(143, 25);
             this.lbl_Rol.TabIndex = 9;
             this.lbl_Rol.Text = "Tipo de usuario";
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(51, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(32, 73);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(12, 15);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(32, 73);
-            this.button2.TabIndex = 11;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // lbl_Titulo
             // 
             this.lbl_Titulo.AutoSize = true;
             this.lbl_Titulo.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_Titulo.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_Titulo.Location = new System.Drawing.Point(141, 24);
+            this.lbl_Titulo.Location = new System.Drawing.Point(178, 9);
             this.lbl_Titulo.Name = "lbl_Titulo";
             this.lbl_Titulo.Size = new System.Drawing.Size(190, 41);
             this.lbl_Titulo.TabIndex = 12;
@@ -197,94 +168,23 @@
             this.btn_Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Modificar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Modificar.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_Modificar.Location = new System.Drawing.Point(377, 37);
+            this.btn_Modificar.Location = new System.Drawing.Point(414, 22);
             this.btn_Modificar.Name = "btn_Modificar";
             this.btn_Modificar.Size = new System.Drawing.Size(143, 28);
             this.btn_Modificar.TabIndex = 13;
             this.btn_Modificar.Text = "Modificar";
             this.btn_Modificar.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(377, 97);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(143, 23);
-            this.textBox1.TabIndex = 14;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(377, 151);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(143, 23);
-            this.textBox2.TabIndex = 15;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(377, 203);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(143, 23);
-            this.textBox3.TabIndex = 16;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(377, 258);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(143, 23);
-            this.textBox4.TabIndex = 17;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(23, 125);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(143, 36);
-            this.button3.TabIndex = 18;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Location = new System.Drawing.Point(548, 37);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(192, 167);
-            this.groupBox1.TabIndex = 19;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(23, 59);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(143, 23);
-            this.textBox5.TabIndex = 19;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 15);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "label1";
+            this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
             // 
             // FrmInfoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(91)))));
-            this.ClientSize = new System.Drawing.Size(762, 373);
+            this.ClientSize = new System.Drawing.Size(734, 345);
             this.ControlBox = false;
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btn_Modificar);
             this.Controls.Add(this.lbl_Titulo);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.lbl_Rol);
             this.Controls.Add(this.lbl_NombreDeUsuario);
             this.Controls.Add(this.lbl_Dni);
@@ -303,8 +203,6 @@
             this.Text = "Cuenta";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmInfoUsuario_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -322,17 +220,7 @@
         private Label lbl_Dni;
         private Label lbl_NombreDeUsuario;
         private Label lbl_Rol;
-        private Button button1;
-        private Button button2;
         private Label lbl_Titulo;
         private Button btn_Modificar;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
-        private TextBox textBox4;
-        private Button button3;
-        private GroupBox groupBox1;
-        private Label label1;
-        private TextBox textBox5;
     }
 }

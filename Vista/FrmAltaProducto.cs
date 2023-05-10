@@ -40,6 +40,7 @@ namespace Vista
                 productoCreado = new Producto(nombreIngresado, tipoSeleccionado, marcaIngresada,
                                               descripcion, (float)precio, stock);
 
+
                 this.DialogResult = DialogResult.OK;
 
             }catch(Exception ex)

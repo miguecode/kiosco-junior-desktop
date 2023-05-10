@@ -59,7 +59,7 @@ namespace Entidades
             return $"{Id},{Nombre},{Tipo},{Descripcion},{Marca},{Precio},{Stock}";
         }
 
-        public override Producto CrearEntidad(List<string> dato)
+        public override Producto CrearEntidadPorLista(List<string> dato)
         {
             int id = int.Parse(dato[0]);
             string nombre = dato[1];

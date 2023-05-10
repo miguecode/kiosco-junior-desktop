@@ -13,24 +13,29 @@ namespace Vista
 {
     public partial class FrmInfoUsuario : Form
     {
-        private FrmLogin formLogin;
+        private Usuario usuarioIngresado;
 
-        public FrmInfoUsuario(FrmLogin formLoginRecibido)
+        public FrmInfoUsuario(Usuario usuarioIngresado)
         {
             InitializeComponent();
-            formLogin = formLoginRecibido;
+            this.usuarioIngresado = usuarioIngresado;
         }
 
         private void FrmInfoUsuario_Load(object sender, EventArgs e)
         {
-            if(formLogin is not null)
+            if(usuarioIngresado is not null)
             {
-                lbl_Nombre.Text = formLogin.UsuarioIngresado.Nombre;
-                lbl_Apellido.Text = formLogin.UsuarioIngresado.Apellido;
-                lbl_Dni.Text = formLogin.UsuarioIngresado.Dni.ToString();
-                lbl_NombreDeUsuario.Text = formLogin.UsuarioIngresado.NombreUsuario;
-                lbl_Rol.Text = formLogin.UsuarioIngresado.Rol.ToString();
+                lbl_Nombre.Text = usuarioIngresado.Nombre;
+                lbl_Apellido.Text = usuarioIngresado.Apellido;
+                lbl_Dni.Text = usuarioIngresado.Dni.ToString();
+                lbl_NombreDeUsuario.Text = usuarioIngresado.NombreUsuario;
+                lbl_Rol.Text = usuarioIngresado.Rol.ToString();
             }
+        }
+
+        private void btn_Modificar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

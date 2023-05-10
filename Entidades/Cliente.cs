@@ -21,7 +21,7 @@ namespace Entidades
 
         public override string GetParser()
         {
-            return $"CLIENTE,{Rol},{NombreUsuario},{Contrasenia},{Dni},{Nombre},{Apellido}";
+            return $"{Rol},{NombreUsuario},{Contrasenia},{Dni},{Nombre},{Apellido}";
         }
 
         public override string ToString()
@@ -37,7 +37,5 @@ namespace Entidades
 
             return sb.ToString();
         }
-
-
     }
 }

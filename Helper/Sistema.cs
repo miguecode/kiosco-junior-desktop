@@ -19,8 +19,6 @@ namespace Helper
             listaDeUsuarios = new List<Usuario>();
             listaDeProductos = new List<Producto>();
 
-
-
             //listaDeUsuarios = Mock.listaDeUsuariosHardcodeada;
             //listaDeProductos = Mock.listaDeProductosHardcodeada;
         }
