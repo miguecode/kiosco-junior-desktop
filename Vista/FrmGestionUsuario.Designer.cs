@@ -46,7 +46,6 @@
             // 
             // dtg_Usuarios
             // 
-            this.dtg_Usuarios.AllowUserToAddRows = false;
             this.dtg_Usuarios.AllowUserToDeleteRows = false;
             this.dtg_Usuarios.AllowUserToResizeColumns = false;
             this.dtg_Usuarios.AllowUserToResizeRows = false;
@@ -160,7 +159,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(29)))), ((int)(((byte)(43)))));
-            this.ClientSize = new System.Drawing.Size(774, 361);
+            this.ClientSize = new System.Drawing.Size(770, 357);
             this.ControlBox = false;
             this.Controls.Add(this.btn_Modificar);
             this.Controls.Add(this.btn_Eliminar);

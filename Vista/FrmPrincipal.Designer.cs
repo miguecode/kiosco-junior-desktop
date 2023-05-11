@@ -36,12 +36,12 @@
             this.smi_Cuenta = new System.Windows.Forms.ToolStripMenuItem();
             this.verDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.smi_Compras = new System.Windows.Forms.ToolStripMenuItem();
             this.smi_Usuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.smi_Cerrar = new System.Windows.Forms.ToolStripMenuItem();
             this.sta_Datos = new System.Windows.Forms.StatusStrip();
             this.sbl_NombreUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.sbl_DniUsuario = new System.Windows.Forms.ToolStripStatusLabel();
-            this.smi_Compras = new System.Windows.Forms.ToolStripMenuItem();
             this.msp_Principal.SuspendLayout();
             this.sta_Datos.SuspendLayout();
             this.SuspendLayout();
@@ -122,6 +122,16 @@
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar sesión";
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
+            // smi_Compras
+            // 
+            this.smi_Compras.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.smi_Compras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.smi_Compras.Name = "smi_Compras";
+            this.smi_Compras.Size = new System.Drawing.Size(89, 36);
+            this.smi_Compras.Text = "Compras";
+            this.smi_Compras.Visible = false;
+            this.smi_Compras.Click += new System.EventHandler(this.smi_Compras_Click);
+            // 
             // smi_Usuarios
             // 
             this.smi_Usuarios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(202)))), ((int)(((byte)(51)))));
@@ -152,7 +162,7 @@
             this.sta_Datos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.sbl_NombreUsuario,
             this.sbl_DniUsuario});
-            this.sta_Datos.Location = new System.Drawing.Point(0, 430);
+            this.sta_Datos.Location = new System.Drawing.Point(0, 455);
             this.sta_Datos.Name = "sta_Datos";
             this.sta_Datos.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode;
             this.sta_Datos.Size = new System.Drawing.Size(800, 25);
@@ -177,15 +187,6 @@
             this.sbl_DniUsuario.Size = new System.Drawing.Size(101, 20);
             this.sbl_DniUsuario.Text = "DNI 00000000";
             // 
-            // smi_Compras
-            // 
-            this.smi_Compras.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.smi_Compras.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.smi_Compras.Name = "smi_Compras";
-            this.smi_Compras.Size = new System.Drawing.Size(89, 36);
-            this.smi_Compras.Text = "Compras";
-            this.smi_Compras.Click += new System.EventHandler(this.smi_Compras_Click);
-            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -193,7 +194,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(81)))), ((int)(((byte)(150)))), ((int)(((byte)(234)))));
             this.BackgroundImage = global::Vista.Properties.Resources.inicioKiosco;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(800, 455);
+            this.ClientSize = new System.Drawing.Size(800, 480);
             this.ControlBox = false;
             this.Controls.Add(this.sta_Datos);
             this.Controls.Add(this.msp_Principal);

@@ -9,15 +9,14 @@ namespace Entidades
 {
     public class Cliente : Usuario
     {
-        private Dictionary<Producto, float> carrito;
+        private List<Producto> carrito;
+        public List<Producto> Carrito { get => carrito; set => carrito = value; }
 
         public Cliente(string nombre, string apellido, int dni, string nombreUsuario, string contrasenia, ERol rol)                     
                                                                 :base(nombre, apellido, dni, nombreUsuario, contrasenia, rol)
         {
-            carrito = new Dictionary<Producto, float>();
+            carrito = new List<Producto>();
         }
-
-        public Dictionary<Producto, float> Carrito { get => carrito; set => carrito = value; }
 
         public override string GetParser()
         {

@@ -47,7 +47,6 @@
             // 
             // dtg_Productos
             // 
-            this.dtg_Productos.AllowUserToAddRows = false;
             this.dtg_Productos.AllowUserToDeleteRows = false;
             this.dtg_Productos.AllowUserToResizeColumns = false;
             this.dtg_Productos.AllowUserToResizeRows = false;
@@ -173,7 +172,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ClientSize = new System.Drawing.Size(761, 366);
+            this.ClientSize = new System.Drawing.Size(757, 362);
             this.ControlBox = false;
             this.Controls.Add(this.btn_Detalles);
             this.Controls.Add(this.btn_Modificar);

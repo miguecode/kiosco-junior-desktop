@@ -146,22 +146,5 @@ namespace Vista
             formCompras = new FrmCompras(usuarioActual);
             formCompras.MdiParent = this;
         }
-
-        private void CrearCliente()
-        {
-            if(usuarioActual.Rol == ERol.Cliente)
-            {
-                Cliente clienteCreado = new Cliente(usuarioActual.Nombre, usuarioActual.Apellido, usuarioActual.Dni,
-                                        usuarioActual.NombreUsuario, usuarioActual.Contrasenia, usuarioActual.Rol);
-
-
-
-            }
-
-
-        }
-
-
-
     }
 }

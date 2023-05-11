@@ -15,25 +15,28 @@ namespace Vista
     public partial class FrmCompras : Form
     {
         private Cliente clienteActual;
+        private List<Producto> menu;
 
         public FrmCompras(Usuario usuarioActual)
         {
             InitializeComponent();
-            this.clienteActual = (Cliente)usuarioActual;
+            this.clienteActual = ConvertirUsuarioACliente(usuarioActual);
+            this.menu = Sistema.ListaDeProductos;
         }
 
         private void FrmCompras_Load(object sender, EventArgs e)
         {
-            ActualizarDataGrids(Sistema.ListaDeProductos, clienteActual.Carrito);
+            ActualizarDataGrids(menu, clienteActual.Carrito);
         }
 
         private void AgregarProductoAlCarrito()
         {
             Producto productoSeleccionado = SeleccionarProductoEspecifico();
 
-            if(productoSeleccionado is not null && productoSeleccionado.Stock > 0)
+            if(productoSeleccionado is not null)
             {
-                clienteActual.Carrito.Add(productoSeleccionado, productoSeleccionado.Precio);
+                clienteActual.Carrito.Add(productoSeleccionado);
+                lbl_Error.Visible = false;
             }else
             {
                 lbl_Error.Visible = true;
@@ -46,13 +49,13 @@ namespace Vista
 
             foreach (var itemCarrito in clienteActual.Carrito)
             {
-                precioTotal += itemCarrito.Value;
+                precioTotal += itemCarrito.Precio;
             }
 
-            lbl_Total.Text = $"Precio TOTAL: $ {precioTotal.ToString("000,00")}";
+            lbl_Total.Text = $"Precio TOTAL: $ {precioTotal.ToString("00,00")}";
         }
 
-        public void ActualizarDataGrids(List<Producto> menu, Dictionary<Producto, float> carrito)
+        public void ActualizarDataGrids(List<Producto> menu, List<Producto> carrito)
         {
             dtg_Productos.DataSource = null;
             dtg_Carrito.DataSource = null;
@@ -62,18 +65,30 @@ namespace Vista
 
         private Producto SeleccionarProductoEspecifico()
         {
-            return Sistema.ListaDeProductos[dtg_Productos.CurrentRow.Index];
+            return menu[dtg_Productos.CurrentRow.Index];
         }
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            AgregarProductoAlCarrito();
+            ActualizarDataGrids(menu, clienteActual.Carrito);
+            try
+            {
+                VerificarProductoStock();
 
-            CrearPrecioTotal();
+                AgregarProductoAlCarrito();
 
-            ActualizarDataGrids(Sistema.ListaDeProductos, clienteActual.Carrito);
+                CrearPrecioTotal();
 
-            ReducirStockProducto();
+                ActualizarDataGrids(menu, clienteActual.Carrito);
+
+            }
+            catch(Exception ex)
+            {
+                lbl_Error.Text = ex.Message;
+                lbl_Error.Visible = true;
+            }
+
+            //ReducirStockProducto();
         }
 
         private void ReducirStockProducto()
@@ -81,6 +96,42 @@ namespace Vista
             Producto productoSeleccionado = SeleccionarProductoEspecifico();
             productoSeleccionado.Stock--;
         }
+
+
+        private Cliente ConvertirUsuarioACliente(Usuario usuarioActual)
+        {
+            Cliente clienteCreado = new Cliente(usuarioActual.Nombre, usuarioActual.Apellido, usuarioActual.Dni,
+                                        usuarioActual.NombreUsuario, usuarioActual.Contrasenia, usuarioActual.Rol);
+
+            return clienteCreado;
+        }
+
+        private void VerificarProductoStock()
+        {
+            Producto productoSeleccionado = SeleccionarProductoEspecifico();
+
+            int contador = 1;
+
+            foreach (Producto producto in clienteActual.Carrito)
+            {
+                if(producto == productoSeleccionado)
+                {
+                    contador++;
+                }
+            }
+
+            if (contador > productoSeleccionado.Stock)
+                throw new Exception("Producto agotado");
+        }
+
+        private void btn_Confirmar_Click(object sender, EventArgs e)
+        {
+
+
+
+
+        }
+
 
 
 

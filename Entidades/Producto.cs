@@ -17,7 +17,6 @@ namespace Entidades
         private int stock;
         private int id;
         private static int idActual;
-
         public Producto()
         {
             this.nombre = String.Empty;
