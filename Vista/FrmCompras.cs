@@ -21,12 +21,16 @@ namespace Vista
         {
             InitializeComponent();
             this.clienteActual = ConvertirUsuarioACliente(usuarioActual);
+
+            this.menu = new List<Producto>();
             this.menu = Sistema.ListaDeProductos;
+
         }
 
         private void FrmCompras_Load(object sender, EventArgs e)
-        {
-            ActualizarDataGrids(menu, clienteActual.Carrito);
+        {;
+            dtg_Productos.DataSource = null;
+            dtg_Productos.DataSource = menu;
         }
 
         private void AgregarProductoAlCarrito()
@@ -52,7 +56,7 @@ namespace Vista
                 precioTotal += itemCarrito.Precio;
             }
 
-            lbl_Total.Text = $"Precio TOTAL: $ {precioTotal.ToString("00,00")}";
+            lbl_Total.Text = $"Precio TOTAL: $ {precioTotal.ToString("0,00")}";
         }
 
         public void ActualizarDataGrids(List<Producto> menu, List<Producto> carrito)
@@ -70,7 +74,6 @@ namespace Vista
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            ActualizarDataGrids(menu, clienteActual.Carrito);
             try
             {
                 VerificarProductoStock();
@@ -87,8 +90,6 @@ namespace Vista
                 lbl_Error.Text = ex.Message;
                 lbl_Error.Visible = true;
             }
-
-            //ReducirStockProducto();
         }
 
         private void ReducirStockProducto()
