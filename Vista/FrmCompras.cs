@@ -17,20 +17,18 @@ namespace Vista
         private Cliente clienteActual;
         private List<Producto> menu;
         private float precioTotal;
-        private Dictionary<List<Producto>, float> ventaActual;
+        private Venta ventaActual;
 
         public FrmCompras(Usuario usuarioActual)
         {
             InitializeComponent();
             clienteActual = ConvertirUsuarioACliente(usuarioActual);
-
-            //this.menu = new List<Producto>();
             menu = Sistema.ListaDeProductos;
-            ventaActual = new Dictionary<List<Producto>, float>();
+            ventaActual = new Venta();
         }
 
         private void FrmCompras_Load(object sender, EventArgs e)
-        {;
+        {
             dtg_Productos.DataSource = null;
             dtg_Productos.DataSource = menu;
         }
@@ -55,6 +53,15 @@ namespace Vista
         private void VerificarProductoStock()
         {
             Producto productoSeleccionado = SeleccionarProductoEspecifico();
+
+            int contador = ContarRepeticionesProducto(productoSeleccionado);
+
+            if (contador > productoSeleccionado.Stock)
+                throw new Exception("Producto agotado");
+        }
+
+        private int ContarRepeticionesProducto(Producto productoSeleccionado)
+        {
             int contador = 1;
 
             foreach (Producto producto in clienteActual.Carrito)
@@ -63,9 +70,9 @@ namespace Vista
                     contador++;
             }
 
-            if (contador > productoSeleccionado.Stock)
-                throw new Exception("Producto agotado");
+            return contador;
         }
+
         private void AgregarProductoAlCarrito()
         {
             Producto productoSeleccionado = SeleccionarProductoEspecifico();
@@ -76,7 +83,7 @@ namespace Vista
                 lbl_Error.Visible = false;
             }else
             {
-                lbl_Error.Visible = true;
+                throw new Exception("Producto no encontrado");
             }
         }
 
@@ -97,35 +104,51 @@ namespace Vista
             lbl_Total.Text = $"Precio TOTAL: $ {precioTotal:0.00}";
         }
 
-
-
         private void ReducirStockProducto()
         {
-            int contador = 0;
-
-            /*foreach (Producto producto in clienteActual.Carrito)
-            {
-                if (producto == productoSeleccionado)
-                    contador++;
-            }
-
             foreach (Producto producto in Sistema.ListaDeProductos)
             {
-                producto.Stock - 
-            }*/
+                if (clienteActual.Carrito.Contains(producto))
+                {                
+                    int contador = ContarRepeticionesProducto(producto);
+                    contador--;
+
+                    producto.Stock -= contador;
+                }
+            }
         }
 
         private void btn_Confirmar_Click(object sender, EventArgs e)
         {
-            Dictionary<List<Producto>, float> ventaActual = new Dictionary<List<Producto>, float>();
+            if(clienteActual.Carrito.Count > 0)
+            {
+                string nombreCliente = clienteActual.NombreCompleto;
+                List<Producto> carrito = clienteActual.Carrito;
+                float valorTotal = precioTotal;
 
-            ventaActual.Add(clienteActual.Carrito, precioTotal);
+                ventaActual = new Venta(nombreCliente, carrito, valorTotal);
 
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine($"ID: {ventaActual.Id}");
+                sb.AppendLine($"Nombre Cliente: {ventaActual.NombreCliente}");
+                sb.AppendLine($"Valor Total: {ventaActual.ValorTotal}");
+                sb.AppendLine($"Cantidad de productos: {ventaActual.CantidadProductos}");
+                sb.AppendLine($"Productos: {ventaActual.ListaProductos}");
 
+                MessageBox.Show(sb.ToString());
 
+                ReducirStockProducto();
+
+                ReiniciarCarrito();
+            }
         }
 
         private void btn_VaciarCarrito_Click(object sender, EventArgs e)
+        {
+            ReiniciarCarrito();
+        }
+
+        private void ReiniciarCarrito()
         {
             clienteActual.Carrito.Clear();
             ActualizarDataGrids(menu, clienteActual.Carrito);

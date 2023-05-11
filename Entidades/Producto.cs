@@ -25,7 +25,7 @@ namespace Entidades
             this.descripcion = String.Empty;
             this.precio = 0;
             this.stock = 0;
-            this.id = 0;
+            this.id = 0000;
         }
 
         public Producto(string nombre, ETipo tipo, string marca, string descripcion,
