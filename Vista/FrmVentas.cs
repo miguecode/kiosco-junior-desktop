@@ -1,4 +1,5 @@
-﻿using Helper;
+﻿using Entidades;
+using Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -26,15 +27,42 @@ namespace Vista
 
         private void btn_Borrar_Click(object sender, EventArgs e)
         {
-            DialogResult respuesta = MessageBox.Show("¿Seguro de borrar todo el historial de ventas?" +
-                "\nNo podrás recuperarlo.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-
-            if (respuesta == DialogResult.OK)
+            if(Sistema.ListaDeVentas.Count > 0)
             {
-                Sistema.ListaDeVentas.Clear();
-                dtg_Ventas.DataSource = null;
-                dtg_Ventas.DataSource = Sistema.listaDeVentas;
+                DialogResult respuesta = MessageBox.Show("¿Seguro de borrar todo el historial de ventas?" +
+                    "\nNo podrás recuperarlo.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (respuesta == DialogResult.OK)
+                {
+                    Sistema.ListaDeVentas.Clear();
+                    dtg_Ventas.DataSource = null;
+                    dtg_Ventas.DataSource = Sistema.listaDeVentas;
+                    lbl_IngresosTotales.Text = "0,00";
+                }
             }
         }
+
+        private void EscribirIngresosTotales()
+        {
+            if (Sistema.ListaDeVentas.Count > 0)
+            {
+                foreach (Venta venta in Sistema.ListaDeVentas)
+                {
+                    
+                }
+
+
+            }
+
+
+
+
+        }
+
+
+
+
+
+
     }
 }

@@ -37,6 +37,12 @@ namespace Vista
             listaParser.AddRange(Sistema.ListaDeProductos);
 
             Archivo.GuardarListas(listaParser, "listaProductos.txt");
+
+            listaParser.Clear();
+
+            listaParser.AddRange(Sistema.ListaDeVentas);
+
+            Archivo.GuardarListas(listaParser, "listaVentas.txt");
         }
     }
 }
