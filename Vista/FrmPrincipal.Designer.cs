@@ -42,6 +42,7 @@
             this.sta_Datos = new System.Windows.Forms.StatusStrip();
             this.sbl_NombreUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.sbl_DniUsuario = new System.Windows.Forms.ToolStripStatusLabel();
+            this.smi_Ventas = new System.Windows.Forms.ToolStripMenuItem();
             this.msp_Principal.SuspendLayout();
             this.sta_Datos.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +53,7 @@
             this.msp_Principal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.smi_Inicio,
             this.smi_Producto,
+            this.smi_Ventas,
             this.smi_Cuenta,
             this.smi_Compras,
             this.smi_Usuarios,
@@ -187,6 +189,15 @@
             this.sbl_DniUsuario.Size = new System.Drawing.Size(101, 20);
             this.sbl_DniUsuario.Text = "DNI 00000000";
             // 
+            // smi_Ventas
+            // 
+            this.smi_Ventas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.smi_Ventas.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.smi_Ventas.Name = "smi_Ventas";
+            this.smi_Ventas.Size = new System.Drawing.Size(73, 36);
+            this.smi_Ventas.Text = "Ventas";
+            this.smi_Ventas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -232,5 +243,6 @@
         private ToolStripMenuItem smi_Usuarios;
         private ToolStripStatusLabel sbl_DniUsuario;
         private ToolStripMenuItem smi_Compras;
+        private ToolStripMenuItem smi_Ventas;
     }
 }

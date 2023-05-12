@@ -24,11 +24,11 @@ namespace Entidades
         public ERol Rol { get => rol; }
         public Usuario()
         {
-            nombre = "No cargado";
-            apellido = "No cargado";
+            nombre = "NO CARGADO";
+            apellido = "NO CARGADO";
             dni = 00000000;
-            nombreUsuario = "No cargado";
-            contrasenia = "No cargada";
+            nombreUsuario = "NO CARGADO";
+            contrasenia = "NO CARGADO";
             rol = ERol.Cliente;
         }
 

@@ -74,6 +74,9 @@ namespace Helper
 
             if (entidad is Usuario)
                 Sistema.ListaDeUsuarios.Add((Usuario)entidad);
+
+            if (entidad is Venta)
+                Sistema.ListaDeVentas.Add((Venta)entidad);
         }
 
         //////////////////////////////////////////////////////////////////////////////////////////////

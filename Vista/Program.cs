@@ -21,6 +21,7 @@ namespace Vista
         {
             Archivo.CargarListas("listaUsuarios.txt", new Usuario());
             Archivo.CargarListas("listaProductos.txt", new Producto());
+            Archivo.CargarListas("listaVentas.txt", new Venta());
         }
 
         private static void GuardarDatos()
@@ -37,12 +38,5 @@ namespace Vista
 
             Archivo.GuardarListas(listaParser, "listaProductos.txt");
         }
-
-
-
-
-
-
-
     }
 }

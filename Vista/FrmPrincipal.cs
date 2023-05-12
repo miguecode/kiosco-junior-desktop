@@ -20,6 +20,7 @@ namespace Vista
         private FrmInfoUsuario? formInfoUsuario;
         private FrmGestionUsuario? formGestionUsuario;
         private FrmCompras? formCompras;
+        private FrmVentas? formVentas;
 
         public FrmPrincipal(FrmLogin formLoginRecibido)
         {
@@ -33,7 +34,6 @@ namespace Vista
             usuarioActual = formLogin.UsuarioIngresado;
             
             configurarMenuPorRol(usuarioActual);
-
             CrearFormulariosMdi();
         }
 

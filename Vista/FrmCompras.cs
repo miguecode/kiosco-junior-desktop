@@ -123,17 +123,24 @@ namespace Vista
             if(clienteActual.Carrito.Count > 0)
             {
                 string nombreCliente = clienteActual.NombreCompleto;
-                List<Producto> carrito = clienteActual.Carrito;
+                //List<Producto> carrito = clienteActual.Carrito;
+
+                //string factura = ventaActual.EscribirLista(clienteActual.Carrito);
+
                 float valorTotal = precioTotal;
 
-                ventaActual = new Venta(nombreCliente, carrito, valorTotal);
+                //ventaActual = new Venta(nombreCliente, factura, valorTotal);
+
+                ventaActual = new Venta(nombreCliente, valorTotal);
+
+                Sistema.ListaDeVentas.Add(ventaActual);
 
                 StringBuilder sb = new StringBuilder();
                 sb.AppendLine($"ID: {ventaActual.Id}");
                 sb.AppendLine($"Nombre Cliente: {ventaActual.NombreCliente}");
                 sb.AppendLine($"Valor Total: {ventaActual.ValorTotal}");
-                sb.AppendLine($"Cantidad de productos: {ventaActual.CantidadProductos}");
-                sb.AppendLine($"Productos: {ventaActual.ListaProductos}");
+                //sb.AppendLine($"Cantidad de productos: {ventaActual.CantidadProductos}");
+                sb.AppendLine($"Productos:\n{ventaActual.EscribirLista(clienteActual.Carrito)}");
 
                 MessageBox.Show(sb.ToString());
 

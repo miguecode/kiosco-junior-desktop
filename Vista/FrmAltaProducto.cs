@@ -20,6 +20,7 @@ namespace Vista
         public FrmAltaProducto()
         {
             InitializeComponent();
+            productoCreado = new Producto();
         }
 
         private void btn_Agregar_Click(object sender, EventArgs e)
@@ -30,16 +31,7 @@ namespace Vista
 
                 //Buscar si el producto ya existe
 
-                _ = Enum.TryParse(cmb_Tipo.SelectedItem.ToString(), out ETipo tipoSeleccionado);
-                string nombreIngresado = txt_Nombre.Text;
-                string marcaIngresada = txt_Marca.Text;
-                string descripcion = rtb_Descripcion.Text;
-                float precio = (float)nud_Precio.Value;
-                int stock = (int)nud_Stock.Value;
-
-                productoCreado = new Producto(nombreIngresado, tipoSeleccionado, marcaIngresada,
-                                              descripcion, (float)precio, stock);
-
+                CrearProducto();
 
                 this.DialogResult = DialogResult.OK;
 
@@ -48,6 +40,18 @@ namespace Vista
                 lbl_Error.Visible = true;
                 lbl_Error.Text = ex.Message;
             }
+        }
+
+        private void CrearProducto()
+        {
+            _ = Enum.TryParse(cmb_Tipo.SelectedItem.ToString(), out ETipo tipo);
+            string nombre = txt_Nombre.Text;
+            string marca = txt_Marca.Text;
+            string descripcion = rtb_Descripcion.Text;
+            float precio = (float)nud_Precio.Value;
+            int stock = (int)nud_Stock.Value;
+
+            productoCreado = new Producto(nombre, tipo, marca, descripcion, precio, stock);
         }
 
         private void ValidarDatosProducto()

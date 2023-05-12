@@ -19,10 +19,10 @@ namespace Entidades
         private static int idActual;
         public Producto()
         {
-            this.nombre = String.Empty;
+            this.nombre = "NO CARGADO";
             this.tipo = ETipo.Otros;
-            this.marca = String.Empty;
-            this.descripcion = String.Empty;
+            this.marca = "NO CARGADO";
+            this.descripcion = "NO CARGADO";
             this.precio = 0;
             this.stock = 0;
             this.id = 0000;
@@ -60,7 +60,6 @@ namespace Entidades
 
         public override Producto CrearEntidadPorLista(List<string> dato)
         {
-            int id = int.Parse(dato[0]);
             string nombre = dato[1];
             _ = Enum.TryParse(dato[2], out ETipo tipo);
             string descripcion = dato[3];
@@ -77,12 +76,8 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine($"NOMBRE: {Nombre}");
-            sb.AppendLine($"TIPO: {Tipo.ToString()}");
-            sb.AppendLine($"MARCA: {Marca}");
-            sb.AppendLine($"PRECIO: {Precio}");
-            sb.AppendLine($"STOCK: {Stock}");
-            sb.AppendLine($"DESCRIPCIÓN: {Descripcion}");
+            sb.Append($"-NOMBRE: {Nombre} - PRECIO: {Precio}-");
+
             return sb.ToString();
         }
 
