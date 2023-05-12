@@ -24,6 +24,7 @@ namespace Vista
             InitializeComponent();
             clienteActual = ConvertirUsuarioACliente(usuarioActual);
             menu = new List<Producto>();
+            menu.AddRange(Sistema.ListaDeProductos);
             ventaActual = new Venta();
         }
 
@@ -31,7 +32,8 @@ namespace Vista
         {
             dtg_Productos.DataSource = null;
             dtg_Productos.DataSource = menu;
-            menu.AddRange(Sistema.ListaDeProductos);
+            OcultarProductosAgotados();
+
         }
 
         private void btn_Agregar_Click(object sender, EventArgs e)
@@ -83,9 +85,7 @@ namespace Vista
                 clienteActual.Carrito.Add(productoSeleccionado);
                 lbl_Error.Visible = false;
             }else
-            {
                 throw new Exception("Producto no encontrado");
-            }
         }
 
         private Producto SeleccionarProductoEspecifico()
@@ -146,7 +146,9 @@ namespace Vista
                 MessageBox.Show(sb.ToString());
 
                 ReducirStockProducto();
+
                 OcultarProductosAgotados();
+
                 ReiniciarCarrito();
             }
         }
