@@ -11,7 +11,7 @@ namespace Helper
     {
         private static List<Usuario> listaDeUsuarios;
         private static List<Producto> listaDeProductos;
-        public static List<Venta> listaDeVentas;
+        private static List<Venta> listaDeVentas;
         public static List<Usuario> ListaDeUsuarios { get => listaDeUsuarios; }
         public static List<Producto> ListaDeProductos { get => listaDeProductos; }
         public static List<Venta> ListaDeVentas { get => listaDeVentas; }

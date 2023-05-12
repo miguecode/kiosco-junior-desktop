@@ -14,10 +14,10 @@ namespace Consola
             //Archivo.EscribirEnArchivo();
             //Archivo.Stream();
 
-            List<Parser> listaUsuariosParser = new List<Parser>();
+            List<Dato> listaUsuariosParser = new List<Dato>();
             listaUsuariosParser.AddRange(Sistema.ListaDeUsuarios);
 
-            List<Parser> listaProductosParser = new List<Parser>();
+            List<Dato> listaProductosParser = new List<Dato>();
             listaProductosParser.AddRange(Sistema.ListaDeProductos);
 
             Archivo.GuardarListas(listaUsuariosParser, "listaUsuarios.txt");

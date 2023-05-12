@@ -56,5 +56,24 @@ namespace Vista
             txt_Contrasenia.Text = String.Empty;
             lbl_Error.Visible = false;
         }
+
+        private void btn_Ver_Click(object sender, EventArgs e)
+        {
+            if (!txt_Contrasenia.UseSystemPasswordChar)
+            {
+                txt_Contrasenia.UseSystemPasswordChar = true;
+            }else
+            {
+                txt_Contrasenia.UseSystemPasswordChar = false;
+            }
+        }
+
+        private void btn_IngresarAdmin_Click(object sender, EventArgs e)
+        {
+            usuarioIngresado = Sistema.ListaDeUsuarios[0];
+            FrmPrincipal formPrincipal = new FrmPrincipal(this);
+            formPrincipal.Show();
+            this.Hide();
+        }
     }
 }

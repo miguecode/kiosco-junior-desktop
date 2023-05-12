@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Venta : Parser
+    public class Venta : Dato
     {
         private int id;
         private string nombreCliente;
@@ -72,7 +72,7 @@ namespace Entidades
             return $"{Id},{NombreCliente},{ValorTotal}";
         }
 
-        public override Parser CrearEntidadPorLista(List<string> dato)
+        public override Dato CrearEntidadPorLista(List<string> dato)
         {
             //int id = int.Parse(dato[0]);
             string nombre = dato[1];

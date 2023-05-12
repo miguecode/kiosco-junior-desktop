@@ -12,37 +12,9 @@ namespace Vista
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            CargarDatos();
+            Archivo.CargarArchivos();
             Application.Run(new FrmLogin());
-            GuardarDatos();
-        }
-
-        private static void CargarDatos()
-        {
-            Archivo.CargarListas("listaUsuarios.txt", new Usuario());
-            Archivo.CargarListas("listaProductos.txt", new Producto());
-            Archivo.CargarListas("listaVentas.txt", new Venta());
-        }
-
-        private static void GuardarDatos()
-        {
-            List<Parser> listaParser = new List<Parser>();
-
-            listaParser.AddRange(Sistema.ListaDeUsuarios);
-
-            Archivo.GuardarListas(listaParser, "listaUsuarios.txt");
-
-            listaParser.Clear();
-
-            listaParser.AddRange(Sistema.ListaDeProductos);
-
-            Archivo.GuardarListas(listaParser, "listaProductos.txt");
-
-            listaParser.Clear();
-
-            listaParser.AddRange(Sistema.ListaDeVentas);
-
-            Archivo.GuardarListas(listaParser, "listaVentas.txt");
+            Archivo.GuardarArchivos();
         }
     }
 }

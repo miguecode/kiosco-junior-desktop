@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Usuario : Parser
+    public class Usuario : Dato
     {
         private string nombre;
         private string apellido;

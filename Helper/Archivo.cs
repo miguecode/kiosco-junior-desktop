@@ -16,11 +16,34 @@ namespace Helper
         {
         }
 
-        public static void GuardarListas(List<Parser> entidadLista, string path)
+        public static void CargarArchivos()
+        {
+            CargarListas("listaUsuarios.txt", new Usuario());
+            CargarListas("listaProductos.txt", new Producto());
+            CargarListas("listaVentas.txt", new Venta());
+        }
+
+        public static void GuardarArchivos()
+        {
+            List<Dato> listaParser = new List<Dato>();
+
+            listaParser.AddRange(Sistema.ListaDeUsuarios);
+            Archivo.GuardarListas(listaParser, "listaUsuarios.txt");
+            listaParser.Clear();
+
+            listaParser.AddRange(Sistema.ListaDeProductos);
+            Archivo.GuardarListas(listaParser, "listaProductos.txt");
+            listaParser.Clear();
+
+            listaParser.AddRange(Sistema.ListaDeVentas);
+            Archivo.GuardarListas(listaParser, "listaVentas.txt");
+        }
+
+        public static void GuardarListas(List<Dato> entidadLista, string path)
         {
             StreamWriter sw = new StreamWriter(path, false);
 
-            foreach (Parser entidadLinea in entidadLista)
+            foreach (Dato entidadLinea in entidadLista)
             {
                 sw.WriteLine(entidadLinea.GetParser());
             }
@@ -29,7 +52,7 @@ namespace Helper
             sw.Dispose();
         }
 
-        public static void CargarListas(string path, Parser entidad)
+        public static void CargarListas(string path, Dato entidad)
         {
             StreamReader sr = File.OpenText(path);
 
@@ -37,7 +60,7 @@ namespace Helper
             {
                 List<string> listaDeDatos = GetDatosDividosPorCaracter(sr, ',');
 
-                Parser entidadCreada = CrearEntidadPorDatos(listaDeDatos, entidad);
+                Dato entidadCreada = CrearEntidadPorDatos(listaDeDatos, entidad);
 
                 AgregarEntidadALista(entidadCreada);         
             }
@@ -60,14 +83,14 @@ namespace Helper
             return listaDeDatos;
         }
 
-        private static Parser CrearEntidadPorDatos(List<string> listaDatos, Parser entidad)
+        private static Dato CrearEntidadPorDatos(List<string> listaDatos, Dato entidad)
         {
-            Parser entidadCreada = entidad.CrearEntidadPorLista(listaDatos);
+            Dato entidadCreada = entidad.CrearEntidadPorLista(listaDatos);
 
             return entidadCreada;
         }
 
-        private static void AgregarEntidadALista(Parser entidad)
+        private static void AgregarEntidadALista(Dato entidad)
         {
             if (entidad is Producto)
                 Sistema.ListaDeProductos.Add((Producto)entidad);

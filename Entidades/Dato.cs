@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,16 +8,8 @@ namespace Entidades
 {
     public abstract class Dato
     {
-        public abstract bool ValidarDatos();  
-        
+        public abstract string GetParser();
 
-
-
-
-
-
-
-
-
+        public abstract Dato CrearEntidadPorLista(List<string> listaDatos);
     }
 }

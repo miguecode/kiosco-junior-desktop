@@ -31,13 +31,19 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtg_Ventas = new System.Windows.Forms.DataGridView();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ventaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btn_Borrar = new System.Windows.Forms.Button();
             this.lbl_TituloIngresos = new System.Windows.Forms.Label();
             this.lbl_IngresosTotales = new System.Windows.Forms.Label();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbl_TituloVentasTotales = new System.Windows.Forms.Label();
+            this.lbl_VentasTotales = new System.Windows.Forms.Label();
+            this.lbl_TituloComprador = new System.Windows.Forms.Label();
+            this.lbl_CompradorFrecuente = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Ventas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -76,46 +82,6 @@
             this.dtg_Ventas.Size = new System.Drawing.Size(313, 350);
             this.dtg_Ventas.TabIndex = 0;
             // 
-            // ventaBindingSource
-            // 
-            this.ventaBindingSource.DataSource = typeof(Entidades.Venta);
-            // 
-            // btn_Borrar
-            // 
-            this.btn_Borrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.btn_Borrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Borrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Borrar.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_Borrar.Location = new System.Drawing.Point(12, 368);
-            this.btn_Borrar.Name = "btn_Borrar";
-            this.btn_Borrar.Size = new System.Drawing.Size(145, 33);
-            this.btn_Borrar.TabIndex = 1;
-            this.btn_Borrar.Text = "Borrar historial";
-            this.btn_Borrar.UseVisualStyleBackColor = false;
-            this.btn_Borrar.Click += new System.EventHandler(this.btn_Borrar_Click);
-            // 
-            // lbl_TituloIngresos
-            // 
-            this.lbl_TituloIngresos.AutoSize = true;
-            this.lbl_TituloIngresos.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_TituloIngresos.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_TituloIngresos.Location = new System.Drawing.Point(343, 325);
-            this.lbl_TituloIngresos.Name = "lbl_TituloIngresos";
-            this.lbl_TituloIngresos.Size = new System.Drawing.Size(259, 37);
-            this.lbl_TituloIngresos.TabIndex = 2;
-            this.lbl_TituloIngresos.Text = "Ingresos totales: $ ";
-            // 
-            // lbl_IngresosTotales
-            // 
-            this.lbl_IngresosTotales.AutoSize = true;
-            this.lbl_IngresosTotales.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_IngresosTotales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(163)))), ((int)(((byte)(37)))));
-            this.lbl_IngresosTotales.Location = new System.Drawing.Point(585, 325);
-            this.lbl_IngresosTotales.Name = "lbl_IngresosTotales";
-            this.lbl_IngresosTotales.Size = new System.Drawing.Size(33, 37);
-            this.lbl_IngresosTotales.TabIndex = 3;
-            this.lbl_IngresosTotales.Text = "0";
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -143,6 +109,112 @@
             this.valorTotalDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.valorTotalDataGridViewTextBoxColumn.Width = 80;
             // 
+            // ventaBindingSource
+            // 
+            this.ventaBindingSource.DataSource = typeof(Entidades.Venta);
+            // 
+            // btn_Borrar
+            // 
+            this.btn_Borrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.btn_Borrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Borrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Borrar.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btn_Borrar.Location = new System.Drawing.Point(12, 368);
+            this.btn_Borrar.Name = "btn_Borrar";
+            this.btn_Borrar.Size = new System.Drawing.Size(145, 33);
+            this.btn_Borrar.TabIndex = 1;
+            this.btn_Borrar.Text = "Borrar historial";
+            this.btn_Borrar.UseVisualStyleBackColor = false;
+            this.btn_Borrar.Click += new System.EventHandler(this.btn_Borrar_Click);
+            // 
+            // lbl_TituloIngresos
+            // 
+            this.lbl_TituloIngresos.AutoSize = true;
+            this.lbl_TituloIngresos.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_TituloIngresos.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lbl_TituloIngresos.Location = new System.Drawing.Point(343, 317);
+            this.lbl_TituloIngresos.Name = "lbl_TituloIngresos";
+            this.lbl_TituloIngresos.Size = new System.Drawing.Size(302, 45);
+            this.lbl_TituloIngresos.TabIndex = 2;
+            this.lbl_TituloIngresos.Text = "Ingresos totales: $ ";
+            // 
+            // lbl_IngresosTotales
+            // 
+            this.lbl_IngresosTotales.AutoSize = true;
+            this.lbl_IngresosTotales.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_IngresosTotales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(163)))), ((int)(((byte)(37)))));
+            this.lbl_IngresosTotales.Location = new System.Drawing.Point(629, 317);
+            this.lbl_IngresosTotales.Name = "lbl_IngresosTotales";
+            this.lbl_IngresosTotales.Size = new System.Drawing.Size(38, 45);
+            this.lbl_IngresosTotales.TabIndex = 3;
+            this.lbl_IngresosTotales.Text = "0";
+            // 
+            // lbl_TituloVentasTotales
+            // 
+            this.lbl_TituloVentasTotales.AutoSize = true;
+            this.lbl_TituloVentasTotales.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_TituloVentasTotales.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lbl_TituloVentasTotales.Location = new System.Drawing.Point(343, 255);
+            this.lbl_TituloVentasTotales.Name = "lbl_TituloVentasTotales";
+            this.lbl_TituloVentasTotales.Size = new System.Drawing.Size(176, 31);
+            this.lbl_TituloVentasTotales.TabIndex = 4;
+            this.lbl_TituloVentasTotales.Text = "Ventas totales: ";
+            // 
+            // lbl_VentasTotales
+            // 
+            this.lbl_VentasTotales.AutoSize = true;
+            this.lbl_VentasTotales.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_VentasTotales.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lbl_VentasTotales.Location = new System.Drawing.Point(510, 255);
+            this.lbl_VentasTotales.Name = "lbl_VentasTotales";
+            this.lbl_VentasTotales.Size = new System.Drawing.Size(27, 31);
+            this.lbl_VentasTotales.TabIndex = 5;
+            this.lbl_VentasTotales.Text = "0";
+            // 
+            // lbl_TituloComprador
+            // 
+            this.lbl_TituloComprador.AutoSize = true;
+            this.lbl_TituloComprador.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_TituloComprador.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lbl_TituloComprador.Location = new System.Drawing.Point(343, 149);
+            this.lbl_TituloComprador.Name = "lbl_TituloComprador";
+            this.lbl_TituloComprador.Size = new System.Drawing.Size(304, 31);
+            this.lbl_TituloComprador.TabIndex = 6;
+            this.lbl_TituloComprador.Text = "Comprador más frecuente: ";
+            // 
+            // lbl_CompradorFrecuente
+            // 
+            this.lbl_CompradorFrecuente.AutoSize = true;
+            this.lbl_CompradorFrecuente.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_CompradorFrecuente.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lbl_CompradorFrecuente.Location = new System.Drawing.Point(343, 180);
+            this.lbl_CompradorFrecuente.Name = "lbl_CompradorFrecuente";
+            this.lbl_CompradorFrecuente.Size = new System.Drawing.Size(102, 31);
+            this.lbl_CompradorFrecuente.TabIndex = 7;
+            this.lbl_CompradorFrecuente.Text = "Nombre";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label3.Location = new System.Drawing.Point(343, 72);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(79, 31);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "label3";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.label4.Location = new System.Drawing.Point(440, 72);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 31);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "label4";
+            // 
             // FrmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -150,6 +222,12 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(800, 411);
             this.ControlBox = false;
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbl_CompradorFrecuente);
+            this.Controls.Add(this.lbl_TituloComprador);
+            this.Controls.Add(this.lbl_VentasTotales);
+            this.Controls.Add(this.lbl_TituloVentasTotales);
             this.Controls.Add(this.lbl_IngresosTotales);
             this.Controls.Add(this.lbl_TituloIngresos);
             this.Controls.Add(this.btn_Borrar);
@@ -178,5 +256,11 @@
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nombreClienteDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn valorTotalDataGridViewTextBoxColumn;
+        private Label lbl_TituloVentasTotales;
+        private Label lbl_VentasTotales;
+        private Label lbl_TituloComprador;
+        private Label lbl_CompradorFrecuente;
+        private Label label3;
+        private Label label4;
     }
 }

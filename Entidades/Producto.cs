@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Producto : Parser
+    public class Producto : Dato
     {
         private string nombre;
         private string marca;

@@ -23,7 +23,7 @@ namespace Vista
         {
             InitializeComponent();
             clienteActual = ConvertirUsuarioACliente(usuarioActual);
-            menu = Sistema.ListaDeProductos;
+            menu = new List<Producto>();
             ventaActual = new Venta();
         }
 
@@ -31,6 +31,7 @@ namespace Vista
         {
             dtg_Productos.DataSource = null;
             dtg_Productos.DataSource = menu;
+            menu.AddRange(Sistema.ListaDeProductos);
         }
 
         private void btn_Agregar_Click(object sender, EventArgs e)
@@ -145,7 +146,7 @@ namespace Vista
                 MessageBox.Show(sb.ToString());
 
                 ReducirStockProducto();
-
+                OcultarProductosAgotados();
                 ReiniciarCarrito();
             }
         }
@@ -163,11 +164,23 @@ namespace Vista
             lbl_Total.Text = $"Precio TOTAL: $ {precioTotal:0.00}";
         }
 
-        public void ActualizarDataGrids(List<Producto> menu, List<Producto> carrito)
+        private void OcultarProductosAgotados()
+        {
+            foreach (Producto producto in Sistema.ListaDeProductos)
+            {
+                if (producto.Stock == 0)
+                {
+                    menu.Remove(producto);
+                }
+            }
+        }
+
+        private void ActualizarDataGrids(List<Producto> menu, List<Producto> carrito)
         {
             dtg_Productos.DataSource = null;
-            dtg_Carrito.DataSource = null;
             dtg_Productos.DataSource = menu;
+
+            dtg_Carrito.DataSource = null;
             dtg_Carrito.DataSource = carrito;
         }
 

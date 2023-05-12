@@ -47,7 +47,7 @@
             this.lbl_Nombre.AutoSize = true;
             this.lbl_Nombre.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_Nombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(102)))), ((int)(((byte)(230)))));
-            this.lbl_Nombre.Location = new System.Drawing.Point(150, 144);
+            this.lbl_Nombre.Location = new System.Drawing.Point(134, 144);
             this.lbl_Nombre.Name = "lbl_Nombre";
             this.lbl_Nombre.Size = new System.Drawing.Size(67, 20);
             this.lbl_Nombre.TabIndex = 0;
@@ -58,7 +58,7 @@
             this.lbl_Contrasenia.AutoSize = true;
             this.lbl_Contrasenia.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_Contrasenia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(102)))), ((int)(((byte)(230)))));
-            this.lbl_Contrasenia.Location = new System.Drawing.Point(152, 201);
+            this.lbl_Contrasenia.Location = new System.Drawing.Point(136, 201);
             this.lbl_Contrasenia.Name = "lbl_Contrasenia";
             this.lbl_Contrasenia.Size = new System.Drawing.Size(88, 20);
             this.lbl_Contrasenia.TabIndex = 1;
@@ -72,7 +72,7 @@
             this.btn_Ingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Ingresar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Ingresar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_Ingresar.Location = new System.Drawing.Point(355, 149);
+            this.btn_Ingresar.Location = new System.Drawing.Point(339, 149);
             this.btn_Ingresar.Name = "btn_Ingresar";
             this.btn_Ingresar.Size = new System.Drawing.Size(128, 54);
             this.btn_Ingresar.TabIndex = 2;
@@ -87,7 +87,7 @@
             this.btn_Autocompletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Autocompletar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Autocompletar.ForeColor = System.Drawing.SystemColors.Control;
-            this.btn_Autocompletar.Location = new System.Drawing.Point(355, 209);
+            this.btn_Autocompletar.Location = new System.Drawing.Point(339, 209);
             this.btn_Autocompletar.Name = "btn_Autocompletar";
             this.btn_Autocompletar.Size = new System.Drawing.Size(128, 38);
             this.btn_Autocompletar.TabIndex = 3;
@@ -98,14 +98,14 @@
             // txt_Nombre
             // 
             this.txt_Nombre.BackColor = System.Drawing.SystemColors.Window;
-            this.txt_Nombre.Location = new System.Drawing.Point(150, 167);
+            this.txt_Nombre.Location = new System.Drawing.Point(134, 167);
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(137, 23);
             this.txt_Nombre.TabIndex = 4;
             // 
             // txt_Contrasenia
             // 
-            this.txt_Contrasenia.Location = new System.Drawing.Point(150, 224);
+            this.txt_Contrasenia.Location = new System.Drawing.Point(134, 224);
             this.txt_Contrasenia.Name = "txt_Contrasenia";
             this.txt_Contrasenia.Size = new System.Drawing.Size(137, 23);
             this.txt_Contrasenia.TabIndex = 5;
@@ -116,7 +116,7 @@
             this.lbl_Error.AutoSize = true;
             this.lbl_Error.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_Error.ForeColor = System.Drawing.Color.OrangeRed;
-            this.lbl_Error.Location = new System.Drawing.Point(150, 267);
+            this.lbl_Error.Location = new System.Drawing.Point(134, 267);
             this.lbl_Error.Name = "lbl_Error";
             this.lbl_Error.Padding = new System.Windows.Forms.Padding(2);
             this.lbl_Error.Size = new System.Drawing.Size(128, 23);
@@ -127,7 +127,7 @@
             // pic_Login
             // 
             this.pic_Login.Image = global::Vista.Properties.Resources.login;
-            this.pic_Login.Location = new System.Drawing.Point(240, 21);
+            this.pic_Login.Location = new System.Drawing.Point(224, 21);
             this.pic_Login.Name = "pic_Login";
             this.pic_Login.Size = new System.Drawing.Size(126, 87);
             this.pic_Login.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -139,7 +139,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(102)))), ((int)(((byte)(230)))));
-            this.label1.Location = new System.Drawing.Point(230, 111);
+            this.label1.Location = new System.Drawing.Point(214, 111);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(145, 29);
             this.label1.TabIndex = 8;
@@ -153,29 +153,31 @@
             this.btn_IngresarAdmin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_IngresarAdmin.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_IngresarAdmin.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btn_IngresarAdmin.Location = new System.Drawing.Point(474, 21);
+            this.btn_IngresarAdmin.Location = new System.Drawing.Point(479, 21);
             this.btn_IngresarAdmin.Name = "btn_IngresarAdmin";
             this.btn_IngresarAdmin.Size = new System.Drawing.Size(128, 48);
             this.btn_IngresarAdmin.TabIndex = 9;
             this.btn_IngresarAdmin.Text = "Ingresar como Admin.";
             this.btn_IngresarAdmin.UseVisualStyleBackColor = false;
+            this.btn_IngresarAdmin.Click += new System.EventHandler(this.btn_IngresarAdmin_Click);
             // 
             // btn_Ver
             // 
             this.btn_Ver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Ver.Location = new System.Drawing.Point(291, 224);
+            this.btn_Ver.Location = new System.Drawing.Point(275, 224);
             this.btn_Ver.Name = "btn_Ver";
-            this.btn_Ver.Size = new System.Drawing.Size(24, 23);
+            this.btn_Ver.Size = new System.Drawing.Size(33, 23);
             this.btn_Ver.TabIndex = 10;
-            this.btn_Ver.Text = "O";
+            this.btn_Ver.Text = "Ver";
             this.btn_Ver.UseVisualStyleBackColor = true;
+            this.btn_Ver.Click += new System.EventHandler(this.btn_Ver_Click);
             // 
             // FrmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            this.ClientSize = new System.Drawing.Size(614, 316);
+            this.ClientSize = new System.Drawing.Size(634, 316);
             this.Controls.Add(this.btn_Ver);
             this.Controls.Add(this.btn_IngresarAdmin);
             this.Controls.Add(this.label1);
