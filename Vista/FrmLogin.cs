@@ -70,10 +70,47 @@ namespace Vista
 
         private void btn_IngresarAdmin_Click(object sender, EventArgs e)
         {
-            usuarioIngresado = Sistema.ListaDeUsuarios[0];
-            FrmPrincipal formPrincipal = new FrmPrincipal(this);
-            formPrincipal.Show();
-            this.Hide();
+            foreach (Usuario usuario in Sistema.ListaDeUsuarios)
+            {
+                if(usuario.Rol == ERol.SuperUsuario)
+                {
+                    usuarioIngresado = usuario;
+                    FrmPrincipal formPrincipal = new FrmPrincipal(this);
+                    formPrincipal.Show();
+                    this.Hide();
+                    break;
+                }
+            }
+        }
+
+        private void btn_IngresarEmpleado_Click(object sender, EventArgs e)
+        {
+            foreach (Usuario usuario in Sistema.ListaDeUsuarios)
+            {
+                if (usuario.Rol == ERol.Empleado)
+                {
+                    usuarioIngresado = usuario;
+                    FrmPrincipal formPrincipal = new FrmPrincipal(this);
+                    formPrincipal.Show();
+                    this.Hide();
+                    break;
+                }
+            }
+        }
+
+        private void btn_IngresarCliente_Click(object sender, EventArgs e)
+        {
+            foreach (Usuario usuario in Sistema.ListaDeUsuarios)
+            {
+                if (usuario.Rol == ERol.Cliente)
+                {
+                    usuarioIngresado = usuario;
+                    FrmPrincipal formPrincipal = new FrmPrincipal(this);
+                    formPrincipal.Show();
+                    this.Hide();
+                    break;
+                }
+            }
         }
     }
 }
