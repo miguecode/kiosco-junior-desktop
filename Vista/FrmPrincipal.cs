@@ -72,17 +72,15 @@ namespace Vista
 
         private void mostrarFormularioHijo(Type tipoFormulario)
         {
-            //Recorro todos los formularios que ya sean hijos del Contenedor MDI
             foreach (Form formulario in this.MdiChildren)
             {
-                if(formulario.GetType() != tipoFormulario) //Si no es el que le paso, lo oculto
+                if(formulario.GetType() != tipoFormulario)
                 {
                     formulario.Hide();
-                }else                                    //Si es el que le paso,
+                }else
                 {
-                    //formulario.Size = this.Size;
                     formulario.WindowState = FormWindowState.Maximized;
-                    formulario.Show();               //Lo muestro
+                    formulario.Show();
                 }
             }
         }
@@ -108,6 +106,7 @@ namespace Vista
             {
                 smi_Compras.Visible = true;
                 smi_Producto.Visible = false;
+                smi_Ventas.Visible = false;
                 verDatosToolStripMenuItem.Visible = false;
                 //smi_Cerrar.Margin.Left = 
             }
@@ -145,6 +144,13 @@ namespace Vista
             formGestionUsuario.MdiParent = this;
             formCompras = new FrmCompras(usuarioActual);
             formCompras.MdiParent = this;
+            formVentas = new FrmVentas();
+            formVentas.MdiParent = this;
+        }
+
+        private void smi_Ventas_Click(object sender, EventArgs e)
+        {
+            mostrarFormularioHijo(typeof(FrmVentas));
         }
     }
 }

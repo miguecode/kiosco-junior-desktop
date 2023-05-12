@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace Vista
 {
-    public partial class Ventas : Form
+    public partial class FrmVentas : Form
     {
-        public Ventas()
+        public FrmVentas()
         {
             InitializeComponent();
         }

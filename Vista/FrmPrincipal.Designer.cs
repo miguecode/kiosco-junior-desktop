@@ -33,6 +33,7 @@
             this.smi_Producto = new System.Windows.Forms.ToolStripMenuItem();
             this.verProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.agregarProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.smi_Ventas = new System.Windows.Forms.ToolStripMenuItem();
             this.smi_Cuenta = new System.Windows.Forms.ToolStripMenuItem();
             this.verDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,7 +43,6 @@
             this.sta_Datos = new System.Windows.Forms.StatusStrip();
             this.sbl_NombreUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.sbl_DniUsuario = new System.Windows.Forms.ToolStripStatusLabel();
-            this.smi_Ventas = new System.Windows.Forms.ToolStripMenuItem();
             this.msp_Principal.SuspendLayout();
             this.sta_Datos.SuspendLayout();
             this.SuspendLayout();
@@ -54,14 +54,14 @@
             this.smi_Inicio,
             this.smi_Producto,
             this.smi_Ventas,
-            this.smi_Cuenta,
             this.smi_Compras,
             this.smi_Usuarios,
+            this.smi_Cuenta,
             this.smi_Cerrar});
             this.msp_Principal.Location = new System.Drawing.Point(0, 0);
             this.msp_Principal.Name = "msp_Principal";
             this.msp_Principal.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.msp_Principal.Size = new System.Drawing.Size(800, 40);
+            this.msp_Principal.Size = new System.Drawing.Size(800, 41);
             this.msp_Principal.TabIndex = 4;
             this.msp_Principal.Text = "Menú Principal";
             // 
@@ -98,6 +98,17 @@
             this.agregarProductosToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
             this.agregarProductosToolStripMenuItem.Text = "Agregar Productos";
             this.agregarProductosToolStripMenuItem.Click += new System.EventHandler(this.agregarProductosToolStripMenuItem_Click);
+            // 
+            // smi_Ventas
+            // 
+            this.smi_Ventas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.smi_Ventas.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.smi_Ventas.Name = "smi_Ventas";
+            this.smi_Ventas.Padding = new System.Windows.Forms.Padding(0);
+            this.smi_Ventas.Size = new System.Drawing.Size(65, 36);
+            this.smi_Ventas.Text = "Ventas";
+            this.smi_Ventas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.smi_Ventas.Click += new System.EventHandler(this.smi_Ventas_Click);
             // 
             // smi_Cuenta
             // 
@@ -151,10 +162,9 @@
             this.smi_Cerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(44)))), ((int)(((byte)(13)))));
             this.smi_Cerrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.smi_Cerrar.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.smi_Cerrar.Margin = new System.Windows.Forms.Padding(320, -2, 0, -2);
             this.smi_Cerrar.Name = "smi_Cerrar";
-            this.smi_Cerrar.Padding = new System.Windows.Forms.Padding(15, 0, 15, 15);
-            this.smi_Cerrar.Size = new System.Drawing.Size(90, 40);
+            this.smi_Cerrar.Padding = new System.Windows.Forms.Padding(0, 0, 0, 12);
+            this.smi_Cerrar.Size = new System.Drawing.Size(60, 37);
             this.smi_Cerrar.Text = "Cerrar";
             this.smi_Cerrar.Click += new System.EventHandler(this.smi_Cerrar_Click);
             // 
@@ -188,15 +198,6 @@
             this.sbl_DniUsuario.Name = "sbl_DniUsuario";
             this.sbl_DniUsuario.Size = new System.Drawing.Size(101, 20);
             this.sbl_DniUsuario.Text = "DNI 00000000";
-            // 
-            // smi_Ventas
-            // 
-            this.smi_Ventas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.smi_Ventas.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.smi_Ventas.Name = "smi_Ventas";
-            this.smi_Ventas.Size = new System.Drawing.Size(73, 36);
-            this.smi_Ventas.Text = "Ventas";
-            this.smi_Ventas.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FrmPrincipal
             // 
