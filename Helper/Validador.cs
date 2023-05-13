@@ -16,10 +16,62 @@ namespace Helper
 
         }
 
-        public static void ValidarDatosEntidad()
+        public static void ValidarDatosUsuario(Object rol, string nombre, string apellido,
+                                                 string dni, string nombreUsuario, string contrasenia)
         {
-            //Creo que este método no debería ir aca o quiza si..?
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("Datos no válidos:");
+
+            if (!Validador.ValidarItemEnumerado(rol, typeof(ERol)))
+                sb.AppendLine("- Rol");
+
+            if (!Validador.ValidarStringConLetraSinDigitoYRango(nombre, 2, 24))
+                sb.AppendLine("- Nombre");
+
+            if (!Validador.ValidarStringConLetraSinDigitoYRango(apellido, 2, 24))
+                sb.AppendLine("- Apellido");
+
+            if (!Validador.ValidarStringNumericoRango(dni, 7, 9))
+                sb.AppendLine("- DNI");
+
+            if (!Validador.ValidarStringConLetraDigitoYRango(nombreUsuario, 4, 17))
+                sb.AppendLine("- Nombre de Usuario");
+
+            if (!Validador.ValidarStringConLetraDigitoYRango(contrasenia, 7, 17))
+                sb.AppendLine("- Contraseña");
+
+            if (sb.Length > 19)
+                throw new Exception(sb.ToString());
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         public static bool ValidarStringConLetraSinDigitoYRango(string cadena, int minimo, int maximo)
         {
@@ -79,9 +131,7 @@ namespace Helper
             foreach (char caracter in cadena) 
             {
                 if (!char.IsLetter(caracter) && caracter != ' ' && caracter != '-')
-                {
                     return false;
-                }
             }
 
             return true;
@@ -92,9 +142,7 @@ namespace Helper
             for (int i = 0; i < cadena.Length - 1; i++)
             {
                 if ((cadena[i] == ' ' && cadena[i + 1] == ' ') || (cadena[i] == '-' && cadena[i + 1] == '-'))
-                {
                     return false;
-                }
             }
 
             return true;
@@ -105,9 +153,7 @@ namespace Helper
             foreach (char caracter in cadena)
             {
                 if (!char.IsLetterOrDigit(caracter))
-                {
                     return false;
-                }
             }
 
             return true;

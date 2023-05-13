@@ -58,6 +58,7 @@ namespace Vista
         private void EscribirIngresosTotales(List<Venta> lista)
         {
             ingresosTotales = 0;
+            lbl_IngresosTotales.Text = ingresosTotales.ToString("0.00");
 
             if (lista.Count > 0)
             {
@@ -73,6 +74,7 @@ namespace Vista
         private void EscribirCompradorMasFrecuente(List<Venta> lista)
         {
             compradorMasFrecuente = String.Empty;
+            lbl_CompradorFrecuente.Text = compradorMasFrecuente;
 
             if (Sistema.ListaDeVentas.Count > 0)
             {

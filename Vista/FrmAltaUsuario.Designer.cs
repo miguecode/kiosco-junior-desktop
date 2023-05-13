@@ -127,7 +127,7 @@
             // 
             // txt_NombreDeUsuario
             // 
-            this.txt_NombreDeUsuario.Location = new System.Drawing.Point(382, 71);
+            this.txt_NombreDeUsuario.Location = new System.Drawing.Point(381, 72);
             this.txt_NombreDeUsuario.MaxLength = 16;
             this.txt_NombreDeUsuario.Name = "txt_NombreDeUsuario";
             this.txt_NombreDeUsuario.Size = new System.Drawing.Size(151, 23);
@@ -249,6 +249,7 @@
             this.Name = "FrmAltaUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Datos del Usuario";
+            this.Load += new System.EventHandler(this.FrmAltaUsuario_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

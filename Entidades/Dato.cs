@@ -11,5 +11,9 @@ namespace Entidades
         public abstract string GetParser();
 
         public abstract Dato CrearEntidadPorLista(List<string> listaDatos);
+
+
+
+
     }
 }

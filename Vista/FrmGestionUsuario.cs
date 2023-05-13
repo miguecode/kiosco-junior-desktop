@@ -36,12 +36,14 @@ namespace Vista
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            FrmAltaUsuario formAltaUsuario = new FrmAltaUsuario();
+            Usuario usuarioNuevo = new Usuario();
+
+            FrmAltaUsuario formAltaUsuario = new FrmAltaUsuario(usuarioNuevo, true);
 
             if (formAltaUsuario.ShowDialog() == DialogResult.OK)
             {
-                Sistema.ListaDeUsuarios.Add(formAltaUsuario.UsuarioCreado);
-                this.ActualizarDataGrid(Sistema.ListaDeUsuarios);
+                Sistema.ListaDeUsuarios.Add(formAltaUsuario.UsuarioIngresado);
+                ActualizarDataGrid(Sistema.ListaDeUsuarios);
             }
             else
             {
@@ -55,13 +57,26 @@ namespace Vista
             {
                 Usuario usuarioSeleccionado = SeleccionarUsuarioEspecifico();
                 Sistema.ListaDeUsuarios.Remove(usuarioSeleccionado);
-                this.ActualizarDataGrid(Sistema.ListaDeUsuarios);
+                ActualizarDataGrid(Sistema.ListaDeUsuarios);
             }
         }
 
         private void btn_Modificar_Click(object sender, EventArgs e)
         {
-            if (Sistema.ListaDeUsuarios.Count > 0)
+            if(Sistema.ListaDeUsuarios.Count > 0)
+            {
+                Usuario usuarioSeleccionado = SeleccionarUsuarioEspecifico();
+                FrmAltaUsuario formModificar = new FrmAltaUsuario(usuarioSeleccionado, false);
+
+                if(formModificar.ShowDialog() == DialogResult.OK)
+                {
+                    ActualizarDataGrid(Sistema.ListaDeUsuarios);
+                }else
+                {
+                    formModificar.Close();
+                }
+            }
+            /*if (Sistema.ListaDeUsuarios.Count > 0)
             {
                 FrmAltaUsuario formAltaUsuario = new FrmAltaUsuario();
                 Usuario productoSeleccionado = SeleccionarUsuarioEspecifico();
@@ -77,7 +92,7 @@ namespace Vista
                 {
                     formAltaUsuario.Close();
                 }
-            }
+            }*/
         }
     }
 }

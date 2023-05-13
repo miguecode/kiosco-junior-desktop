@@ -60,12 +60,10 @@ namespace Vista
         private void btn_Ver_Click(object sender, EventArgs e)
         {
             if (!txt_Contrasenia.UseSystemPasswordChar)
-            {
                 txt_Contrasenia.UseSystemPasswordChar = true;
-            }else
-            {
+
+            else
                 txt_Contrasenia.UseSystemPasswordChar = false;
-            }
         }
 
         private void btn_IngresarAdmin_Click(object sender, EventArgs e)

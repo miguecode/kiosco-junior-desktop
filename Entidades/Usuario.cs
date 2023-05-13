@@ -21,14 +21,15 @@ namespace Entidades
         public string NombreUsuario { get => nombreUsuario; set => nombreUsuario = value; }
         public string Contrasenia { get => contrasenia; set => contrasenia = value; }
         public string NombreCompleto { get => $"{Nombre} {Apellido}"; }
-        public ERol Rol { get => rol; }
+        public ERol Rol { get => rol; set => rol = value; }
+
         public Usuario()
         {
-            nombre = "NO CARGADO";
-            apellido = "NO CARGADO";
-            dni = 00000000;
-            nombreUsuario = "NO CARGADO";
-            contrasenia = "NO CARGADO";
+            nombre = String.Empty;
+            apellido = String.Empty;
+            dni = 0;
+            nombreUsuario = String.Empty;
+            contrasenia = String.Empty;
             rol = ERol.Cliente;
         }
 
