@@ -20,7 +20,7 @@ namespace Entidades
 
         public override string GetParser()
         {
-            return $"{Rol},{NombreUsuario},{Contrasenia},{Dni},{Nombre},{Apellido}";
+            return $"{Rol};{NombreUsuario};{Contrasenia};{Dni};{Nombre};{Apellido}";
         }
 
         public override string ToString()

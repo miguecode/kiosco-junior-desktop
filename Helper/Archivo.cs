@@ -14,6 +14,7 @@ namespace Helper
     {
         public Archivo()
         {
+
         }
 
         public static void CargarArchivos()
@@ -58,7 +59,7 @@ namespace Helper
 
             while (!sr.EndOfStream)
             {
-                List<string> listaDeDatos = GetDatosDividosPorCaracter(sr, ',');
+                List<string> listaDeDatos = GetDatosDividosPorCaracter(sr, ';');
 
                 Dato entidadCreada = CrearEntidadPorDatos(listaDeDatos, entidad);
 

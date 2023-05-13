@@ -69,7 +69,7 @@ namespace Entidades
 
         public override string GetParser()
         {
-            return $"{Id},{NombreCliente},{ValorTotal}";
+            return $"{Id};{NombreCliente};{ValorTotal}";
         }
 
         public override Dato CrearEntidadPorLista(List<string> dato)

@@ -109,7 +109,16 @@ namespace Helper
 
         public static bool ValidarStringNumericoRango(string cadena, int minimo, int maximo)
         {
-            return cadena.Length > minimo && cadena.Length < maximo && int.TryParse(cadena, out _);
+            if (!ValidarStringRango(cadena, 7, 9))
+                return false;
+
+            foreach (char caracter in cadena)
+            {
+                if (!char.IsNumber(caracter))
+                    return false;
+            }
+
+            return true;
         }
 
         public static bool ValidarItemEnumerado(Object itemSeleccionado, Type tipoEnumerado)

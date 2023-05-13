@@ -55,7 +55,7 @@ namespace Entidades
 
         public override string GetParser()
         {
-            return $"{Id},{Nombre},{Tipo},{Descripcion},{Marca},{Precio},{Stock}";
+            return $"{Id};{Nombre};{Tipo};{Descripcion};{Marca};{Precio};{Stock}";
         }
 
         public override Producto CrearEntidadPorLista(List<string> dato)
