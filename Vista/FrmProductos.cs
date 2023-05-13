@@ -37,7 +37,7 @@ namespace Vista
 
         private void btn_Detalles_Click(object sender, EventArgs e)
         {
-            if(Sistema.ListaDeProductos.Count > 0)
+            if (Sistema.ListaDeProductos.Count > 0)
             {
                 Producto productoSeleccionado = SeleccionarProductoEspecifico();
 
@@ -53,16 +53,16 @@ namespace Vista
 
         private void btn_AltaProducto_Click(object sender, EventArgs e)
         {
-            FrmAltaProducto formAltaProducto = new FrmAltaProducto();
+            Producto productoNuevo = new Producto();
+
+            FrmAltaProducto formAltaProducto = new FrmAltaProducto(productoNuevo, true);
 
             if (formAltaProducto.ShowDialog() == DialogResult.OK)
             {
-                Sistema.ListaDeProductos.Add(formAltaProducto.ProductoCreado);
-                this.ActualizarDataGrid(Sistema.ListaDeProductos);
+                Sistema.ListaDeProductos.Add(formAltaProducto.ProductoIngresado);
+                ActualizarDataGrid(Sistema.ListaDeProductos);
             }else
-            {
                 formAltaProducto.Close();
-            }
         }
 
         private void btn_BajaProducto_Click(object sender, EventArgs e)
@@ -71,29 +71,23 @@ namespace Vista
             {
                 Producto productoSeleccionado = SeleccionarProductoEspecifico();
                 Sistema.ListaDeProductos.Remove(productoSeleccionado);
-                this.ActualizarDataGrid(Sistema.ListaDeProductos);
+                ActualizarDataGrid(Sistema.ListaDeProductos);
             }
         }
 
         private void btn_Modificar_Click(object sender, EventArgs e)
         {
-            if(Sistema.ListaDeProductos.Count > 0)
+            if (Sistema.ListaDeProductos.Count > 0)
             {
-                FrmAltaProducto formAltaProducto = new FrmAltaProducto();
                 Producto productoSeleccionado = SeleccionarProductoEspecifico();
+                FrmAltaProducto formModificar = new FrmAltaProducto(productoSeleccionado, false);
 
-                if (formAltaProducto.ShowDialog() == DialogResult.OK)
+                if (formModificar.ShowDialog() == DialogResult.OK)
                 {
-                    int indice = Sistema.ListaDeProductos.IndexOf(productoSeleccionado);
-                    Sistema.ListaDeProductos.Remove(productoSeleccionado);
-                    formAltaProducto.ProductoCreado.Id = productoSeleccionado.Id;
-                    Sistema.ListaDeProductos.Insert(indice, formAltaProducto.ProductoCreado);                  
-                    this.ActualizarDataGrid(Sistema.ListaDeProductos);
+                    ActualizarDataGrid(Sistema.ListaDeProductos);
                 }
                 else
-                {
-                    formAltaProducto.Close();
-                }
+                    formModificar.Close();
             }
         }
     }

@@ -14,24 +14,44 @@ namespace Vista
 {
     public partial class FrmAltaProducto : Form
     {
-        private Producto productoCreado;
-        public Producto ProductoCreado { get => productoCreado; }
+        private Producto productoIngresado;
+        private bool esProductoNuevo;
+        public Producto ProductoIngresado { get => productoIngresado; }
 
-        public FrmAltaProducto()
+        public FrmAltaProducto(Producto productoIngresado, bool esProductoNuevo)
         {
             InitializeComponent();
-            productoCreado = new Producto();
+            this.productoIngresado = productoIngresado;
+            this.esProductoNuevo = esProductoNuevo;
+        }
+
+        private void FrmAltaProducto_Load(object sender, EventArgs e)
+        {
+            if(!esProductoNuevo)
+                RecibirDatosDelProductoAModificar();
+        }
+
+        private void RecibirDatosDelProductoAModificar()
+        {
+            cmb_Tipo.Text = productoIngresado.Tipo.ToString();
+            txt_Nombre.Text = productoIngresado.Nombre;
+            txt_Marca.Text = productoIngresado.Marca;
+            rtb_Descripcion.Text = productoIngresado.Descripcion.ToString();
+            nud_Precio.Value = (decimal)productoIngresado.Precio;
+            nud_Stock.Value = productoIngresado.Stock;
         }
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
             try
             {
-                ValidarDatosProducto();
+                Validador.ValidarDatosProducto(cmb_Tipo.SelectedItem, txt_Nombre.Text, txt_Marca.Text,
+                                                (float)nud_Precio.Value, (float)nud_Stock.Value, rtb_Descripcion.Text);
 
-                //Buscar si el producto ya existe
+                AsignarDatosAlProducto();
 
-                CrearProducto();
+                if (esProductoNuevo)
+                    VerificarSiExisteProducto(productoIngresado);
 
                 this.DialogResult = DialogResult.OK;
 
@@ -42,7 +62,7 @@ namespace Vista
             }
         }
 
-        private void CrearProducto()
+        private void AsignarDatosAlProducto()
         {
             _ = Enum.TryParse(cmb_Tipo.SelectedItem.ToString(), out ETipo tipo);
             string nombre = txt_Nombre.Text;
@@ -51,37 +71,20 @@ namespace Vista
             float precio = (float)nud_Precio.Value;
             int stock = (int)nud_Stock.Value;
 
-            productoCreado = new Producto(nombre, tipo, marca, descripcion, precio, stock);
-        }
-
-        private void ValidarDatosProducto()
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine("Datos no válidos:");
-
-            if (!Validador.ValidarItemEnumerado(cmb_Tipo.SelectedItem, typeof(ETipo)))
-                sb.AppendLine("- Tipo");
-
-            if (!Validador.ValidarStringConLetraSinDigitoYRango(txt_Nombre.Text, 2, 24))
-                sb.AppendLine("- Nombre");
-
-            if (!Validador.ValidarStringConLetraSinDigitoYRango(txt_Marca.Text, 2, 24))
-                sb.AppendLine("- Marca");
-
-            if (!Validador.ValidarCantidadRango((float)nud_Precio.Value, 0, 5001))
-                sb.AppendLine("- Precio");
-
-            if (!Validador.ValidarCantidadRango((float)nud_Stock.Value, 0, 2001))
-                sb.AppendLine("- Stock");
-
-            if (!Validador.ValidarStringRango(rtb_Descripcion.Text, 4, 121))
-                sb.AppendLine("- Descripción");
-
-            if(sb.Length > 19)
-                throw new Exception(sb.ToString());
+            if(esProductoNuevo)
+                productoIngresado = new Producto(nombre, tipo, marca, descripcion, precio, stock);
+            else
+            {
+                productoIngresado.Tipo = tipo;
+                productoIngresado.Nombre = nombre;
+                productoIngresado.Marca = marca;
+                productoIngresado.Descripcion = descripcion;
+                productoIngresado.Precio = precio;
+                productoIngresado.Stock = stock;
+            }          
         }
        
-        private void ValidarProductoExistente(Producto productoRecibido)
+        private void VerificarSiExisteProducto(Producto productoRecibido)
         {
             foreach (Producto producto in Sistema.ListaDeProductos)
             {

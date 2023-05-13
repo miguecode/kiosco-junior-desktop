@@ -46,9 +46,7 @@ namespace Vista
                 ActualizarDataGrid(Sistema.ListaDeUsuarios);
             }
             else
-            {
                 formAltaUsuario.Close();
-            }
         }
 
         private void btn_Eliminar_Click(object sender, EventArgs e)
@@ -72,27 +70,8 @@ namespace Vista
                 {
                     ActualizarDataGrid(Sistema.ListaDeUsuarios);
                 }else
-                {
                     formModificar.Close();
-                }
             }
-            /*if (Sistema.ListaDeUsuarios.Count > 0)
-            {
-                FrmAltaUsuario formAltaUsuario = new FrmAltaUsuario();
-                Usuario productoSeleccionado = SeleccionarUsuarioEspecifico();
-
-                if (formAltaUsuario.ShowDialog() == DialogResult.OK)
-                {
-                    int indice = Sistema.ListaDeUsuarios.IndexOf(productoSeleccionado);
-                    Sistema.ListaDeUsuarios.Remove(productoSeleccionado);
-                    Sistema.ListaDeUsuarios.Insert(indice, formAltaUsuario.UsuarioCreado);
-                    this.ActualizarDataGrid(Sistema.ListaDeUsuarios);
-                }
-                else
-                {
-                    formAltaUsuario.Close();
-                }
-            }*/
         }
     }
 }

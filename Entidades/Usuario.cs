@@ -78,12 +78,12 @@ namespace Entidades
 
         public static bool operator ==(Usuario u1, Usuario u2)
         {
-            return u1.NombreUsuario == u2.NombreUsuario;
+            return u1.NombreUsuario == u2.NombreUsuario || u1.Dni == u2.Dni;
         }
 
         public static bool operator !=(Usuario u1, Usuario u2)
         {
-            return !(u1.NombreUsuario == u2.NombreUsuario);
+            return !(u1.NombreUsuario == u2.NombreUsuario || u1.Dni == u2.Dni);
         }
     }
 }

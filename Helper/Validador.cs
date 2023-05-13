@@ -22,56 +22,55 @@ namespace Helper
             StringBuilder sb = new StringBuilder();
             sb.AppendLine("Datos no válidos:");
 
-            if (!Validador.ValidarItemEnumerado(rol, typeof(ERol)))
+            if (!ValidarItemEnumerado(rol, typeof(ERol)))
                 sb.AppendLine("- Rol");
 
-            if (!Validador.ValidarStringConLetraSinDigitoYRango(nombre, 2, 24))
+            if (!ValidarStringConLetraSinDigitoYRango(nombre, 2, 24))
                 sb.AppendLine("- Nombre");
 
-            if (!Validador.ValidarStringConLetraSinDigitoYRango(apellido, 2, 24))
+            if (!ValidarStringConLetraSinDigitoYRango(apellido, 2, 24))
                 sb.AppendLine("- Apellido");
 
-            if (!Validador.ValidarStringNumericoRango(dni, 7, 9))
+            if (!ValidarStringNumericoRango(dni, 7, 9))
                 sb.AppendLine("- DNI");
 
-            if (!Validador.ValidarStringConLetraDigitoYRango(nombreUsuario, 4, 17))
+            if (!ValidarStringConLetraDigitoYRango(nombreUsuario, 4, 17))
                 sb.AppendLine("- Nombre de Usuario");
 
-            if (!Validador.ValidarStringConLetraDigitoYRango(contrasenia, 7, 17))
+            if (!ValidarStringConLetraDigitoYRango(contrasenia, 7, 17))
                 sb.AppendLine("- Contraseña");
 
             if (sb.Length > 19)
                 throw new Exception(sb.ToString());
         }
 
+        public static void ValidarDatosProducto(Object tipo, string nombre, string marca, float precio,
+                                            float stock, string descripcion)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("Datos no válidos:");
 
+            if (!ValidarItemEnumerado(tipo, typeof(ETipo)))
+                sb.AppendLine("- Tipo");
 
+            if (!ValidarStringConLetraSinDigitoYRango(nombre, 2, 24))
+                sb.AppendLine("- Nombre");
 
+            if (!ValidarStringConLetraSinDigitoYRango(marca, 2, 24))
+                sb.AppendLine("- Marca");
 
+            if (!ValidarStringRango(descripcion, 4, 121))
+                sb.AppendLine("- Descripción");
 
+            if (!ValidarCantidadRango((float)stock, 0, 2001))
+                sb.AppendLine("- Stock");
 
+            if (!ValidarCantidadRango((float)precio, 0, 5001))
+                sb.AppendLine("- Precio");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            if (sb.Length > 19)
+                throw new Exception(sb.ToString());
+        }
 
         public static bool ValidarStringConLetraSinDigitoYRango(string cadena, int minimo, int maximo)
         {

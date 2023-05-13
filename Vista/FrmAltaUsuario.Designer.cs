@@ -160,7 +160,7 @@
             this.btn_Confirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Confirmar.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Confirmar.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_Confirmar.Location = new System.Drawing.Point(425, 162);
+            this.btn_Confirmar.Location = new System.Drawing.Point(393, 162);
             this.btn_Confirmar.Name = "btn_Confirmar";
             this.btn_Confirmar.Size = new System.Drawing.Size(140, 45);
             this.btn_Confirmar.TabIndex = 11;
@@ -174,7 +174,7 @@
             this.btn_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cancelar.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Cancelar.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_Cancelar.Location = new System.Drawing.Point(425, 213);
+            this.btn_Cancelar.Location = new System.Drawing.Point(393, 213);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(140, 34);
             this.btn_Cancelar.TabIndex = 12;

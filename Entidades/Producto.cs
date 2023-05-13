@@ -19,12 +19,12 @@ namespace Entidades
         private static int idActual;
         public Producto()
         {
-            this.nombre = "NO CARGADO";
+            this.nombre = String.Empty;
             this.tipo = ETipo.Otros;
-            this.marca = "NO CARGADO";
-            this.descripcion = "NO CARGADO";
-            this.precio = 0;
-            this.stock = 0;
+            this.marca = String.Empty;
+            this.descripcion = String.Empty;
+            this.precio = 1;
+            this.stock = 1;
             this.id = 0000;
         }
 
@@ -83,12 +83,12 @@ namespace Entidades
 
         public static bool operator ==(Producto p1, Producto p2)
         {
-            return p1.Id == p2.Id && p1.Nombre == p2.Nombre && p1.Marca == p2.Marca;
+            return p1.Id == p2.Id;
         }
 
         public static bool operator !=(Producto p1, Producto p2)
         {
-            return !(p1.Id == p2.Id && p1.Nombre == p2.Nombre && p1.Marca == p2.Marca);
+            return !(p1.Id == p2.Id);
         }
     }
 }

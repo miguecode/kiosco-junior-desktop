@@ -53,9 +53,9 @@
             this.btn_Confirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Confirmar.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Confirmar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Confirmar.Location = new System.Drawing.Point(28, 239);
+            this.btn_Confirmar.Location = new System.Drawing.Point(39, 272);
             this.btn_Confirmar.Name = "btn_Confirmar";
-            this.btn_Confirmar.Size = new System.Drawing.Size(123, 42);
+            this.btn_Confirmar.Size = new System.Drawing.Size(145, 42);
             this.btn_Confirmar.TabIndex = 0;
             this.btn_Confirmar.Text = "Confirmar";
             this.btn_Confirmar.UseVisualStyleBackColor = false;
@@ -63,7 +63,7 @@
             // 
             // txt_Nombre
             // 
-            this.txt_Nombre.Location = new System.Drawing.Point(28, 41);
+            this.txt_Nombre.Location = new System.Drawing.Point(39, 44);
             this.txt_Nombre.MaxLength = 23;
             this.txt_Nombre.Name = "txt_Nombre";
             this.txt_Nombre.Size = new System.Drawing.Size(151, 23);
@@ -71,7 +71,7 @@
             // 
             // txt_Marca
             // 
-            this.txt_Marca.Location = new System.Drawing.Point(28, 93);
+            this.txt_Marca.Location = new System.Drawing.Point(39, 109);
             this.txt_Marca.MaxLength = 23;
             this.txt_Marca.Name = "txt_Marca";
             this.txt_Marca.Size = new System.Drawing.Size(151, 23);
@@ -90,14 +90,14 @@
             "Bebida",
             "Alfajor",
             "Otros"});
-            this.cmb_Tipo.Location = new System.Drawing.Point(238, 41);
+            this.cmb_Tipo.Location = new System.Drawing.Point(274, 44);
             this.cmb_Tipo.Name = "cmb_Tipo";
             this.cmb_Tipo.Size = new System.Drawing.Size(121, 23);
             this.cmb_Tipo.TabIndex = 4;
             // 
             // rtb_Descripcion
             // 
-            this.rtb_Descripcion.Location = new System.Drawing.Point(28, 150);
+            this.rtb_Descripcion.Location = new System.Drawing.Point(39, 175);
             this.rtb_Descripcion.MaxLength = 120;
             this.rtb_Descripcion.Name = "rtb_Descripcion";
             this.rtb_Descripcion.Size = new System.Drawing.Size(186, 74);
@@ -110,9 +110,9 @@
             this.btn_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cancelar.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Cancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Cancelar.Location = new System.Drawing.Point(28, 287);
+            this.btn_Cancelar.Location = new System.Drawing.Point(39, 320);
             this.btn_Cancelar.Name = "btn_Cancelar";
-            this.btn_Cancelar.Size = new System.Drawing.Size(123, 39);
+            this.btn_Cancelar.Size = new System.Drawing.Size(145, 39);
             this.btn_Cancelar.TabIndex = 6;
             this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = false;
@@ -120,32 +120,27 @@
             // 
             // nud_Stock
             // 
-            this.nud_Stock.Location = new System.Drawing.Point(239, 93);
-            this.nud_Stock.Maximum = new decimal(new int[] {
-            2000,
+            this.nud_Stock.Increment = new decimal(new int[] {
+            5,
             0,
             0,
             0});
-            this.nud_Stock.Minimum = new decimal(new int[] {
-            1,
+            this.nud_Stock.Location = new System.Drawing.Point(274, 109);
+            this.nud_Stock.Maximum = new decimal(new int[] {
+            2000,
             0,
             0,
             0});
             this.nud_Stock.Name = "nud_Stock";
             this.nud_Stock.Size = new System.Drawing.Size(120, 23);
             this.nud_Stock.TabIndex = 7;
-            this.nud_Stock.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // lbl_Nombre
             // 
             this.lbl_Nombre.AutoSize = true;
             this.lbl_Nombre.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_Nombre.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_Nombre.Location = new System.Drawing.Point(28, 19);
+            this.lbl_Nombre.Location = new System.Drawing.Point(39, 22);
             this.lbl_Nombre.Name = "lbl_Nombre";
             this.lbl_Nombre.Size = new System.Drawing.Size(65, 19);
             this.lbl_Nombre.TabIndex = 8;
@@ -156,7 +151,7 @@
             this.lbl_Marca.AutoSize = true;
             this.lbl_Marca.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_Marca.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_Marca.Location = new System.Drawing.Point(28, 71);
+            this.lbl_Marca.Location = new System.Drawing.Point(39, 87);
             this.lbl_Marca.Name = "lbl_Marca";
             this.lbl_Marca.Size = new System.Drawing.Size(51, 19);
             this.lbl_Marca.TabIndex = 9;
@@ -167,7 +162,7 @@
             this.lbl_Tipo.AutoSize = true;
             this.lbl_Tipo.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_Tipo.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_Tipo.Location = new System.Drawing.Point(239, 19);
+            this.lbl_Tipo.Location = new System.Drawing.Point(275, 22);
             this.lbl_Tipo.Name = "lbl_Tipo";
             this.lbl_Tipo.Size = new System.Drawing.Size(39, 19);
             this.lbl_Tipo.TabIndex = 10;
@@ -178,7 +173,7 @@
             this.lbl_Stock.AutoSize = true;
             this.lbl_Stock.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_Stock.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_Stock.Location = new System.Drawing.Point(239, 71);
+            this.lbl_Stock.Location = new System.Drawing.Point(274, 87);
             this.lbl_Stock.Name = "lbl_Stock";
             this.lbl_Stock.Size = new System.Drawing.Size(46, 19);
             this.lbl_Stock.TabIndex = 11;
@@ -189,7 +184,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label5.Location = new System.Drawing.Point(28, 128);
+            this.label5.Location = new System.Drawing.Point(39, 153);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 19);
             this.label5.TabIndex = 12;
@@ -200,7 +195,7 @@
             this.lbl_Error.AutoSize = true;
             this.lbl_Error.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_Error.ForeColor = System.Drawing.Color.Red;
-            this.lbl_Error.Location = new System.Drawing.Point(239, 205);
+            this.lbl_Error.Location = new System.Drawing.Point(275, 230);
             this.lbl_Error.Name = "lbl_Error";
             this.lbl_Error.Size = new System.Drawing.Size(124, 19);
             this.lbl_Error.TabIndex = 13;
@@ -212,7 +207,7 @@
             this.lbl_Precio.AutoSize = true;
             this.lbl_Precio.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_Precio.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_Precio.Location = new System.Drawing.Point(238, 128);
+            this.lbl_Precio.Location = new System.Drawing.Point(274, 153);
             this.lbl_Precio.Name = "lbl_Precio";
             this.lbl_Precio.Size = new System.Drawing.Size(52, 19);
             this.lbl_Precio.TabIndex = 14;
@@ -220,32 +215,28 @@
             // 
             // nud_Precio
             // 
-            this.nud_Precio.Location = new System.Drawing.Point(239, 150);
-            this.nud_Precio.Maximum = new decimal(new int[] {
-            5000,
+            this.nud_Precio.DecimalPlaces = 2;
+            this.nud_Precio.Increment = new decimal(new int[] {
+            50,
             0,
             0,
             0});
-            this.nud_Precio.Minimum = new decimal(new int[] {
-            1,
+            this.nud_Precio.Location = new System.Drawing.Point(275, 175);
+            this.nud_Precio.Maximum = new decimal(new int[] {
+            5000,
             0,
             0,
             0});
             this.nud_Precio.Name = "nud_Precio";
             this.nud_Precio.Size = new System.Drawing.Size(120, 23);
             this.nud_Precio.TabIndex = 15;
-            this.nud_Precio.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // FrmAltaProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(50)))), ((int)(((byte)(143)))));
-            this.ClientSize = new System.Drawing.Size(384, 335);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(60)))), ((int)(((byte)(80)))));
+            this.ClientSize = new System.Drawing.Size(441, 379);
             this.ControlBox = false;
             this.Controls.Add(this.nud_Precio);
             this.Controls.Add(this.lbl_Precio);
@@ -268,6 +259,7 @@
             this.Name = "FrmAltaProducto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Datos del Producto";
+            this.Load += new System.EventHandler(this.FrmAltaProducto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nud_Stock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Precio)).EndInit();
             this.ResumeLayout(false);

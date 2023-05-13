@@ -20,10 +20,10 @@ namespace Vista
 
         public Usuario UsuarioIngresado { get => usuarioIngresado; }
 
-        public FrmAltaUsuario(Usuario usuario, bool esUsuarioNuevo)
+        public FrmAltaUsuario(Usuario usuarioIngresado, bool esUsuarioNuevo)
         {
             InitializeComponent();
-            usuarioIngresado = usuario;
+            this.usuarioIngresado = usuarioIngresado;
             this.esUsuarioNuevo = esUsuarioNuevo;
         }
 

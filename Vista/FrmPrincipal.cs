@@ -57,17 +57,17 @@ namespace Vista
         }
 
         private void agregarProductosToolStripMenuItem_Click(object sender, EventArgs e)
-        {            
-            FrmAltaProducto formAltaProducto = new FrmAltaProducto();
+        {
+            Producto productoNuevo = new Producto();
+
+            FrmAltaProducto formAltaProducto = new FrmAltaProducto(productoNuevo, true);
 
             if (formAltaProducto.ShowDialog() == DialogResult.OK && formProductos is not null)
             {
-                Sistema.ListaDeProductos.Add(formAltaProducto.ProductoCreado);
+                Sistema.ListaDeProductos.Add(formAltaProducto.ProductoIngresado);
                 formProductos.ActualizarDataGrid(Sistema.ListaDeProductos);
             }else
-            {
                 formAltaProducto.Close();
-            }
         }
 
         private void mostrarFormularioHijo(Type tipoFormulario)
