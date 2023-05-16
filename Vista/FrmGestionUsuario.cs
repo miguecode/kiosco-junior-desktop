@@ -24,16 +24,6 @@ namespace Vista
             ActualizarDataGrid(Sistema.ListaDeUsuarios);
         }
 
-        public void ActualizarDataGrid(List<Usuario> listaUsuarios)
-        {
-            dtg_Usuarios.DataSource = null;
-            dtg_Usuarios.DataSource = listaUsuarios;
-        }
-        private Usuario SeleccionarUsuarioEspecifico()
-        {
-            return Sistema.ListaDeUsuarios[dtg_Usuarios.CurrentRow.Index];
-        }
-
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
             Usuario usuarioNuevo = new Usuario();
@@ -51,27 +41,45 @@ namespace Vista
 
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
-            if (Sistema.ListaDeUsuarios.Count > 0)
+            if (Sistema.ListaDeUsuarios.Count > 1)
             {
+                DialogResult respuesta = MessageBox.Show("¿Seguro de eliminar a este usuario?" +
+                    "\nNo podrás recuperarlo.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
                 Usuario usuarioSeleccionado = SeleccionarUsuarioEspecifico();
-                Sistema.ListaDeUsuarios.Remove(usuarioSeleccionado);
-                ActualizarDataGrid(Sistema.ListaDeUsuarios);
+
+                if (respuesta == DialogResult.OK)
+                {
+                    Sistema.ListaDeUsuarios.Remove(usuarioSeleccionado);
+                    ActualizarDataGrid(Sistema.ListaDeUsuarios);
+                }
             }
         }
 
         private void btn_Modificar_Click(object sender, EventArgs e)
         {
-            if(Sistema.ListaDeUsuarios.Count > 0)
+            if (Sistema.ListaDeUsuarios.Count > 0)
             {
                 Usuario usuarioSeleccionado = SeleccionarUsuarioEspecifico();
                 FrmAltaUsuario formModificar = new FrmAltaUsuario(usuarioSeleccionado, false);
 
-                if(formModificar.ShowDialog() == DialogResult.OK)
-                {
+                if (formModificar.ShowDialog() == DialogResult.OK)
                     ActualizarDataGrid(Sistema.ListaDeUsuarios);
-                }else
+
+                else
                     formModificar.Close();
             }
+        }
+
+        public void ActualizarDataGrid(List<Usuario> listaUsuarios)
+        {
+            dtg_Usuarios.DataSource = null;
+            dtg_Usuarios.DataSource = listaUsuarios;
+        }
+
+        private Usuario SeleccionarUsuarioEspecifico()
+        {
+            return Sistema.ListaDeUsuarios[dtg_Usuarios.CurrentRow.Index];
         }
     }
 }

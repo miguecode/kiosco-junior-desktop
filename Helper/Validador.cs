@@ -11,11 +11,6 @@ namespace Helper
 {
     public static class Validador
     {
-        static Validador()
-        {
-
-        }
-
         public static void ValidarDatosUsuario(Object rol, string nombre, string apellido,
                                                  string dni, string nombreUsuario, string contrasenia)
         {

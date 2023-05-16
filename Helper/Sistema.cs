@@ -21,9 +21,6 @@ namespace Helper
             listaDeUsuarios = new List<Usuario>();
             listaDeProductos = new List<Producto>();
             listaDeVentas = new List<Venta>();
-
-            //listaDeUsuarios = Mock.listaDeUsuariosHardcodeada;
-            //listaDeProductos = Mock.listaDeProductosHardcodeada;
         }
 
         public static Usuario ConfirmarIngreso(string nick, string contrasenia)
@@ -38,6 +35,7 @@ namespace Helper
                 else
                     throw new Exception("Usuario o contraseña incorrectos");
             }
+
             throw new Exception(String.Empty);
         }
 

@@ -27,7 +27,7 @@ namespace Entidades
         {
             nombre = String.Empty;
             apellido = String.Empty;
-            dni = 0;
+            dni = 00000000;
             nombreUsuario = String.Empty;
             contrasenia = String.Empty;
             rol = ERol.Cliente;

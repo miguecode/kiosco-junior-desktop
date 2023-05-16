@@ -41,20 +41,11 @@ namespace Vista
 
         private void btn_Autocompletar_Click(object sender, EventArgs e)
         {
-            List<Usuario> listaDeUsuarios = Sistema.ListaDeUsuarios;
-
             Random rnd = new Random();
-            int numeroRandom = rnd.Next(0, listaDeUsuarios.Count);
+            int numeroRandom = rnd.Next(0, Sistema.ListaDeUsuarios.Count);
 
-            txt_Nombre.Text = listaDeUsuarios[numeroRandom].NombreUsuario;
-            txt_Contrasenia.Text = listaDeUsuarios[numeroRandom].Contrasenia;
-        }
-
-        public void LimpiarPantalla()
-        {
-            txt_Nombre.Text = String.Empty;
-            txt_Contrasenia.Text = String.Empty;
-            lbl_Error.Visible = false;
+            txt_Nombre.Text = Sistema.ListaDeUsuarios[numeroRandom].NombreUsuario;
+            txt_Contrasenia.Text = Sistema.ListaDeUsuarios[numeroRandom].Contrasenia;
         }
 
         private void btn_Ver_Click(object sender, EventArgs e)
@@ -72,10 +63,7 @@ namespace Vista
             {
                 if(usuario.Rol == ERol.SuperUsuario)
                 {
-                    usuarioIngresado = usuario;
-                    FrmPrincipal formPrincipal = new FrmPrincipal(this);
-                    formPrincipal.Show();
-                    this.Hide();
+                    IngresarRapidoPorUsuario(usuario);
                     break;
                 }
             }
@@ -87,10 +75,7 @@ namespace Vista
             {
                 if (usuario.Rol == ERol.Empleado)
                 {
-                    usuarioIngresado = usuario;
-                    FrmPrincipal formPrincipal = new FrmPrincipal(this);
-                    formPrincipal.Show();
-                    this.Hide();
+                    IngresarRapidoPorUsuario(usuario);
                     break;
                 }
             }
@@ -102,13 +87,26 @@ namespace Vista
             {
                 if (usuario.Rol == ERol.Cliente)
                 {
-                    usuarioIngresado = usuario;
-                    FrmPrincipal formPrincipal = new FrmPrincipal(this);
-                    formPrincipal.Show();
-                    this.Hide();
+                    IngresarRapidoPorUsuario(usuario);
                     break;
                 }
             }
+        }
+
+        public void LimpiarPantalla()
+        {
+            txt_Nombre.Text = String.Empty;
+            txt_Contrasenia.Text = String.Empty;
+            lbl_Error.Visible = false;
+            txt_Contrasenia.UseSystemPasswordChar = true;
+        }
+
+        private void IngresarRapidoPorUsuario(Usuario usuario)
+        {
+            usuarioIngresado = usuario;
+            FrmPrincipal formPrincipal = new FrmPrincipal(this);
+            formPrincipal.Show();
+            this.Hide();
         }
     }
 }

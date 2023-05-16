@@ -12,11 +12,6 @@ namespace Helper
 {
     public class Archivo
     {
-        public Archivo()
-        {
-
-        }
-
         public static void CargarArchivos()
         {
             CargarListas("listaUsuarios.txt", new Usuario());
@@ -76,10 +71,8 @@ namespace Helper
 
             string[]? datoDividido = sr.ReadLine()?.Split(caracter);
 
-            if(datoDividido is not null)
-            {
+            if (datoDividido is not null)
                 listaDeDatos.AddRange(datoDividido);
-            }
 
             return listaDeDatos;
         }

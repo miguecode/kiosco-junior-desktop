@@ -33,7 +33,7 @@ namespace Vista
         {
             usuarioActual = formLogin.UsuarioIngresado;
             
-            configurarMenuPorRol(usuarioActual);
+            ConfigurarMenuPorRol(usuarioActual);
             CrearFormulariosMdi();
         }
 
@@ -53,7 +53,7 @@ namespace Vista
 
         private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            mostrarFormularioHijo(typeof(FrmProductos));
+            MostrarFormularioHijo(typeof(FrmProductos));
         }
 
         private void agregarProductosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -70,14 +70,14 @@ namespace Vista
                 formAltaProducto.Close();
         }
 
-        private void mostrarFormularioHijo(Type tipoFormulario)
+        private void MostrarFormularioHijo(Type tipoFormulario)
         {
             foreach (Form formulario in this.MdiChildren)
             {
-                if(formulario.GetType() != tipoFormulario)
-                {
+                if (formulario.GetType() != tipoFormulario)
                     formulario.Hide();
-                }else
+
+                else
                 {
                     formulario.WindowState = FormWindowState.Maximized;
                     formulario.Show();
@@ -87,10 +87,10 @@ namespace Vista
 
         private void verDatosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            mostrarFormularioHijo(typeof(FrmInfoUsuario));
+            MostrarFormularioHijo(typeof(FrmInfoUsuario));
         }
 
-        private void configurarMenuPorRol(Usuario usuarioRecibido)
+        private void ConfigurarMenuPorRol(Usuario usuarioRecibido)
         {
             sbl_NombreUsuario.Text = usuarioRecibido.NombreCompleto;
             sbl_DniUsuario.Text = $"DNI: {usuarioRecibido.Dni}";
@@ -98,9 +98,9 @@ namespace Vista
             if (usuarioRecibido.Rol == ERol.SuperUsuario)
             {
                 smi_Usuarios.Visible = true;
-                //smi_Cerrar.Margin.Left = 470
                 sbl_NombreUsuario.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
                 sbl_NombreUsuario.ForeColor = Color.FromArgb(234, 202, 51);
+                //smi_Cerrar.Margin.Left = 470
             }
             else if(usuarioRecibido.Rol == ERol.Cliente)
             {
@@ -109,11 +109,6 @@ namespace Vista
                 smi_Ventas.Visible = false;
                 verDatosToolStripMenuItem.Visible = false;
                 //smi_Cerrar.Margin.Left = 
-            }
-            else
-            {
-                //Empleado
-                //smi_Cerrar.Margin.Left = 320
             }
         }
 
@@ -126,12 +121,12 @@ namespace Vista
 
         private void smi_Usuarios_Click(object sender, EventArgs e)
         {
-            mostrarFormularioHijo(typeof(FrmGestionUsuario));
+            MostrarFormularioHijo(typeof(FrmGestionUsuario));
         }
 
         private void smi_Compras_Click(object sender, EventArgs e)
         {
-            mostrarFormularioHijo(typeof(FrmCompras));
+            MostrarFormularioHijo(typeof(FrmCompras));
         }
 
         private void CrearFormulariosMdi()
@@ -150,7 +145,7 @@ namespace Vista
 
         private void smi_Ventas_Click(object sender, EventArgs e)
         {
-            mostrarFormularioHijo(typeof(FrmVentas));
+            MostrarFormularioHijo(typeof(FrmVentas));
         }
     }
 }

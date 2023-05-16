@@ -87,6 +87,7 @@
             // 
             this.btn_Autocompletar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(149)))), ((int)(((byte)(165)))));
             this.btn_Autocompletar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Autocompletar.FlatAppearance.BorderSize = 0;
             this.btn_Autocompletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Autocompletar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Autocompletar.ForeColor = System.Drawing.SystemColors.Control;
@@ -167,6 +168,7 @@
             // 
             // btn_Ver
             // 
+            this.btn_Ver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Ver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Ver.Location = new System.Drawing.Point(279, 243);
             this.btn_Ver.Name = "btn_Ver";

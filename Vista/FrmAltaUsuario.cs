@@ -30,11 +30,15 @@ namespace Vista
         private void FrmAltaUsuario_Load(object sender, EventArgs e)
         {
             if (!esUsuarioNuevo)
-                RecibirDatosDelUsuarioAModificar();
+                ConfigurarDatosModificables();
         }
 
-        private void RecibirDatosDelUsuarioAModificar()
+        private void ConfigurarDatosModificables()
         {
+            if (!(usuarioIngresado.Rol == ERol.Cliente))
+                cmb_Rol.Enabled = false;
+
+            btn_VerContrasenia.Enabled = false;
             txt_NombreDeUsuario.Enabled = false;
             txt_Contrasenia.Enabled = false;
             cmb_Rol.Text = usuarioIngresado.Rol.ToString();

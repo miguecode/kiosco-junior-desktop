@@ -67,7 +67,7 @@ namespace Vista
 
         private void btn_BajaProducto_Click(object sender, EventArgs e)
         {
-            if(Sistema.ListaDeProductos.Count > 0)
+            if (Sistema.ListaDeProductos.Count > 0)
             {
                 Producto productoSeleccionado = SeleccionarProductoEspecifico();
                 Sistema.ListaDeProductos.Remove(productoSeleccionado);
@@ -83,9 +83,7 @@ namespace Vista
                 FrmAltaProducto formModificar = new FrmAltaProducto(productoSeleccionado, false);
 
                 if (formModificar.ShowDialog() == DialogResult.OK)
-                {
                     ActualizarDataGrid(Sistema.ListaDeProductos);
-                }
                 else
                     formModificar.Close();
             }

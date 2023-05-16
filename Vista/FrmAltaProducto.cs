@@ -28,10 +28,10 @@ namespace Vista
         private void FrmAltaProducto_Load(object sender, EventArgs e)
         {
             if(!esProductoNuevo)
-                RecibirDatosDelProductoAModificar();
+                AsignarDatosAlUsuario();
         }
 
-        private void RecibirDatosDelProductoAModificar()
+        private void AsignarDatosAlUsuario()
         {
             cmb_Tipo.Text = productoIngresado.Tipo.ToString();
             txt_Nombre.Text = productoIngresado.Nombre;
@@ -54,7 +54,6 @@ namespace Vista
                     VerificarSiExisteProducto(productoIngresado);
 
                 this.DialogResult = DialogResult.OK;
-
             }catch(Exception ex)
             {
                 lbl_Error.Visible = true;
@@ -89,9 +88,7 @@ namespace Vista
             foreach (Producto producto in Sistema.ListaDeProductos)
             {
                 if (producto == productoRecibido)
-                {
                     throw new Exception("Ese producto ya existe");
-                }
             }
         }
 

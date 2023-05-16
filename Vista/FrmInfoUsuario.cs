@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,19 +24,28 @@ namespace Vista
 
         private void FrmInfoUsuario_Load(object sender, EventArgs e)
         {
-            if(usuarioIngresado is not null)
-            {
-                lbl_Nombre.Text = usuarioIngresado.Nombre;
-                lbl_Apellido.Text = usuarioIngresado.Apellido;
-                lbl_Dni.Text = usuarioIngresado.Dni.ToString();
-                lbl_NombreDeUsuario.Text = usuarioIngresado.NombreUsuario;
-                lbl_Rol.Text = usuarioIngresado.Rol.ToString();
-            }
+            if (usuarioIngresado is not null)
+                AsignarDatos();
         }
 
         private void btn_Modificar_Click(object sender, EventArgs e)
         {
+            FrmAltaUsuario formModificar = new FrmAltaUsuario(usuarioIngresado, false);
 
+            if (formModificar.ShowDialog() == DialogResult.OK)
+                AsignarDatos();
+
+            else
+                formModificar.Close();
+        }
+
+        private void AsignarDatos()
+        {
+            lbl_Nombre.Text = usuarioIngresado.Nombre;
+            lbl_Apellido.Text = usuarioIngresado.Apellido;
+            lbl_Dni.Text = usuarioIngresado.Dni.ToString();
+            lbl_NombreDeUsuario.Text = usuarioIngresado.NombreUsuario;
+            lbl_Rol.Text = usuarioIngresado.Rol.ToString();
         }
     }
 }

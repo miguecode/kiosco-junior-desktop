@@ -23,9 +23,9 @@ namespace Vista
         {
             InitializeComponent();
             clienteActual = ConvertirUsuarioACliente(usuarioActual);
+            ventaActual = new Venta();
             menu = new List<Producto>();
             menu.AddRange(Sistema.ListaDeProductos);
-            ventaActual = new Venta();
         }
 
         private void FrmCompras_Load(object sender, EventArgs e)
@@ -33,7 +33,6 @@ namespace Vista
             dtg_Productos.DataSource = null;
             dtg_Productos.DataSource = menu;
             OcultarProductosAgotados();
-
         }
 
         private void btn_Agregar_Click(object sender, EventArgs e)
@@ -80,7 +79,7 @@ namespace Vista
         {
             Producto productoSeleccionado = SeleccionarProductoEspecifico();
 
-            if(productoSeleccionado is not null)
+            if (productoSeleccionado is not null)
             {
                 clienteActual.Carrito.Add(productoSeleccionado);
                 lbl_Error.Visible = false;
@@ -121,29 +120,23 @@ namespace Vista
 
         private void btn_Confirmar_Click(object sender, EventArgs e)
         {
-            if(clienteActual.Carrito.Count > 0)
+            if (clienteActual.Carrito.Count > 0)
             {
                 string nombreCliente = clienteActual.NombreCompleto;
-                //List<Producto> carrito = clienteActual.Carrito;
-
-                //string factura = ventaActual.EscribirLista(clienteActual.Carrito);
-
                 float valorTotal = precioTotal;
-
-                //ventaActual = new Venta(nombreCliente, factura, valorTotal);
 
                 ventaActual = new Venta(nombreCliente, valorTotal);
 
                 Sistema.ListaDeVentas.Add(ventaActual);
 
                 StringBuilder sb = new StringBuilder();
-                sb.AppendLine($"ID: {ventaActual.Id}");
-                sb.AppendLine($"Nombre Cliente: {ventaActual.NombreCliente}");
-                sb.AppendLine($"Valor Total: {ventaActual.ValorTotal}");
-                //sb.AppendLine($"Cantidad de productos: {ventaActual.CantidadProductos}");
-                sb.AppendLine($"Productos:\n{ventaActual.EscribirLista(clienteActual.Carrito)}");
+                sb.AppendLine("¡Compra realizada con éxito!\n");
+                sb.AppendLine($"ID de la transacción: {ventaActual.Id}");
+                sb.AppendLine($"Cantidad de productos comprados: {clienteActual.TamañoDeCarrito}");
+                sb.AppendLine($"Comprador: {nombreCliente}\n");
+                sb.AppendLine($"Importe Total: $ {ventaActual.ValorTotal.ToString("0.00")}");;
 
-                MessageBox.Show(sb.ToString());
+                MessageBox.Show(sb.ToString(), "Kiosco Junior");
 
                 ReducirStockProducto();
 
@@ -171,9 +164,7 @@ namespace Vista
             foreach (Producto producto in Sistema.ListaDeProductos)
             {
                 if (producto.Stock == 0)
-                {
                     menu.Remove(producto);
-                }
             }
         }
 

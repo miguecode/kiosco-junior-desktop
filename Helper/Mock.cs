@@ -9,8 +9,8 @@ namespace Helper
 {
     public static class Mock
     {
-        public static List<Usuario> listaDeUsuariosHardcodeada;
-        public static List<Producto> listaDeProductosHardcodeada;
+        public static List<Usuario>? listaDeUsuariosHardcodeada;
+        public static List<Producto>? listaDeProductosHardcodeada;
 
         static Mock()
         {
@@ -39,9 +39,5 @@ namespace Helper
             listaDeProductosHardcodeada.Add(new Producto("Papitas chicas", ETipo.Snack, "Lays", "Papitas clásicas chicas.", 100, 80));
             return listaDeProductosHardcodeada;
         }
-
-
-
-
     }
 }

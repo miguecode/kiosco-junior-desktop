@@ -51,7 +51,7 @@ namespace Entidades
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public float Precio { get => precio; set => precio = value; }
         public int Stock { get => stock; set => stock = value; }
-        public int Id { get => id; set => id = value; }
+        public int Id { get => id; }
 
         public override string GetParser()
         {

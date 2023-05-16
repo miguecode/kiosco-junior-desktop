@@ -11,7 +11,7 @@ namespace Entidades
     {
         private List<Producto> carrito;
         public List<Producto> Carrito { get => carrito; set => carrito = value; }
-
+        public int TamañoDeCarrito { get => carrito.Count; }
         public Cliente(string nombre, string apellido, int dni, string nombreUsuario, string contrasenia, ERol rol)                     
                                                                 :base(nombre, apellido, dni, nombreUsuario, contrasenia, rol)
         {

@@ -157,6 +157,7 @@
             // btn_Confirmar
             // 
             this.btn_Confirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(136)))), ((int)(((byte)(4)))));
+            this.btn_Confirmar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Confirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Confirmar.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Confirmar.ForeColor = System.Drawing.SystemColors.HighlightText;
@@ -171,6 +172,7 @@
             // btn_Cancelar
             // 
             this.btn_Cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(58)))), ((int)(((byte)(10)))));
+            this.btn_Cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cancelar.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Cancelar.ForeColor = System.Drawing.SystemColors.HighlightText;
@@ -185,9 +187,10 @@
             // btn_VerContrasenia
             // 
             this.btn_VerContrasenia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.btn_VerContrasenia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_VerContrasenia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_VerContrasenia.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_VerContrasenia.Location = new System.Drawing.Point(539, 115);
+            this.btn_VerContrasenia.Location = new System.Drawing.Point(539, 116);
             this.btn_VerContrasenia.Name = "btn_VerContrasenia";
             this.btn_VerContrasenia.Size = new System.Drawing.Size(38, 23);
             this.btn_VerContrasenia.TabIndex = 13;
