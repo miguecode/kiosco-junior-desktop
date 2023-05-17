@@ -32,21 +32,22 @@ namespace Vista
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             usuarioActual = formLogin.UsuarioIngresado;
-            
-            ConfigurarMenuPorRol(usuarioActual);
+            IsMdiContainer = true;
             CrearFormulariosMdi();
+            ConfigurarMenuPorRol(usuarioActual);
         }
 
         private void smi_Cerrar_Click(object sender, EventArgs e)
         {
             formLogin.Close();
-            this.Close();
+            Close();
         }
 
         private void smi_Inicio_Click(object sender, EventArgs e)
         {
             foreach (var formularioHijo in this.MdiChildren)
             {
+                //pnl_Principal.Visible = true;
                 formularioHijo.Hide();
             }
         }
@@ -79,6 +80,7 @@ namespace Vista
 
                 else
                 {
+                    //pnl_Principal.Visible = false;
                     formulario.WindowState = FormWindowState.Maximized;
                     formulario.Show();
                 }

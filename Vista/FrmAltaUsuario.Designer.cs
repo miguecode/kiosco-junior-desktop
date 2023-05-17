@@ -156,11 +156,12 @@
             // 
             // btn_Confirmar
             // 
-            this.btn_Confirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(136)))), ((int)(((byte)(4)))));
+            this.btn_Confirmar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(143)))), ((int)(((byte)(16)))));
             this.btn_Confirmar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Confirmar.FlatAppearance.BorderSize = 0;
             this.btn_Confirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Confirmar.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Confirmar.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btn_Confirmar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_Confirmar.Location = new System.Drawing.Point(393, 162);
             this.btn_Confirmar.Name = "btn_Confirmar";
             this.btn_Confirmar.Size = new System.Drawing.Size(140, 45);
@@ -171,11 +172,12 @@
             // 
             // btn_Cancelar
             // 
-            this.btn_Cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(58)))), ((int)(((byte)(10)))));
+            this.btn_Cancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(45)))), ((int)(((byte)(0)))));
             this.btn_Cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Cancelar.FlatAppearance.BorderSize = 0;
             this.btn_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cancelar.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Cancelar.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btn_Cancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.btn_Cancelar.Location = new System.Drawing.Point(393, 213);
             this.btn_Cancelar.Name = "btn_Cancelar";
             this.btn_Cancelar.Size = new System.Drawing.Size(140, 34);
@@ -186,7 +188,7 @@
             // 
             // btn_VerContrasenia
             // 
-            this.btn_VerContrasenia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.btn_VerContrasenia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.btn_VerContrasenia.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_VerContrasenia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_VerContrasenia.ForeColor = System.Drawing.SystemColors.HighlightText;
@@ -227,9 +229,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(55)))), ((int)(((byte)(71)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.ClientSize = new System.Drawing.Size(592, 318);
-            this.ControlBox = false;
             this.Controls.Add(this.lbl_Rol);
             this.Controls.Add(this.cmb_Rol);
             this.Controls.Add(this.btn_VerContrasenia);
@@ -250,6 +251,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FrmAltaUsuario";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Datos del Usuario";
             this.Load += new System.EventHandler(this.FrmAltaUsuario_Load);
