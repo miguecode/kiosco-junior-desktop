@@ -36,7 +36,7 @@
             this.txt_Contrasenia = new System.Windows.Forms.TextBox();
             this.lbl_Error = new System.Windows.Forms.Label();
             this.pic_Login = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_Bienvenido = new System.Windows.Forms.Label();
             this.btn_IngresarAdmin = new System.Windows.Forms.Button();
             this.btn_Ver = new System.Windows.Forms.Button();
             this.btn_IngresarCliente = new System.Windows.Forms.Button();
@@ -49,7 +49,7 @@
             // 
             this.lbl_Nombre.AutoSize = true;
             this.lbl_Nombre.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Nombre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(102)))), ((int)(((byte)(230)))));
+            this.lbl_Nombre.ForeColor = System.Drawing.Color.White;
             this.lbl_Nombre.Location = new System.Drawing.Point(129, 163);
             this.lbl_Nombre.Name = "lbl_Nombre";
             this.lbl_Nombre.Size = new System.Drawing.Size(67, 20);
@@ -60,7 +60,7 @@
             // 
             this.lbl_Contrasenia.AutoSize = true;
             this.lbl_Contrasenia.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Contrasenia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(102)))), ((int)(((byte)(230)))));
+            this.lbl_Contrasenia.ForeColor = System.Drawing.Color.White;
             this.lbl_Contrasenia.Location = new System.Drawing.Point(129, 220);
             this.lbl_Contrasenia.Name = "lbl_Contrasenia";
             this.lbl_Contrasenia.Size = new System.Drawing.Size(88, 20);
@@ -69,11 +69,11 @@
             // 
             // btn_Ingresar
             // 
-            this.btn_Ingresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(91)))), ((int)(((byte)(176)))));
+            this.btn_Ingresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(75)))), ((int)(((byte)(171)))));
             this.btn_Ingresar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Ingresar.FlatAppearance.BorderSize = 0;
             this.btn_Ingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Ingresar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Ingresar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Ingresar.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_Ingresar.Location = new System.Drawing.Point(338, 168);
             this.btn_Ingresar.Name = "btn_Ingresar";
@@ -85,11 +85,11 @@
             // 
             // btn_Autocompletar
             // 
-            this.btn_Autocompletar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(7)))), ((int)(((byte)(149)))), ((int)(((byte)(165)))));
+            this.btn_Autocompletar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(105)))), ((int)(((byte)(201)))));
             this.btn_Autocompletar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Autocompletar.FlatAppearance.BorderSize = 0;
             this.btn_Autocompletar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Autocompletar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Autocompletar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Autocompletar.ForeColor = System.Drawing.SystemColors.Control;
             this.btn_Autocompletar.Location = new System.Drawing.Point(338, 228);
             this.btn_Autocompletar.Name = "btn_Autocompletar";
@@ -119,7 +119,7 @@
             // 
             this.lbl_Error.AutoSize = true;
             this.lbl_Error.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Error.ForeColor = System.Drawing.Color.OrangeRed;
+            this.lbl_Error.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(45)))), ((int)(((byte)(0)))));
             this.lbl_Error.Location = new System.Drawing.Point(129, 285);
             this.lbl_Error.Name = "lbl_Error";
             this.lbl_Error.Padding = new System.Windows.Forms.Padding(2);
@@ -138,20 +138,20 @@
             this.pic_Login.TabIndex = 7;
             this.pic_Login.TabStop = false;
             // 
-            // label1
+            // lbl_Bienvenido
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(102)))), ((int)(((byte)(230)))));
-            this.label1.Location = new System.Drawing.Point(213, 121);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(145, 29);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "BIENVENIDO";
+            this.lbl_Bienvenido.AutoSize = true;
+            this.lbl_Bienvenido.Font = new System.Drawing.Font("Candara", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Bienvenido.ForeColor = System.Drawing.Color.White;
+            this.lbl_Bienvenido.Location = new System.Drawing.Point(213, 121);
+            this.lbl_Bienvenido.Name = "lbl_Bienvenido";
+            this.lbl_Bienvenido.Size = new System.Drawing.Size(145, 29);
+            this.lbl_Bienvenido.TabIndex = 8;
+            this.lbl_Bienvenido.Text = "BIENVENIDO";
             // 
             // btn_IngresarAdmin
             // 
-            this.btn_IngresarAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(102)))), ((int)(((byte)(230)))));
+            this.btn_IngresarAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(75)))), ((int)(((byte)(171)))));
             this.btn_IngresarAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_IngresarAdmin.FlatAppearance.BorderColor = System.Drawing.Color.Goldenrod;
             this.btn_IngresarAdmin.FlatAppearance.BorderSize = 3;
@@ -170,6 +170,7 @@
             // 
             this.btn_Ver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Ver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Ver.ForeColor = System.Drawing.Color.White;
             this.btn_Ver.Location = new System.Drawing.Point(279, 243);
             this.btn_Ver.Name = "btn_Ver";
             this.btn_Ver.Size = new System.Drawing.Size(33, 23);
@@ -180,7 +181,7 @@
             // 
             // btn_IngresarCliente
             // 
-            this.btn_IngresarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(102)))), ((int)(((byte)(230)))));
+            this.btn_IngresarCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(75)))), ((int)(((byte)(171)))));
             this.btn_IngresarCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_IngresarCliente.FlatAppearance.BorderColor = System.Drawing.Color.Green;
             this.btn_IngresarCliente.FlatAppearance.BorderSize = 3;
@@ -197,9 +198,9 @@
             // 
             // btn_IngresarEmpleado
             // 
-            this.btn_IngresarEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(102)))), ((int)(((byte)(230)))));
+            this.btn_IngresarEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(75)))), ((int)(((byte)(171)))));
             this.btn_IngresarEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_IngresarEmpleado.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btn_IngresarEmpleado.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(86)))), ((int)(((byte)(86)))));
             this.btn_IngresarEmpleado.FlatAppearance.BorderSize = 3;
             this.btn_IngresarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_IngresarEmpleado.Font = new System.Drawing.Font("Montserrat", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -215,8 +216,9 @@
             // lbl_IngresosRapidos
             // 
             this.lbl_IngresosRapidos.AutoSize = true;
+            this.lbl_IngresosRapidos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.lbl_IngresosRapidos.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_IngresosRapidos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(102)))), ((int)(((byte)(230)))));
+            this.lbl_IngresosRapidos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(75)))), ((int)(((byte)(171)))));
             this.lbl_IngresosRapidos.Location = new System.Drawing.Point(493, 31);
             this.lbl_IngresosRapidos.Name = "lbl_IngresosRapidos";
             this.lbl_IngresosRapidos.Size = new System.Drawing.Size(129, 20);
@@ -227,14 +229,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.ClientSize = new System.Drawing.Size(634, 335);
             this.Controls.Add(this.lbl_IngresosRapidos);
             this.Controls.Add(this.btn_IngresarEmpleado);
             this.Controls.Add(this.btn_IngresarCliente);
             this.Controls.Add(this.btn_Ver);
             this.Controls.Add(this.btn_IngresarAdmin);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_Bienvenido);
             this.Controls.Add(this.pic_Login);
             this.Controls.Add(this.lbl_Error);
             this.Controls.Add(this.txt_Contrasenia);
@@ -265,7 +267,7 @@
         private TextBox txt_Contrasenia;
         private Label lbl_Error;
         private PictureBox pic_Login;
-        private Label label1;
+        private Label lbl_Bienvenido;
         private Button btn_IngresarAdmin;
         private Button btn_Ver;
         private Button btn_IngresarCliente;

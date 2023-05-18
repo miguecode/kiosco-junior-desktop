@@ -46,12 +46,47 @@ namespace Vista
                 EscribirPrecioTotal();
 
                 ActualizarDataGrids(menu, clienteActual.Carrito);
-            }catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 lbl_Error.Text = ex.Message;
                 lbl_Error.Visible = true;
             }
         }
+
+        private void btn_Confirmar_Click(object sender, EventArgs e)
+        {
+            if (clienteActual.Carrito.Count > 0)
+            {
+                string nombreCliente = clienteActual.NombreCompleto;
+                float valorTotal = precioTotal;
+
+                ventaActual = new Venta(nombreCliente, valorTotal);
+
+                Sistema.ListaDeVentas.Add(ventaActual);
+
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine("¡Compra realizada con éxito!\n");
+                sb.AppendLine($"ID de la transacción: {ventaActual.Id}");
+                sb.AppendLine($"Cantidad de productos comprados: {clienteActual.TamañoDeCarrito}");
+                sb.AppendLine($"Comprador: {nombreCliente}\n");
+                sb.AppendLine($"Importe Total: $ {ventaActual.ValorTotal.ToString("0.00")}"); ;
+
+                MessageBox.Show(sb.ToString(), "Kiosco Junior");
+
+                ReducirStockProducto();
+
+                OcultarProductosAgotados();
+
+                ReiniciarCarrito();
+            }
+        }
+
+        private void btn_VaciarCarrito_Click(object sender, EventArgs e)
+        {
+            ReiniciarCarrito();
+        }
+
         private void VerificarProductoStock()
         {
             Producto productoSeleccionado = SeleccionarProductoEspecifico();
@@ -83,7 +118,8 @@ namespace Vista
             {
                 clienteActual.Carrito.Add(productoSeleccionado);
                 lbl_Error.Visible = false;
-            }else
+            }
+            else
                 throw new Exception("Producto no encontrado");
         }
 
@@ -109,46 +145,13 @@ namespace Vista
             foreach (Producto producto in Sistema.ListaDeProductos)
             {
                 if (clienteActual.Carrito.Contains(producto))
-                {                
+                {
                     int contador = ContarRepeticionesProducto(producto);
                     contador--;
 
                     producto.Stock -= contador;
                 }
             }
-        }
-
-        private void btn_Confirmar_Click(object sender, EventArgs e)
-        {
-            if (clienteActual.Carrito.Count > 0)
-            {
-                string nombreCliente = clienteActual.NombreCompleto;
-                float valorTotal = precioTotal;
-
-                ventaActual = new Venta(nombreCliente, valorTotal);
-
-                Sistema.ListaDeVentas.Add(ventaActual);
-
-                StringBuilder sb = new StringBuilder();
-                sb.AppendLine("¡Compra realizada con éxito!\n");
-                sb.AppendLine($"ID de la transacción: {ventaActual.Id}");
-                sb.AppendLine($"Cantidad de productos comprados: {clienteActual.TamañoDeCarrito}");
-                sb.AppendLine($"Comprador: {nombreCliente}\n");
-                sb.AppendLine($"Importe Total: $ {ventaActual.ValorTotal.ToString("0.00")}");;
-
-                MessageBox.Show(sb.ToString(), "Kiosco Junior");
-
-                ReducirStockProducto();
-
-                OcultarProductosAgotados();
-
-                ReiniciarCarrito();
-            }
-        }
-
-        private void btn_VaciarCarrito_Click(object sender, EventArgs e)
-        {
-            ReiniciarCarrito();
         }
 
         private void ReiniciarCarrito()

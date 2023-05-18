@@ -7,23 +7,9 @@ using System.Threading.Tasks;
 
 namespace Helper
 {
-    public static class Sistema
+    public class Autenticacion
     {
-        private static List<Usuario> listaDeUsuarios;
-        private static List<Producto> listaDeProductos;
-        private static List<Venta> listaDeVentas;
-        public static List<Usuario> ListaDeUsuarios { get => listaDeUsuarios; }
-        public static List<Producto> ListaDeProductos { get => listaDeProductos; }
-        public static List<Venta> ListaDeVentas { get => listaDeVentas; }
-
-        static Sistema()
-        {
-            listaDeUsuarios = new List<Usuario>();
-            listaDeProductos = new List<Producto>();
-            listaDeVentas = new List<Venta>();
-        }
-
-        /*public static Usuario ConfirmarIngreso(string nick, string contrasenia)
+        public static Usuario ConfirmarIngreso(string nick, string contrasenia)
         {
             if (!String.IsNullOrEmpty(nick) && !String.IsNullOrEmpty(contrasenia))
             {
@@ -41,13 +27,13 @@ namespace Helper
 
         private static Usuario? ValidarUsuarioExistente(string nick, string contrasenia)
         {
-            foreach (Usuario usuario in listaDeUsuarios)
+            foreach (Usuario usuario in Sistema.ListaDeUsuarios)
             {
                 if (usuario.NombreUsuario == nick && usuario.Contrasenia == contrasenia)
                     return usuario;
             }
 
             return null;
-        }*/
+        }
     }
 }

@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtg_Ventas = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,30 +56,40 @@
             this.dtg_Ventas.AllowUserToResizeRows = false;
             this.dtg_Ventas.AutoGenerateColumns = false;
             this.dtg_Ventas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.dtg_Ventas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dtg_Ventas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtg_Ventas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlDark;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtg_Ventas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtg_Ventas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dtg_Ventas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_Ventas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nombreClienteDataGridViewTextBoxColumn,
             this.valorTotalDataGridViewTextBoxColumn});
             this.dtg_Ventas.DataSource = this.ventaBindingSource;
-            this.dtg_Ventas.Location = new System.Drawing.Point(12, 12);
+            this.dtg_Ventas.EnableHeadersVisualStyles = false;
+            this.dtg_Ventas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(75)))), ((int)(((byte)(171)))));
+            this.dtg_Ventas.Location = new System.Drawing.Point(22, 12);
             this.dtg_Ventas.MultiSelect = false;
             this.dtg_Ventas.Name = "dtg_Ventas";
             this.dtg_Ventas.ReadOnly = true;
+            this.dtg_Ventas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dtg_Ventas.RowHeadersVisible = false;
             this.dtg_Ventas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(75)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dtg_Ventas.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dtg_Ventas.RowTemplate.Height = 25;
             this.dtg_Ventas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtg_Ventas.Size = new System.Drawing.Size(308, 350);
+            this.dtg_Ventas.Size = new System.Drawing.Size(327, 323);
             this.dtg_Ventas.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
@@ -97,14 +108,14 @@
             this.nombreClienteDataGridViewTextBoxColumn.Name = "nombreClienteDataGridViewTextBoxColumn";
             this.nombreClienteDataGridViewTextBoxColumn.ReadOnly = true;
             this.nombreClienteDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.nombreClienteDataGridViewTextBoxColumn.Width = 170;
+            this.nombreClienteDataGridViewTextBoxColumn.Width = 175;
             // 
             // valorTotalDataGridViewTextBoxColumn
             // 
             this.valorTotalDataGridViewTextBoxColumn.DataPropertyName = "ValorTotal";
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = "0,00";
-            this.valorTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = "0,00";
+            this.valorTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.valorTotalDataGridViewTextBoxColumn.HeaderText = "Ingreso";
             this.valorTotalDataGridViewTextBoxColumn.Name = "valorTotalDataGridViewTextBoxColumn";
             this.valorTotalDataGridViewTextBoxColumn.ReadOnly = true;
@@ -122,9 +133,9 @@
             this.btn_Borrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Borrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Borrar.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_Borrar.Location = new System.Drawing.Point(12, 368);
+            this.btn_Borrar.Location = new System.Drawing.Point(196, 341);
             this.btn_Borrar.Name = "btn_Borrar";
-            this.btn_Borrar.Size = new System.Drawing.Size(145, 33);
+            this.btn_Borrar.Size = new System.Drawing.Size(153, 35);
             this.btn_Borrar.TabIndex = 1;
             this.btn_Borrar.Text = "Borrar historial";
             this.btn_Borrar.UseVisualStyleBackColor = false;
@@ -133,22 +144,22 @@
             // lbl_TituloIngresos
             // 
             this.lbl_TituloIngresos.AutoSize = true;
-            this.lbl_TituloIngresos.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_TituloIngresos.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_TituloIngresos.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_TituloIngresos.Location = new System.Drawing.Point(343, 317);
+            this.lbl_TituloIngresos.Location = new System.Drawing.Point(367, 294);
             this.lbl_TituloIngresos.Name = "lbl_TituloIngresos";
-            this.lbl_TituloIngresos.Size = new System.Drawing.Size(302, 45);
+            this.lbl_TituloIngresos.Size = new System.Drawing.Size(282, 41);
             this.lbl_TituloIngresos.TabIndex = 2;
             this.lbl_TituloIngresos.Text = "Ingresos totales: $ ";
             // 
             // lbl_IngresosTotales
             // 
             this.lbl_IngresosTotales.AutoSize = true;
-            this.lbl_IngresosTotales.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_IngresosTotales.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_IngresosTotales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(163)))), ((int)(((byte)(37)))));
-            this.lbl_IngresosTotales.Location = new System.Drawing.Point(624, 317);
+            this.lbl_IngresosTotales.Location = new System.Drawing.Point(636, 294);
             this.lbl_IngresosTotales.Name = "lbl_IngresosTotales";
-            this.lbl_IngresosTotales.Size = new System.Drawing.Size(38, 45);
+            this.lbl_IngresosTotales.Size = new System.Drawing.Size(35, 41);
             this.lbl_IngresosTotales.TabIndex = 3;
             this.lbl_IngresosTotales.Text = "0";
             // 
@@ -157,7 +168,7 @@
             this.lbl_TituloVentasTotales.AutoSize = true;
             this.lbl_TituloVentasTotales.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_TituloVentasTotales.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_TituloVentasTotales.Location = new System.Drawing.Point(343, 255);
+            this.lbl_TituloVentasTotales.Location = new System.Drawing.Point(367, 254);
             this.lbl_TituloVentasTotales.Name = "lbl_TituloVentasTotales";
             this.lbl_TituloVentasTotales.Size = new System.Drawing.Size(176, 31);
             this.lbl_TituloVentasTotales.TabIndex = 4;
@@ -168,7 +179,7 @@
             this.lbl_VentasTotales.AutoSize = true;
             this.lbl_VentasTotales.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_VentasTotales.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_VentasTotales.Location = new System.Drawing.Point(510, 255);
+            this.lbl_VentasTotales.Location = new System.Drawing.Point(529, 254);
             this.lbl_VentasTotales.Name = "lbl_VentasTotales";
             this.lbl_VentasTotales.Size = new System.Drawing.Size(27, 31);
             this.lbl_VentasTotales.TabIndex = 5;
@@ -179,7 +190,7 @@
             this.lbl_TituloComprador.AutoSize = true;
             this.lbl_TituloComprador.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_TituloComprador.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_TituloComprador.Location = new System.Drawing.Point(343, 149);
+            this.lbl_TituloComprador.Location = new System.Drawing.Point(367, 177);
             this.lbl_TituloComprador.Name = "lbl_TituloComprador";
             this.lbl_TituloComprador.Size = new System.Drawing.Size(304, 31);
             this.lbl_TituloComprador.TabIndex = 6;
@@ -190,7 +201,7 @@
             this.lbl_CompradorFrecuente.AutoSize = true;
             this.lbl_CompradorFrecuente.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_CompradorFrecuente.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_CompradorFrecuente.Location = new System.Drawing.Point(343, 180);
+            this.lbl_CompradorFrecuente.Location = new System.Drawing.Point(367, 208);
             this.lbl_CompradorFrecuente.Name = "lbl_CompradorFrecuente";
             this.lbl_CompradorFrecuente.Size = new System.Drawing.Size(102, 31);
             this.lbl_CompradorFrecuente.TabIndex = 7;
@@ -200,8 +211,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
-            this.ClientSize = new System.Drawing.Size(800, 411);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.ClientSize = new System.Drawing.Size(800, 430);
             this.ControlBox = false;
             this.Controls.Add(this.lbl_CompradorFrecuente);
             this.Controls.Add(this.lbl_TituloComprador);

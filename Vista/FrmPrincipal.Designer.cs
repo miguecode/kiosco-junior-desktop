@@ -31,8 +31,6 @@
             this.msp_Principal = new System.Windows.Forms.MenuStrip();
             this.smi_Inicio = new System.Windows.Forms.ToolStripMenuItem();
             this.smi_Producto = new System.Windows.Forms.ToolStripMenuItem();
-            this.verProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.agregarProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.smi_Ventas = new System.Windows.Forms.ToolStripMenuItem();
             this.smi_Compras = new System.Windows.Forms.ToolStripMenuItem();
             this.smi_Usuarios = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,8 +41,12 @@
             this.sta_Datos = new System.Windows.Forms.StatusStrip();
             this.sbl_NombreUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.sbl_DniUsuario = new System.Windows.Forms.ToolStripStatusLabel();
+            this.pnl_Imagen = new System.Windows.Forms.Panel();
+            this.pic_ImagenPrincipal = new System.Windows.Forms.PictureBox();
             this.msp_Principal.SuspendLayout();
             this.sta_Datos.SuspendLayout();
+            this.pnl_Imagen.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_ImagenPrincipal)).BeginInit();
             this.SuspendLayout();
             // 
             // msp_Principal
@@ -81,28 +83,12 @@
             // 
             this.smi_Producto.Checked = true;
             this.smi_Producto.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.smi_Producto.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.verProductosToolStripMenuItem,
-            this.agregarProductosToolStripMenuItem});
             this.smi_Producto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.smi_Producto.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.smi_Producto.Name = "smi_Producto";
             this.smi_Producto.Size = new System.Drawing.Size(99, 37);
             this.smi_Producto.Text = "Productos";
-            // 
-            // verProductosToolStripMenuItem
-            // 
-            this.verProductosToolStripMenuItem.Name = "verProductosToolStripMenuItem";
-            this.verProductosToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
-            this.verProductosToolStripMenuItem.Text = "Ver Productos";
-            this.verProductosToolStripMenuItem.Click += new System.EventHandler(this.verProductosToolStripMenuItem_Click);
-            // 
-            // agregarProductosToolStripMenuItem
-            // 
-            this.agregarProductosToolStripMenuItem.Name = "agregarProductosToolStripMenuItem";
-            this.agregarProductosToolStripMenuItem.Size = new System.Drawing.Size(222, 26);
-            this.agregarProductosToolStripMenuItem.Text = "Agregar Productos";
-            this.agregarProductosToolStripMenuItem.Click += new System.EventHandler(this.agregarProductosToolStripMenuItem_Click);
+            this.smi_Producto.Click += new System.EventHandler(this.smi_Producto_Click);
             // 
             // smi_Ventas
             // 
@@ -151,14 +137,14 @@
             // verDatosToolStripMenuItem
             // 
             this.verDatosToolStripMenuItem.Name = "verDatosToolStripMenuItem";
-            this.verDatosToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.verDatosToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
             this.verDatosToolStripMenuItem.Text = "Ver datos";
             this.verDatosToolStripMenuItem.Click += new System.EventHandler(this.verDatosToolStripMenuItem_Click);
             // 
             // cerrarSesiónToolStripMenuItem
             // 
             this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
             this.cerrarSesiónToolStripMenuItem.Text = "Cerrar sesión";
             this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
             // 
@@ -203,13 +189,35 @@
             this.sbl_DniUsuario.Size = new System.Drawing.Size(101, 20);
             this.sbl_DniUsuario.Text = "DNI 00000000";
             // 
+            // pnl_Imagen
+            // 
+            this.pnl_Imagen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.pnl_Imagen.Controls.Add(this.pic_ImagenPrincipal);
+            this.pnl_Imagen.Location = new System.Drawing.Point(0, 38);
+            this.pnl_Imagen.Name = "pnl_Imagen";
+            this.pnl_Imagen.Size = new System.Drawing.Size(800, 417);
+            this.pnl_Imagen.TabIndex = 7;
+            // 
+            // pic_ImagenPrincipal
+            // 
+            this.pic_ImagenPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pic_ImagenPrincipal.Image = global::Vista.Properties.Resources.mercado;
+            this.pic_ImagenPrincipal.Location = new System.Drawing.Point(120, 65);
+            this.pic_ImagenPrincipal.Name = "pic_ImagenPrincipal";
+            this.pic_ImagenPrincipal.Size = new System.Drawing.Size(564, 282);
+            this.pic_ImagenPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pic_ImagenPrincipal.TabIndex = 0;
+            this.pic_ImagenPrincipal.TabStop = false;
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlText;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(800, 480);
             this.ControlBox = false;
+            this.Controls.Add(this.pnl_Imagen);
             this.Controls.Add(this.sta_Datos);
             this.Controls.Add(this.msp_Principal);
             this.DoubleBuffered = true;
@@ -225,6 +233,8 @@
             this.msp_Principal.PerformLayout();
             this.sta_Datos.ResumeLayout(false);
             this.sta_Datos.PerformLayout();
+            this.pnl_Imagen.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_ImagenPrincipal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,8 +247,6 @@
         private StatusStrip sta_Datos;
         private ToolStripStatusLabel sbl_NombreUsuario;
         private ToolStripMenuItem smi_Cerrar;
-        private ToolStripMenuItem verProductosToolStripMenuItem;
-        private ToolStripMenuItem agregarProductosToolStripMenuItem;
         private ToolStripMenuItem smi_Cuenta;
         private ToolStripMenuItem verDatosToolStripMenuItem;
         private ToolStripMenuItem cerrarSesiónToolStripMenuItem;
@@ -246,5 +254,7 @@
         private ToolStripStatusLabel sbl_DniUsuario;
         private ToolStripMenuItem smi_Compras;
         private ToolStripMenuItem smi_Ventas;
+        private Panel pnl_Imagen;
+        private PictureBox pic_ImagenPrincipal;
     }
 }

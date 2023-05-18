@@ -155,34 +155,35 @@
             // lbl_Titulo
             // 
             this.lbl_Titulo.AutoSize = true;
-            this.lbl_Titulo.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Titulo.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_Titulo.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_Titulo.Location = new System.Drawing.Point(182, 28);
+            this.lbl_Titulo.Location = new System.Drawing.Point(182, 24);
             this.lbl_Titulo.Name = "lbl_Titulo";
-            this.lbl_Titulo.Size = new System.Drawing.Size(190, 41);
+            this.lbl_Titulo.Size = new System.Drawing.Size(203, 45);
             this.lbl_Titulo.TabIndex = 12;
             this.lbl_Titulo.Text = "Información";
             // 
             // btn_Modificar
             // 
+            this.btn_Modificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.btn_Modificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Modificar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Modificar.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.btn_Modificar.Location = new System.Drawing.Point(418, 41);
+            this.btn_Modificar.Location = new System.Drawing.Point(418, 32);
             this.btn_Modificar.Name = "btn_Modificar";
-            this.btn_Modificar.Size = new System.Drawing.Size(143, 28);
+            this.btn_Modificar.Size = new System.Drawing.Size(143, 37);
             this.btn_Modificar.TabIndex = 13;
             this.btn_Modificar.Text = "Modificar";
-            this.btn_Modificar.UseVisualStyleBackColor = true;
+            this.btn_Modificar.UseVisualStyleBackColor = false;
             this.btn_Modificar.Click += new System.EventHandler(this.btn_Modificar_Click);
             // 
             // FrmInfoUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(55)))), ((int)(((byte)(91)))));
-            this.ClientSize = new System.Drawing.Size(722, 366);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.ClientSize = new System.Drawing.Size(714, 358);
             this.ControlBox = false;
             this.Controls.Add(this.btn_Modificar);
             this.Controls.Add(this.lbl_Titulo);

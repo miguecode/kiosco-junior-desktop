@@ -27,7 +27,7 @@ namespace Vista
         {
             try
             {
-                usuarioIngresado = Sistema.ConfirmarIngreso(txt_Nombre.Text, txt_Contrasenia.Text);
+                usuarioIngresado = Autenticacion.ConfirmarIngreso(txt_Nombre.Text, txt_Contrasenia.Text);
                 FrmPrincipal formPrincipal = new FrmPrincipal(this);
                 formPrincipal.Show();
                 this.Hide();

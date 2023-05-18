@@ -37,81 +37,38 @@ namespace Vista
             ConfigurarMenuPorRol(usuarioActual);
         }
 
-        private void smi_Cerrar_Click(object sender, EventArgs e)
-        {
-            formLogin.Close();
-            Close();
-        }
-
         private void smi_Inicio_Click(object sender, EventArgs e)
         {
             foreach (var formularioHijo in this.MdiChildren)
             {
-                //pnl_Principal.Visible = true;
                 formularioHijo.Hide();
+                pnl_Imagen.BringToFront();
             }
         }
 
-        private void verProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void smi_Producto_Click(object sender, EventArgs e)
         {
             MostrarFormularioHijo(typeof(FrmProductos));
         }
 
-        private void agregarProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void smi_Compras_Click(object sender, EventArgs e)
         {
-            Producto productoNuevo = new Producto();
-
-            FrmAltaProducto formAltaProducto = new FrmAltaProducto(productoNuevo, true);
-
-            if (formAltaProducto.ShowDialog() == DialogResult.OK && formProductos is not null)
-            {
-                Sistema.ListaDeProductos.Add(formAltaProducto.ProductoIngresado);
-                formProductos.ActualizarDataGrid(Sistema.ListaDeProductos);
-            }else
-                formAltaProducto.Close();
+            MostrarFormularioHijo(typeof(FrmCompras));
         }
 
-        private void MostrarFormularioHijo(Type tipoFormulario)
+        private void smi_Ventas_Click(object sender, EventArgs e)
         {
-            foreach (Form formulario in this.MdiChildren)
-            {
-                if (formulario.GetType() != tipoFormulario)
-                    formulario.Hide();
+            MostrarFormularioHijo(typeof(FrmVentas));
+        }
 
-                else
-                {
-                    //pnl_Principal.Visible = false;
-                    formulario.WindowState = FormWindowState.Maximized;
-                    formulario.Show();
-                }
-            }
+        private void smi_Usuarios_Click(object sender, EventArgs e)
+        {
+            MostrarFormularioHijo(typeof(FrmGestionUsuario));
         }
 
         private void verDatosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MostrarFormularioHijo(typeof(FrmInfoUsuario));
-        }
-
-        private void ConfigurarMenuPorRol(Usuario usuarioRecibido)
-        {
-            sbl_NombreUsuario.Text = usuarioRecibido.NombreCompleto;
-            sbl_DniUsuario.Text = $"DNI: {usuarioRecibido.Dni}";
-
-            if (usuarioRecibido.Rol == ERol.SuperUsuario)
-            {
-                smi_Usuarios.Visible = true;
-                sbl_NombreUsuario.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-                sbl_NombreUsuario.ForeColor = Color.FromArgb(234, 202, 51);
-                //smi_Cerrar.Margin.Left = 470
-            }
-            else if(usuarioRecibido.Rol == ERol.Cliente)
-            {
-                smi_Compras.Visible = true;
-                smi_Producto.Visible = false;
-                smi_Ventas.Visible = false;
-                verDatosToolStripMenuItem.Visible = false;
-                //smi_Cerrar.Margin.Left = 
-            }
         }
 
         private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
@@ -121,14 +78,10 @@ namespace Vista
             this.Close();
         }
 
-        private void smi_Usuarios_Click(object sender, EventArgs e)
+        private void smi_Cerrar_Click(object sender, EventArgs e)
         {
-            MostrarFormularioHijo(typeof(FrmGestionUsuario));
-        }
-
-        private void smi_Compras_Click(object sender, EventArgs e)
-        {
-            MostrarFormularioHijo(typeof(FrmCompras));
+            formLogin.Close();
+            Close();
         }
 
         private void CrearFormulariosMdi()
@@ -145,9 +98,41 @@ namespace Vista
             formVentas.MdiParent = this;
         }
 
-        private void smi_Ventas_Click(object sender, EventArgs e)
+        private void ConfigurarMenuPorRol(Usuario usuarioRecibido)
         {
-            MostrarFormularioHijo(typeof(FrmVentas));
+            sbl_NombreUsuario.Text = usuarioRecibido.NombreCompleto;
+            sbl_DniUsuario.Text = $"DNI: {usuarioRecibido.Dni}";
+
+            if (usuarioRecibido.Rol == ERol.SuperUsuario)
+            {
+                smi_Usuarios.Visible = true;
+                sbl_NombreUsuario.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
+                //smi_Cerrar.Margin.Left = 470
+            }
+            else if (usuarioRecibido.Rol == ERol.Cliente)
+            {
+                smi_Compras.Visible = true;
+                smi_Producto.Visible = false;
+                smi_Ventas.Visible = false;
+                verDatosToolStripMenuItem.Visible = false;
+                //smi_Cerrar.Margin.Left = 
+            }
+        }
+
+        private void MostrarFormularioHijo(Type tipoFormulario)
+        {
+            foreach (Form formulario in this.MdiChildren)
+            {
+                if (formulario.GetType() != tipoFormulario)
+                    formulario.Hide();
+
+                else
+                {
+                    pnl_Imagen.SendToBack();
+                    formulario.WindowState = FormWindowState.Maximized;
+                    formulario.Show();
+                }
+            }
         }
     }
 }

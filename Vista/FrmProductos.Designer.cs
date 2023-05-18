@@ -87,7 +87,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dtg_Productos.DefaultCellStyle = dataGridViewCellStyle3;
             this.dtg_Productos.EnableHeadersVisualStyles = false;
-            this.dtg_Productos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(176)))), ((int)(((byte)(130)))));
+            this.dtg_Productos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(75)))), ((int)(((byte)(171)))));
             this.dtg_Productos.Location = new System.Drawing.Point(142, 12);
             this.dtg_Productos.MultiSelect = false;
             this.dtg_Productos.Name = "dtg_Productos";
@@ -105,12 +105,12 @@
             this.dtg_Productos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(176)))), ((int)(((byte)(130)))));
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(75)))), ((int)(((byte)(171)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
             this.dtg_Productos.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dtg_Productos.RowTemplate.Height = 25;
             this.dtg_Productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtg_Productos.Size = new System.Drawing.Size(583, 349);
+            this.dtg_Productos.Size = new System.Drawing.Size(593, 349);
             this.dtg_Productos.TabIndex = 0;
             // 
             // idDataGridViewTextBoxColumn
@@ -177,7 +177,7 @@
             // 
             // btn_AltaProducto
             // 
-            this.btn_AltaProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.btn_AltaProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.btn_AltaProducto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_AltaProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_AltaProducto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -192,7 +192,7 @@
             // 
             // btn_BajaProducto
             // 
-            this.btn_BajaProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.btn_BajaProducto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.btn_BajaProducto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_BajaProducto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_BajaProducto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -207,7 +207,7 @@
             // 
             // btn_Modificar
             // 
-            this.btn_Modificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.btn_Modificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.btn_Modificar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Modificar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -222,7 +222,7 @@
             // 
             // btn_Detalles
             // 
-            this.btn_Detalles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.btn_Detalles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
             this.btn_Detalles.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn_Detalles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Detalles.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -239,8 +239,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.ClientSize = new System.Drawing.Size(769, 391);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.ClientSize = new System.Drawing.Size(757, 379);
             this.ControlBox = false;
             this.Controls.Add(this.btn_Detalles);
             this.Controls.Add(this.btn_Modificar);
