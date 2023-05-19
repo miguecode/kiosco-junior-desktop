@@ -44,6 +44,7 @@ namespace Vista
             Random rnd = new Random();
             int numeroRandom = rnd.Next(0, Sistema.ListaDeUsuarios.Count);
 
+            txt_Contrasenia.UseSystemPasswordChar = true;
             txt_Nombre.Text = Sistema.ListaDeUsuarios[numeroRandom].NombreUsuario;
             txt_Contrasenia.Text = Sistema.ListaDeUsuarios[numeroRandom].Contrasenia;
         }

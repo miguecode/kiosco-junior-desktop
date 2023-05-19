@@ -35,8 +35,8 @@
             this.smi_Compras = new System.Windows.Forms.ToolStripMenuItem();
             this.smi_Usuarios = new System.Windows.Forms.ToolStripMenuItem();
             this.smi_Cuenta = new System.Windows.Forms.ToolStripMenuItem();
-            this.verDatosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_VerDatos = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsm_CerrarSesion = new System.Windows.Forms.ToolStripMenuItem();
             this.smi_Cerrar = new System.Windows.Forms.ToolStripMenuItem();
             this.sta_Datos = new System.Windows.Forms.StatusStrip();
             this.sbl_NombreUsuario = new System.Windows.Forms.ToolStripStatusLabel();
@@ -126,27 +126,31 @@
             // smi_Cuenta
             // 
             this.smi_Cuenta.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.verDatosToolStripMenuItem,
-            this.cerrarSesiónToolStripMenuItem});
+            this.tsm_VerDatos,
+            this.tsm_CerrarSesion});
             this.smi_Cuenta.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.smi_Cuenta.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.smi_Cuenta.Name = "smi_Cuenta";
             this.smi_Cuenta.Size = new System.Drawing.Size(76, 37);
             this.smi_Cuenta.Text = "Cuenta";
             // 
-            // verDatosToolStripMenuItem
+            // tsm_VerDatos
             // 
-            this.verDatosToolStripMenuItem.Name = "verDatosToolStripMenuItem";
-            this.verDatosToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
-            this.verDatosToolStripMenuItem.Text = "Ver datos";
-            this.verDatosToolStripMenuItem.Click += new System.EventHandler(this.verDatosToolStripMenuItem_Click);
+            this.tsm_VerDatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(75)))), ((int)(((byte)(171)))));
+            this.tsm_VerDatos.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.tsm_VerDatos.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tsm_VerDatos.Name = "tsm_VerDatos";
+            this.tsm_VerDatos.Size = new System.Drawing.Size(180, 26);
+            this.tsm_VerDatos.Text = "Ver datos";
+            this.tsm_VerDatos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.tsm_VerDatos.Click += new System.EventHandler(this.tsm_VerDatos_Click);
             // 
-            // cerrarSesiónToolStripMenuItem
+            // tsm_CerrarSesion
             // 
-            this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(178, 26);
-            this.cerrarSesiónToolStripMenuItem.Text = "Cerrar sesión";
-            this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
+            this.tsm_CerrarSesion.Name = "tsm_CerrarSesion";
+            this.tsm_CerrarSesion.Size = new System.Drawing.Size(180, 26);
+            this.tsm_CerrarSesion.Text = "Cerrar sesión";
+            this.tsm_CerrarSesion.Click += new System.EventHandler(this.tsm_CerrarSesion_Click);
             // 
             // smi_Cerrar
             // 
@@ -248,8 +252,8 @@
         private ToolStripStatusLabel sbl_NombreUsuario;
         private ToolStripMenuItem smi_Cerrar;
         private ToolStripMenuItem smi_Cuenta;
-        private ToolStripMenuItem verDatosToolStripMenuItem;
-        private ToolStripMenuItem cerrarSesiónToolStripMenuItem;
+        private ToolStripMenuItem tsm_VerDatos;
+        private ToolStripMenuItem tsm_CerrarSesion;
         private ToolStripMenuItem smi_Usuarios;
         private ToolStripStatusLabel sbl_DniUsuario;
         private ToolStripMenuItem smi_Compras;

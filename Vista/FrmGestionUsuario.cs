@@ -1,6 +1,7 @@
 ﻿using Entidades;
 using Helper;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,6 +22,7 @@ namespace Vista
 
         private void FrmGestionUsuario_Load(object sender, EventArgs e)
         {
+            cmb_OrdenarPor.SelectedItem = "Original";
             ActualizarDataGrid(Sistema.ListaDeUsuarios);
         }
 
@@ -46,7 +48,7 @@ namespace Vista
                 DialogResult respuesta = MessageBox.Show("¿Seguro de eliminar a este usuario?" +
                     "\nNo podrás recuperarlo.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
-                Usuario usuarioSeleccionado = SeleccionarUsuarioEspecifico();
+                Usuario usuarioSeleccionado = SeleccionarUsuarioEspecifico(Sistema.ListaDeUsuarios);
 
                 if (respuesta == DialogResult.OK)
                 {
@@ -60,7 +62,7 @@ namespace Vista
         {
             if (Sistema.ListaDeUsuarios.Count > 0)
             {
-                Usuario usuarioSeleccionado = SeleccionarUsuarioEspecifico();
+                Usuario usuarioSeleccionado = SeleccionarUsuarioEspecifico(Sistema.ListaDeUsuarios);
                 FrmAltaUsuario formModificar = new FrmAltaUsuario(usuarioSeleccionado, false);
 
                 if (formModificar.ShowDialog() == DialogResult.OK)
@@ -71,15 +73,58 @@ namespace Vista
             }
         }
 
-        public void ActualizarDataGrid(List<Usuario> listaUsuarios)
+        public void ActualizarDataGrid(List<Usuario> lista)
         {
+            string? itemSeleccionado = cmb_OrdenarPor.SelectedItem.ToString();
+            lista = OrdenarListaUsuarios(itemSeleccionado);
+
             dtg_Usuarios.DataSource = null;
-            dtg_Usuarios.DataSource = listaUsuarios;
+            dtg_Usuarios.DataSource = lista;
         }
 
-        private Usuario SeleccionarUsuarioEspecifico()
+        private Usuario SeleccionarUsuarioEspecifico(List<Usuario> lista)
         {
-            return Sistema.ListaDeUsuarios[dtg_Usuarios.CurrentRow.Index];
+            string? itemSeleccionado = cmb_OrdenarPor.SelectedItem.ToString();
+            lista = OrdenarListaUsuarios(itemSeleccionado);
+
+            return lista[dtg_Usuarios.CurrentRow.Index];
+        }
+
+        private void cmb_OrdenarPor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string? itemSeleccionado = cmb_OrdenarPor.SelectedItem.ToString();
+
+            if (itemSeleccionado is not null)
+            {
+                List<Usuario> listaOrdenada = OrdenarListaUsuarios(itemSeleccionado);
+                ActualizarDataGrid(listaOrdenada);
+            }
+        }
+
+        private static List<Usuario> OrdenarListaUsuarios(string? criterio)
+        {
+            List<Usuario> listaOrdenada = new List<Usuario>();
+
+            switch (criterio)
+            {
+                case "Original":
+                    listaOrdenada = Sistema.ListaDeUsuarios;
+                    break;
+                case "Rol":
+                    listaOrdenada = Sistema.ListaDeUsuarios.OrderBy(u => u.Rol).ToList();
+                    break;                
+                case "Nombre":
+                    listaOrdenada = Sistema.ListaDeUsuarios.OrderBy(u => u.Nombre).ToList();
+                    break;
+                case "Apellido":
+                    listaOrdenada = Sistema.ListaDeUsuarios.OrderBy(u => u.Apellido).ToList();
+                    break;
+                default:
+                    listaOrdenada = Sistema.ListaDeUsuarios;
+                    break;
+            }
+
+            return listaOrdenada;
         }
     }
 }

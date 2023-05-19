@@ -66,12 +66,12 @@ namespace Vista
             MostrarFormularioHijo(typeof(FrmGestionUsuario));
         }
 
-        private void verDatosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tsm_VerDatos_Click(object sender, EventArgs e)
         {
             MostrarFormularioHijo(typeof(FrmInfoUsuario));
         }
 
-        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tsm_CerrarSesion_Click(object sender, EventArgs e)
         {
             formLogin.LimpiarPantalla();
             formLogin.Show();
@@ -103,6 +103,7 @@ namespace Vista
             sbl_NombreUsuario.Text = usuarioRecibido.NombreCompleto;
             sbl_DniUsuario.Text = $"DNI: {usuarioRecibido.Dni}";
 
+
             if (usuarioRecibido.Rol == ERol.SuperUsuario)
             {
                 smi_Usuarios.Visible = true;
@@ -114,7 +115,7 @@ namespace Vista
                 smi_Compras.Visible = true;
                 smi_Producto.Visible = false;
                 smi_Ventas.Visible = false;
-                verDatosToolStripMenuItem.Visible = false;
+                tsm_VerDatos.Visible = false;
                 //smi_Cerrar.Margin.Left = 
             }
         }

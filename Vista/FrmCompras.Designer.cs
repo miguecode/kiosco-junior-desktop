@@ -51,11 +51,13 @@
             this.btn_Confirmar = new System.Windows.Forms.Button();
             this.lbl_Error = new System.Windows.Forms.Label();
             this.dtg_Carrito = new System.Windows.Forms.DataGridView();
-            this.btn_VaciarCarrito = new System.Windows.Forms.Button();
-            this.pnl_Precio = new System.Windows.Forms.Panel();
             this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadEnCarrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btn_VaciarCarrito = new System.Windows.Forms.Button();
+            this.pnl_Precio = new System.Windows.Forms.Panel();
+            this.cmb_FiltrarPorTipo = new System.Windows.Forms.ComboBox();
+            this.lbl_Filtro = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Productos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource1)).BeginInit();
@@ -196,9 +198,9 @@
             this.btn_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Agregar.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Agregar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_Agregar.Location = new System.Drawing.Point(126, 344);
+            this.btn_Agregar.Location = new System.Drawing.Point(148, 344);
             this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Size = new System.Drawing.Size(304, 54);
+            this.btn_Agregar.Size = new System.Drawing.Size(282, 54);
             this.btn_Agregar.TabIndex = 7;
             this.btn_Agregar.Text = "Agregar al carrito";
             this.btn_Agregar.UseVisualStyleBackColor = false;
@@ -291,33 +293,6 @@
             this.dtg_Carrito.Size = new System.Drawing.Size(304, 227);
             this.dtg_Carrito.TabIndex = 10;
             // 
-            // btn_VaciarCarrito
-            // 
-            this.btn_VaciarCarrito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.btn_VaciarCarrito.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_VaciarCarrito.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(61)))));
-            this.btn_VaciarCarrito.FlatAppearance.BorderSize = 0;
-            this.btn_VaciarCarrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_VaciarCarrito.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_VaciarCarrito.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_VaciarCarrito.Location = new System.Drawing.Point(719, 12);
-            this.btn_VaciarCarrito.Margin = new System.Windows.Forms.Padding(0);
-            this.btn_VaciarCarrito.Name = "btn_VaciarCarrito";
-            this.btn_VaciarCarrito.Size = new System.Drawing.Size(69, 29);
-            this.btn_VaciarCarrito.TabIndex = 11;
-            this.btn_VaciarCarrito.Text = "Vaciar";
-            this.btn_VaciarCarrito.UseVisualStyleBackColor = false;
-            this.btn_VaciarCarrito.Click += new System.EventHandler(this.btn_VaciarCarrito_Click);
-            // 
-            // pnl_Precio
-            // 
-            this.pnl_Precio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.pnl_Precio.Controls.Add(this.lbl_Total);
-            this.pnl_Precio.Location = new System.Drawing.Point(484, 274);
-            this.pnl_Precio.Name = "pnl_Precio";
-            this.pnl_Precio.Size = new System.Drawing.Size(304, 57);
-            this.pnl_Precio.TabIndex = 12;
-            // 
             // nombreDataGridViewTextBoxColumn1
             // 
             this.nombreDataGridViewTextBoxColumn1.DataPropertyName = "Nombre";
@@ -348,6 +323,65 @@
             this.CantidadEnCarrito.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.CantidadEnCarrito.Width = 60;
             // 
+            // btn_VaciarCarrito
+            // 
+            this.btn_VaciarCarrito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.btn_VaciarCarrito.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_VaciarCarrito.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(50)))), ((int)(((byte)(61)))));
+            this.btn_VaciarCarrito.FlatAppearance.BorderSize = 0;
+            this.btn_VaciarCarrito.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_VaciarCarrito.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_VaciarCarrito.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_VaciarCarrito.Location = new System.Drawing.Point(719, 12);
+            this.btn_VaciarCarrito.Margin = new System.Windows.Forms.Padding(0);
+            this.btn_VaciarCarrito.Name = "btn_VaciarCarrito";
+            this.btn_VaciarCarrito.Size = new System.Drawing.Size(69, 29);
+            this.btn_VaciarCarrito.TabIndex = 11;
+            this.btn_VaciarCarrito.Text = "Vaciar";
+            this.btn_VaciarCarrito.UseVisualStyleBackColor = false;
+            this.btn_VaciarCarrito.Click += new System.EventHandler(this.btn_VaciarCarrito_Click);
+            // 
+            // pnl_Precio
+            // 
+            this.pnl_Precio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.pnl_Precio.Controls.Add(this.lbl_Total);
+            this.pnl_Precio.Location = new System.Drawing.Point(484, 274);
+            this.pnl_Precio.Name = "pnl_Precio";
+            this.pnl_Precio.Size = new System.Drawing.Size(304, 57);
+            this.pnl_Precio.TabIndex = 12;
+            // 
+            // cmb_FiltrarPorTipo
+            // 
+            this.cmb_FiltrarPorTipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.cmb_FiltrarPorTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_FiltrarPorTipo.ForeColor = System.Drawing.Color.White;
+            this.cmb_FiltrarPorTipo.FormattingEnabled = true;
+            this.cmb_FiltrarPorTipo.Items.AddRange(new object[] {
+            "Todos",
+            "Cigarrillo",
+            "Snack",
+            "Dulce",
+            "Galletita",
+            "Bebida",
+            "Alfajor",
+            "Otros"});
+            this.cmb_FiltrarPorTipo.Location = new System.Drawing.Point(27, 365);
+            this.cmb_FiltrarPorTipo.Name = "cmb_FiltrarPorTipo";
+            this.cmb_FiltrarPorTipo.Size = new System.Drawing.Size(107, 23);
+            this.cmb_FiltrarPorTipo.TabIndex = 13;
+            this.cmb_FiltrarPorTipo.SelectedIndexChanged += new System.EventHandler(this.cmb_FiltrarPorTipo_SelectedIndexChanged);
+            // 
+            // lbl_Filtro
+            // 
+            this.lbl_Filtro.AutoSize = true;
+            this.lbl_Filtro.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Filtro.ForeColor = System.Drawing.Color.White;
+            this.lbl_Filtro.Location = new System.Drawing.Point(27, 341);
+            this.lbl_Filtro.Name = "lbl_Filtro";
+            this.lbl_Filtro.Size = new System.Drawing.Size(75, 19);
+            this.lbl_Filtro.TabIndex = 14;
+            this.lbl_Filtro.Text = "Filtrar por:";
+            // 
             // FrmCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -355,6 +389,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(800, 414);
             this.ControlBox = false;
+            this.Controls.Add(this.lbl_Filtro);
+            this.Controls.Add(this.cmb_FiltrarPorTipo);
             this.Controls.Add(this.pnl_Precio);
             this.Controls.Add(this.btn_VaciarCarrito);
             this.Controls.Add(this.dtg_Carrito);
@@ -404,5 +440,7 @@
         private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn CantidadEnCarrito;
+        private ComboBox cmb_FiltrarPorTipo;
+        private Label lbl_Filtro;
     }
 }

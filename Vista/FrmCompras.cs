@@ -189,5 +189,22 @@ namespace Vista
 
             return clienteCreado;
         }
+
+        private void cmb_FiltrarPorTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            bool respuesta = Enum.TryParse(cmb_FiltrarPorTipo.SelectedItem.ToString(), out ETipo tipoSeleccionado);
+
+            if (respuesta)
+            {
+                List<Producto> listaFiltrada = FiltrarListaPorTipo(tipoSeleccionado.ToString());
+                ActualizarDataGrids(listaFiltrada, clienteActual.Carrito);
+            }
+        }
+
+        private static List<Producto> FiltrarListaPorTipo(string? tipo)
+        {
+            List<Producto> listaFiltrada = Sistema.ListaDeProductos.Where(p => p.Tipo.ToString() == tipo).ToList();
+            return listaFiltrada;
+        }
     }
 }

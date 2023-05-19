@@ -33,22 +33,6 @@ namespace Vista
                 ConfigurarDatosModificables();
         }
 
-        private void ConfigurarDatosModificables()
-        {
-            if (!(usuarioIngresado.Rol == ERol.Cliente))
-                cmb_Rol.Enabled = false;
-
-            btn_VerContrasenia.Enabled = false;
-            txt_NombreDeUsuario.Enabled = false;
-            txt_Contrasenia.Enabled = false;
-            cmb_Rol.Text = usuarioIngresado.Rol.ToString();
-            txt_Nombre.Text = usuarioIngresado.Nombre;
-            txt_Apellido.Text = usuarioIngresado.Apellido;
-            txt_Dni.Text = usuarioIngresado.Dni.ToString();
-            txt_NombreDeUsuario.Text = usuarioIngresado.NombreUsuario;
-            txt_Contrasenia.Text = usuarioIngresado.Contrasenia;
-        }
-
         private void btn_Confirmar_Click(object sender, EventArgs e)
         {
             try
@@ -107,6 +91,22 @@ namespace Vista
                 if (usuario == usuarioIngresado)
                     throw new Exception("Ese usuario ya existe");
             }
+        }
+
+        private void ConfigurarDatosModificables()
+        {
+            if (!(usuarioIngresado.Rol == ERol.Cliente))
+                cmb_Rol.Enabled = false;
+
+            btn_VerContrasenia.Enabled = false;
+            txt_NombreDeUsuario.Enabled = false;
+            txt_Contrasenia.Enabled = false;
+            cmb_Rol.Text = usuarioIngresado.Rol.ToString();
+            txt_Nombre.Text = usuarioIngresado.Nombre;
+            txt_Apellido.Text = usuarioIngresado.Apellido;
+            txt_Dni.Text = usuarioIngresado.Dni.ToString();
+            txt_NombreDeUsuario.Text = usuarioIngresado.NombreUsuario;
+            txt_Contrasenia.Text = usuarioIngresado.Contrasenia;
         }
     }
 }

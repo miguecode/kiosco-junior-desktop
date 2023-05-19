@@ -46,6 +46,8 @@
             this.btn_BajaProducto = new System.Windows.Forms.Button();
             this.btn_Modificar = new System.Windows.Forms.Button();
             this.btn_Detalles = new System.Windows.Forms.Button();
+            this.cmb_OrdenarPor = new System.Windows.Forms.ComboBox();
+            this.lbl_OrdenarPor = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Productos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -235,13 +237,46 @@
             this.btn_Detalles.UseVisualStyleBackColor = false;
             this.btn_Detalles.Click += new System.EventHandler(this.btn_Detalles_Click);
             // 
+            // cmb_OrdenarPor
+            // 
+            this.cmb_OrdenarPor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
+            this.cmb_OrdenarPor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_OrdenarPor.ForeColor = System.Drawing.Color.White;
+            this.cmb_OrdenarPor.FormattingEnabled = true;
+            this.cmb_OrdenarPor.Items.AddRange(new object[] {
+            "Original",
+            "ID",
+            "Tipo",
+            "Nombre",
+            "Marca",
+            "Precio",
+            "Stock"});
+            this.cmb_OrdenarPor.Location = new System.Drawing.Point(338, 372);
+            this.cmb_OrdenarPor.Name = "cmb_OrdenarPor";
+            this.cmb_OrdenarPor.Size = new System.Drawing.Size(89, 23);
+            this.cmb_OrdenarPor.TabIndex = 6;
+            this.cmb_OrdenarPor.SelectedIndexChanged += new System.EventHandler(this.cmb_OrdenarPor_SelectedIndexChanged);
+            // 
+            // lbl_OrdenarPor
+            // 
+            this.lbl_OrdenarPor.AutoSize = true;
+            this.lbl_OrdenarPor.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_OrdenarPor.ForeColor = System.Drawing.Color.White;
+            this.lbl_OrdenarPor.Location = new System.Drawing.Point(243, 373);
+            this.lbl_OrdenarPor.Name = "lbl_OrdenarPor";
+            this.lbl_OrdenarPor.Size = new System.Drawing.Size(89, 19);
+            this.lbl_OrdenarPor.TabIndex = 7;
+            this.lbl_OrdenarPor.Text = "Ordenar por:";
+            // 
             // FrmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.ClientSize = new System.Drawing.Size(757, 379);
+            this.ClientSize = new System.Drawing.Size(745, 402);
             this.ControlBox = false;
+            this.Controls.Add(this.lbl_OrdenarPor);
+            this.Controls.Add(this.cmb_OrdenarPor);
             this.Controls.Add(this.btn_Detalles);
             this.Controls.Add(this.btn_Modificar);
             this.Controls.Add(this.btn_BajaProducto);
@@ -258,6 +293,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Productos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -275,5 +311,7 @@
         private DataGridViewTextBoxColumn marcaDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn stockDataGridViewTextBoxColumn;
+        private ComboBox cmb_OrdenarPor;
+        private Label lbl_OrdenarPor;
     }
 }
