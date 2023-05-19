@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Helper
 {
-    public class MetodosCompras
+    public static class MetodosCompras
     {
-
+        
 
     }
 }

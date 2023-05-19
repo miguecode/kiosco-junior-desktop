@@ -82,7 +82,12 @@ namespace Vista
                 productoIngresado.Stock = stock;
             }          
         }
-       
+
+        private void btn_Cancelar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
+        }
+
         private void VerificarSiExisteProducto(Producto productoRecibido)
         {
             foreach (Producto producto in Sistema.ListaDeProductos)
@@ -90,11 +95,6 @@ namespace Vista
                 if (producto == productoRecibido)
                     throw new Exception("Ese producto ya existe");
             }
-        }
-
-        private void btn_Cancelar_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
         }
     }
 }

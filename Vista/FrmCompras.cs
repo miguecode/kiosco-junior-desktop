@@ -88,33 +88,6 @@ namespace Vista
             ReiniciarCarrito();
         }
 
-        private void VerificarProductoStock()
-        {
-            Producto productoSeleccionado = SeleccionarProductoEspecifico();
-
-            if (productoSeleccionado.CantidadEnCarrito > (productoSeleccionado.Stock -1))
-                throw new Exception("Producto agotado");
-
-
-           /* int contador = ContarRepeticionesProducto(productoSeleccionado);
-
-            if (contador > productoSeleccionado.Stock)
-                throw new Exception("Producto agotado");*/
-        }
-
-        private int ContarRepeticionesProducto(Producto productoSeleccionado)
-        {
-            int contador = 1;
-
-            foreach (Producto producto in clienteActual.Carrito)
-            {
-                if (producto == productoSeleccionado)
-                    contador++;
-            }
-
-            return contador;
-        }
-
         private void AgregarProductoAlCarrito()
         {
             Producto productoSeleccionado = SeleccionarProductoEspecifico();
@@ -127,27 +100,14 @@ namespace Vista
                 productoSeleccionado.CantidadEnCarrito++;
                 lbl_Error.Visible = false;
             }
-
-            /*if (productoSeleccionado is not null)
-            {
-                clienteActual.Carrito.Add(productoSeleccionado);
-                lbl_Error.Visible = false;
-            }
-            else
-                throw new Exception("Producto no encontrado");*/
         }
 
-        private void ReiniciarCantidadDeProductos()
+        private void VerificarProductoStock()
         {
-            foreach (Producto producto in Sistema.ListaDeProductos)
-            {
-                producto.CantidadEnCarrito = 0;
-            }
-        }
+            Producto productoSeleccionado = SeleccionarProductoEspecifico();
 
-        private Producto SeleccionarProductoEspecifico()
-        {
-            return menu[dtg_Productos.CurrentRow.Index];
+            if (productoSeleccionado.CantidadEnCarrito > (productoSeleccionado.Stock -1))
+                throw new Exception("Producto agotado");
         }
 
         private void EscribirPrecioTotal()
@@ -162,22 +122,18 @@ namespace Vista
             lbl_Total.Text = $"Precio TOTAL: $ {precioTotal:0.00}";
         }
 
-        private void ReducirStockProducto()
+        /*private int ContarRepeticionesProducto(Producto productoSeleccionado)
         {
-            foreach (Producto producto in Sistema.ListaDeProductos)
+            int contador = 1;
+
+            foreach (Producto producto in clienteActual.Carrito)
             {
-                producto.Stock -= producto.CantidadEnCarrito;
-
-
-                /*if (clienteActual.Carrito.Contains(producto))
-                {
-                    int contador = ContarRepeticionesProducto(producto);
-                    contador--;
-
-                    producto.Stock -= contador;
-                }*/
+                if (producto == productoSeleccionado)
+                    contador++;
             }
-        }
+
+            return contador;
+        }*/
 
         private void ReiniciarCarrito()
         {
@@ -186,6 +142,22 @@ namespace Vista
             ActualizarDataGrids(menu, clienteActual.Carrito);
             precioTotal = 0;
             lbl_Total.Text = $"Precio TOTAL: $ {precioTotal:0.00}";
+        }
+
+        private void ReiniciarCantidadDeProductos()
+        {
+            foreach (Producto producto in Sistema.ListaDeProductos)
+            {
+                producto.CantidadEnCarrito = 0;
+            }
+        }
+
+        private void ReducirStockProducto()
+        {
+            foreach (Producto producto in Sistema.ListaDeProductos)
+            {
+                producto.Stock -= producto.CantidadEnCarrito;
+            }
         }
 
         private void OcultarProductosAgotados()
@@ -204,6 +176,10 @@ namespace Vista
 
             dtg_Carrito.DataSource = null;
             dtg_Carrito.DataSource = carrito;
+        }
+        private Producto SeleccionarProductoEspecifico()
+        {
+            return menu[dtg_Productos.CurrentRow.Index];
         }
 
         private Cliente ConvertirUsuarioACliente(Usuario usuarioActual)
