@@ -31,13 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtg_Productos = new System.Windows.Forms.DataGridView();
+            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.lbl_Menu = new System.Windows.Forms.Label();
@@ -47,14 +51,11 @@
             this.btn_Confirmar = new System.Windows.Forms.Button();
             this.lbl_Error = new System.Windows.Forms.Label();
             this.dtg_Carrito = new System.Windows.Forms.DataGridView();
-            this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_VaciarCarrito = new System.Windows.Forms.Button();
             this.pnl_Precio = new System.Windows.Forms.Panel();
-            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CantidadEnCarrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Productos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource1)).BeginInit();
@@ -104,6 +105,44 @@
             this.dtg_Productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtg_Productos.Size = new System.Drawing.Size(418, 296);
             this.dtg_Productos.TabIndex = 0;
+            // 
+            // tipoDataGridViewTextBoxColumn
+            // 
+            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tipoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.tipoDataGridViewTextBoxColumn.Width = 90;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.nombreDataGridViewTextBoxColumn.Width = 110;
+            // 
+            // precioDataGridViewTextBoxColumn
+            // 
+            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = "0,00";
+            this.precioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
+            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+            this.precioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.precioDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            // 
+            // Stock
+            // 
+            this.Stock.DataPropertyName = "Stock";
+            this.Stock.HeaderText = "Cantidad";
+            this.Stock.Name = "Stock";
+            this.Stock.ReadOnly = true;
+            this.Stock.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Stock.Width = 60;
             // 
             // productoBindingSource
             // 
@@ -216,7 +255,8 @@
             this.dtg_Carrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_Carrito.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreDataGridViewTextBoxColumn1,
-            this.precioDataGridViewTextBoxColumn1});
+            this.precioDataGridViewTextBoxColumn1,
+            this.CantidadEnCarrito});
             this.dtg_Carrito.DataSource = this.productoBindingSource;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
@@ -251,25 +291,6 @@
             this.dtg_Carrito.Size = new System.Drawing.Size(304, 227);
             this.dtg_Carrito.TabIndex = 10;
             // 
-            // nombreDataGridViewTextBoxColumn1
-            // 
-            this.nombreDataGridViewTextBoxColumn1.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn1.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn1.Name = "nombreDataGridViewTextBoxColumn1";
-            this.nombreDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // precioDataGridViewTextBoxColumn1
-            // 
-            this.precioDataGridViewTextBoxColumn1.DataPropertyName = "Precio";
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = "0,00";
-            this.precioDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle5;
-            this.precioDataGridViewTextBoxColumn1.HeaderText = "Precio";
-            this.precioDataGridViewTextBoxColumn1.Name = "precioDataGridViewTextBoxColumn1";
-            this.precioDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.precioDataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
             // btn_VaciarCarrito
             // 
             this.btn_VaciarCarrito.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
@@ -297,43 +318,35 @@
             this.pnl_Precio.Size = new System.Drawing.Size(304, 57);
             this.pnl_Precio.TabIndex = 12;
             // 
-            // tipoDataGridViewTextBoxColumn
+            // nombreDataGridViewTextBoxColumn1
             // 
-            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
-            this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tipoDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.tipoDataGridViewTextBoxColumn.Width = 90;
+            this.nombreDataGridViewTextBoxColumn1.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn1.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn1.Name = "nombreDataGridViewTextBoxColumn1";
+            this.nombreDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.nombreDataGridViewTextBoxColumn1.Width = 120;
             // 
-            // nombreDataGridViewTextBoxColumn
+            // precioDataGridViewTextBoxColumn1
             // 
-            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
-            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
-            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nombreDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.nombreDataGridViewTextBoxColumn.Width = 110;
+            this.precioDataGridViewTextBoxColumn1.DataPropertyName = "Precio";
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = "0,00";
+            this.precioDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle5;
+            this.precioDataGridViewTextBoxColumn1.HeaderText = "Precio";
+            this.precioDataGridViewTextBoxColumn1.Name = "precioDataGridViewTextBoxColumn1";
+            this.precioDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.precioDataGridViewTextBoxColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.precioDataGridViewTextBoxColumn1.Width = 70;
             // 
-            // precioDataGridViewTextBoxColumn
+            // CantidadEnCarrito
             // 
-            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = "0,00";
-            this.precioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
-            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
-            this.precioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.precioDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            // 
-            // Stock
-            // 
-            this.Stock.DataPropertyName = "Stock";
-            this.Stock.HeaderText = "Cantidad";
-            this.Stock.Name = "Stock";
-            this.Stock.ReadOnly = true;
-            this.Stock.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Stock.Width = 60;
+            this.CantidadEnCarrito.DataPropertyName = "CantidadEnCarrito";
+            this.CantidadEnCarrito.HeaderText = "Cantidad";
+            this.CantidadEnCarrito.Name = "CantidadEnCarrito";
+            this.CantidadEnCarrito.ReadOnly = true;
+            this.CantidadEnCarrito.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.CantidadEnCarrito.Width = 60;
             // 
             // FrmCompras
             // 
@@ -383,12 +396,13 @@
         private Label lbl_Error;
         private DataGridView dtg_Carrito;
         private Button btn_VaciarCarrito;
-        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn1;
         private Panel pnl_Precio;
         private DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn Stock;
+        private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn CantidadEnCarrito;
     }
 }

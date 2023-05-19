@@ -63,9 +63,9 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap inicioKiosco {
+        internal static System.Drawing.Bitmap loginB {
             get {
-                object obj = ResourceManager.GetObject("inicioKiosco", resourceCulture);
+                object obj = ResourceManager.GetObject("loginB", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,39 +73,9 @@ namespace Vista.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap kiosco {
+        internal static System.Drawing.Bitmap tienda {
             get {
-                object obj = ResourceManager.GetObject("kiosco", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap login {
-            get {
-                object obj = ResourceManager.GetObject("login", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap mercado {
-            get {
-                object obj = ResourceManager.GetObject("mercado", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap tienda__1_ {
-            get {
-                object obj = ResourceManager.GetObject("tienda (1)", resourceCulture);
+                object obj = ResourceManager.GetObject("tienda", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -17,6 +17,8 @@ namespace Entidades
         private int stock;
         private int id;
         private static int idActual;
+        private int cantidadEnCarrito;
+
         public Producto()
         {
             this.nombre = String.Empty;
@@ -39,6 +41,7 @@ namespace Entidades
             this.stock = stock;
             this.id = idActual;
             idActual++;
+            this.cantidadEnCarrito = 0;
         }
         static Producto()
         {
@@ -52,6 +55,7 @@ namespace Entidades
         public float Precio { get => precio; set => precio = value; }
         public int Stock { get => stock; set => stock = value; }
         public int Id { get => id; }
+        public int CantidadEnCarrito { get => cantidadEnCarrito; set => cantidadEnCarrito = value; }
 
         public override string GetParser()
         {

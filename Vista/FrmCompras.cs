@@ -33,6 +33,7 @@ namespace Vista
             dtg_Productos.DataSource = null;
             dtg_Productos.DataSource = menu;
             OcultarProductosAgotados();
+            ReiniciarCantidadDeProductos();
         }
 
         private void btn_Agregar_Click(object sender, EventArgs e)
@@ -91,10 +92,14 @@ namespace Vista
         {
             Producto productoSeleccionado = SeleccionarProductoEspecifico();
 
-            int contador = ContarRepeticionesProducto(productoSeleccionado);
+            if (productoSeleccionado.CantidadEnCarrito > (productoSeleccionado.Stock -1))
+                throw new Exception("Producto agotado");
+
+
+           /* int contador = ContarRepeticionesProducto(productoSeleccionado);
 
             if (contador > productoSeleccionado.Stock)
-                throw new Exception("Producto agotado");
+                throw new Exception("Producto agotado");*/
         }
 
         private int ContarRepeticionesProducto(Producto productoSeleccionado)
@@ -114,13 +119,30 @@ namespace Vista
         {
             Producto productoSeleccionado = SeleccionarProductoEspecifico();
 
-            if (productoSeleccionado is not null)
+            if (clienteActual.Carrito.Contains(productoSeleccionado))
+                productoSeleccionado.CantidadEnCarrito++;
+            else
+            {
+                clienteActual.Carrito.Add(productoSeleccionado);
+                productoSeleccionado.CantidadEnCarrito++;
+                lbl_Error.Visible = false;
+            }
+
+            /*if (productoSeleccionado is not null)
             {
                 clienteActual.Carrito.Add(productoSeleccionado);
                 lbl_Error.Visible = false;
             }
             else
-                throw new Exception("Producto no encontrado");
+                throw new Exception("Producto no encontrado");*/
+        }
+
+        private void ReiniciarCantidadDeProductos()
+        {
+            foreach (Producto producto in Sistema.ListaDeProductos)
+            {
+                producto.CantidadEnCarrito = 0;
+            }
         }
 
         private Producto SeleccionarProductoEspecifico()
@@ -132,9 +154,9 @@ namespace Vista
         {
             precioTotal = 0;
 
-            foreach (var itemCarrito in clienteActual.Carrito)
+            foreach (Producto producto in clienteActual.Carrito)
             {
-                precioTotal += itemCarrito.Precio;
+                precioTotal += producto.Precio * producto.CantidadEnCarrito;
             }
 
             lbl_Total.Text = $"Precio TOTAL: $ {precioTotal:0.00}";
@@ -144,18 +166,22 @@ namespace Vista
         {
             foreach (Producto producto in Sistema.ListaDeProductos)
             {
-                if (clienteActual.Carrito.Contains(producto))
+                producto.Stock -= producto.CantidadEnCarrito;
+
+
+                /*if (clienteActual.Carrito.Contains(producto))
                 {
                     int contador = ContarRepeticionesProducto(producto);
                     contador--;
 
                     producto.Stock -= contador;
-                }
+                }*/
             }
         }
 
         private void ReiniciarCarrito()
         {
+            ReiniciarCantidadDeProductos();
             clienteActual.Carrito.Clear();
             ActualizarDataGrids(menu, clienteActual.Carrito);
             precioTotal = 0;

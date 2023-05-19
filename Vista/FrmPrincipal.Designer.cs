@@ -193,18 +193,18 @@
             // 
             this.pnl_Imagen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.pnl_Imagen.Controls.Add(this.pic_ImagenPrincipal);
-            this.pnl_Imagen.Location = new System.Drawing.Point(0, 38);
+            this.pnl_Imagen.Location = new System.Drawing.Point(0, 44);
             this.pnl_Imagen.Name = "pnl_Imagen";
-            this.pnl_Imagen.Size = new System.Drawing.Size(800, 417);
+            this.pnl_Imagen.Size = new System.Drawing.Size(800, 408);
             this.pnl_Imagen.TabIndex = 7;
             // 
             // pic_ImagenPrincipal
             // 
             this.pic_ImagenPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pic_ImagenPrincipal.Image = global::Vista.Properties.Resources.mercado;
-            this.pic_ImagenPrincipal.Location = new System.Drawing.Point(120, 65);
+            this.pic_ImagenPrincipal.Image = global::Vista.Properties.Resources.tienda;
+            this.pic_ImagenPrincipal.Location = new System.Drawing.Point(115, 92);
             this.pic_ImagenPrincipal.Name = "pic_ImagenPrincipal";
-            this.pic_ImagenPrincipal.Size = new System.Drawing.Size(564, 282);
+            this.pic_ImagenPrincipal.Size = new System.Drawing.Size(556, 246);
             this.pic_ImagenPrincipal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pic_ImagenPrincipal.TabIndex = 0;
             this.pic_ImagenPrincipal.TabStop = false;
@@ -213,7 +213,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(800, 480);
             this.ControlBox = false;
