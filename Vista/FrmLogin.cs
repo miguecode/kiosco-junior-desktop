@@ -41,12 +41,15 @@ namespace Vista
 
         private void btn_Autocompletar_Click(object sender, EventArgs e)
         {
-            Random rnd = new Random();
-            int numeroRandom = rnd.Next(0, Sistema.ListaDeUsuarios.Count);
+            if (Sistema.ListaDeUsuarios.Count > 0)
+            {
+                Random rnd = new Random();
+                int numeroRandom = rnd.Next(0, Sistema.ListaDeUsuarios.Count);
 
-            txt_Contrasenia.UseSystemPasswordChar = true;
-            txt_Nombre.Text = Sistema.ListaDeUsuarios[numeroRandom].NombreUsuario;
-            txt_Contrasenia.Text = Sistema.ListaDeUsuarios[numeroRandom].Contrasenia;
+                txt_Contrasenia.UseSystemPasswordChar = true;
+                txt_Nombre.Text = Sistema.ListaDeUsuarios[numeroRandom].NombreUsuario;
+                txt_Contrasenia.Text = Sistema.ListaDeUsuarios[numeroRandom].Contrasenia;
+            }
         }
 
         private void btn_Ver_Click(object sender, EventArgs e)

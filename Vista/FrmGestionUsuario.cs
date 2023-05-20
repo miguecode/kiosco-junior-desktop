@@ -25,6 +25,22 @@ namespace Vista
             cmb_OrdenarPor.SelectedItem = "Original";
             ActualizarDataGrid(Sistema.ListaDeUsuarios);
         }
+        public void ActualizarDataGrid(List<Usuario> lista)
+        {
+            string? itemSeleccionado = cmb_OrdenarPor.SelectedItem.ToString();
+            lista = OrdenarListaUsuarios(itemSeleccionado);
+
+            dtg_Usuarios.DataSource = null;
+            dtg_Usuarios.DataSource = lista;
+        }
+
+        private Usuario SeleccionarUsuarioEspecifico(List<Usuario> lista)
+        {
+            string? itemSeleccionado = cmb_OrdenarPor.SelectedItem.ToString();
+            lista = OrdenarListaUsuarios(itemSeleccionado);
+
+            return lista[dtg_Usuarios.CurrentRow.Index];
+        }
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
@@ -43,15 +59,14 @@ namespace Vista
 
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
-            if (Sistema.ListaDeUsuarios.Count > 1)
+            if (Sistema.ListaDeUsuarios.Count > 0)
             {
                 DialogResult respuesta = MessageBox.Show("¿Seguro de eliminar a este usuario?" +
                     "\nNo podrás recuperarlo.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
-                Usuario usuarioSeleccionado = SeleccionarUsuarioEspecifico(Sistema.ListaDeUsuarios);
-
                 if (respuesta == DialogResult.OK)
                 {
+                    Usuario usuarioSeleccionado = SeleccionarUsuarioEspecifico(Sistema.ListaDeUsuarios);
                     Sistema.ListaDeUsuarios.Remove(usuarioSeleccionado);
                     ActualizarDataGrid(Sistema.ListaDeUsuarios);
                 }
@@ -67,27 +82,9 @@ namespace Vista
 
                 if (formModificar.ShowDialog() == DialogResult.OK)
                     ActualizarDataGrid(Sistema.ListaDeUsuarios);
-
                 else
                     formModificar.Close();
             }
-        }
-
-        public void ActualizarDataGrid(List<Usuario> lista)
-        {
-            string? itemSeleccionado = cmb_OrdenarPor.SelectedItem.ToString();
-            lista = OrdenarListaUsuarios(itemSeleccionado);
-
-            dtg_Usuarios.DataSource = null;
-            dtg_Usuarios.DataSource = lista;
-        }
-
-        private Usuario SeleccionarUsuarioEspecifico(List<Usuario> lista)
-        {
-            string? itemSeleccionado = cmb_OrdenarPor.SelectedItem.ToString();
-            lista = OrdenarListaUsuarios(itemSeleccionado);
-
-            return lista[dtg_Usuarios.CurrentRow.Index];
         }
 
         private void cmb_OrdenarPor_SelectedIndexChanged(object sender, EventArgs e)

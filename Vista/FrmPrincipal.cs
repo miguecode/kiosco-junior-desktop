@@ -35,7 +35,6 @@ namespace Vista
             IsMdiContainer = true;
             CrearFormulariosMdi();
             ConfigurarMenuPorRol(usuarioActual);
-
         }
 
         private void smi_Inicio_Click(object sender, EventArgs e)

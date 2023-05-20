@@ -41,8 +41,8 @@
             this.smi_Cerrar = new System.Windows.Forms.ToolStripMenuItem();
             this.sta_Datos = new System.Windows.Forms.StatusStrip();
             this.sbl_NombreUsuario = new System.Windows.Forms.ToolStripStatusLabel();
-            this.sbl_RolUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.sbl_DniUsuario = new System.Windows.Forms.ToolStripStatusLabel();
+            this.sbl_RolUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.pnl_Imagen = new System.Windows.Forms.Panel();
             this.lbl_Kiosco = new System.Windows.Forms.Label();
             this.lbl_Fecha = new System.Windows.Forms.Label();
@@ -191,15 +191,6 @@
             this.sbl_NombreUsuario.Size = new System.Drawing.Size(139, 20);
             this.sbl_NombreUsuario.Text = "Nombre de Usuario";
             // 
-            // sbl_RolUsuario
-            // 
-            this.sbl_RolUsuario.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.sbl_RolUsuario.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.sbl_RolUsuario.Margin = new System.Windows.Forms.Padding(400, 3, 0, 2);
-            this.sbl_RolUsuario.Name = "sbl_RolUsuario";
-            this.sbl_RolUsuario.Size = new System.Drawing.Size(106, 20);
-            this.sbl_RolUsuario.Text = "Rol de Usuario";
-            // 
             // sbl_DniUsuario
             // 
             this.sbl_DniUsuario.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -209,6 +200,15 @@
             this.sbl_DniUsuario.Size = new System.Drawing.Size(101, 20);
             this.sbl_DniUsuario.Text = "DNI 00000000";
             // 
+            // sbl_RolUsuario
+            // 
+            this.sbl_RolUsuario.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.sbl_RolUsuario.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.sbl_RolUsuario.Margin = new System.Windows.Forms.Padding(400, 3, 0, 2);
+            this.sbl_RolUsuario.Name = "sbl_RolUsuario";
+            this.sbl_RolUsuario.Size = new System.Drawing.Size(106, 20);
+            this.sbl_RolUsuario.Text = "Rol de Usuario";
+            // 
             // pnl_Imagen
             // 
             this.pnl_Imagen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
@@ -216,9 +216,10 @@
             this.pnl_Imagen.Controls.Add(this.lbl_Fecha);
             this.pnl_Imagen.Controls.Add(this.lbl_Horario);
             this.pnl_Imagen.Controls.Add(this.pic_ImagenPrincipal);
-            this.pnl_Imagen.Location = new System.Drawing.Point(0, 44);
+            this.pnl_Imagen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Imagen.Location = new System.Drawing.Point(0, 41);
             this.pnl_Imagen.Name = "pnl_Imagen";
-            this.pnl_Imagen.Size = new System.Drawing.Size(800, 408);
+            this.pnl_Imagen.Size = new System.Drawing.Size(800, 414);
             this.pnl_Imagen.TabIndex = 7;
             // 
             // lbl_Kiosco
@@ -237,7 +238,7 @@
             this.lbl_Fecha.AutoSize = true;
             this.lbl_Fecha.Font = new System.Drawing.Font("Segoe UI", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Fecha.ForeColor = System.Drawing.Color.White;
-            this.lbl_Fecha.Location = new System.Drawing.Point(40, 149);
+            this.lbl_Fecha.Location = new System.Drawing.Point(39, 149);
             this.lbl_Fecha.Name = "lbl_Fecha";
             this.lbl_Fecha.Size = new System.Drawing.Size(312, 54);
             this.lbl_Fecha.TabIndex = 2;
@@ -248,7 +249,7 @@
             this.lbl_Horario.AutoSize = true;
             this.lbl_Horario.Font = new System.Drawing.Font("Segoe UI", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Horario.ForeColor = System.Drawing.Color.White;
-            this.lbl_Horario.Location = new System.Drawing.Point(26, 43);
+            this.lbl_Horario.Location = new System.Drawing.Point(30, 43);
             this.lbl_Horario.Name = "lbl_Horario";
             this.lbl_Horario.Size = new System.Drawing.Size(234, 106);
             this.lbl_Horario.TabIndex = 1;
