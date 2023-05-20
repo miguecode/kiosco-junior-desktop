@@ -10,7 +10,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades.csproj" />
     <ProjectReference Include="..\Helper\Helper.csproj" />
-    <ProjectReference Include="..\Vista\Vista.csproj" />
   </ItemGroup>
 
 </Project>

@@ -56,7 +56,6 @@ namespace Vista
         {
             if (!txt_Contrasenia.UseSystemPasswordChar)
                 txt_Contrasenia.UseSystemPasswordChar = true;
-
             else
                 txt_Contrasenia.UseSystemPasswordChar = false;
         }

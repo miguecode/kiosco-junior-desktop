@@ -13,7 +13,7 @@ namespace Helper
         {
             if (!String.IsNullOrEmpty(nick) && !String.IsNullOrEmpty(contrasenia))
             {
-                var usuarioExistente = ValidarUsuarioExistente(nick, contrasenia);
+                Usuario? usuarioExistente = ValidarUsuarioExistente(nick, contrasenia);
 
                 if (usuarioExistente is not null)
                     return usuarioExistente;
@@ -24,7 +24,7 @@ namespace Helper
 
             throw new Exception(String.Empty);
         }
-
+        
         private static Usuario? ValidarUsuarioExistente(string nick, string contrasenia)
         {
             foreach (Usuario usuario in Sistema.ListaDeUsuarios)

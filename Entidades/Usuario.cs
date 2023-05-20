@@ -85,5 +85,18 @@ namespace Entidades
         {
             return !(u1.NombreUsuario == u2.NombreUsuario || u1.Dni == u2.Dni);
         }
+
+        public override bool Equals(object? obj)
+        {
+            if (obj is null || this is null)
+                return false;
+
+            return Equals(this, obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return 1;
+        }
     }
 }

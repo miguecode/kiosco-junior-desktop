@@ -1,5 +1,6 @@
 ﻿using Entidades;
 using Helper;
+using HelperFormularios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,8 +32,8 @@ namespace Vista
 
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-            usuarioActual = formLogin.UsuarioIngresado;
             IsMdiContainer = true;
+            usuarioActual = formLogin.UsuarioIngresado;
             CrearFormulariosMdi();
             ConfigurarMenuPorRol(usuarioActual);
         }
@@ -42,7 +43,7 @@ namespace Vista
             foreach (var formularioHijo in this.MdiChildren)
             {
                 formularioHijo.Hide();
-                pnl_Imagen.BringToFront();
+                pnl_Inicio.BringToFront();
             }
         }
 
@@ -54,33 +55,32 @@ namespace Vista
 
         private void smi_Producto_Click(object sender, EventArgs e)
         {
-            MostrarFormularioHijo(typeof(FrmProductos));
+            Formularios.MostrarFormularioHijo(this, typeof(FrmProductos), pnl_Inicio);
         }
 
         private void smi_Compras_Click(object sender, EventArgs e)
         {
-            MostrarFormularioHijo(typeof(FrmCompras));
+            Formularios.MostrarFormularioHijo(this, typeof(FrmCompras), pnl_Inicio);
         }
 
         private void smi_Ventas_Click(object sender, EventArgs e)
         {
-            MostrarFormularioHijo(typeof(FrmVentas));
+            Formularios.MostrarFormularioHijo(this, typeof(FrmVentas), pnl_Inicio);
         }
 
         private void smi_Usuarios_Click(object sender, EventArgs e)
         {
-            MostrarFormularioHijo(typeof(FrmGestionUsuario));
+            Formularios.MostrarFormularioHijo(this, typeof(FrmGestionUsuario), pnl_Inicio);
         }
 
         private void tsm_VerDatos_Click(object sender, EventArgs e)
         {
-            MostrarFormularioHijo(typeof(FrmInfoUsuario));
+            Formularios.MostrarFormularioHijo(this, typeof(FrmInfoUsuario), pnl_Inicio);
         }
 
         private void tsm_CerrarSesion_Click(object sender, EventArgs e)
         {
-            formLogin.LimpiarDatos();           
-            formLogin.Show();
+            formLogin.LimpiarDatos();
             this.Close();
         }
 
@@ -119,22 +119,6 @@ namespace Vista
                 smi_Producto.Visible = false;
                 smi_Ventas.Visible = false;
                 tsm_VerDatos.Visible = false;
-            }
-        }
-
-        private void MostrarFormularioHijo(Type tipoFormulario)
-        {
-            foreach (Form formulario in this.MdiChildren)
-            {
-                if (formulario.GetType() != tipoFormulario)
-                    formulario.Hide();
-
-                else
-                {
-                    pnl_Imagen.SendToBack();
-                    formulario.WindowState = FormWindowState.Maximized;
-                    formulario.Show();
-                }
             }
         }
     }

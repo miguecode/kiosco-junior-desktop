@@ -43,7 +43,7 @@
             this.sbl_NombreUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.sbl_DniUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.sbl_RolUsuario = new System.Windows.Forms.ToolStripStatusLabel();
-            this.pnl_Imagen = new System.Windows.Forms.Panel();
+            this.pnl_Inicio = new System.Windows.Forms.Panel();
             this.lbl_Kiosco = new System.Windows.Forms.Label();
             this.lbl_Fecha = new System.Windows.Forms.Label();
             this.lbl_Horario = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.tim_HoraYFecha = new System.Windows.Forms.Timer(this.components);
             this.msp_Principal.SuspendLayout();
             this.sta_Datos.SuspendLayout();
-            this.pnl_Imagen.SuspendLayout();
+            this.pnl_Inicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ImagenPrincipal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -209,18 +209,18 @@
             this.sbl_RolUsuario.Size = new System.Drawing.Size(106, 20);
             this.sbl_RolUsuario.Text = "Rol de Usuario";
             // 
-            // pnl_Imagen
+            // pnl_Inicio
             // 
-            this.pnl_Imagen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.pnl_Imagen.Controls.Add(this.lbl_Kiosco);
-            this.pnl_Imagen.Controls.Add(this.lbl_Fecha);
-            this.pnl_Imagen.Controls.Add(this.lbl_Horario);
-            this.pnl_Imagen.Controls.Add(this.pic_ImagenPrincipal);
-            this.pnl_Imagen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Imagen.Location = new System.Drawing.Point(0, 41);
-            this.pnl_Imagen.Name = "pnl_Imagen";
-            this.pnl_Imagen.Size = new System.Drawing.Size(800, 414);
-            this.pnl_Imagen.TabIndex = 7;
+            this.pnl_Inicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.pnl_Inicio.Controls.Add(this.lbl_Kiosco);
+            this.pnl_Inicio.Controls.Add(this.lbl_Fecha);
+            this.pnl_Inicio.Controls.Add(this.lbl_Horario);
+            this.pnl_Inicio.Controls.Add(this.pic_ImagenPrincipal);
+            this.pnl_Inicio.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_Inicio.Location = new System.Drawing.Point(0, 41);
+            this.pnl_Inicio.Name = "pnl_Inicio";
+            this.pnl_Inicio.Size = new System.Drawing.Size(800, 414);
+            this.pnl_Inicio.TabIndex = 7;
             // 
             // lbl_Kiosco
             // 
@@ -279,7 +279,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(800, 480);
             this.ControlBox = false;
-            this.Controls.Add(this.pnl_Imagen);
+            this.Controls.Add(this.pnl_Inicio);
             this.Controls.Add(this.sta_Datos);
             this.Controls.Add(this.msp_Principal);
             this.DoubleBuffered = true;
@@ -295,8 +295,8 @@
             this.msp_Principal.PerformLayout();
             this.sta_Datos.ResumeLayout(false);
             this.sta_Datos.PerformLayout();
-            this.pnl_Imagen.ResumeLayout(false);
-            this.pnl_Imagen.PerformLayout();
+            this.pnl_Inicio.ResumeLayout(false);
+            this.pnl_Inicio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ImagenPrincipal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -316,7 +316,7 @@
         private ToolStripStatusLabel sbl_DniUsuario;
         private ToolStripMenuItem smi_Compras;
         private ToolStripMenuItem smi_Ventas;
-        private Panel pnl_Imagen;
+        private Panel pnl_Inicio;
         private PictureBox pic_ImagenPrincipal;
         private ToolStripMenuItem tsm_VerDatos;
         private ToolStripStatusLabel sbl_RolUsuario;

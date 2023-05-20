@@ -80,7 +80,7 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.Append($"-NOMBRE: {Nombre} - PRECIO: {Precio}-");
+            sb.Append($"NOMBRE: {Nombre} - PRECIO: {Precio}");
 
             return sb.ToString();
         }
@@ -93,6 +93,19 @@ namespace Entidades
         public static bool operator !=(Producto p1, Producto p2)
         {
             return !(p1.Id == p2.Id);
+        }
+
+        public override bool Equals(object? obj)
+        {
+            if (obj is null || this is null)
+                return false;
+
+            return Equals(this, obj);
+        }
+
+        public override int GetHashCode()
+        {
+            return Id;
         }
     }
 }

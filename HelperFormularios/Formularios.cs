@@ -5,24 +5,21 @@ namespace HelperFormularios
 {
     public static class Formularios
     {
-        
-
-
-        public static void LimpiarPantalla(TextBox textBoxNombre, TextBox textBoxContrasenia, Label labelError)
+        public static void MostrarFormularioHijo(Form formulario, Type tipoFormulario, Panel panelInicio)
         {
-            textBoxNombre.Text = string.Empty;
-            textBoxContrasenia.Text = string.Empty;
-            labelError.Visible = false;
+            foreach (Form itemFormulario in formulario.MdiChildren)
+            {
+                if (itemFormulario.GetType() != tipoFormulario)
+                    itemFormulario.Hide();
+
+                else
+                {
+                    panelInicio.SendToBack();
+                    itemFormulario.WindowState = FormWindowState.Maximized;
+                    itemFormulario.Show();
+                }
+            }
         }
-
-
-
-
-
-
-
-
-
 
 
 
