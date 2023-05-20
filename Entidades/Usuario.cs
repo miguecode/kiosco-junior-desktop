@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -32,7 +34,7 @@ namespace Entidades
             contrasenia = String.Empty;
             rol = ERol.Cliente;
         }
-
+        
         public Usuario(string nombre, string apellido, int dni, string nombreUsuario, string contrasenia, ERol rol)
         {
             this.nombre = nombre;
@@ -91,7 +93,7 @@ namespace Entidades
             if (obj is null || this is null)
                 return false;
 
-            return Equals(this, obj);
+            return this == (Usuario)obj;
         }
 
         public override int GetHashCode()

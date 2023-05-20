@@ -26,23 +26,6 @@ namespace Vista
             ActualizarDataGrid(Sistema.ListaDeProductos);
         }
 
-        public void ActualizarDataGrid(List<Producto> lista)
-        {
-            string? itemSeleccionado = cmb_OrdenarPor.SelectedItem.ToString();
-            lista = OrdenarListaProductos(itemSeleccionado);
-
-            dtg_Productos.DataSource = null;
-            dtg_Productos.DataSource = lista;
-        }
-
-        private Producto SeleccionarProductoEspecifico(List<Producto> lista)
-        {
-            string? itemSeleccionado = cmb_OrdenarPor.SelectedItem.ToString();
-            lista = OrdenarListaProductos(itemSeleccionado);
-
-            return lista[dtg_Productos.CurrentRow.Index];
-        }
-
         private void btn_Detalles_Click(object sender, EventArgs e)
         {
             if (Sistema.ListaDeProductos.Count > 0)
@@ -108,6 +91,23 @@ namespace Vista
             }
         }
 
+        public void ActualizarDataGrid(List<Producto> lista)
+        {
+            string? itemSeleccionado = cmb_OrdenarPor.SelectedItem.ToString();
+            lista = OrdenarListaProductos(itemSeleccionado);
+
+            dtg_Productos.DataSource = null;
+            dtg_Productos.DataSource = lista;
+        }
+
+        private Producto SeleccionarProductoEspecifico(List<Producto> lista)
+        {
+            string? itemSeleccionado = cmb_OrdenarPor.SelectedItem.ToString();
+            lista = OrdenarListaProductos(itemSeleccionado);
+
+            return lista[dtg_Productos.CurrentRow.Index];
+        }
+
         private List<Producto> OrdenarListaProductos(string? criterio)
         {
             List<Producto> listaOrdenada = new List<Producto>();
@@ -130,7 +130,7 @@ namespace Vista
                     listaOrdenada = Sistema.ListaDeProductos.OrderBy(p => p.Marca).ToList();
                     break;
                 case "Precio":
-                    listaOrdenada = Sistema.ListaDeProductos.OrderBy(p => p.Precio).ToList();
+                    listaOrdenada = Sistema.ListaDeProductos.OrderByDescending(p => p.Precio).ToList();
                     break;
                 case "Stock":
                     listaOrdenada = Sistema.ListaDeProductos.OrderBy(p => p.Stock).ToList();

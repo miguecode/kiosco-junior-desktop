@@ -1,5 +1,6 @@
 ﻿using Entidades;
 using Helper;
+using HelperFormularios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,18 +28,9 @@ namespace Vista
 
         private void FrmAltaProducto_Load(object sender, EventArgs e)
         {
-            if(!esProductoNuevo)
-                AsignarDatosAlUsuario();
-        }
-
-        private void AsignarDatosAlUsuario()
-        {
-            cmb_Tipo.Text = productoIngresado.Tipo.ToString();
-            txt_Nombre.Text = productoIngresado.Nombre;
-            txt_Marca.Text = productoIngresado.Marca;
-            rtb_Descripcion.Text = productoIngresado.Descripcion.ToString();
-            nud_Precio.Value = (decimal)productoIngresado.Precio;
-            nud_Stock.Value = productoIngresado.Stock;
+            if (!esProductoNuevo)
+                Formularios.ConfigurarDatosModificables(productoIngresado, cmb_Tipo, txt_Nombre,
+                                                        txt_Marca, rtb_Descripcion, nud_Precio, nud_Stock);
         }
 
         private void btn_Agregar_Click(object sender, EventArgs e)
@@ -51,7 +43,7 @@ namespace Vista
                 AsignarDatosAlProducto();
 
                 if (esProductoNuevo)
-                    VerificarSiExisteProducto(productoIngresado);
+                    Dato.VerificarSiExisteEntidad(Sistema.ListaDeProductos, productoIngresado);
 
                 this.DialogResult = DialogResult.OK;
             }catch(Exception ex)
@@ -59,6 +51,11 @@ namespace Vista
                 lbl_Error.Visible = true;
                 lbl_Error.Text = ex.Message;
             }
+        }
+
+        private void btn_Cancelar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
         }
 
         private void AsignarDatosAlProducto()
@@ -81,20 +78,6 @@ namespace Vista
                 productoIngresado.Precio = precio;
                 productoIngresado.Stock = stock;
             }          
-        }
-
-        private void btn_Cancelar_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
-        }
-
-        private void VerificarSiExisteProducto(Producto productoRecibido)
-        {
-            foreach (Producto producto in Sistema.ListaDeProductos)
-            {
-                if (producto == productoRecibido)
-                    throw new Exception("Ese producto ya existe");
-            }
         }
     }
 }

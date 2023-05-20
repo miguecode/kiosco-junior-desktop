@@ -81,6 +81,7 @@ namespace Vista
         private void tsm_CerrarSesion_Click(object sender, EventArgs e)
         {
             formLogin.LimpiarDatos();
+            formLogin.Show();
             this.Close();
         }
 

@@ -25,22 +25,6 @@ namespace Vista
             cmb_OrdenarPor.SelectedItem = "Original";
             ActualizarDataGrid(Sistema.ListaDeUsuarios);
         }
-        public void ActualizarDataGrid(List<Usuario> lista)
-        {
-            string? itemSeleccionado = cmb_OrdenarPor.SelectedItem.ToString();
-            lista = OrdenarListaUsuarios(itemSeleccionado);
-
-            dtg_Usuarios.DataSource = null;
-            dtg_Usuarios.DataSource = lista;
-        }
-
-        private Usuario SeleccionarUsuarioEspecifico(List<Usuario> lista)
-        {
-            string? itemSeleccionado = cmb_OrdenarPor.SelectedItem.ToString();
-            lista = OrdenarListaUsuarios(itemSeleccionado);
-
-            return lista[dtg_Usuarios.CurrentRow.Index];
-        }
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
@@ -96,6 +80,23 @@ namespace Vista
                 List<Usuario> listaOrdenada = OrdenarListaUsuarios(itemSeleccionado);
                 ActualizarDataGrid(listaOrdenada);
             }
+        }
+
+        public void ActualizarDataGrid(List<Usuario> lista)
+        {
+            string? itemSeleccionado = cmb_OrdenarPor.SelectedItem.ToString();
+            lista = OrdenarListaUsuarios(itemSeleccionado);
+
+            dtg_Usuarios.DataSource = null;
+            dtg_Usuarios.DataSource = lista;
+        }
+
+        private Usuario SeleccionarUsuarioEspecifico(List<Usuario> lista)
+        {
+            string? itemSeleccionado = cmb_OrdenarPor.SelectedItem.ToString();
+            lista = OrdenarListaUsuarios(itemSeleccionado);
+
+            return lista[dtg_Usuarios.CurrentRow.Index];
         }
 
         private static List<Usuario> OrdenarListaUsuarios(string? criterio)

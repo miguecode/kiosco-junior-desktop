@@ -100,7 +100,7 @@ namespace Entidades
             if (obj is null || this is null)
                 return false;
 
-            return Equals(this, obj);
+            return this == (Producto)obj;
         }
 
         public override int GetHashCode()
