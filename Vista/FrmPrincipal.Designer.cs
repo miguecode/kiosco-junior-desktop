@@ -184,11 +184,11 @@
             // 
             // sbl_NombreUsuario
             // 
-            this.sbl_NombreUsuario.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.sbl_NombreUsuario.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.sbl_NombreUsuario.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.sbl_NombreUsuario.Margin = new System.Windows.Forms.Padding(10, 3, 0, 2);
             this.sbl_NombreUsuario.Name = "sbl_NombreUsuario";
-            this.sbl_NombreUsuario.Size = new System.Drawing.Size(139, 20);
+            this.sbl_NombreUsuario.Size = new System.Drawing.Size(146, 20);
             this.sbl_NombreUsuario.Text = "Nombre de Usuario";
             // 
             // sbl_DniUsuario

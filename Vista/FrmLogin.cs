@@ -97,7 +97,7 @@ namespace Vista
             }
         }
 
-        public void LimpiarPantalla()
+        public void LimpiarDatos()
         {
             txt_Nombre.Text = String.Empty;
             txt_Contrasenia.Text = String.Empty;

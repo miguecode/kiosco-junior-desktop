@@ -79,7 +79,7 @@ namespace Vista
 
         private void tsm_CerrarSesion_Click(object sender, EventArgs e)
         {
-            formLogin.LimpiarPantalla();
+            formLogin.LimpiarDatos();           
             formLogin.Show();
             this.Close();
         }
@@ -111,10 +111,8 @@ namespace Vista
             sbl_RolUsuario.Text = usuarioRecibido.Rol.ToString();
 
             if (usuarioRecibido.Rol == ERol.SuperUsuario)
-            {
                 smi_Usuarios.Visible = true;
-                sbl_NombreUsuario.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-            }
+
             else if (usuarioRecibido.Rol == ERol.Cliente)
             {
                 smi_Compras.Visible = true;

@@ -67,14 +67,13 @@ namespace Vista
                 ventaActual = new Venta(nombreCliente, valorTotal);
 
                 Sistema.ListaDeVentas.Add(ventaActual);
-
+              
                 StringBuilder sb = new StringBuilder();
                 sb.AppendLine("¡Compra realizada con éxito!\n");
                 sb.AppendLine($"ID de la transacción: {ventaActual.Id}");
                 sb.AppendLine($"Cantidad de productos comprados: {clienteActual.TamañoDeCarrito}");
                 sb.AppendLine($"Comprador: {nombreCliente}\n");
                 sb.AppendLine($"Importe Total: $ {ventaActual.ValorTotal.ToString("0.00")}"); ;
-
                 MessageBox.Show(sb.ToString(), "Kiosco Junior");
 
                 ReducirStockProducto();
