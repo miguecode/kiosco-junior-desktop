@@ -1,11 +1,13 @@
 ﻿using Entidades;
 using Helper;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -122,19 +124,6 @@ namespace Vista
             lbl_Total.Text = $"Precio TOTAL: $ {precioTotal:0.00}";
         }
 
-        /*private int ContarRepeticionesProducto(Producto productoSeleccionado)
-        {
-            int contador = 1;
-
-            foreach (Producto producto in clienteActual.Carrito)
-            {
-                if (producto == productoSeleccionado)
-                    contador++;
-            }
-
-            return contador;
-        }*/
-
         private void ReiniciarCarrito()
         {
             ReiniciarCantidadDeProductos();
@@ -188,23 +177,6 @@ namespace Vista
                                         usuarioActual.NombreUsuario, usuarioActual.Contrasenia, usuarioActual.Rol);
 
             return clienteCreado;
-        }
-
-        private void cmb_FiltrarPorTipo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            bool respuesta = Enum.TryParse(cmb_FiltrarPorTipo.SelectedItem.ToString(), out ETipo tipoSeleccionado);
-
-            if (respuesta)
-            {
-                List<Producto> listaFiltrada = FiltrarListaPorTipo(tipoSeleccionado.ToString());
-                ActualizarDataGrids(listaFiltrada, clienteActual.Carrito);
-            }
-        }
-
-        private static List<Producto> FiltrarListaPorTipo(string? tipo)
-        {
-            List<Producto> listaFiltrada = Sistema.ListaDeProductos.Where(p => p.Tipo.ToString() == tipo).ToList();
-            return listaFiltrada;
         }
     }
 }

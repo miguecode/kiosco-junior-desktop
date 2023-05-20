@@ -35,6 +35,7 @@ namespace Vista
             IsMdiContainer = true;
             CrearFormulariosMdi();
             ConfigurarMenuPorRol(usuarioActual);
+
         }
 
         private void smi_Inicio_Click(object sender, EventArgs e)
@@ -44,6 +45,12 @@ namespace Vista
                 formularioHijo.Hide();
                 pnl_Imagen.BringToFront();
             }
+        }
+
+        private void tim_HoraYFecha_Tick(object sender, EventArgs e)
+        {
+            lbl_Horario.Text = DateTime.Now.ToShortTimeString();
+            lbl_Fecha.Text = DateTime.Now.ToString("dd 'de' MMMM yyyy");
         }
 
         private void smi_Producto_Click(object sender, EventArgs e)
@@ -102,13 +109,12 @@ namespace Vista
         {
             sbl_NombreUsuario.Text = usuarioRecibido.NombreCompleto;
             sbl_DniUsuario.Text = $"DNI: {usuarioRecibido.Dni}";
-
+            sbl_RolUsuario.Text = usuarioRecibido.Rol.ToString();
 
             if (usuarioRecibido.Rol == ERol.SuperUsuario)
             {
                 smi_Usuarios.Visible = true;
                 sbl_NombreUsuario.Font = new Font("Segoe UI", 11F, FontStyle.Bold, GraphicsUnit.Point);
-                //smi_Cerrar.Margin.Left = 470
             }
             else if (usuarioRecibido.Rol == ERol.Cliente)
             {
@@ -116,7 +122,6 @@ namespace Vista
                 smi_Producto.Visible = false;
                 smi_Ventas.Visible = false;
                 tsm_VerDatos.Visible = false;
-                //smi_Cerrar.Margin.Left = 
             }
         }
 

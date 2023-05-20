@@ -198,9 +198,9 @@
             this.btn_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Agregar.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Agregar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_Agregar.Location = new System.Drawing.Point(148, 344);
+            this.btn_Agregar.Location = new System.Drawing.Point(207, 344);
             this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Size = new System.Drawing.Size(282, 54);
+            this.btn_Agregar.Size = new System.Drawing.Size(223, 54);
             this.btn_Agregar.TabIndex = 7;
             this.btn_Agregar.Text = "Agregar al carrito";
             this.btn_Agregar.UseVisualStyleBackColor = false;
@@ -215,9 +215,9 @@
             this.btn_Confirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Confirmar.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Confirmar.ForeColor = System.Drawing.Color.White;
-            this.btn_Confirmar.Location = new System.Drawing.Point(484, 337);
+            this.btn_Confirmar.Location = new System.Drawing.Point(565, 337);
             this.btn_Confirmar.Name = "btn_Confirmar";
-            this.btn_Confirmar.Size = new System.Drawing.Size(304, 61);
+            this.btn_Confirmar.Size = new System.Drawing.Size(223, 61);
             this.btn_Confirmar.TabIndex = 8;
             this.btn_Confirmar.Text = "Comprar";
             this.btn_Confirmar.UseVisualStyleBackColor = false;
@@ -369,7 +369,6 @@
             this.cmb_FiltrarPorTipo.Name = "cmb_FiltrarPorTipo";
             this.cmb_FiltrarPorTipo.Size = new System.Drawing.Size(107, 23);
             this.cmb_FiltrarPorTipo.TabIndex = 13;
-            this.cmb_FiltrarPorTipo.SelectedIndexChanged += new System.EventHandler(this.cmb_FiltrarPorTipo_SelectedIndexChanged);
             // 
             // lbl_Filtro
             // 
