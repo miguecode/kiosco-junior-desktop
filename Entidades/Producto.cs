@@ -28,6 +28,7 @@ namespace Entidades
             this.precio = 1;
             this.stock = 1;
             this.id = 0000;
+            this.cantidadEnCarrito = 0;
         }
 
         public Producto(string nombre, ETipo tipo, string marca, string descripcion,

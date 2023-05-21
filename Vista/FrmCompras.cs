@@ -1,6 +1,7 @@
 ﻿using Entidades;
 using Helper;
 using System;
+using System.CodeDom;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -91,7 +92,7 @@ namespace Vista
 
         private void AgregarProductoAlCarrito()
         {
-            Producto productoSeleccionado = SeleccionarProductoEspecifico();
+            Producto productoSeleccionado = SeleccionarProductoEspecifico(false);
 
             if (clienteActual.Carrito.Contains(productoSeleccionado))
                 productoSeleccionado.CantidadEnCarrito++;
@@ -105,7 +106,7 @@ namespace Vista
 
         private void VerificarProductoStock()
         {
-            Producto productoSeleccionado = SeleccionarProductoEspecifico();
+            Producto productoSeleccionado = SeleccionarProductoEspecifico(false);
 
             if (productoSeleccionado.CantidadEnCarrito > (productoSeleccionado.Stock -1))
                 throw new Exception("Producto agotado");
@@ -165,9 +166,13 @@ namespace Vista
             dtg_Carrito.DataSource = null;
             dtg_Carrito.DataSource = carrito;
         }
-        private Producto SeleccionarProductoEspecifico()
+
+        private Producto SeleccionarProductoEspecifico(bool esCarrito)
         {
-            return menu[dtg_Productos.CurrentRow.Index];
+            if (esCarrito)
+                return clienteActual.Carrito[dtg_Carrito.CurrentRow.Index];
+            else
+                return menu[dtg_Productos.CurrentRow.Index];            
         }
 
         private Cliente ConvertirUsuarioACliente(Usuario usuarioActual)
@@ -176,6 +181,20 @@ namespace Vista
                                         usuarioActual.NombreUsuario, usuarioActual.Contrasenia, usuarioActual.Rol);
 
             return clienteCreado;
+        }
+
+        private void btn_Sacar_Click(object sender, EventArgs e)
+        {
+            if (clienteActual.Carrito.Count > 0)
+            {
+                Producto productoSeleccionado = SeleccionarProductoEspecifico(true);
+
+                productoSeleccionado.CantidadEnCarrito = 0;
+                clienteActual.Carrito.Remove(productoSeleccionado);
+
+                ActualizarDataGrids(menu, clienteActual.Carrito);
+                EscribirPrecioTotal();
+            }
         }
     }
 }
