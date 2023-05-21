@@ -43,7 +43,7 @@
             this.sbl_NombreUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.sbl_DniUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.sbl_RolUsuario = new System.Windows.Forms.ToolStripStatusLabel();
-            this.pnl_Inicio = new System.Windows.Forms.Panel();
+            this.pan_Inicio = new System.Windows.Forms.Panel();
             this.lbl_Kiosco = new System.Windows.Forms.Label();
             this.lbl_Fecha = new System.Windows.Forms.Label();
             this.lbl_Horario = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.tim_HoraYFecha = new System.Windows.Forms.Timer(this.components);
             this.msp_Principal.SuspendLayout();
             this.sta_Datos.SuspendLayout();
-            this.pnl_Inicio.SuspendLayout();
+            this.pan_Inicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ImagenPrincipal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,6 +59,7 @@
             // 
             this.msp_Principal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(75)))), ((int)(((byte)(171)))));
             this.msp_Principal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.msp_Principal.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.msp_Principal.GripMargin = new System.Windows.Forms.Padding(0);
             this.msp_Principal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.smi_Inicio,
@@ -71,8 +72,9 @@
             this.msp_Principal.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.msp_Principal.Location = new System.Drawing.Point(0, 0);
             this.msp_Principal.Name = "msp_Principal";
+            this.msp_Principal.Padding = new System.Windows.Forms.Padding(6, 0, 0, 2);
             this.msp_Principal.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.msp_Principal.Size = new System.Drawing.Size(800, 41);
+            this.msp_Principal.Size = new System.Drawing.Size(800, 39);
             this.msp_Principal.TabIndex = 4;
             this.msp_Principal.Text = "Menú Principal";
             // 
@@ -91,7 +93,9 @@
             this.smi_Producto.CheckState = System.Windows.Forms.CheckState.Checked;
             this.smi_Producto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.smi_Producto.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.smi_Producto.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.smi_Producto.Name = "smi_Producto";
+            this.smi_Producto.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.smi_Producto.Size = new System.Drawing.Size(99, 37);
             this.smi_Producto.Text = "Productos";
             this.smi_Producto.Click += new System.EventHandler(this.smi_Producto_Click);
@@ -209,18 +213,20 @@
             this.sbl_RolUsuario.Size = new System.Drawing.Size(106, 20);
             this.sbl_RolUsuario.Text = "Rol de Usuario";
             // 
-            // pnl_Inicio
+            // pan_Inicio
             // 
-            this.pnl_Inicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.pnl_Inicio.Controls.Add(this.lbl_Kiosco);
-            this.pnl_Inicio.Controls.Add(this.lbl_Fecha);
-            this.pnl_Inicio.Controls.Add(this.lbl_Horario);
-            this.pnl_Inicio.Controls.Add(this.pic_ImagenPrincipal);
-            this.pnl_Inicio.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnl_Inicio.Location = new System.Drawing.Point(0, 41);
-            this.pnl_Inicio.Name = "pnl_Inicio";
-            this.pnl_Inicio.Size = new System.Drawing.Size(800, 414);
-            this.pnl_Inicio.TabIndex = 7;
+            this.pan_Inicio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pan_Inicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.pan_Inicio.Controls.Add(this.lbl_Kiosco);
+            this.pan_Inicio.Controls.Add(this.lbl_Fecha);
+            this.pan_Inicio.Controls.Add(this.lbl_Horario);
+            this.pan_Inicio.Controls.Add(this.pic_ImagenPrincipal);
+            this.pan_Inicio.Location = new System.Drawing.Point(0, 42);
+            this.pan_Inicio.Name = "pan_Inicio";
+            this.pan_Inicio.Size = new System.Drawing.Size(800, 410);
+            this.pan_Inicio.TabIndex = 7;
             // 
             // lbl_Kiosco
             // 
@@ -249,7 +255,7 @@
             this.lbl_Horario.AutoSize = true;
             this.lbl_Horario.Font = new System.Drawing.Font("Segoe UI", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.lbl_Horario.ForeColor = System.Drawing.Color.White;
-            this.lbl_Horario.Location = new System.Drawing.Point(30, 43);
+            this.lbl_Horario.Location = new System.Drawing.Point(23, 43);
             this.lbl_Horario.Name = "lbl_Horario";
             this.lbl_Horario.Size = new System.Drawing.Size(234, 106);
             this.lbl_Horario.TabIndex = 1;
@@ -279,7 +285,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(800, 480);
             this.ControlBox = false;
-            this.Controls.Add(this.pnl_Inicio);
+            this.Controls.Add(this.pan_Inicio);
             this.Controls.Add(this.sta_Datos);
             this.Controls.Add(this.msp_Principal);
             this.DoubleBuffered = true;
@@ -295,8 +301,8 @@
             this.msp_Principal.PerformLayout();
             this.sta_Datos.ResumeLayout(false);
             this.sta_Datos.PerformLayout();
-            this.pnl_Inicio.ResumeLayout(false);
-            this.pnl_Inicio.PerformLayout();
+            this.pan_Inicio.ResumeLayout(false);
+            this.pan_Inicio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_ImagenPrincipal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -315,8 +321,7 @@
         private ToolStripMenuItem smi_Usuarios;
         private ToolStripStatusLabel sbl_DniUsuario;
         private ToolStripMenuItem smi_Compras;
-        private ToolStripMenuItem smi_Ventas;
-        private Panel pnl_Inicio;
+        private Panel pan_Inicio;
         private PictureBox pic_ImagenPrincipal;
         private ToolStripMenuItem tsm_VerDatos;
         private ToolStripStatusLabel sbl_RolUsuario;
@@ -324,5 +329,6 @@
         private Label lbl_Horario;
         private Label lbl_Kiosco;
         private System.Windows.Forms.Timer tim_HoraYFecha;
+        private ToolStripMenuItem smi_Ventas;
     }
 }

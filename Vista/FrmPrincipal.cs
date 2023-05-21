@@ -43,7 +43,7 @@ namespace Vista
             foreach (var formularioHijo in this.MdiChildren)
             {
                 formularioHijo.Hide();
-                pnl_Inicio.BringToFront();
+                pan_Inicio.BringToFront();
             }
         }
 
@@ -55,27 +55,27 @@ namespace Vista
 
         private void smi_Producto_Click(object sender, EventArgs e)
         {
-            Formularios.MostrarFormularioHijo(this, typeof(FrmProductos), pnl_Inicio);
+            Formularios.MostrarFormularioHijo(this, typeof(FrmProductos), pan_Inicio);
         }
 
         private void smi_Compras_Click(object sender, EventArgs e)
         {
-            Formularios.MostrarFormularioHijo(this, typeof(FrmCompras), pnl_Inicio);
+            Formularios.MostrarFormularioHijo(this, typeof(FrmCompras), pan_Inicio);
         }
 
         private void smi_Ventas_Click(object sender, EventArgs e)
         {
-            Formularios.MostrarFormularioHijo(this, typeof(FrmVentas), pnl_Inicio);
+            Formularios.MostrarFormularioHijo(this, typeof(FrmVentas), pan_Inicio);
         }
 
         private void smi_Usuarios_Click(object sender, EventArgs e)
         {
-            Formularios.MostrarFormularioHijo(this, typeof(FrmGestionUsuario), pnl_Inicio);
+            Formularios.MostrarFormularioHijo(this, typeof(FrmGestionUsuario), pan_Inicio);
         }
 
         private void tsm_VerDatos_Click(object sender, EventArgs e)
         {
-            Formularios.MostrarFormularioHijo(this, typeof(FrmInfoUsuario), pnl_Inicio);
+            Formularios.MostrarFormularioHijo(this, typeof(FrmInfoUsuario), pan_Inicio);
         }
 
         private void tsm_CerrarSesion_Click(object sender, EventArgs e)

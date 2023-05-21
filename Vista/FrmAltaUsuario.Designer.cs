@@ -44,6 +44,11 @@
             this.btn_VerContrasenia = new System.Windows.Forms.Button();
             this.cmb_Rol = new System.Windows.Forms.ComboBox();
             this.lbl_Rol = new System.Windows.Forms.Label();
+            this.pan_Nombre = new System.Windows.Forms.Panel();
+            this.pan_Apellido = new System.Windows.Forms.Panel();
+            this.pan_Dni = new System.Windows.Forms.Panel();
+            this.pan_NombreUsuario = new System.Windows.Forms.Panel();
+            this.pan_Contrasenia = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // lbl_Nombre
@@ -103,42 +108,57 @@
             // 
             // txt_Nombre
             // 
+            this.txt_Nombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.txt_Nombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Nombre.ForeColor = System.Drawing.Color.White;
             this.txt_Nombre.Location = new System.Drawing.Point(112, 69);
             this.txt_Nombre.MaxLength = 14;
             this.txt_Nombre.Name = "txt_Nombre";
-            this.txt_Nombre.Size = new System.Drawing.Size(151, 23);
+            this.txt_Nombre.Size = new System.Drawing.Size(151, 16);
             this.txt_Nombre.TabIndex = 5;
             // 
             // txt_Apellido
             // 
+            this.txt_Apellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.txt_Apellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Apellido.ForeColor = System.Drawing.Color.White;
             this.txt_Apellido.Location = new System.Drawing.Point(112, 116);
             this.txt_Apellido.MaxLength = 14;
             this.txt_Apellido.Name = "txt_Apellido";
-            this.txt_Apellido.Size = new System.Drawing.Size(151, 23);
+            this.txt_Apellido.Size = new System.Drawing.Size(151, 16);
             this.txt_Apellido.TabIndex = 6;
             // 
             // txt_Dni
             // 
+            this.txt_Dni.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.txt_Dni.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Dni.ForeColor = System.Drawing.Color.White;
             this.txt_Dni.Location = new System.Drawing.Point(381, 24);
             this.txt_Dni.MaxLength = 8;
             this.txt_Dni.Name = "txt_Dni";
-            this.txt_Dni.Size = new System.Drawing.Size(151, 23);
+            this.txt_Dni.Size = new System.Drawing.Size(151, 16);
             this.txt_Dni.TabIndex = 7;
             // 
             // txt_NombreDeUsuario
             // 
+            this.txt_NombreDeUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.txt_NombreDeUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_NombreDeUsuario.ForeColor = System.Drawing.Color.White;
             this.txt_NombreDeUsuario.Location = new System.Drawing.Point(381, 72);
             this.txt_NombreDeUsuario.MaxLength = 16;
             this.txt_NombreDeUsuario.Name = "txt_NombreDeUsuario";
-            this.txt_NombreDeUsuario.Size = new System.Drawing.Size(151, 23);
+            this.txt_NombreDeUsuario.Size = new System.Drawing.Size(151, 16);
             this.txt_NombreDeUsuario.TabIndex = 8;
             // 
             // txt_Contrasenia
             // 
+            this.txt_Contrasenia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.txt_Contrasenia.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Contrasenia.ForeColor = System.Drawing.Color.White;
             this.txt_Contrasenia.Location = new System.Drawing.Point(382, 115);
             this.txt_Contrasenia.MaxLength = 16;
             this.txt_Contrasenia.Name = "txt_Contrasenia";
-            this.txt_Contrasenia.Size = new System.Drawing.Size(151, 23);
+            this.txt_Contrasenia.Size = new System.Drawing.Size(151, 16);
             this.txt_Contrasenia.TabIndex = 9;
             this.txt_Contrasenia.UseSystemPasswordChar = true;
             // 
@@ -202,7 +222,9 @@
             // 
             // cmb_Rol
             // 
+            this.cmb_Rol.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.cmb_Rol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Rol.ForeColor = System.Drawing.Color.White;
             this.cmb_Rol.FormattingEnabled = true;
             this.cmb_Rol.Items.AddRange(new object[] {
             "SuperUsuario",
@@ -225,12 +247,57 @@
             this.lbl_Rol.TabIndex = 15;
             this.lbl_Rol.Text = "Rol";
             // 
+            // pan_Nombre
+            // 
+            this.pan_Nombre.BackColor = System.Drawing.Color.White;
+            this.pan_Nombre.Location = new System.Drawing.Point(112, 91);
+            this.pan_Nombre.Name = "pan_Nombre";
+            this.pan_Nombre.Size = new System.Drawing.Size(151, 1);
+            this.pan_Nombre.TabIndex = 16;
+            // 
+            // pan_Apellido
+            // 
+            this.pan_Apellido.BackColor = System.Drawing.Color.White;
+            this.pan_Apellido.Location = new System.Drawing.Point(112, 138);
+            this.pan_Apellido.Name = "pan_Apellido";
+            this.pan_Apellido.Size = new System.Drawing.Size(151, 1);
+            this.pan_Apellido.TabIndex = 17;
+            // 
+            // pan_Dni
+            // 
+            this.pan_Dni.BackColor = System.Drawing.Color.White;
+            this.pan_Dni.Location = new System.Drawing.Point(382, 46);
+            this.pan_Dni.Name = "pan_Dni";
+            this.pan_Dni.Size = new System.Drawing.Size(151, 1);
+            this.pan_Dni.TabIndex = 18;
+            // 
+            // pan_NombreUsuario
+            // 
+            this.pan_NombreUsuario.BackColor = System.Drawing.Color.White;
+            this.pan_NombreUsuario.Location = new System.Drawing.Point(382, 94);
+            this.pan_NombreUsuario.Name = "pan_NombreUsuario";
+            this.pan_NombreUsuario.Size = new System.Drawing.Size(151, 1);
+            this.pan_NombreUsuario.TabIndex = 19;
+            // 
+            // pan_Contrasenia
+            // 
+            this.pan_Contrasenia.BackColor = System.Drawing.Color.White;
+            this.pan_Contrasenia.Location = new System.Drawing.Point(382, 137);
+            this.pan_Contrasenia.Name = "pan_Contrasenia";
+            this.pan_Contrasenia.Size = new System.Drawing.Size(151, 1);
+            this.pan_Contrasenia.TabIndex = 20;
+            // 
             // FrmAltaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.ClientSize = new System.Drawing.Size(592, 318);
+            this.Controls.Add(this.pan_Contrasenia);
+            this.Controls.Add(this.pan_NombreUsuario);
+            this.Controls.Add(this.pan_Dni);
+            this.Controls.Add(this.pan_Apellido);
+            this.Controls.Add(this.pan_Nombre);
             this.Controls.Add(this.lbl_Rol);
             this.Controls.Add(this.cmb_Rol);
             this.Controls.Add(this.btn_VerContrasenia);
@@ -278,5 +345,10 @@
         private Button btn_VerContrasenia;
         private ComboBox cmb_Rol;
         private Label lbl_Rol;
+        private Panel pan_Nombre;
+        private Panel pan_Apellido;
+        private Panel pan_Dni;
+        private Panel pan_NombreUsuario;
+        private Panel pan_Contrasenia;
     }
 }

@@ -43,6 +43,10 @@
             this.lbl_Error = new System.Windows.Forms.Label();
             this.lbl_Precio = new System.Windows.Forms.Label();
             this.nud_Precio = new System.Windows.Forms.NumericUpDown();
+            this.pan_Nombre = new System.Windows.Forms.Panel();
+            this.pan_Marca = new System.Windows.Forms.Panel();
+            this.pan_Stock = new System.Windows.Forms.Panel();
+            this.pan_Precio = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Stock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nud_Precio)).BeginInit();
             this.SuspendLayout();
@@ -55,9 +59,9 @@
             this.btn_Confirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Confirmar.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Confirmar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Confirmar.Location = new System.Drawing.Point(70, 278);
+            this.btn_Confirmar.Location = new System.Drawing.Point(52, 278);
             this.btn_Confirmar.Name = "btn_Confirmar";
-            this.btn_Confirmar.Size = new System.Drawing.Size(145, 42);
+            this.btn_Confirmar.Size = new System.Drawing.Size(163, 42);
             this.btn_Confirmar.TabIndex = 0;
             this.btn_Confirmar.Text = "Confirmar";
             this.btn_Confirmar.UseVisualStyleBackColor = false;
@@ -65,24 +69,31 @@
             // 
             // txt_Nombre
             // 
+            this.txt_Nombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.txt_Nombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Nombre.ForeColor = System.Drawing.Color.White;
             this.txt_Nombre.Location = new System.Drawing.Point(54, 46);
             this.txt_Nombre.MaxLength = 23;
             this.txt_Nombre.Name = "txt_Nombre";
-            this.txt_Nombre.Size = new System.Drawing.Size(161, 23);
+            this.txt_Nombre.Size = new System.Drawing.Size(161, 16);
             this.txt_Nombre.TabIndex = 1;
             // 
             // txt_Marca
             // 
-            this.txt_Marca.Location = new System.Drawing.Point(54, 111);
+            this.txt_Marca.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.txt_Marca.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_Marca.ForeColor = System.Drawing.Color.White;
+            this.txt_Marca.Location = new System.Drawing.Point(54, 110);
             this.txt_Marca.MaxLength = 23;
             this.txt_Marca.Name = "txt_Marca";
-            this.txt_Marca.Size = new System.Drawing.Size(161, 23);
+            this.txt_Marca.Size = new System.Drawing.Size(161, 16);
             this.txt_Marca.TabIndex = 2;
             // 
             // cmb_Tipo
             // 
-            this.cmb_Tipo.BackColor = System.Drawing.SystemColors.Window;
+            this.cmb_Tipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.cmb_Tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmb_Tipo.ForeColor = System.Drawing.Color.White;
             this.cmb_Tipo.FormattingEnabled = true;
             this.cmb_Tipo.Items.AddRange(new object[] {
             "Cigarrillo",
@@ -99,6 +110,9 @@
             // 
             // rtb_Descripcion
             // 
+            this.rtb_Descripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.rtb_Descripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtb_Descripcion.ForeColor = System.Drawing.Color.White;
             this.rtb_Descripcion.Location = new System.Drawing.Point(54, 177);
             this.rtb_Descripcion.MaxLength = 120;
             this.rtb_Descripcion.Name = "rtb_Descripcion";
@@ -114,9 +128,9 @@
             this.btn_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Cancelar.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Cancelar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Cancelar.Location = new System.Drawing.Point(70, 326);
+            this.btn_Cancelar.Location = new System.Drawing.Point(52, 326);
             this.btn_Cancelar.Name = "btn_Cancelar";
-            this.btn_Cancelar.Size = new System.Drawing.Size(145, 39);
+            this.btn_Cancelar.Size = new System.Drawing.Size(163, 39);
             this.btn_Cancelar.TabIndex = 6;
             this.btn_Cancelar.Text = "Cancelar";
             this.btn_Cancelar.UseVisualStyleBackColor = false;
@@ -124,6 +138,9 @@
             // 
             // nud_Stock
             // 
+            this.nud_Stock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.nud_Stock.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.nud_Stock.ForeColor = System.Drawing.Color.White;
             this.nud_Stock.Increment = new decimal(new int[] {
             5,
             0,
@@ -136,7 +153,7 @@
             0,
             0});
             this.nud_Stock.Name = "nud_Stock";
-            this.nud_Stock.Size = new System.Drawing.Size(120, 23);
+            this.nud_Stock.Size = new System.Drawing.Size(120, 19);
             this.nud_Stock.TabIndex = 7;
             // 
             // lbl_Nombre
@@ -144,7 +161,7 @@
             this.lbl_Nombre.AutoSize = true;
             this.lbl_Nombre.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_Nombre.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_Nombre.Location = new System.Drawing.Point(54, 24);
+            this.lbl_Nombre.Location = new System.Drawing.Point(52, 24);
             this.lbl_Nombre.Name = "lbl_Nombre";
             this.lbl_Nombre.Size = new System.Drawing.Size(65, 19);
             this.lbl_Nombre.TabIndex = 8;
@@ -155,7 +172,7 @@
             this.lbl_Marca.AutoSize = true;
             this.lbl_Marca.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_Marca.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_Marca.Location = new System.Drawing.Point(54, 89);
+            this.lbl_Marca.Location = new System.Drawing.Point(52, 89);
             this.lbl_Marca.Name = "lbl_Marca";
             this.lbl_Marca.Size = new System.Drawing.Size(51, 19);
             this.lbl_Marca.TabIndex = 9;
@@ -188,7 +205,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.label5.Location = new System.Drawing.Point(54, 155);
+            this.label5.Location = new System.Drawing.Point(52, 155);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(87, 19);
             this.label5.TabIndex = 12;
@@ -219,7 +236,10 @@
             // 
             // nud_Precio
             // 
+            this.nud_Precio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.nud_Precio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.nud_Precio.DecimalPlaces = 2;
+            this.nud_Precio.ForeColor = System.Drawing.Color.White;
             this.nud_Precio.Increment = new decimal(new int[] {
             50,
             0,
@@ -232,8 +252,40 @@
             0,
             0});
             this.nud_Precio.Name = "nud_Precio";
-            this.nud_Precio.Size = new System.Drawing.Size(120, 23);
+            this.nud_Precio.Size = new System.Drawing.Size(120, 19);
             this.nud_Precio.TabIndex = 15;
+            // 
+            // pan_Nombre
+            // 
+            this.pan_Nombre.BackColor = System.Drawing.Color.White;
+            this.pan_Nombre.Location = new System.Drawing.Point(52, 68);
+            this.pan_Nombre.Name = "pan_Nombre";
+            this.pan_Nombre.Size = new System.Drawing.Size(163, 1);
+            this.pan_Nombre.TabIndex = 16;
+            // 
+            // pan_Marca
+            // 
+            this.pan_Marca.BackColor = System.Drawing.Color.White;
+            this.pan_Marca.Location = new System.Drawing.Point(52, 133);
+            this.pan_Marca.Name = "pan_Marca";
+            this.pan_Marca.Size = new System.Drawing.Size(163, 1);
+            this.pan_Marca.TabIndex = 17;
+            // 
+            // pan_Stock
+            // 
+            this.pan_Stock.BackColor = System.Drawing.Color.White;
+            this.pan_Stock.Location = new System.Drawing.Point(271, 127);
+            this.pan_Stock.Name = "pan_Stock";
+            this.pan_Stock.Size = new System.Drawing.Size(103, 1);
+            this.pan_Stock.TabIndex = 18;
+            // 
+            // pan_Precio
+            // 
+            this.pan_Precio.BackColor = System.Drawing.Color.White;
+            this.pan_Precio.Location = new System.Drawing.Point(271, 195);
+            this.pan_Precio.Name = "pan_Precio";
+            this.pan_Precio.Size = new System.Drawing.Size(103, 1);
+            this.pan_Precio.TabIndex = 19;
             // 
             // FrmAltaProducto
             // 
@@ -241,6 +293,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.ClientSize = new System.Drawing.Size(452, 399);
+            this.Controls.Add(this.pan_Precio);
+            this.Controls.Add(this.pan_Stock);
+            this.Controls.Add(this.pan_Marca);
+            this.Controls.Add(this.pan_Nombre);
             this.Controls.Add(this.nud_Precio);
             this.Controls.Add(this.lbl_Precio);
             this.Controls.Add(this.lbl_Error);
@@ -288,5 +344,9 @@
         private Label lbl_Error;
         private Label lbl_Precio;
         private NumericUpDown nud_Precio;
+        private Panel pan_Nombre;
+        private Panel pan_Marca;
+        private Panel pan_Stock;
+        private Panel pan_Precio;
     }
 }
