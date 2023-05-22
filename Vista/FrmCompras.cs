@@ -41,20 +41,25 @@ namespace Vista
 
         private void btn_Agregar_Click(object sender, EventArgs e)
         {
-            try
+            if (dtg_Productos.Rows.Count > 0)
             {
-                VerificarProductoStock();
+                try
+                {
+                    VerificarProductoStock();
 
-                AgregarProductoAlCarrito();
+                    AgregarProductoAlCarrito();
 
-                EscribirPrecioTotal();
+                    EscribirPrecioTotal();
 
-                ActualizarDataGrids(menu, clienteActual.Carrito);
-            }
-            catch (Exception ex)
-            {
-                lbl_Error.Text = ex.Message;
-                lbl_Error.Visible = true;
+                    ActualizarDataGrids(menu, clienteActual.Carrito);
+
+                    lbl_Error.Visible = false;
+                }
+                catch (Exception ex)
+                {
+                    lbl_Error.Text = ex.Message;
+                    lbl_Error.Visible = true;
+                }
             }
         }
 
@@ -62,20 +67,11 @@ namespace Vista
         {
             if (clienteActual.Carrito.Count > 0)
             {
-                string nombreCliente = clienteActual.NombreCompleto;
-                float valorTotal = precioTotal;
-
-                ventaActual = new Venta(nombreCliente, valorTotal);
+                ventaActual = new Venta(clienteActual.NombreCompleto, precioTotal);
 
                 Sistema.ListaDeVentas.Add(ventaActual);
-              
-                StringBuilder sb = new StringBuilder();
-                sb.AppendLine("¡Compra realizada con éxito!\n");
-                sb.AppendLine($"ID de la transacción: {ventaActual.Id}");
-                sb.AppendLine($"Cantidad de productos comprados: {clienteActual.TamañoDeCarrito}");
-                sb.AppendLine($"Comprador: {nombreCliente}\n");
-                sb.AppendLine($"Importe Total: $ {ventaActual.ValorTotal.ToString("0.00")}"); ;
-                MessageBox.Show(sb.ToString(), "Kiosco Junior");
+
+                MostrarMensajeVentaExitosa();
 
                 ReducirStockProducto();
 
@@ -84,10 +80,57 @@ namespace Vista
                 ReiniciarCarrito();
             }
         }
+        private void btn_Sacar_Click(object sender, EventArgs e)
+        {
+            if (clienteActual.Carrito.Count > 0)
+            {
+                Producto productoSeleccionado = SeleccionarProductoEspecifico(true);
+
+                productoSeleccionado.CantidadEnCarrito = 0;
+                clienteActual.Carrito.Remove(productoSeleccionado);
+
+                ActualizarDataGrids(menu, clienteActual.Carrito);
+                EscribirPrecioTotal();
+            }
+        }
 
         private void btn_VaciarCarrito_Click(object sender, EventArgs e)
         {
-            ReiniciarCarrito();
+            if (clienteActual.Carrito.Count > 0)
+                ReiniciarCarrito();
+        }
+
+        private void OcultarProductosAgotados()
+        {
+            foreach (Producto producto in Sistema.ListaDeProductos)
+            {
+                if (producto.Stock == 0)
+                    menu.Remove(producto);
+            }
+        }
+
+        private static void ReiniciarCantidadDeProductos()
+        {
+            foreach (Producto producto in Sistema.ListaDeProductos)
+            {
+                producto.CantidadEnCarrito = 0;
+            }
+        }
+
+        private void VerificarProductoStock()
+        {
+            Producto productoSeleccionado = SeleccionarProductoEspecifico(false);
+
+            if (productoSeleccionado.CantidadEnCarrito > (productoSeleccionado.Stock - 1))
+                throw new Exception("Producto agotado");
+        }
+
+        private Producto SeleccionarProductoEspecifico(bool esCarrito)
+        {
+            if (esCarrito)
+                return clienteActual.Carrito[dtg_Carrito.CurrentRow.Index];
+
+            return menu[dtg_Productos.CurrentRow.Index];
         }
 
         private void AgregarProductoAlCarrito()
@@ -104,14 +147,6 @@ namespace Vista
             }
         }
 
-        private void VerificarProductoStock()
-        {
-            Producto productoSeleccionado = SeleccionarProductoEspecifico(false);
-
-            if (productoSeleccionado.CantidadEnCarrito > (productoSeleccionado.Stock -1))
-                throw new Exception("Producto agotado");
-        }
-
         private void EscribirPrecioTotal()
         {
             precioTotal = 0;
@@ -124,6 +159,15 @@ namespace Vista
             lbl_Total.Text = $"Precio TOTAL: $ {precioTotal:0.00}";
         }
 
+        private void ActualizarDataGrids(List<Producto> menuLista, List<Producto> carrito)
+        {
+            dtg_Productos.DataSource = null;
+            dtg_Productos.DataSource = menuLista;
+
+            dtg_Carrito.DataSource = null;
+            dtg_Carrito.DataSource = carrito;
+        }
+
         private void ReiniciarCarrito()
         {
             ReiniciarCantidadDeProductos();
@@ -133,15 +177,7 @@ namespace Vista
             lbl_Total.Text = $"Precio TOTAL: $ {precioTotal:0.00}";
         }
 
-        private void ReiniciarCantidadDeProductos()
-        {
-            foreach (Producto producto in Sistema.ListaDeProductos)
-            {
-                producto.CantidadEnCarrito = 0;
-            }
-        }
-
-        private void ReducirStockProducto()
+        private static void ReducirStockProducto()
         {
             foreach (Producto producto in Sistema.ListaDeProductos)
             {
@@ -149,30 +185,21 @@ namespace Vista
             }
         }
 
-        private void OcultarProductosAgotados()
-        {
-            foreach (Producto producto in Sistema.ListaDeProductos)
-            {
-                if (producto.Stock == 0)
-                    menu.Remove(producto);
-            }
-        }
 
-        private void ActualizarDataGrids(List<Producto> menu, List<Producto> carrito)
-        {
-            dtg_Productos.DataSource = null;
-            dtg_Productos.DataSource = menu;
 
-            dtg_Carrito.DataSource = null;
-            dtg_Carrito.DataSource = carrito;
-        }
 
-        private Producto SeleccionarProductoEspecifico(bool esCarrito)
+
+        private void MostrarMensajeVentaExitosa()
         {
-            if (esCarrito)
-                return clienteActual.Carrito[dtg_Carrito.CurrentRow.Index];
-            else
-                return menu[dtg_Productos.CurrentRow.Index];            
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("¡Compra realizada con éxito!\n");
+            sb.AppendLine($"ID de la transacción: {ventaActual.Id}");
+            sb.AppendLine($"Cantidad de productos distintos comprados: {clienteActual.TamañoDeCarrito}");
+            sb.AppendLine($"Comprador: {clienteActual.NombreCompleto}\n");
+            sb.AppendLine($"Importe Total: $ {ventaActual.ValorTotal.ToString("0.00")}"); ;
+
+            MessageBox.Show(sb.ToString(), "Kiosco Junior");
         }
 
         private Cliente ConvertirUsuarioACliente(Usuario usuarioActual)
@@ -181,20 +208,6 @@ namespace Vista
                                         usuarioActual.NombreUsuario, usuarioActual.Contrasenia, usuarioActual.Rol);
 
             return clienteCreado;
-        }
-
-        private void btn_Sacar_Click(object sender, EventArgs e)
-        {
-            if (clienteActual.Carrito.Count > 0)
-            {
-                Producto productoSeleccionado = SeleccionarProductoEspecifico(true);
-
-                productoSeleccionado.CantidadEnCarrito = 0;
-                clienteActual.Carrito.Remove(productoSeleccionado);
-
-                ActualizarDataGrids(menu, clienteActual.Carrito);
-                EscribirPrecioTotal();
-            }
         }
     }
 }

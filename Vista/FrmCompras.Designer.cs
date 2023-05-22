@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtg_Productos = new System.Windows.Forms.DataGridView();
             this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,8 +56,6 @@
             this.CantidadEnCarrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_VaciarCarrito = new System.Windows.Forms.Button();
             this.pnl_Precio = new System.Windows.Forms.Panel();
-            this.cmb_FiltrarPorTipo = new System.Windows.Forms.ComboBox();
-            this.lbl_Filtro = new System.Windows.Forms.Label();
             this.btn_Sacar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Productos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
@@ -77,14 +75,14 @@
             this.dtg_Productos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtg_Productos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtg_Productos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle25.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle25.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle25.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle25.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtg_Productos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle25;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtg_Productos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtg_Productos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_Productos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tipoDataGridViewTextBoxColumn,
@@ -99,11 +97,11 @@
             this.dtg_Productos.Name = "dtg_Productos";
             this.dtg_Productos.ReadOnly = true;
             this.dtg_Productos.RowHeadersVisible = false;
-            dataGridViewCellStyle27.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle27.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(75)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.White;
-            this.dtg_Productos.RowsDefaultCellStyle = dataGridViewCellStyle27;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(75)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.dtg_Productos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dtg_Productos.RowTemplate.Height = 25;
             this.dtg_Productos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtg_Productos.Size = new System.Drawing.Size(418, 296);
@@ -130,9 +128,9 @@
             // precioDataGridViewTextBoxColumn
             // 
             this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
-            dataGridViewCellStyle26.Format = "C2";
-            dataGridViewCellStyle26.NullValue = "0,00";
-            this.precioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle26;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = "0,00";
+            this.precioDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
             this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
             this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
             this.precioDataGridViewTextBoxColumn.ReadOnly = true;
@@ -247,48 +245,48 @@
             this.dtg_Carrito.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtg_Carrito.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtg_Carrito.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle28.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle28.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle28.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle28.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtg_Carrito.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle28;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtg_Carrito.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dtg_Carrito.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_Carrito.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombreDataGridViewTextBoxColumn1,
             this.precioDataGridViewTextBoxColumn1,
             this.CantidadEnCarrito});
             this.dtg_Carrito.DataSource = this.productoBindingSource;
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle30.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle30.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle30.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle30.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle30.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtg_Carrito.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtg_Carrito.DefaultCellStyle = dataGridViewCellStyle6;
             this.dtg_Carrito.EnableHeadersVisualStyles = false;
             this.dtg_Carrito.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(139)))), ((int)(((byte)(24)))));
             this.dtg_Carrito.Location = new System.Drawing.Point(484, 41);
             this.dtg_Carrito.MultiSelect = false;
             this.dtg_Carrito.Name = "dtg_Carrito";
             this.dtg_Carrito.ReadOnly = true;
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle31.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtg_Carrito.RowHeadersDefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtg_Carrito.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dtg_Carrito.RowHeadersVisible = false;
-            dataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(139)))), ((int)(((byte)(24)))));
-            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.White;
-            this.dtg_Carrito.RowsDefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(139)))), ((int)(((byte)(24)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            this.dtg_Carrito.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dtg_Carrito.RowTemplate.Height = 25;
             this.dtg_Carrito.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtg_Carrito.Size = new System.Drawing.Size(304, 227);
@@ -306,9 +304,9 @@
             // precioDataGridViewTextBoxColumn1
             // 
             this.precioDataGridViewTextBoxColumn1.DataPropertyName = "Precio";
-            dataGridViewCellStyle29.Format = "C2";
-            dataGridViewCellStyle29.NullValue = "0,00";
-            this.precioDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = "0,00";
+            this.precioDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle5;
             this.precioDataGridViewTextBoxColumn1.HeaderText = "Precio";
             this.precioDataGridViewTextBoxColumn1.Name = "precioDataGridViewTextBoxColumn1";
             this.precioDataGridViewTextBoxColumn1.ReadOnly = true;
@@ -351,37 +349,6 @@
             this.pnl_Precio.Size = new System.Drawing.Size(304, 57);
             this.pnl_Precio.TabIndex = 12;
             // 
-            // cmb_FiltrarPorTipo
-            // 
-            this.cmb_FiltrarPorTipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
-            this.cmb_FiltrarPorTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmb_FiltrarPorTipo.ForeColor = System.Drawing.Color.White;
-            this.cmb_FiltrarPorTipo.FormattingEnabled = true;
-            this.cmb_FiltrarPorTipo.Items.AddRange(new object[] {
-            "Todos",
-            "Cigarrillo",
-            "Snack",
-            "Dulce",
-            "Galletita",
-            "Bebida",
-            "Alfajor",
-            "Otros"});
-            this.cmb_FiltrarPorTipo.Location = new System.Drawing.Point(27, 365);
-            this.cmb_FiltrarPorTipo.Name = "cmb_FiltrarPorTipo";
-            this.cmb_FiltrarPorTipo.Size = new System.Drawing.Size(107, 23);
-            this.cmb_FiltrarPorTipo.TabIndex = 13;
-            // 
-            // lbl_Filtro
-            // 
-            this.lbl_Filtro.AutoSize = true;
-            this.lbl_Filtro.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Filtro.ForeColor = System.Drawing.Color.White;
-            this.lbl_Filtro.Location = new System.Drawing.Point(27, 341);
-            this.lbl_Filtro.Name = "lbl_Filtro";
-            this.lbl_Filtro.Size = new System.Drawing.Size(75, 19);
-            this.lbl_Filtro.TabIndex = 14;
-            this.lbl_Filtro.Text = "Filtrar por:";
-            // 
             // btn_Sacar
             // 
             this.btn_Sacar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
@@ -408,8 +375,6 @@
             this.ClientSize = new System.Drawing.Size(800, 414);
             this.ControlBox = false;
             this.Controls.Add(this.btn_Sacar);
-            this.Controls.Add(this.lbl_Filtro);
-            this.Controls.Add(this.cmb_FiltrarPorTipo);
             this.Controls.Add(this.pnl_Precio);
             this.Controls.Add(this.btn_VaciarCarrito);
             this.Controls.Add(this.dtg_Carrito);
@@ -459,8 +424,6 @@
         private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn CantidadEnCarrito;
-        private ComboBox cmb_FiltrarPorTipo;
-        private Label lbl_Filtro;
         private Button btn_Sacar;
     }
 }
