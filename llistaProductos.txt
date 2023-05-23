@@ -1,0 +1,72 @@
+1000;Philip Morris;Cigarrillos;Caja de 12 cigarrillos rubios.;Philip Morris;400;21
+1001;Melbourne;Cigarrillos;Caja de 20 cigarrillos rubios suaves.;Melbourne;300;20
+1002;Marlboro comun;Cigarrillos;Caja de cigarrillos con capsula convertible.;Marlboro;500;25
+1003;Marlboro Blue;Cigarrillos;Caja de cigarrillos con capsula convertible.;Marlboro;700;25
+1004;Chesterfield Original;Cigarrillos;Caja de 12 cigarrillos rubios.;Chesterfield;350;20
+1005;Camel comun;Cigarrillos;Caja de 20 cigarrillos rubios.;Camel;670;15
+1006;Master Filter;Cigarrillos;Caja de 20 cigarrillos rubios.;Master Filter;300;25
+1007;Lucky Strike;Cigarrillos;Caja de 12 cigarrillos rubios.;Lucky Strike;600;15
+1008;Lucky Strike Paris;Cigarrillos;Caja de 20 cigarrillos rubios.;Lucky Strike;800;15
+1009;Red Point;Cigarrillos;Caja de 20 cigarrillos rubios convertibles.;Red Point;400;15
+1010;Rothmans;Cigarrillos;Caja de 20 cigarrillos rubios.;Rothmans;500;25
+1011;Mediatarde;Galletitas;Galletitas crackers.;Bagley;350;20
+1012;Macucas;Galletitas;Galletitas de chocolate rellenas.;Arcor;250;15
+1013;Variadas;Galletitas;Galletitas surtidas.;Terrabusi;500;25
+1014;Sonrisas;Galletitas;Galletitas rellenas.;Bagley;350;15
+1015;Chocolinas;Galletitas;Galletitas simples de chocolate.;Bagley;320;15
+1016;Merengadas;Galletitas;Galletitas rellenas.;Bagley;350;15
+1017;Pitusas chocolate;Galletitas;Galletitas de cacao con crema.;ParNor;250;30
+1018;Frolitas;Galletitas;Galletitas con membrillo.;Trio;400;15
+1019;Bizcochos;Galletitas;Bizcochitos con grasa.;Don Satur;300;14
+1020;Cheetos;Snacks;Copetin a base de harina de maiz.;PepsiCo;350;15
+1021;Palitos;Snacks;Palitos sabor panceta.;PepsiCo;400;10
+1022;Lays;Snacks;Papas fritas simples.;PepsiCo;350;20
+1023;Rueditas;Snacks;Copetin a base de trigo.;PepsiCo;400;19
+1024;Lays jamon;Snacks;Papitas sabor jamon serrano.;PepsiCo;600;15
+1025;Doritos;Snacks;Doritos sabor queso.;PepsiCo;350;25
+1026;Twistos jamon;Snacks;Mini tostadas horneadas sabor jamon.;Twistos;350;15
+1027;Twistos queso;Snacks;Mini tostadas horneadas sabor queso.;Twistos;350;25
+1028;Saladix jamon;Snacks;Mini tostadas sabor jamon.;Arcor;200;20
+1029;Saladix queso;Snacks;Mini tostadas sabor queso.;Arcor;200;20
+1030;Saladix Cross;Snacks;Mini tostadas sabor jamon y queso.;Arcor;250;25
+1031;Block;Dulces;Tableta de chocolate negro.;Arcor;500;15
+1032;Cofler negro;Dulces;Tableta de chocolate negro.;Arcor;350;10
+1033;Cofler blanco;Dulces;Tableta de chocolate blanco.;Arcor;350;13
+1034;Bon o Bon;Dulces;Bombon de chocolate relleno.;Arcor;300;27
+1035;Marroc;Dulces;Bocadito de chocolate marroc.;Felfort;250;13
+1036;Shot;Dulces;Tableta de chocolate negro.;Shot;450;9
+1037;Milka comun;Dulces;Tableta de chocolate negro.;Milka;400;30
+1038;Milka Leger;Dulces;Tableta de chocolate negro aireado.;Cofler;450;15
+1039;Guaymallen comun;Dulces;Alfajor de chocolate negro.;Guaymallen;300;15
+1040;Guaymallen blanco;Dulces;Alfajor de chocolate blanco.;Guaymallen;300;25
+1041;Guaymallen triple;Dulces;Triple alfajor de chocolate negro.;Guaymallen;500;15
+1042;Jorgito comun;Dulces;Alfajor de chocolate negro.;Jorgito;350;15
+1043;Capitan del espacio;Dulces;Alfajor de chocolate negro.;Cap del espacio;350;15
+1044;Agua Villavicencio;Bebidas;Agua sin gas.;Villavicencio;300;30
+1045;Agua Kin;Bebidas;Agua sin gas.;Coca Cola;250;15
+1046;Agua Eco;Bebidas;Agua sin gas.;Eco Andes;350;30
+1047;Agua Glaciar;Bebidas;Agua sin gas.;Glaciar;350;15
+1048;Bonaqua;Bebidas;Agua sin gas.;Bonaqua;300;30
+1049;Smartwater;Bebidas;Agua sin gas.;Bonaqua;400;15
+1050;Cepita naranja;Bebidas;Jugo Cepita de naranja.;Coca Cola;350;15
+1051;Cepita manzana;Bebidas;Jugo Cepita de manzana.;Coca Cola;350;30
+1052;Cepita mix;Bebidas;Jugo Cepita sabor mix frutal.;Coca Cola;350;24
+1053;Baggio naranja;Bebidas;Jugo Baggio de naranja.;Baggio;400;15
+1054;Baggio manzana;Bebidas;Jugo Baggio de manzana.;Baggio;400;15
+1055;CocaCola media;Bebidas;Gaseosa sabor cola mediana.;Coca Cola;600;30
+1056;CocaCola grande;Bebidas;Gaseosa sabor cola grande.;Coca Cola;700;15
+1057;CocaCola Light;Bebidas;Gaseosa sin gas.;Coca Cola;400;15
+1058;Pepsi media;Bebidas;Gaseosa sabor cola mediana.;Pepsi;600;15
+1059;Pepsi media;Bebidas;Gaseosa sabor cola grande.;Pepsi;700;20
+1060;Seven Up;Bebidas;Gaseosa dietetica.;Coca Cola;600;15
+1061;Sprite;Bebidas;Gaseosa dietetica.;Coca Cola;500;10
+1062;Fanta;Bebidas;Jugo de naranja con gas.;Fanta;500;10
+1063;Sanguche de jyq;Comidas;Sanguche de miga de jamon y queso.;Local;350;15
+1064;Tostado;Comidas;Sanguche de jyq tostado.;Local;600;13
+1065;Pancho;Comidas;Pancho comun.;Local;650;15
+1066;Cono de papas;Comidas;Papas fritas en un cono de carton.;Local;450;15
+1067;Barbijo;Otros;Barbijo blanco comun.;Local;250;10
+1068;Encendedor;Otros;Encendedor comun.;Bic;250;30
+1069;Lapices;Otros;Caja de 12 lapices de colores.;FaberCastel;600;15
+1070;Regla;Otros;Regla de 20cm comun.;Local;200;15
+1071;Tijera;Otros;Tijera comun.;Local;200;30
