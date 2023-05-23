@@ -47,6 +47,12 @@ namespace Vista
             }
         }
 
+        /// <summary>
+        /// Este evento en particular actualiza a los label de horario y fecha
+        /// respectivamente, usando la clase DateTime y el propio controlador timer.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void tim_HoraYFecha_Tick(object sender, EventArgs e)
         {
             lbl_Horario.Text = DateTime.Now.ToShortTimeString();
@@ -105,6 +111,11 @@ namespace Vista
             formVentas.MdiParent = this;
         }
 
+        /// <summary>
+        /// Funciona para detallar en la vista a los datos del usuario recibido.
+        /// Dependiendo del tipo del usuario recibido, se configura el menú de navegación.
+        /// </summary>
+        /// <param name="usuarioRecibido"></param>
         private void ConfigurarMenuPorRol(Usuario usuarioRecibido)
         {
             sbl_NombreUsuario.Text = usuarioRecibido.NombreCompleto;

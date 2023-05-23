@@ -104,6 +104,12 @@ namespace Vista
             txt_Contrasenia.UseSystemPasswordChar = true;
         }
 
+        /// <summary>
+        /// Instancia un formulario principal pasandole por parámetro a este mismo formulario,
+        /// y lo muestra. Después, se oculta a si mismo. El usuario ingresado será el recibido
+        /// por parámetro.
+        /// </summary>
+        /// <param name="usuario"></param>
         private void IngresarRapidoPorUsuario(Usuario usuario)
         {
             usuarioIngresado = usuario;

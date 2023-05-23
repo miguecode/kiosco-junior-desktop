@@ -94,43 +94,6 @@ namespace Vista
             }
         }
 
-        /// <summary>
-        /// Recorre al carrito. Dependiendo del tipo del producto por el que esté
-        /// pasando, se aumentará la cantidad de veces que aparece el tipo de tal producto.
-        /// </summary>
-        private void CalcularCantidadDeProductosCompradosPorTipo()
-        {
-            foreach (Producto producto in clienteActual.Carrito)
-            {
-                string tipo = producto.Tipo.ToString();
-
-                switch (tipo)
-                {
-                    case "Cigarrillos":
-                        cantidadCigarrillos += producto.CantidadEnCarrito;
-                        break;
-                    case "Bebidas":
-                        cantidadBebidas += producto.CantidadEnCarrito;
-                        break;
-                    case "Snacks":
-                        cantidadSnacks += producto.CantidadEnCarrito;
-                        break;
-                    case "Galletitas":
-                        cantidadGalletitas += producto.CantidadEnCarrito;
-                        break;
-                    case "Dulces":
-                        cantidadDulces += producto.CantidadEnCarrito;
-                        break;
-                    case "Comidas":
-                        cantidadComidas += producto.CantidadEnCarrito;
-                        break;
-                    default:
-                        cantidadOtros += producto.CantidadEnCarrito;
-                        break;
-                }
-            }
-        }
-
         private void btn_Sacar_Click(object sender, EventArgs e)
         {
             if (clienteActual.Carrito.Count > 0)
@@ -182,6 +145,43 @@ namespace Vista
             foreach (Producto producto in Sistema.ListaDeProductos)
             {
                 producto.CantidadEnCarrito = 0;
+            }
+        }
+
+        /// <summary>
+        /// Recorre al carrito. Dependiendo del tipo del producto por el que esté
+        /// pasando, se aumentará la cantidad de veces que aparece el tipo de tal producto.
+        /// </summary>
+        private void CalcularCantidadDeProductosCompradosPorTipo()
+        {
+            foreach (Producto producto in clienteActual.Carrito)
+            {
+                string tipo = producto.Tipo.ToString();
+
+                switch (tipo)
+                {
+                    case "Cigarrillos":
+                        cantidadCigarrillos += producto.CantidadEnCarrito;
+                        break;
+                    case "Bebidas":
+                        cantidadBebidas += producto.CantidadEnCarrito;
+                        break;
+                    case "Snacks":
+                        cantidadSnacks += producto.CantidadEnCarrito;
+                        break;
+                    case "Galletitas":
+                        cantidadGalletitas += producto.CantidadEnCarrito;
+                        break;
+                    case "Dulces":
+                        cantidadDulces += producto.CantidadEnCarrito;
+                        break;
+                    case "Comidas":
+                        cantidadComidas += producto.CantidadEnCarrito;
+                        break;
+                    default:
+                        cantidadOtros += producto.CantidadEnCarrito;
+                        break;
+                }
             }
         }
 

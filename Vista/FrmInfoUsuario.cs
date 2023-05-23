@@ -25,7 +25,7 @@ namespace Vista
         private void FrmInfoUsuario_Load(object sender, EventArgs e)
         {
             if (usuarioIngresado is not null)
-                AsignarDatos();
+                EscribirDatos();
         }
 
         private void btn_Modificar_Click(object sender, EventArgs e)
@@ -33,13 +33,13 @@ namespace Vista
             FrmAltaUsuario formModificar = new FrmAltaUsuario(usuarioIngresado, false);
 
             if (formModificar.ShowDialog() == DialogResult.OK)
-                AsignarDatos();
+                EscribirDatos();
 
             else
                 formModificar.Close();
         }
 
-        private void AsignarDatos()
+        private void EscribirDatos()
         {
             lbl_Nombre.Text = usuarioIngresado.Nombre;
             lbl_Apellido.Text = usuarioIngresado.Apellido;
