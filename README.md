@@ -3,7 +3,7 @@
 ## Datos
 - Nombre: Gil Miguel Ángel
 - Correo: junmigue7@gmail.com
-- División 1C
+- División 1E
 
 ### Proyecto Kiosco Junior
 Mi aplicación simula la gestión de un kiosco. Tiene usuarios con distintos roles, cada uno con su función.  
