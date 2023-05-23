@@ -9,7 +9,15 @@ namespace Helper
 {
     public class Autenticacion
     {
-        public static Usuario ConfirmarIngreso(string nick, string contrasenia)
+        /// <summary>
+        /// Valida si el usuario ingresado existe usando el método ValidarUsuarioExistente.
+        /// Si existe, retorna al usuario ingresado, y sino, lanza una excepción controlada.
+        /// </summary>
+        /// <param name="nick"></param>
+        /// <param name="contrasenia"></param>
+        /// <returns>Retorna al usuario ingresado si es que existe</returns>
+        /// <exception cref="Exception"></exception>
+        public static Usuario ConfirmarIngresoOrThrow(string nick, string contrasenia)
         {
             if (!String.IsNullOrEmpty(nick) && !String.IsNullOrEmpty(contrasenia))
             {
@@ -25,6 +33,13 @@ namespace Helper
             throw new Exception(String.Empty);
         }
         
+        /// <summary>
+        /// Es el método encargado de revisar todos los usuarios de la lista de usuarios,
+        /// y verificar si sus datos de nombre y contraseña coinciden con los ingresados.
+        /// </summary>
+        /// <param name="nick"></param>
+        /// <param name="contrasenia"></param>
+        /// <returns>Si coinciden, retorna al usuario. Sino, retorna null</returns>
         private static Usuario? ValidarUsuarioExistente(string nick, string contrasenia)
         {
             foreach (Usuario usuario in Sistema.ListaDeUsuarios)

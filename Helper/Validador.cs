@@ -11,6 +11,19 @@ namespace Helper
 {
     public static class Validador
     {
+        /// <summary>
+        /// Valida todos los datos referidos al usuario, invocando cada método.
+        /// Si un método validador devuelve false, ese atributo se escribe en un mensaje de error.
+        /// Si ese mensaje supera los 19 caracteres significará que se concibieron validaciones falsas
+        /// y por lo tanto lanzará una excepción detallando cada dato no válido.
+        /// </summary>
+        /// <param name="rol"></param>
+        /// <param name="nombre"></param>
+        /// <param name="apellido"></param>
+        /// <param name="dni"></param>
+        /// <param name="nombreUsuario"></param>
+        /// <param name="contrasenia"></param>
+        /// <exception cref="Exception"></exception>
         public static void ValidarDatosUsuario(Object rol, string nombre, string apellido,
                                                  string dni, string nombreUsuario, string contrasenia)
         {
@@ -39,6 +52,19 @@ namespace Helper
                 throw new Exception(sb.ToString());
         }
 
+        /// <summary>
+        /// Valida todos los datos referidos al producto, invocando cada método.
+        /// Si un método validador devuelve false, ese atributo se escribe en un mensaje de error.
+        /// Si ese mensaje supera los 19 caracteres significará que se concibieron validaciones falsas
+        /// y por lo tanto lanzará una excepción detallando cada dato no válido.
+        /// </summary>
+        /// <param name="tipo"></param>
+        /// <param name="nombre"></param>
+        /// <param name="marca"></param>
+        /// <param name="precio"></param>
+        /// <param name="stock"></param>
+        /// <param name="descripcion"></param>
+        /// <exception cref="Exception"></exception>
         public static void ValidarDatosProducto(Object tipo, string nombre, string marca, float precio,
                                             float stock, string descripcion)
         {
@@ -127,8 +153,6 @@ namespace Helper
             return true;
         }
 
-        ////////////////////////////////////////////////////////////////////////////////////////////////////
-        //Métodos encapsulados (Solo se usan en esta clase)
         private static bool ValidarStringConLetraGuionYEspacio(string cadena)
         {
             foreach (char caracter in cadena) 

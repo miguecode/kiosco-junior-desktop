@@ -23,32 +23,32 @@ namespace Helper
             CargarListas("listaVentas.txt", new Venta());
         }
 
-        private static void ComprobarArchivosExistentes(string path1, string path2, string path3)
+        private static void ComprobarArchivosExistentes(string pathUno, string pathDos, string pathTres)
         {
-            if ( !(File.Exists(path1) && File.Exists(path2) && File.Exists(path3)))
-                CrearArchivosPorDefault(path1, path2, path3);
+            if ( !(File.Exists(pathUno) && File.Exists(pathDos) && File.Exists(pathTres)))
+                CrearArchivosPorDefault(pathUno, pathDos, pathTres);
         }
 
         /// <summary>
         /// Recibe 3 string que serán las rutas. Su función es crear un archivo por cada una de ellas.
         /// Una lista de usuarios, de productos y de ventas. A cada uno le escribe un ejemplo predeterminado.
         /// </summary>
-        /// <param name="path1"></param>
-        /// <param name="path2"></param>
-        /// <param name="path3"></param>
-        private static void CrearArchivosPorDefault(string path1, string path2, string path3)
+        /// <param name="pathUno"></param>
+        /// <param name="pathDos"></param>
+        /// <param name="pathTres"></param>
+        private static void CrearArchivosPorDefault(string pathUno, string pathDos, string pathTres)
         {
             StringBuilder usuarioDefault = new StringBuilder();
             usuarioDefault.Append("SuperUsuario;Administrador;Administrador;40000000;Nombre;Apellido");
-            File.WriteAllText(path1, usuarioDefault.ToString());
+            File.WriteAllText(pathUno, usuarioDefault.ToString());
 
             StringBuilder productoDefault = new StringBuilder();
             productoDefault.Append("1000;Nombre;Otros;Descripcion del producto.;Marca;100;50");
-            File.WriteAllText(path2, productoDefault.ToString());
+            File.WriteAllText(pathDos, productoDefault.ToString());
 
             StringBuilder ventaDefault = new StringBuilder();
             ventaDefault.Append("1000;Nombre Apellido;100;0;0;0;0;0;0;0;1");
-            File.WriteAllText(path3, ventaDefault.ToString());
+            File.WriteAllText(pathTres, ventaDefault.ToString());
         }
 
         /// <summary>
@@ -132,6 +132,12 @@ namespace Helper
             return listaDeDatos;
         }
 
+        /// <summary>
+        /// Dependiendo de cuál sea la entidad, la crea usando CrearEntidadPorLista.
+        /// </summary>
+        /// <param name="listaDatos"></param>
+        /// <param name="entidad"></param>
+        /// <returns>Devuelve la entidad creada</returns>
         private static Dato CrearEntidadPorDatos(List<string> listaDatos, Dato entidad)
         {
             Dato entidadCreada = entidad.CrearEntidadPorLista(listaDatos);
@@ -139,6 +145,10 @@ namespace Helper
             return entidadCreada;
         }
 
+        /// <summary>
+        /// Dependiendo de cuál sea la entidad, se la agrega a su lista correspondiente.
+        /// </summary>
+        /// <param name="entidad"></param>
         private static void AgregarEntidadALista(Dato entidad)
         {
             if (entidad is Producto)
