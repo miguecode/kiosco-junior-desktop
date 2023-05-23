@@ -15,9 +15,12 @@ namespace Vista
 {
     public partial class FrmGestionUsuario : Form
     {
-        public FrmGestionUsuario()
+        Usuario administradorActual;
+
+        public FrmGestionUsuario(Usuario administradorActual)
         {
             InitializeComponent();
+            this.administradorActual = administradorActual;
         }
 
         private void FrmGestionUsuario_Load(object sender, EventArgs e)
@@ -43,7 +46,7 @@ namespace Vista
 
         private void btn_Eliminar_Click(object sender, EventArgs e)
         {
-            if (Sistema.ListaDeUsuarios.Count > 0)
+            if (!UsuarioSeleccionadoASiMismo())
             {
                 DialogResult respuesta = MessageBox.Show("¿Seguro de eliminar a este usuario?" +
                     "\nNo podrás recuperarlo.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -97,6 +100,16 @@ namespace Vista
             lista = OrdenarListaUsuarios(itemSeleccionado);
 
             return lista[dtg_Usuarios.CurrentRow.Index];
+        }
+
+        private bool UsuarioSeleccionadoASiMismo()
+        {
+            Usuario usuarioSeleccionado = SeleccionarUsuarioEspecifico(Sistema.ListaDeUsuarios);
+
+            if (usuarioSeleccionado == administradorActual)
+                return true;
+            else
+                return false;
         }
 
         private static List<Usuario> OrdenarListaUsuarios(string? criterio)

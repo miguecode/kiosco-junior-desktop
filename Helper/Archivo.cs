@@ -14,9 +14,31 @@ namespace Helper
     {
         public static void CargarArchivos()
         {
+            ComprobarArchivosExistentes("listaUsuarios.txt", "listaProductos.txt", "listaVentas.txt");
             CargarListas("listaUsuarios.txt", new Usuario());
             CargarListas("listaProductos.txt", new Producto());
             CargarListas("listaVentas.txt", new Venta());
+        }
+
+        private static void ComprobarArchivosExistentes(string path1, string path2, string path3)
+        {
+            if ( !(File.Exists(path1) && File.Exists(path2) && File.Exists(path3)))
+                CrearArchivosPorDefault(path1, path2, path3);
+        }
+
+        private static void CrearArchivosPorDefault(string path1, string path2, string path3)
+        {
+            StringBuilder usuarioDefault = new StringBuilder();
+            usuarioDefault.Append("SuperUsuario;Administrador;Administrador;40000000;Nombre;Apellido");
+            File.WriteAllText(path1, usuarioDefault.ToString());
+
+            StringBuilder productoDefault = new StringBuilder();
+            productoDefault.Append("1000;Nombre;Otros;Descripcion del producto.;Marca;100;50");
+            File.WriteAllText(path2, productoDefault.ToString());
+
+            StringBuilder ventaDefault = new StringBuilder();
+            ventaDefault.Append("1000;Nombre Apellido;200;2;1;1;0;0;0;0;0");
+            File.WriteAllText(path3, ventaDefault.ToString());
         }
 
         public static void GuardarArchivos()
@@ -28,7 +50,7 @@ namespace Helper
             listaParser.Clear();
 
             listaParser.AddRange(Sistema.ListaDeProductos);
-            Archivo.GuardarListas(listaParser, "llistaProductos.txt");
+            Archivo.GuardarListas(listaParser, "listaProductos.txt");
             listaParser.Clear();
 
             listaParser.AddRange(Sistema.ListaDeVentas);
@@ -47,8 +69,7 @@ namespace Helper
             sw.Close();
             sw.Dispose();
         }
-
-        public static void CargarListas(string path, Dato entidad)
+        private static void CargarListas(string path, Dato entidad)
         {
             StreamReader sr = File.OpenText(path);
 

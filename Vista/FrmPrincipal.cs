@@ -97,7 +97,7 @@ namespace Vista
             formProductos.MdiParent = this;
             formInfoUsuario = new FrmInfoUsuario(usuarioActual);
             formInfoUsuario.MdiParent = this;
-            formGestionUsuario = new FrmGestionUsuario();
+            formGestionUsuario = new FrmGestionUsuario(usuarioActual);
             formGestionUsuario.MdiParent = this;
             formCompras = new FrmCompras(usuarioActual);
             formCompras.MdiParent = this;
