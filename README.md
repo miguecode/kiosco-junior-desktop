@@ -24,6 +24,7 @@ Cada cliente tiene una lista de productos (Carrito), la cual va a crear agregán
 que seleccione. Cabe destacar que los productos tienen un atributo Stock, por lo tanto, pueden agotarse.  
 
 ### Archivos
-Se utilizan 3 archivos .txt para cargar las listas principales del proyecto. Estas 3 listas  
-son manejadas por una clase estática llamada Sistema. Al clonar el repositorio estos archivos  
-no existen, por lo tanto, el programa se encarga de crearlos por default (con un SuperUsuario).  
+Se utilizan 3 archivos .txt para cargar las listas principales del proyecto. Estas 3 listas son manejadas por  
+una clase estática llamada Sistema. Al clonar el repositorio estos archivos no existen, por lo tanto, el programa  
+se encarga de crearlos por default (con un SuperUsuario).  Además, en la carpeta 'Archivos' hay 3 archivos  
+con bastantes usuarios, productos y ventas como ejemplos.
