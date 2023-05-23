@@ -69,6 +69,11 @@ namespace Vista
             this.DialogResult = DialogResult.Cancel;
         }
 
+        /// <summary>
+        /// Si el producto es nuevo, creará un nuevo producto en base a los valores que
+        /// recibe de las entradas. Si no lo es, significa que estamos ante una modificación
+        /// y por lo tanto, sólo se sobreescribirán los datos que reciba.
+        /// </summary>
         private void AsignarDatosAlUsuario()
         {
             _ = Enum.TryParse(cmb_Rol.SelectedItem.ToString(), out ERol rol);

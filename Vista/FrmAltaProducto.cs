@@ -43,7 +43,7 @@ namespace Vista
                 AsignarDatosAlProducto();
 
                 if (esProductoNuevo)
-                    Dato.VerificarSiExisteEntidad(Sistema.ListaDeProductos, productoIngresado);
+                    Dato.VerificarSiExisteEntidadOrThrow(Sistema.ListaDeProductos, productoIngresado);
 
                 this.DialogResult = DialogResult.OK;
             }catch(Exception ex)
@@ -58,6 +58,10 @@ namespace Vista
             this.DialogResult = DialogResult.Cancel;
         }
 
+        /// <summary>
+        /// Si el producto es nuevo, creará un nuevo producto en base a los valores que
+        /// recibe de las entradas. Si no lo es, significa que estamos ante una modificación
+        /// </summary>
         private void AsignarDatosAlProducto()
         {
             _ = Enum.TryParse(cmb_Tipo.SelectedItem.ToString(), out ETipo tipo);

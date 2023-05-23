@@ -85,6 +85,10 @@ namespace Vista
             }
         }
 
+        /// <summary>
+        /// En este caso, antes de actualizar el DataSource, se ordena la lista.
+        /// </summary>
+        /// <param name="lista"></param>
         public void ActualizarDataGrid(List<Usuario> lista)
         {
             string? itemSeleccionado = cmb_OrdenarPor.SelectedItem.ToString();
@@ -94,6 +98,11 @@ namespace Vista
             dtg_Usuarios.DataSource = lista;
         }
 
+        /// <summary>
+        /// Se ordena la lista antes de retornar al usuario.
+        /// </summary>
+        /// <param name="lista"></param>
+        /// <returns>Retorna al usuario</returns>
         private Usuario SeleccionarUsuarioEspecifico(List<Usuario> lista)
         {
             string? itemSeleccionado = cmb_OrdenarPor.SelectedItem.ToString();
@@ -102,6 +111,10 @@ namespace Vista
             return lista[dtg_Usuarios.CurrentRow.Index];
         }
 
+        /// <summary>
+        /// Verifica que el usuario seleccionado no sea el mismo que está administrando actualmente.
+        /// </summary>
+        /// <returns>Retorna true si es el mismo, y false si no lo es.</returns>
         private bool UsuarioSeleccionadoASiMismo()
         {
             Usuario usuarioSeleccionado = SeleccionarUsuarioEspecifico(Sistema.ListaDeUsuarios);
@@ -112,6 +125,12 @@ namespace Vista
                 return false;
         }
 
+        /// <summary>
+        /// Dependiendo del criterio string que recibe, se crea una lista nueva de 
+        /// tipo Usuario, la cual va a ser ordenada por el criterio elegido.
+        /// </summary>
+        /// <param name="criterio"></param>
+        /// <returns>Retorna la lista ordenada</returns>
         private static List<Usuario> OrdenarListaUsuarios(string? criterio)
         {
             List<Usuario> listaOrdenada = new List<Usuario>();

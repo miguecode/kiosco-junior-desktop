@@ -22,7 +22,7 @@ namespace Entidades
         /// <returns>Retorna la entidad creada</returns>
         public abstract Dato CrearEntidadPorLista(List<string> listaDatos);
 
-        public static void VerificarSiExisteEntidad(List<Producto> lista, Producto productoRecibido)
+        public static void VerificarSiExisteEntidadOrThrow(List<Producto> lista, Producto productoRecibido)
         {
             foreach (Producto producto in lista)
             {

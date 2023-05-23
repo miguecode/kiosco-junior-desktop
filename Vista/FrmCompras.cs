@@ -53,7 +53,7 @@ namespace Vista
             {
                 try
                 {
-                    VerificarProductoStock();
+                    VerificarProductoStockOrThrow();
 
                     AgregarProductoAlCarrito();
 
@@ -94,6 +94,10 @@ namespace Vista
             }
         }
 
+        /// <summary>
+        /// Recorre al carrito. Dependiendo del tipo del producto por el que esté
+        /// pasando, se aumentará la cantidad de veces que aparece el tipo de tal producto.
+        /// </summary>
         private void CalcularCantidadDeProductosCompradosPorTipo()
         {
             foreach (Producto producto in clienteActual.Carrito)
@@ -181,7 +185,7 @@ namespace Vista
             }
         }
 
-        private void VerificarProductoStock()
+        private void VerificarProductoStockOrThrow()
         {
             Producto productoSeleccionado = SeleccionarProductoEspecifico(false);
 
@@ -189,6 +193,13 @@ namespace Vista
                 throw new Exception("Producto agotado");
         }
 
+        /// <summary>
+        /// Si el bool que recibe es true, significa que necesitamos retornar al producto
+        /// seleccionado en el DataGridView del carrito. Si el bool es false, se retorna
+        /// al producto seleccionado en el DataGridView del menú.
+        /// </summary>
+        /// <param name="esCarrito"></param>
+        /// <returns></returns>
         private Producto SeleccionarProductoEspecifico(bool esCarrito)
         {
             if (esCarrito)
@@ -197,6 +208,10 @@ namespace Vista
             return menu[dtg_Productos.CurrentRow.Index];
         }
 
+        /// <summary>
+        /// Si el carrito ya tenía al producto seleccionado, le aumenta la cantidad.
+        /// Si no lo tenía, lo agrega y le aumenta la cantidad.
+        /// </summary>
         private void AgregarProductoAlCarrito()
         {
             Producto productoSeleccionado = SeleccionarProductoEspecifico(false);
@@ -211,6 +226,11 @@ namespace Vista
             }
         }
 
+        /// <summary>
+        /// Recorre cada producto del carrito y hace el cálculo para asignarle el resultado al
+        /// atributo precioTotal. El cálculo va a depender de si se está pagando con Efectivo o con MercadoPago.
+        /// Por último, lo escribe en el label del formulario que corresponde.
+        /// </summary>
         private void EscribirPrecioTotal()
         {
             precioTotal = 0;
