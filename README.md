@@ -27,5 +27,6 @@ que seleccione. Cabe destacar que los productos tienen un atributo Stock, por lo
 El tema de los archivos funciona correctamente. Yo trabajo con 3 archivos .txt que son las listas  
 de usuarios, productos y ventas. El problema está en el momento de cargarlas; a mi me funciona bien  
 porque el path que le paso es el que le corresponde a mi directorio, pero, al descargarlo de git,  
-quizá a una persona que no este usando mi máquina le correspondería otro path. No se bien como sería eso. En todo caso, coloqué los 3 archivos sueltos en el directorio para que almenos puedan moverse  
+quizá a una persona que no este usando mi máquina le correspondería otro path. No se bien como sería eso.  
+En todo caso, coloqué los 3 archivos sueltos en el directorio para que almenos puedan moverse  
 a donde deben, que sería: \Gil.Miguel.Primer.Parcial\Vista\bin\Debug\net6.0-windows\ aca.  
