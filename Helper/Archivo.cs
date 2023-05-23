@@ -47,7 +47,7 @@ namespace Helper
             File.WriteAllText(pathDos, productoDefault.ToString());
 
             StringBuilder ventaDefault = new StringBuilder();
-            ventaDefault.Append("1000;Nombre Apellido;100;0;0;0;0;0;0;0;1");
+            ventaDefault.Append("1000;Nombre Apellido;100;1;0;0;0;0;0;0;1");
             File.WriteAllText(pathTres, ventaDefault.ToString());
         }
 
