@@ -28,7 +28,7 @@ namespace Helper
             listaParser.Clear();
 
             listaParser.AddRange(Sistema.ListaDeProductos);
-            Archivo.GuardarListas(listaParser, "listaProductos.txt");
+            Archivo.GuardarListas(listaParser, "llistaProductos.txt");
             listaParser.Clear();
 
             listaParser.AddRange(Sistema.ListaDeVentas);

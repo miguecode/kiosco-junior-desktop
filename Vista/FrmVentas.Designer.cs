@@ -44,6 +44,7 @@
             this.lbl_VentasTotales = new System.Windows.Forms.Label();
             this.lbl_TituloComprador = new System.Windows.Forms.Label();
             this.lbl_CompradorFrecuente = new System.Windows.Forms.Label();
+            this.btn_VerDetalles = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Ventas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventaBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -207,6 +208,21 @@
             this.lbl_CompradorFrecuente.TabIndex = 7;
             this.lbl_CompradorFrecuente.Text = "Nombre";
             // 
+            // btn_VerDetalles
+            // 
+            this.btn_VerDetalles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.btn_VerDetalles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_VerDetalles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_VerDetalles.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_VerDetalles.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btn_VerDetalles.Location = new System.Drawing.Point(22, 341);
+            this.btn_VerDetalles.Name = "btn_VerDetalles";
+            this.btn_VerDetalles.Size = new System.Drawing.Size(153, 35);
+            this.btn_VerDetalles.TabIndex = 8;
+            this.btn_VerDetalles.Text = "Ver Detalles";
+            this.btn_VerDetalles.UseVisualStyleBackColor = false;
+            this.btn_VerDetalles.Click += new System.EventHandler(this.btn_VerDetalles_Click);
+            // 
             // FrmVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -214,6 +230,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(800, 430);
             this.ControlBox = false;
+            this.Controls.Add(this.btn_VerDetalles);
             this.Controls.Add(this.lbl_CompradorFrecuente);
             this.Controls.Add(this.lbl_TituloComprador);
             this.Controls.Add(this.lbl_VentasTotales);
@@ -250,5 +267,6 @@
         private DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nombreClienteDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn valorTotalDataGridViewTextBoxColumn;
+        private Button btn_VerDetalles;
     }
 }

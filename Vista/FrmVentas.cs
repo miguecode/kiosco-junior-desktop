@@ -1,6 +1,7 @@
 ﻿using Entidades;
 using Helper;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -88,6 +89,35 @@ namespace Vista
         private void EscribirVentasTotales(List<Venta> lista)
         {
             lbl_VentasTotales.Text = lista.Count.ToString();
+        }
+
+        private void btn_VerDetalles_Click(object sender, EventArgs e)
+        {
+            if (Sistema.ListaDeVentas.Count > 0)
+            {
+                Venta ventaSeleccionada = SeleccionarVentaEspecifica(Sistema.ListaDeVentas);
+
+                StringBuilder sb = new StringBuilder();
+
+                sb.AppendLine("Detalles de la venta\n");
+                sb.AppendLine($"ID de la transacción: {ventaSeleccionada.Id}");
+                sb.AppendLine($"Comprador: {ventaSeleccionada.NombreCliente}\n");
+                sb.AppendLine($"Cantidad de productos comprados: {ventaSeleccionada.CantidadProductos}\n");
+                sb.AppendLine($"Cigarrillos comprados: {ventaSeleccionada.CantidadCigarrillos}");
+                sb.AppendLine($"Bebidas compradas: {ventaSeleccionada.CantidadBebidas}");
+                sb.AppendLine($"Snacks compradas: {ventaSeleccionada.CantidadSnacks}");
+                sb.AppendLine($"Galletitas compradas: {ventaSeleccionada.CantidadGalletitas}");
+                sb.AppendLine($"Dulces comprados: {ventaSeleccionada.CantidadDulces}");
+                sb.AppendLine($"Comidas compradas: {ventaSeleccionada.CantidadComidas}");
+                sb.AppendLine($"Otros productos comprados: {ventaSeleccionada.CantidadOtros}\n");
+                sb.AppendLine($"Importe Total: $ {ventaSeleccionada.ValorTotal.ToString("0.00")}");
+                MessageBox.Show(sb.ToString(), "Kiosco Junior");
+            }
+        }
+
+        private Venta SeleccionarVentaEspecifica(List<Venta> lista)
+        {
+            return lista[dtg_Ventas.CurrentRow.Index];
         }
     }
 }

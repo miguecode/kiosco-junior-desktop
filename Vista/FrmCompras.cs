@@ -20,7 +20,15 @@ namespace Vista
         private Cliente clienteActual;
         private List<Producto> menu;
         private float precioTotal;
+        private int cantidadCigarrillos = 0;
+        private int cantidadBebidas = 0;
+        private int cantidadSnacks = 0;
+        private int cantidadGalletitas = 0;
+        private int cantidadDulces = 0;
+        private int cantidadComidas = 0;
+        private int cantidadOtros = 0;
         private Venta ventaActual;
+        private float aumento = 1.05f;
 
         public FrmCompras(Usuario usuarioActual)
         {
@@ -67,7 +75,12 @@ namespace Vista
         {
             if (clienteActual.Carrito.Count > 0)
             {
-                ventaActual = new Venta(clienteActual.NombreCompleto, precioTotal);
+                CalcularCantidadDeProductosCompradosPorTipo();
+                int tamañoCarrito = CalcularTamañoDeCarrito();
+
+                ventaActual = new Venta(clienteActual.NombreCompleto, precioTotal, tamañoCarrito,
+                    cantidadCigarrillos, cantidadBebidas, cantidadSnacks,
+                    cantidadGalletitas, cantidadDulces, cantidadComidas, cantidadOtros);
 
                 Sistema.ListaDeVentas.Add(ventaActual);
 
@@ -80,6 +93,40 @@ namespace Vista
                 ReiniciarCarrito();
             }
         }
+
+        private void CalcularCantidadDeProductosCompradosPorTipo()
+        {
+            foreach (Producto producto in clienteActual.Carrito)
+            {
+                string tipo = producto.Tipo.ToString();
+
+                switch (tipo)
+                {
+                    case "Cigarrillos":
+                        cantidadCigarrillos += producto.CantidadEnCarrito;
+                        break;
+                    case "Bebidas":
+                        cantidadBebidas += producto.CantidadEnCarrito;
+                        break;
+                    case "Snacks":
+                        cantidadSnacks += producto.CantidadEnCarrito;
+                        break;
+                    case "Galletitas":
+                        cantidadGalletitas += producto.CantidadEnCarrito;
+                        break;
+                    case "Dulces":
+                        cantidadDulces += producto.CantidadEnCarrito;
+                        break;
+                    case "Comidas":
+                        cantidadComidas += producto.CantidadEnCarrito;
+                        break;
+                    default:
+                        cantidadOtros += producto.CantidadEnCarrito;
+                        break;
+                }
+            }
+        }
+
         private void btn_Sacar_Click(object sender, EventArgs e)
         {
             if (clienteActual.Carrito.Count > 0)
@@ -99,6 +146,15 @@ namespace Vista
             if (clienteActual.Carrito.Count > 0)
                 ReiniciarCarrito();
         }
+        private void rad_Efectivo_CheckedChanged(object sender, EventArgs e)
+        {
+            EscribirPrecioTotal();
+        }
+
+        private void rad_MercadoPago_CheckedChanged(object sender, EventArgs e)
+        {
+            EscribirPrecioTotal();
+        }
 
         private void OcultarProductosAgotados()
         {
@@ -109,8 +165,16 @@ namespace Vista
             }
         }
 
-        private static void ReiniciarCantidadDeProductos()
+        private void ReiniciarCantidadDeProductos()
         {
+            cantidadCigarrillos = 0;
+            cantidadBebidas = 0;
+            cantidadSnacks = 0;
+            cantidadGalletitas = 0;
+            cantidadDulces = 0;
+            cantidadComidas = 0;
+            cantidadOtros = 0;
+
             foreach (Producto producto in Sistema.ListaDeProductos)
             {
                 producto.CantidadEnCarrito = 0;
@@ -153,10 +217,19 @@ namespace Vista
 
             foreach (Producto producto in clienteActual.Carrito)
             {
-                precioTotal += producto.Precio * producto.CantidadEnCarrito;
+                if (rad_Efectivo.Checked)
+                    precioTotal += producto.Precio * producto.CantidadEnCarrito;
+
+                else
+                {
+                    precioTotal += (producto.Precio * aumento) * producto.CantidadEnCarrito;
+                }
             }
 
-            lbl_Total.Text = $"Precio TOTAL: $ {precioTotal:0.00}";
+            lbl_Total.Text = $"TOTAL: $ {precioTotal:0.00}";
+
+            if (rad_MercadoPago.Checked)
+                lbl_Total.Text += " (+5%)";
         }
 
         private void ActualizarDataGrids(List<Producto> menuLista, List<Producto> carrito)
@@ -174,7 +247,7 @@ namespace Vista
             clienteActual.Carrito.Clear();
             ActualizarDataGrids(menu, clienteActual.Carrito);
             precioTotal = 0;
-            lbl_Total.Text = $"Precio TOTAL: $ {precioTotal:0.00}";
+            lbl_Total.Text = $"TOTAL: $ {precioTotal:0.00}";
         }
 
         private static void ReducirStockProducto()
@@ -185,24 +258,39 @@ namespace Vista
             }
         }
 
-
-
-
-
         private void MostrarMensajeVentaExitosa()
         {
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("¡Compra realizada con éxito!\n");
             sb.AppendLine($"ID de la transacción: {ventaActual.Id}");
-            sb.AppendLine($"Cantidad de productos distintos comprados: {clienteActual.TamañoDeCarrito}");
             sb.AppendLine($"Comprador: {clienteActual.NombreCompleto}\n");
-            sb.AppendLine($"Importe Total: $ {ventaActual.ValorTotal.ToString("0.00")}"); ;
+            sb.AppendLine($"Cantidad de productos comprados: {CalcularTamañoDeCarrito()}");
+            sb.AppendLine($"Cigarrillos comprados: {ventaActual.CantidadCigarrillos}");
+            sb.AppendLine($"Bebidas compradas: {ventaActual.CantidadBebidas}");
+            sb.AppendLine($"Snacks compradas: {ventaActual.CantidadSnacks}");
+            sb.AppendLine($"Galletitas compradas: {ventaActual.CantidadGalletitas}");
+            sb.AppendLine($"Dulces comprados: {ventaActual.CantidadDulces}");
+            sb.AppendLine($"Comidas compradas: {ventaActual.CantidadComidas}");
+            sb.AppendLine($"Otros productos comprados: {ventaActual.CantidadOtros}\n");
+            sb.AppendLine($"Importe Total: $ {ventaActual.ValorTotal.ToString("0.00")}");
 
             MessageBox.Show(sb.ToString(), "Kiosco Junior");
         }
 
-        private Cliente ConvertirUsuarioACliente(Usuario usuarioActual)
+        private int CalcularTamañoDeCarrito()
+        {
+            int cantidad = 0;
+
+            foreach (Producto producto in clienteActual.Carrito)
+            {
+                cantidad += producto.CantidadEnCarrito;
+            }
+
+            return cantidad;
+        }
+
+        private static Cliente ConvertirUsuarioACliente(Usuario usuarioActual)
         {
             Cliente clienteCreado = new Cliente(usuarioActual.Nombre, usuarioActual.Apellido, usuarioActual.Dni,
                                         usuarioActual.NombreUsuario, usuarioActual.Contrasenia, usuarioActual.Rol);

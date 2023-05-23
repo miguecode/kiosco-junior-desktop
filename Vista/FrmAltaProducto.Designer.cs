@@ -96,12 +96,12 @@
             this.cmb_Tipo.ForeColor = System.Drawing.Color.White;
             this.cmb_Tipo.FormattingEnabled = true;
             this.cmb_Tipo.Items.AddRange(new object[] {
-            "Cigarrillo",
-            "Snack",
-            "Dulce",
-            "Galletita",
-            "Bebida",
-            "Alfajor",
+            "Cigarrillos",
+            "Bebidas",
+            "Snacks",
+            "Galletitas",
+            "Dulces",
+            "Comidas",
             "Otros"});
             this.cmb_Tipo.Location = new System.Drawing.Point(271, 46);
             this.cmb_Tipo.Name = "cmb_Tipo";

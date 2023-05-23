@@ -8,12 +8,12 @@ namespace Entidades
 {
     public enum ETipo
     {
-        Cigarrillo,
-        Snack,
-        Dulce,
-        Galletita,
-        Bebida,
-        Alfajor,
+        Cigarrillos,
+        Bebidas,
+        Snacks,
+        Galletitas,
+        Dulces,
+        Comidas,
         Otros
     }
 }

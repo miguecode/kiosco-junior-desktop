@@ -55,13 +55,17 @@
             this.precioDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CantidadEnCarrito = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_VaciarCarrito = new System.Windows.Forms.Button();
-            this.pnl_Precio = new System.Windows.Forms.Panel();
+            this.pan_Precio = new System.Windows.Forms.Panel();
             this.btn_Sacar = new System.Windows.Forms.Button();
+            this.rad_Efectivo = new System.Windows.Forms.RadioButton();
+            this.rad_MercadoPago = new System.Windows.Forms.RadioButton();
+            this.pnl_MetodoDePago = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Productos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Carrito)).BeginInit();
-            this.pnl_Precio.SuspendLayout();
+            this.pan_Precio.SuspendLayout();
+            this.pnl_MetodoDePago.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtg_Productos
@@ -184,9 +188,9 @@
             this.lbl_Total.Location = new System.Drawing.Point(10, 13);
             this.lbl_Total.Margin = new System.Windows.Forms.Padding(0);
             this.lbl_Total.Name = "lbl_Total";
-            this.lbl_Total.Size = new System.Drawing.Size(230, 31);
+            this.lbl_Total.Size = new System.Drawing.Size(157, 31);
             this.lbl_Total.TabIndex = 6;
-            this.lbl_Total.Text = "Precio TOTAL: $ 0,00";
+            this.lbl_Total.Text = "TOTAL: $ 0,00";
             // 
             // btn_Agregar
             // 
@@ -197,9 +201,9 @@
             this.btn_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Agregar.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Agregar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btn_Agregar.Location = new System.Drawing.Point(207, 344);
+            this.btn_Agregar.Location = new System.Drawing.Point(183, 344);
             this.btn_Agregar.Name = "btn_Agregar";
-            this.btn_Agregar.Size = new System.Drawing.Size(223, 54);
+            this.btn_Agregar.Size = new System.Drawing.Size(247, 54);
             this.btn_Agregar.TabIndex = 7;
             this.btn_Agregar.Text = "Agregar al carrito";
             this.btn_Agregar.UseVisualStyleBackColor = false;
@@ -214,9 +218,9 @@
             this.btn_Confirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Confirmar.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btn_Confirmar.ForeColor = System.Drawing.Color.White;
-            this.btn_Confirmar.Location = new System.Drawing.Point(484, 337);
+            this.btn_Confirmar.Location = new System.Drawing.Point(600, 337);
             this.btn_Confirmar.Name = "btn_Confirmar";
-            this.btn_Confirmar.Size = new System.Drawing.Size(304, 61);
+            this.btn_Confirmar.Size = new System.Drawing.Size(188, 61);
             this.btn_Confirmar.TabIndex = 8;
             this.btn_Confirmar.Text = "Comprar";
             this.btn_Confirmar.UseVisualStyleBackColor = false;
@@ -340,14 +344,14 @@
             this.btn_VaciarCarrito.UseVisualStyleBackColor = false;
             this.btn_VaciarCarrito.Click += new System.EventHandler(this.btn_VaciarCarrito_Click);
             // 
-            // pnl_Precio
+            // pan_Precio
             // 
-            this.pnl_Precio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            this.pnl_Precio.Controls.Add(this.lbl_Total);
-            this.pnl_Precio.Location = new System.Drawing.Point(484, 274);
-            this.pnl_Precio.Name = "pnl_Precio";
-            this.pnl_Precio.Size = new System.Drawing.Size(304, 57);
-            this.pnl_Precio.TabIndex = 12;
+            this.pan_Precio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.pan_Precio.Controls.Add(this.lbl_Total);
+            this.pan_Precio.Location = new System.Drawing.Point(484, 274);
+            this.pan_Precio.Name = "pan_Precio";
+            this.pan_Precio.Size = new System.Drawing.Size(304, 57);
+            this.pan_Precio.TabIndex = 12;
             // 
             // btn_Sacar
             // 
@@ -367,6 +371,42 @@
             this.btn_Sacar.UseVisualStyleBackColor = false;
             this.btn_Sacar.Click += new System.EventHandler(this.btn_Sacar_Click);
             // 
+            // rad_Efectivo
+            // 
+            this.rad_Efectivo.AutoSize = true;
+            this.rad_Efectivo.Checked = true;
+            this.rad_Efectivo.ForeColor = System.Drawing.Color.White;
+            this.rad_Efectivo.Location = new System.Drawing.Point(10, 10);
+            this.rad_Efectivo.Name = "rad_Efectivo";
+            this.rad_Efectivo.Size = new System.Drawing.Size(67, 19);
+            this.rad_Efectivo.TabIndex = 17;
+            this.rad_Efectivo.TabStop = true;
+            this.rad_Efectivo.Text = "Efectivo";
+            this.rad_Efectivo.UseVisualStyleBackColor = true;
+            this.rad_Efectivo.CheckedChanged += new System.EventHandler(this.rad_Efectivo_CheckedChanged);
+            // 
+            // rad_MercadoPago
+            // 
+            this.rad_MercadoPago.AutoSize = true;
+            this.rad_MercadoPago.ForeColor = System.Drawing.Color.White;
+            this.rad_MercadoPago.Location = new System.Drawing.Point(10, 35);
+            this.rad_MercadoPago.Name = "rad_MercadoPago";
+            this.rad_MercadoPago.Size = new System.Drawing.Size(99, 19);
+            this.rad_MercadoPago.TabIndex = 17;
+            this.rad_MercadoPago.Text = "MercadoPago";
+            this.rad_MercadoPago.UseVisualStyleBackColor = true;
+            this.rad_MercadoPago.CheckedChanged += new System.EventHandler(this.rad_MercadoPago_CheckedChanged);
+            // 
+            // pnl_MetodoDePago
+            // 
+            this.pnl_MetodoDePago.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            this.pnl_MetodoDePago.Controls.Add(this.rad_MercadoPago);
+            this.pnl_MetodoDePago.Controls.Add(this.rad_Efectivo);
+            this.pnl_MetodoDePago.Location = new System.Drawing.Point(484, 337);
+            this.pnl_MetodoDePago.Name = "pnl_MetodoDePago";
+            this.pnl_MetodoDePago.Size = new System.Drawing.Size(110, 61);
+            this.pnl_MetodoDePago.TabIndex = 16;
+            // 
             // FrmCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -374,8 +414,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(800, 414);
             this.ControlBox = false;
+            this.Controls.Add(this.pnl_MetodoDePago);
             this.Controls.Add(this.btn_Sacar);
-            this.Controls.Add(this.pnl_Precio);
+            this.Controls.Add(this.pan_Precio);
             this.Controls.Add(this.btn_VaciarCarrito);
             this.Controls.Add(this.dtg_Carrito);
             this.Controls.Add(this.lbl_Error);
@@ -396,8 +437,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Carrito)).EndInit();
-            this.pnl_Precio.ResumeLayout(false);
-            this.pnl_Precio.PerformLayout();
+            this.pan_Precio.ResumeLayout(false);
+            this.pan_Precio.PerformLayout();
+            this.pnl_MetodoDePago.ResumeLayout(false);
+            this.pnl_MetodoDePago.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -416,7 +459,7 @@
         private Label lbl_Error;
         private DataGridView dtg_Carrito;
         private Button btn_VaciarCarrito;
-        private Panel pnl_Precio;
+        private Panel pan_Precio;
         private DataGridViewTextBoxColumn tipoDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
@@ -425,5 +468,8 @@
         private DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn1;
         private DataGridViewTextBoxColumn CantidadEnCarrito;
         private Button btn_Sacar;
+        private RadioButton rad_Efectivo;
+        private RadioButton rad_MercadoPago;
+        private Panel pnl_MetodoDePago;
     }
 }

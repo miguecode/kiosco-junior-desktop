@@ -48,6 +48,5 @@ namespace HelperFormularios
             nombreUsuario.Text = usuarioIngresado.NombreUsuario;
             contrasenia.Text = usuarioIngresado.Contrasenia;
         }
-
     }
 }
