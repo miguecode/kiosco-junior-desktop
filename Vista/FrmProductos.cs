@@ -91,6 +91,10 @@ namespace Vista
             }
         }
 
+        /// <summary>
+        /// En este caso, antes de actualizar el DataSource, se ordena la lista.
+        /// </summary>
+        /// <param name="lista"></param>
         public void ActualizarDataGrid(List<Producto> lista)
         {
             string? itemSeleccionado = cmb_OrdenarPor.SelectedItem.ToString();
@@ -100,6 +104,11 @@ namespace Vista
             dtg_Productos.DataSource = lista;
         }
 
+        /// <summary>
+        /// Se ordena la lista antes de retornar al producto.
+        /// </summary>
+        /// <param name="lista"></param>
+        /// <returns></returns>
         private Producto SeleccionarProductoEspecifico(List<Producto> lista)
         {
             string? itemSeleccionado = cmb_OrdenarPor.SelectedItem.ToString();
@@ -108,6 +117,12 @@ namespace Vista
             return lista[dtg_Productos.CurrentRow.Index];
         }
 
+        /// <summary>
+        /// Dependiendo del criterio string que recibe, se crea una lista nueva de 
+        /// tipo Producto, la cual va a ser ordenada por el criterio elegido.
+        /// </summary>
+        /// <param name="criterio"></param>
+        /// <returns>Retorna la lista ordenada</returns>
         private List<Producto> OrdenarListaProductos(string? criterio)
         {
             List<Producto> listaOrdenada = new List<Producto>();

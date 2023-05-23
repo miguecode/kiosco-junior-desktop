@@ -46,51 +46,6 @@ namespace Vista
             }
         }
 
-        private void LimpiarPantalla()
-        {
-            Sistema.ListaDeVentas.Clear();
-            dtg_Ventas.DataSource = null;
-            dtg_Ventas.DataSource = Sistema.ListaDeVentas;
-            EscribirIngresosTotales(Sistema.ListaDeVentas);
-            EscribirCompradorMasFrecuente(Sistema.ListaDeVentas);
-            EscribirVentasTotales(Sistema.ListaDeVentas);
-        }
-
-        private void EscribirIngresosTotales(List<Venta> lista)
-        {
-            ingresosTotales = 0;
-            lbl_IngresosTotales.Text = ingresosTotales.ToString("0.00");
-
-            if (lista.Count > 0)
-            {
-                foreach (Venta venta in lista)
-                {
-                    ingresosTotales += venta.ValorTotal;
-                }
-
-                lbl_IngresosTotales.Text = ingresosTotales.ToString("0.00");
-            }
-        }
-
-        private void EscribirCompradorMasFrecuente(List<Venta> lista)
-        {
-            compradorMasFrecuente = String.Empty;
-            lbl_CompradorFrecuente.Text = compradorMasFrecuente;
-
-            if (Sistema.ListaDeVentas.Count > 0)
-            {
-                var grupoCompradores = lista.GroupBy(v => v.NombreCliente).OrderByDescending(g => g.Count());
-                compradorMasFrecuente = grupoCompradores.First().Key;
-
-                lbl_CompradorFrecuente.Text = compradorMasFrecuente;
-            }
-        }
-
-        private void EscribirVentasTotales(List<Venta> lista)
-        {
-            lbl_VentasTotales.Text = lista.Count.ToString();
-        }
-
         private void btn_VerDetalles_Click(object sender, EventArgs e)
         {
             if (Sistema.ListaDeVentas.Count > 0)
@@ -113,6 +68,65 @@ namespace Vista
                 sb.AppendLine($"Importe Total: $ {ventaSeleccionada.ValorTotal.ToString("0.00")}");
                 MessageBox.Show(sb.ToString(), "Kiosco Junior");
             }
+        }
+
+        /// <summary>
+        /// Reinicia todos los datos de las ventas, ingresos, estadísticas, y el propio historial.
+        /// </summary>
+        private void LimpiarPantalla()
+        {
+            Sistema.ListaDeVentas.Clear();
+            dtg_Ventas.DataSource = null;
+            dtg_Ventas.DataSource = Sistema.ListaDeVentas;
+            EscribirIngresosTotales(Sistema.ListaDeVentas);
+            EscribirCompradorMasFrecuente(Sistema.ListaDeVentas);
+            EscribirVentasTotales(Sistema.ListaDeVentas);
+        }
+
+        /// <summary>
+        /// Recorre toda la lista de ventas, acumulando los importes de cada una
+        /// y escribiendo el valor final en el label correspondiente.
+        /// </summary>
+        /// <param name="lista"></param>
+        private void EscribirIngresosTotales(List<Venta> lista)
+        {
+            ingresosTotales = 0;
+            lbl_IngresosTotales.Text = ingresosTotales.ToString("0.00");
+
+            if (lista.Count > 0)
+            {
+                foreach (Venta venta in lista)
+                {
+                    ingresosTotales += venta.ValorTotal;
+                }
+
+                lbl_IngresosTotales.Text = ingresosTotales.ToString("0.00");
+            }
+        }
+
+        /// <summary>
+        /// Crea un grupo de compradores con su nombre como criterio ordenado en descenso.
+        /// Por lo tanto, cada grupo será un nombre de cliente. El compradorMasFrecuente será un string
+        /// el cual tomará el valor del grupo de compradores más repetido. Lo escribe en pantalla.
+        /// </summary>
+        /// <param name="lista"></param>
+        private void EscribirCompradorMasFrecuente(List<Venta> lista)
+        {
+            compradorMasFrecuente = String.Empty;
+            lbl_CompradorFrecuente.Text = compradorMasFrecuente;
+
+            if (Sistema.ListaDeVentas.Count > 0)
+            {
+                var grupoCompradores = lista.GroupBy(v => v.NombreCliente).OrderByDescending(g => g.Count());
+                compradorMasFrecuente = grupoCompradores.First().Key;
+
+                lbl_CompradorFrecuente.Text = compradorMasFrecuente;
+            }
+        }
+
+        private void EscribirVentasTotales(List<Venta> lista)
+        {
+            lbl_VentasTotales.Text = lista.Count.ToString();
         }
 
         private Venta SeleccionarVentaEspecifica(List<Venta> lista)
