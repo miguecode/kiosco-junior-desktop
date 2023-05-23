@@ -21,21 +21,19 @@ namespace Entidades
         private int cantidadDulces;
         private int cantidadComidas;
         private int cantidadOtros;
-
         private static int idActual;
 
-        public int Id { get => id; set => id = value; }
-        public string NombreCliente { get => nombreCliente; set => nombreCliente = value; }
-        public float ValorTotal { get => valorTotal; set => valorTotal = value; }
-        public int CantidadProductos { get => cantidadProductos; set => cantidadProductos = value; }
-        public int CantidadCigarrillos { get => cantidadCigarrillos; set => cantidadCigarrillos = value; }
-        public int CantidadBebidas { get => cantidadBebidas; set => cantidadBebidas = value; }
-        public int CantidadSnacks { get => cantidadSnacks; set => cantidadSnacks = value; }
-        public int CantidadGalletitas { get => cantidadGalletitas; set => cantidadGalletitas = value; }
-        public int CantidadDulces { get => cantidadDulces; set => cantidadDulces = value; }
-        public int CantidadComidas { get => cantidadComidas; set => cantidadComidas = value; }
-        public int CantidadOtros { get => cantidadOtros; set => cantidadOtros = value; }
-
+        public int Id { get => id; }
+        public string NombreCliente { get => nombreCliente; }
+        public float ValorTotal { get => valorTotal; }
+        public int CantidadProductos { get => cantidadProductos; }
+        public int CantidadCigarrillos { get => cantidadCigarrillos; }
+        public int CantidadBebidas { get => cantidadBebidas; }
+        public int CantidadSnacks { get => cantidadSnacks; }
+        public int CantidadGalletitas { get => cantidadGalletitas; }
+        public int CantidadDulces { get => cantidadDulces; }
+        public int CantidadComidas { get => cantidadComidas; }
+        public int CantidadOtros { get => cantidadOtros; }
 
         public Venta()
         {
