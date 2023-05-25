@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtg_Ventas = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +46,8 @@
             this.lbl_CompradorFrecuente = new System.Windows.Forms.Label();
             this.btn_VerDetalles = new System.Windows.Forms.Button();
             this.pan_Ingresos = new System.Windows.Forms.Panel();
+            this.lbl_TituloProductos = new System.Windows.Forms.Label();
+            this.lbl_ProductosVendidosTotales = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Ventas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventaBindingSource)).BeginInit();
             this.pan_Ingresos.SuspendLayout();
@@ -62,14 +64,14 @@
             this.dtg_Ventas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtg_Ventas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtg_Ventas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtg_Ventas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtg_Ventas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dtg_Ventas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_Ventas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
@@ -85,11 +87,11 @@
             this.dtg_Ventas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dtg_Ventas.RowHeadersVisible = false;
             this.dtg_Ventas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(75)))), ((int)(((byte)(171)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
-            this.dtg_Ventas.RowsDefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(75)))), ((int)(((byte)(171)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            this.dtg_Ventas.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dtg_Ventas.RowTemplate.Height = 25;
             this.dtg_Ventas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtg_Ventas.Size = new System.Drawing.Size(327, 323);
@@ -116,9 +118,9 @@
             // valorTotalDataGridViewTextBoxColumn
             // 
             this.valorTotalDataGridViewTextBoxColumn.DataPropertyName = "ValorTotal";
-            dataGridViewCellStyle17.Format = "C2";
-            dataGridViewCellStyle17.NullValue = "0,00";
-            this.valorTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = "0,00";
+            this.valorTotalDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.valorTotalDataGridViewTextBoxColumn.HeaderText = "Ingreso";
             this.valorTotalDataGridViewTextBoxColumn.Name = "valorTotalDataGridViewTextBoxColumn";
             this.valorTotalDataGridViewTextBoxColumn.ReadOnly = true;
@@ -171,7 +173,7 @@
             this.lbl_TituloVentasTotales.AutoSize = true;
             this.lbl_TituloVentasTotales.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_TituloVentasTotales.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_TituloVentasTotales.Location = new System.Drawing.Point(367, 199);
+            this.lbl_TituloVentasTotales.Location = new System.Drawing.Point(367, 232);
             this.lbl_TituloVentasTotales.Name = "lbl_TituloVentasTotales";
             this.lbl_TituloVentasTotales.Size = new System.Drawing.Size(176, 31);
             this.lbl_TituloVentasTotales.TabIndex = 4;
@@ -182,7 +184,7 @@
             this.lbl_VentasTotales.AutoSize = true;
             this.lbl_VentasTotales.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_VentasTotales.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_VentasTotales.Location = new System.Drawing.Point(529, 199);
+            this.lbl_VentasTotales.Location = new System.Drawing.Point(529, 232);
             this.lbl_VentasTotales.Name = "lbl_VentasTotales";
             this.lbl_VentasTotales.Size = new System.Drawing.Size(27, 31);
             this.lbl_VentasTotales.TabIndex = 5;
@@ -193,7 +195,7 @@
             this.lbl_TituloComprador.AutoSize = true;
             this.lbl_TituloComprador.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_TituloComprador.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_TituloComprador.Location = new System.Drawing.Point(367, 90);
+            this.lbl_TituloComprador.Location = new System.Drawing.Point(367, 107);
             this.lbl_TituloComprador.Name = "lbl_TituloComprador";
             this.lbl_TituloComprador.Size = new System.Drawing.Size(304, 31);
             this.lbl_TituloComprador.TabIndex = 6;
@@ -204,7 +206,7 @@
             this.lbl_CompradorFrecuente.AutoSize = true;
             this.lbl_CompradorFrecuente.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_CompradorFrecuente.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_CompradorFrecuente.Location = new System.Drawing.Point(367, 121);
+            this.lbl_CompradorFrecuente.Location = new System.Drawing.Point(367, 138);
             this.lbl_CompradorFrecuente.Name = "lbl_CompradorFrecuente";
             this.lbl_CompradorFrecuente.Size = new System.Drawing.Size(102, 31);
             this.lbl_CompradorFrecuente.TabIndex = 7;
@@ -232,8 +234,30 @@
             this.pan_Ingresos.Controls.Add(this.lbl_TituloIngresos);
             this.pan_Ingresos.Location = new System.Drawing.Point(367, 278);
             this.pan_Ingresos.Name = "pan_Ingresos";
-            this.pan_Ingresos.Size = new System.Drawing.Size(421, 57);
+            this.pan_Ingresos.Size = new System.Drawing.Size(411, 57);
             this.pan_Ingresos.TabIndex = 9;
+            // 
+            // lbl_TituloProductos
+            // 
+            this.lbl_TituloProductos.AutoSize = true;
+            this.lbl_TituloProductos.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_TituloProductos.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lbl_TituloProductos.Location = new System.Drawing.Point(367, 188);
+            this.lbl_TituloProductos.Name = "lbl_TituloProductos";
+            this.lbl_TituloProductos.Size = new System.Drawing.Size(323, 31);
+            this.lbl_TituloProductos.TabIndex = 10;
+            this.lbl_TituloProductos.Text = "Productos vendidos totales:  ";
+            // 
+            // lbl_ProductosVendidosTotales
+            // 
+            this.lbl_ProductosVendidosTotales.AutoSize = true;
+            this.lbl_ProductosVendidosTotales.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_ProductosVendidosTotales.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lbl_ProductosVendidosTotales.Location = new System.Drawing.Point(674, 188);
+            this.lbl_ProductosVendidosTotales.Name = "lbl_ProductosVendidosTotales";
+            this.lbl_ProductosVendidosTotales.Size = new System.Drawing.Size(27, 31);
+            this.lbl_ProductosVendidosTotales.TabIndex = 11;
+            this.lbl_ProductosVendidosTotales.Text = "0";
             // 
             // FrmVentas
             // 
@@ -242,6 +266,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(800, 430);
             this.ControlBox = false;
+            this.Controls.Add(this.lbl_ProductosVendidosTotales);
+            this.Controls.Add(this.lbl_TituloProductos);
             this.Controls.Add(this.pan_Ingresos);
             this.Controls.Add(this.btn_VerDetalles);
             this.Controls.Add(this.lbl_CompradorFrecuente);
@@ -282,5 +308,7 @@
         private DataGridViewTextBoxColumn valorTotalDataGridViewTextBoxColumn;
         private Button btn_VerDetalles;
         private Panel pan_Ingresos;
+        private Label lbl_TituloProductos;
+        private Label lbl_ProductosVendidosTotales;
     }
 }

@@ -17,11 +17,13 @@ namespace Vista
     {
         private float ingresosTotales;
         private string compradorMasFrecuente;
+        private int productosVendidosTotales;
 
         public FrmVentas()
         {
             InitializeComponent();
             ingresosTotales = 0;
+            productosVendidosTotales = 0;
             compradorMasFrecuente = String.Empty;
         }
 
@@ -30,6 +32,7 @@ namespace Vista
             dtg_Ventas.DataSource = null;
             dtg_Ventas.DataSource = Sistema.ListaDeVentas;
             EscribirIngresosTotales(Sistema.ListaDeVentas);
+            EscribirProductosVendidosTotales(Sistema.ListaDeVentas);
             EscribirCompradorMasFrecuente(Sistema.ListaDeVentas);
             EscribirVentasTotales(Sistema.ListaDeVentas);
         }
@@ -79,6 +82,7 @@ namespace Vista
             dtg_Ventas.DataSource = null;
             dtg_Ventas.DataSource = Sistema.ListaDeVentas;
             EscribirIngresosTotales(Sistema.ListaDeVentas);
+            EscribirProductosVendidosTotales(Sistema.ListaDeVentas);
             EscribirCompradorMasFrecuente(Sistema.ListaDeVentas);
             EscribirVentasTotales(Sistema.ListaDeVentas);
         }
@@ -104,6 +108,22 @@ namespace Vista
             }
         }
 
+        private void EscribirProductosVendidosTotales(List<Venta> lista)
+        {
+            productosVendidosTotales = 0;
+            lbl_ProductosVendidosTotales.Text = productosVendidosTotales.ToString();
+
+            if (lista.Count > 0)
+            {
+                foreach (Venta venta in lista)
+                {
+                    productosVendidosTotales += venta.CantidadProductos;
+                }
+
+                lbl_ProductosVendidosTotales.Text = productosVendidosTotales.ToString();
+            }
+        }
+
         /// <summary>
         /// Crea un grupo de compradores con su nombre como criterio ordenado en descenso.
         /// Por lo tanto, cada grupo será un nombre de cliente. El compradorMasFrecuente será un string
@@ -115,7 +135,7 @@ namespace Vista
             compradorMasFrecuente = String.Empty;
             lbl_CompradorFrecuente.Text = compradorMasFrecuente;
 
-            if (Sistema.ListaDeVentas.Count > 0)
+            if (lista.Count > 0)
             {
                 var grupoCompradores = lista.GroupBy(v => v.NombreCliente).OrderByDescending(g => g.Count());
                 compradorMasFrecuente = grupoCompradores.First().Key;
