@@ -23,6 +23,13 @@ namespace Helper
             CargarListas("listaVentas.txt", new Venta());
         }
 
+        /// <summary>
+        /// Verifica la existencia de los 3 archivos principales.
+        /// De no existir, los crea y les carga valores predeterminados.
+        /// </summary>
+        /// <param name="pathUno"></param>
+        /// <param name="pathDos"></param>
+        /// <param name="pathTres"></param>
         private static void ComprobarArchivosExistentes(string pathUno, string pathDos, string pathTres)
         {
             if ( !(File.Exists(pathUno) && File.Exists(pathDos) && File.Exists(pathTres)))
@@ -39,7 +46,7 @@ namespace Helper
         private static void CrearArchivosPorDefault(string pathUno, string pathDos, string pathTres)
         {
             StringBuilder usuarioDefault = new StringBuilder();
-            usuarioDefault.Append("SuperUsuario;Administrador;Administrador;40000000;Nombre;Apellido");
+            usuarioDefault.Append("SuperUsuario;Administrador;Administrador;10000000;Nombre;Apellido");
             File.WriteAllText(pathUno, usuarioDefault.ToString());
 
             StringBuilder productoDefault = new StringBuilder();

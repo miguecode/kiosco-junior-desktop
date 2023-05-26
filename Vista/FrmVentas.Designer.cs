@@ -48,6 +48,8 @@
             this.pan_Ingresos = new System.Windows.Forms.Panel();
             this.lbl_TituloProductos = new System.Windows.Forms.Label();
             this.lbl_ProductosVendidosTotales = new System.Windows.Forms.Label();
+            this.lbl_TipoMasVendido = new System.Windows.Forms.Label();
+            this.lbl_TituloTipo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Ventas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ventaBindingSource)).BeginInit();
             this.pan_Ingresos.SuspendLayout();
@@ -173,7 +175,7 @@
             this.lbl_TituloVentasTotales.AutoSize = true;
             this.lbl_TituloVentasTotales.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_TituloVentasTotales.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_TituloVentasTotales.Location = new System.Drawing.Point(367, 232);
+            this.lbl_TituloVentasTotales.Location = new System.Drawing.Point(370, 220);
             this.lbl_TituloVentasTotales.Name = "lbl_TituloVentasTotales";
             this.lbl_TituloVentasTotales.Size = new System.Drawing.Size(176, 31);
             this.lbl_TituloVentasTotales.TabIndex = 4;
@@ -184,7 +186,7 @@
             this.lbl_VentasTotales.AutoSize = true;
             this.lbl_VentasTotales.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_VentasTotales.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_VentasTotales.Location = new System.Drawing.Point(529, 232);
+            this.lbl_VentasTotales.Location = new System.Drawing.Point(532, 220);
             this.lbl_VentasTotales.Name = "lbl_VentasTotales";
             this.lbl_VentasTotales.Size = new System.Drawing.Size(27, 31);
             this.lbl_VentasTotales.TabIndex = 5;
@@ -195,7 +197,7 @@
             this.lbl_TituloComprador.AutoSize = true;
             this.lbl_TituloComprador.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_TituloComprador.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_TituloComprador.Location = new System.Drawing.Point(367, 107);
+            this.lbl_TituloComprador.Location = new System.Drawing.Point(370, 90);
             this.lbl_TituloComprador.Name = "lbl_TituloComprador";
             this.lbl_TituloComprador.Size = new System.Drawing.Size(304, 31);
             this.lbl_TituloComprador.TabIndex = 6;
@@ -206,7 +208,7 @@
             this.lbl_CompradorFrecuente.AutoSize = true;
             this.lbl_CompradorFrecuente.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_CompradorFrecuente.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_CompradorFrecuente.Location = new System.Drawing.Point(367, 138);
+            this.lbl_CompradorFrecuente.Location = new System.Drawing.Point(370, 121);
             this.lbl_CompradorFrecuente.Name = "lbl_CompradorFrecuente";
             this.lbl_CompradorFrecuente.Size = new System.Drawing.Size(102, 31);
             this.lbl_CompradorFrecuente.TabIndex = 7;
@@ -229,12 +231,12 @@
             // 
             // pan_Ingresos
             // 
-            this.pan_Ingresos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(31)))), ((int)(((byte)(31)))));
+            this.pan_Ingresos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(27)))), ((int)(((byte)(27)))));
             this.pan_Ingresos.Controls.Add(this.lbl_IngresosTotales);
             this.pan_Ingresos.Controls.Add(this.lbl_TituloIngresos);
-            this.pan_Ingresos.Location = new System.Drawing.Point(367, 278);
+            this.pan_Ingresos.Location = new System.Drawing.Point(370, 278);
             this.pan_Ingresos.Name = "pan_Ingresos";
-            this.pan_Ingresos.Size = new System.Drawing.Size(411, 57);
+            this.pan_Ingresos.Size = new System.Drawing.Size(412, 57);
             this.pan_Ingresos.TabIndex = 9;
             // 
             // lbl_TituloProductos
@@ -242,7 +244,7 @@
             this.lbl_TituloProductos.AutoSize = true;
             this.lbl_TituloProductos.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_TituloProductos.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_TituloProductos.Location = new System.Drawing.Point(367, 188);
+            this.lbl_TituloProductos.Location = new System.Drawing.Point(370, 173);
             this.lbl_TituloProductos.Name = "lbl_TituloProductos";
             this.lbl_TituloProductos.Size = new System.Drawing.Size(323, 31);
             this.lbl_TituloProductos.TabIndex = 10;
@@ -253,11 +255,33 @@
             this.lbl_ProductosVendidosTotales.AutoSize = true;
             this.lbl_ProductosVendidosTotales.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_ProductosVendidosTotales.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.lbl_ProductosVendidosTotales.Location = new System.Drawing.Point(674, 188);
+            this.lbl_ProductosVendidosTotales.Location = new System.Drawing.Point(674, 173);
             this.lbl_ProductosVendidosTotales.Name = "lbl_ProductosVendidosTotales";
             this.lbl_ProductosVendidosTotales.Size = new System.Drawing.Size(27, 31);
             this.lbl_ProductosVendidosTotales.TabIndex = 11;
             this.lbl_ProductosVendidosTotales.Text = "0";
+            // 
+            // lbl_TipoMasVendido
+            // 
+            this.lbl_TipoMasVendido.AutoSize = true;
+            this.lbl_TipoMasVendido.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_TipoMasVendido.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lbl_TipoMasVendido.Location = new System.Drawing.Point(370, 43);
+            this.lbl_TipoMasVendido.Name = "lbl_TipoMasVendido";
+            this.lbl_TipoMasVendido.Size = new System.Drawing.Size(62, 31);
+            this.lbl_TipoMasVendido.TabIndex = 13;
+            this.lbl_TipoMasVendido.Text = "Tipo";
+            // 
+            // lbl_TituloTipo
+            // 
+            this.lbl_TituloTipo.AutoSize = true;
+            this.lbl_TituloTipo.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_TituloTipo.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.lbl_TituloTipo.Location = new System.Drawing.Point(370, 12);
+            this.lbl_TituloTipo.Name = "lbl_TituloTipo";
+            this.lbl_TituloTipo.Size = new System.Drawing.Size(347, 31);
+            this.lbl_TituloTipo.TabIndex = 12;
+            this.lbl_TituloTipo.Text = "Tipo de producto más vendido:";
             // 
             // FrmVentas
             // 
@@ -266,6 +290,8 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(35)))), ((int)(((byte)(35)))));
             this.ClientSize = new System.Drawing.Size(800, 430);
             this.ControlBox = false;
+            this.Controls.Add(this.lbl_TipoMasVendido);
+            this.Controls.Add(this.lbl_TituloTipo);
             this.Controls.Add(this.lbl_ProductosVendidosTotales);
             this.Controls.Add(this.lbl_TituloProductos);
             this.Controls.Add(this.pan_Ingresos);
@@ -310,5 +336,7 @@
         private Panel pan_Ingresos;
         private Label lbl_TituloProductos;
         private Label lbl_ProductosVendidosTotales;
+        private Label lbl_TipoMasVendido;
+        private Label lbl_TituloTipo;
     }
 }

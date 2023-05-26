@@ -16,8 +16,9 @@ namespace Vista
     public partial class FrmVentas : Form
     {
         private float ingresosTotales;
-        private string compradorMasFrecuente;
         private int productosVendidosTotales;
+        private string compradorMasFrecuente;
+        private string tipoMasVendido;
 
         public FrmVentas()
         {
@@ -25,6 +26,7 @@ namespace Vista
             ingresosTotales = 0;
             productosVendidosTotales = 0;
             compradorMasFrecuente = String.Empty;
+            tipoMasVendido = String.Empty;
         }
 
         private void Ventas_Load(object sender, EventArgs e)
@@ -34,6 +36,7 @@ namespace Vista
             EscribirIngresosTotales(Sistema.ListaDeVentas);
             EscribirProductosVendidosTotales(Sistema.ListaDeVentas);
             EscribirCompradorMasFrecuente(Sistema.ListaDeVentas);
+            EscribirTipoMasVendido(Sistema.ListaDeVentas);
             EscribirVentasTotales(Sistema.ListaDeVentas);
         }
 
@@ -83,6 +86,7 @@ namespace Vista
             dtg_Ventas.DataSource = Sistema.ListaDeVentas;
             EscribirIngresosTotales(Sistema.ListaDeVentas);
             EscribirProductosVendidosTotales(Sistema.ListaDeVentas);
+            EscribirTipoMasVendido(Sistema.ListaDeVentas);
             EscribirCompradorMasFrecuente(Sistema.ListaDeVentas);
             EscribirVentasTotales(Sistema.ListaDeVentas);
         }
@@ -140,8 +144,55 @@ namespace Vista
                 var grupoCompradores = lista.GroupBy(v => v.NombreCliente).OrderByDescending(g => g.Count());
                 compradorMasFrecuente = grupoCompradores.First().Key;
 
-                lbl_CompradorFrecuente.Text = compradorMasFrecuente;
+                lbl_CompradorFrecuente.Text = $"{compradorMasFrecuente} ({grupoCompradores.First().Count()} compras)";
             }
+        }
+
+        private void EscribirTipoMasVendido(List<Venta> lista)
+        {
+            tipoMasVendido = String.Empty;
+            lbl_TipoMasVendido.Text = tipoMasVendido;
+
+            if (lista.Count > 0)
+            {
+                var tipoMasVendido = CalcularCantidadDeProductosPorTipo(Sistema.ListaDeVentas);
+
+                lbl_TipoMasVendido.Text = $"{tipoMasVendido.Key} ({tipoMasVendido.Value} ventas)";
+            }
+        }
+
+        /// <summary>
+        /// Crea un dictionary para los tipos de productos. Le aumenta el valor a cada elemento recorriendo
+        /// a la lista de ventas. Después, ordena la lista de mayor a menor en base a los valores/cantidades.
+        /// <param name="lista"></param>
+        /// <returns>Devuelve el primer elemento de la lista ordenada (la mayor cantidad)</returns>
+        private KeyValuePair<string, int> CalcularCantidadDeProductosPorTipo(List<Venta> lista)
+        {
+            Dictionary<string, int> listaDeTipos = new Dictionary<string, int>()
+            {
+                { "Cigarrillos", 0 },
+                { "Bebidas", 0 },
+                { "Snacks", 0 },
+                { "Galletitas", 0 },
+                { "Dulces", 0 },
+                { "Comidas", 0 },
+                { "Otros", 0 },
+            };
+
+            foreach (Venta venta in lista)
+            {
+                listaDeTipos["Cigarrillos"] += venta.CantidadCigarrillos;
+                listaDeTipos["Bebidas"] += venta.CantidadBebidas;
+                listaDeTipos["Snacks"] += venta.CantidadSnacks;
+                listaDeTipos["Galletitas"] += venta.CantidadGalletitas;
+                listaDeTipos["Dulces"] += venta.CantidadDulces;
+                listaDeTipos["Comidas"] += venta.CantidadComidas;
+                listaDeTipos["Otros"] += venta.CantidadOtros;
+            }
+
+            var listaOrdenada = listaDeTipos.OrderByDescending(t => t.Value);
+
+            return listaOrdenada.First();
         }
 
         private void EscribirVentasTotales(List<Venta> lista)
