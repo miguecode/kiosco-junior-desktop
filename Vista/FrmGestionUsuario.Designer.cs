@@ -165,7 +165,7 @@
             // 
             // usuarioBindingSource
             // 
-            this.usuarioBindingSource.DataSource = typeof(Entidades.Usuario);
+            this.usuarioBindingSource.DataSource = typeof(Entidades.Producto);
             // 
             // btn_Agregar
             // 

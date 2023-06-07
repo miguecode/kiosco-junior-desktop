@@ -45,7 +45,7 @@ namespace Vista
                 AsignarDatosAlUsuario();
 
                 if (esUsuarioNuevo)
-                    Dato.VerificarSiExisteEntidad(Sistema.ListaDeUsuarios, usuarioIngresado);
+                    Dato.VerificarSiExisteEntidadOrThrow(Sistema.ListaDeUsuarios, usuarioIngresado);
 
                 this.DialogResult = DialogResult.OK;
             }catch (Exception ex)

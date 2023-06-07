@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +32,7 @@ namespace Entidades
             }
         }
 
-        public static void VerificarSiExisteEntidad(List<Usuario> lista, Usuario usuarioRecibido)
+        public static void VerificarSiExisteEntidadOrThrow(List<Usuario> lista, Usuario usuarioRecibido)
         {
             foreach (Usuario usuario in lista)
             {
@@ -39,5 +40,17 @@ namespace Entidades
                     throw new Exception("Ya existe un usuario con ese nombre de usuario");
             }
         }
+
+        /*public static void VerificarSiExisteEntidadOrThrow(List<Dato> lista, Dato entidadRecibida)
+        {
+            foreach (Dato entidad in lista)
+            {
+                if (entidad == entidadRecibida)
+                    throw new Exception("Ya existe este elemento");
+            }
+        }*/
+
+        //SQL
+        public abstract Dato CrearEntidadPorBaseDeDatos(DataRow row);
     }
 }

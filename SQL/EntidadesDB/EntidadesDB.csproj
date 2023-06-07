@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Entidades\Entidades.csproj" />
-    <ProjectReference Include="..\SQL\EntidadesDB\EntidadesDB.csproj" />
+    <ProjectReference Include="..\..\Entidades\Entidades.csproj" />
+    <ProjectReference Include="..\ConexionSQL\ConexionSQL.csproj" />
   </ItemGroup>
 
 </Project>

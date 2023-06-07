@@ -13,7 +13,7 @@ namespace Helper
     public class Archivo
     {
         /// <summary>
-        /// Su función es cargar los archivos principales si es que existen, y sino, crearlos por default.
+        /// Carga los archivos principales si es que existen, y sino, los crea por default.
         /// </summary>
         public static void CargarArchivos()
         {
@@ -32,30 +32,27 @@ namespace Helper
         /// <param name="pathTres"></param>
         private static void ComprobarArchivosExistentes(string pathUno, string pathDos, string pathTres)
         {
-            if ( !(File.Exists(pathUno) && File.Exists(pathDos) && File.Exists(pathTres)))
+            if (!(File.Exists(pathUno) && File.Exists(pathDos) && File.Exists(pathTres)))
                 CrearArchivosPorDefault(pathUno, pathDos, pathTres);
         }
 
         /// <summary>
         /// Recibe 3 string que serán las rutas. Su función es crear un archivo por cada una de ellas.
-        /// Una lista de usuarios, de productos y de ventas. A cada uno le escribe un ejemplo predeterminado.
+        /// Una lista de usuarios, de productos y de ventas. A cada uno le escribe un valor predeterminado.
         /// </summary>
         /// <param name="pathUno"></param>
         /// <param name="pathDos"></param>
         /// <param name="pathTres"></param>
         private static void CrearArchivosPorDefault(string pathUno, string pathDos, string pathTres)
         {
-            StringBuilder usuarioDefault = new StringBuilder();
-            usuarioDefault.Append("SuperUsuario;Administrador;Administrador;10000000;Nombre;Apellido");
-            File.WriteAllText(pathUno, usuarioDefault.ToString());
+            string valorDefault = "SuperUsuario;Administrador;Administrador;10000000;Nombre;Apellido";
+            File.WriteAllText(pathUno, valorDefault);
 
-            StringBuilder productoDefault = new StringBuilder();
-            productoDefault.Append("1000;Nombre;Otros;Descripcion del producto.;Marca;100;50");
-            File.WriteAllText(pathDos, productoDefault.ToString());
+            valorDefault = "1000;Nombre;Otros;Descripcion del producto.;Marca;100;50";
+            File.WriteAllText(pathDos, valorDefault);
 
-            StringBuilder ventaDefault = new StringBuilder();
-            ventaDefault.Append("1000;Nombre Apellido;100;1;0;0;0;0;0;0;1");
-            File.WriteAllText(pathTres, ventaDefault.ToString());
+            valorDefault = "1000;Nombre Apellido;100;1;0;0;0;0;0;0;1";
+            File.WriteAllText(pathTres, valorDefault);
         }
 
         /// <summary>
@@ -121,8 +118,8 @@ namespace Helper
         }
 
         /// <summary>
-        /// Su función es crear una lista de strings los cuales representan cada dato
-        /// de una entidad. Usa Split pasandole el caracter separador que recibe por parámetro
+        /// Crea una lista de strings los cuales representan cada dato de una entidad.
+        /// Usa Split pasandole el caracter separador que recibe por parámetro.
         /// </summary>
         /// <param name="sr"></param>
         /// <param name="caracter"></param>

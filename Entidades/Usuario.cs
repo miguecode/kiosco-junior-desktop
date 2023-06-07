@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Data;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -58,6 +59,20 @@ namespace Entidades
             int dni = int.Parse(dato[3]);
             string nombre = dato[4];
             string apellido = dato[5];
+
+            Usuario usuarioCreado = new Usuario(nombre, apellido, dni, nombreUsuario, contrasenia, rol);
+
+            return usuarioCreado;
+        }
+
+        public override Usuario CrearEntidadPorBaseDeDatos(DataRow row)
+        {
+            string nombre = row["nombre"].ToString() ?? "";
+            string apellido = row["apellido"].ToString() ?? "";
+            int dni = Convert.ToInt32(row["dni"].ToString());
+            string nombreUsuario = row["nombre_usuario"].ToString() ?? "";
+            string contrasenia = row["contrasenia"].ToString() ?? "";
+            _ = Enum.TryParse(row["rol"].ToString() ?? "", out ERol rol);
 
             Usuario usuarioCreado = new Usuario(nombre, apellido, dni, nombreUsuario, contrasenia, rol);
 

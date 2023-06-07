@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using EntidadesDB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,9 +19,17 @@ namespace Helper
 
         static Sistema()
         {
-            listaDeUsuarios = new List<Usuario>();
+            /*listaDeUsuarios = new List<Usuario>();
             listaDeProductos = new List<Producto>();
-            listaDeVentas = new List<Venta>();
+            listaDeVentas = new List<Venta>();*/
+
+            UsuarioDB entidadUsuarioDB = new UsuarioDB();
+            ProductoDB entidadProductoDB = new ProductoDB();
+            VentaDB entidadVentaDB = new VentaDB();
+
+            listaDeUsuarios = entidadUsuarioDB.TraerTodosLosRegistros();
+            listaDeProductos = entidadProductoDB.TraerTodosLosRegistros();
+            listaDeVentas = entidadVentaDB.TraerTodosLosRegistros();
         }
     }
 }

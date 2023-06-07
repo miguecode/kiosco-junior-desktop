@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -16,6 +17,7 @@ namespace Entidades
         private ETipo tipo;
         private int stock;
         private int id;
+        private int idDB;
         private static int idActual;
         private int cantidadEnCarrito;
 
@@ -28,6 +30,7 @@ namespace Entidades
             this.precio = 1;
             this.stock = 1;
             this.id = 0000;
+            this.idDB = 0000;
             this.cantidadEnCarrito = 0;
         }
 
@@ -41,9 +44,17 @@ namespace Entidades
             this.precio = precio;
             this.stock = stock;
             this.id = idActual;
+            this.idDB = 0000;
             idActual++;
             this.cantidadEnCarrito = 0;
         }
+
+        public Producto(int idDB, string nombre, ETipo tipo, string marca, string descripcion,float precio, int stock)
+                                 : this(nombre, tipo, marca, descripcion, precio, stock)
+        {
+            this.idDB = idDB;
+        }
+
         static Producto()
         {
             idActual = 1000;
@@ -56,6 +67,7 @@ namespace Entidades
         public float Precio { get => precio; set => precio = value; }
         public int Stock { get => stock; set => stock = value; }
         public int Id { get => id; }
+        public int IdDB { get => idDB; }
         public int CantidadEnCarrito { get => cantidadEnCarrito; set => cantidadEnCarrito = value; }
 
         public override string GetParser()
@@ -77,11 +89,26 @@ namespace Entidades
             return productoCreado;
         }
 
+        public override Producto CrearEntidadPorBaseDeDatos(DataRow row)
+        {
+            int id = Convert.ToInt32(row["id"].ToString());
+            string nombre = row["nombre"].ToString() ?? "";
+            string marca = row["marca"].ToString() ?? "";
+            string descripcion = row["descripcion"].ToString() ?? "";
+            float precio = Convert.ToSingle(row["precio"].ToString());
+            _ = Enum.TryParse(row["tipo"].ToString() ?? "", out ETipo tipo);
+            int stock = Convert.ToInt32(row["stock"].ToString());
+
+            Producto productoCreado = new Producto(id, nombre, tipo, marca, descripcion, precio, stock);
+
+            return productoCreado;
+        }
+
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.Append($"NOMBRE: {Nombre} - PRECIO: {Precio}");
+            sb.Append($"ID: {IdDB} NOMBRE: {Nombre} - PRECIO: {Precio}");
 
             return sb.ToString();
         }

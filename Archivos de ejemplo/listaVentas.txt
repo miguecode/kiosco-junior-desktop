@@ -1,1 +1,6 @@
-1000;Emmanuel Menchaca;13282,5;32;4;1;11;1;13;2;0
+1000;Emmanuel Menchaca;1500;5;0;5;0;0;0;0;0
+1001;Emmanuel Menchaca;1000;4;0;0;0;4;0;0;0
+1002;Emmanuel Menchaca;300;1;0;0;0;1;0;0;0
+1003;Emmanuel Menchaca;892,5;3;0;1;0;2;0;0;0
+1004;Emmanuel Menchaca;950;3;0;0;0;3;0;0;0
+1005;Emmanuel Menchaca;3500;6;0;6;0;0;0;0;0
