@@ -16,24 +16,25 @@ namespace EntidadesDB
 
         public string NombreTabla { get => "usuarios"; }
         public string Identificador { get => "dni"; }
-        public string Atributos { get => "nombre, apellido, dni, nombre_usuario, contrasenia, rol"; }
+        public string Atributos { get => "(nombre, apellido, dni, nombre_usuario, contrasenia, rol)"; }
+        public string Valores { get => "VALUES (@nombre, @apellido, @dni, @nombre_usuario, @contrasenia, @rol)"; }
 
-        public int Agregar(Usuario u)
+        public int Agregar(Usuario usuario)
         {
-            string consulta = $"INSERT INTO {NombreTabla} {Atributos} VALUES (@nombre, @apellido, @dni, @nombre_usuario, @contrasenia, @rol)";
+            try
+            {
+                string consulta = $"INSERT INTO {NombreTabla} {Atributos} {Valores}";
 
-            SqlCommand command = new SqlCommand(consulta, Connection);
-            command.Parameters.Clear();
-            command.Parameters.AddWithValue("@nombre", u.Nombre);
-            command.Parameters.AddWithValue("@apellido", u.Apellido);
-            command.Parameters.AddWithValue("@dni", u.Dni);
-            command.Parameters.AddWithValue("@nombre_usuario", u.NombreUsuario);
-            command.Parameters.AddWithValue("@contrasenia", u.Contrasenia);
-            command.Parameters.AddWithValue("@rol", u.Rol);
+                SqlCommand command = new SqlCommand(consulta, Connection);
 
-            int filasAfectadas = EjecutarConsultaNonQuery(command);
+                EstablecerParametros(command, usuario);
 
-            return filasAfectadas;
+                return EjecutarConsultaNonQuery(command);
+            }
+            catch(Exception)
+            {
+                throw new Exception("No se pudo agregar el usuario a la DB");
+            }
         }
 
         public int Eliminar(Usuario identificacion)
@@ -41,9 +42,24 @@ namespace EntidadesDB
             throw new NotImplementedException();
         }
 
-        public int Modificar(Usuario objeto)
+        public int Modificar(Usuario usuario)
         {
-            throw new NotImplementedException();
+            try
+            {
+                string consulta = $"UPDATE {NombreTabla} SET {Atributos} {Valores} ";
+
+                SqlCommand command = new SqlCommand(consulta, Connection);
+
+                EstablecerParametros(command, usuario);
+
+                int filasAfectadas = EjecutarConsultaNonQuery(command);
+
+                return filasAfectadas;
+            }
+            catch (Exception)
+            {
+                throw new Exception("No se pudo agregar el usuario a la DB");
+            }
         }
 
         public List<Usuario> TraerTodosLosRegistros()
@@ -82,6 +98,17 @@ namespace EntidadesDB
             }
 
             return listaUsuarios;
+        }
+
+        public void EstablecerParametros(SqlCommand command, Usuario u)
+        {
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@nombre", u.Nombre);
+            command.Parameters.AddWithValue("@apellido", u.Apellido);
+            command.Parameters.AddWithValue("@dni", u.Dni);
+            command.Parameters.AddWithValue("@nombre_usuario", u.NombreUsuario);
+            command.Parameters.AddWithValue("@contrasenia", u.Contrasenia);
+            command.Parameters.AddWithValue("@rol", u.Rol);
         }
     }
 }

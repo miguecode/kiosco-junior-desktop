@@ -35,9 +35,10 @@ namespace ConexionSQL
         protected int EjecutarConsultaNonQuery(SqlCommand command)
         {
             Abrir();
+            //Connection.Open();
 
             //SqlCommand command = new SqlCommand(consulta, Connection);
-            
+
             int filasAfectadas = command.ExecuteNonQuery();
 
             Cerrar();

@@ -17,24 +17,25 @@ namespace EntidadesDB
 
         public string NombreTabla { get => "productos"; }
         public string Identificador { get => "id"; }
-        public string Atributos { get => "nombre, tipo, descripcion, marca, precio, stock"; }
+        public string Atributos { get => "(nombre, tipo, descripcion, marca, precio, stock)"; }
+        public string Valores { get => "VALUES (@nombre, @tipo, @descripcion, @marca, @precio, @stock)"; }
 
-        public int Agregar(Producto p)
+        public int Agregar(Producto producto)
         {
-            string consulta = $"INSERT INTO {NombreTabla} {Atributos} VALUES (@nombre, @tipo, @descripcion, @marca, @precio, @stock)";
+            try
+            {
+                string consulta = $"INSERT INTO {NombreTabla} {Atributos} {Valores}";
 
-            SqlCommand command = new SqlCommand(consulta, Connection);
-            command.Parameters.Clear();
-            command.Parameters.AddWithValue("@nombre", p.Nombre);
-            command.Parameters.AddWithValue("@tipo", p.Tipo);
-            command.Parameters.AddWithValue("@descripcion", p.Descripcion);
-            command.Parameters.AddWithValue("@marca", p.Marca);
-            command.Parameters.AddWithValue("@precio", p.Precio);
-            command.Parameters.AddWithValue("@stock", p.Stock);
+                SqlCommand command = new SqlCommand(consulta, Connection);
 
-            int filasAfectadas = EjecutarConsultaNonQuery(command);
+                EstablecerParametros(command, producto);
 
-            return filasAfectadas;
+                return EjecutarConsultaNonQuery(command);
+            }
+            catch(Exception)
+            {
+                throw new Exception("No se pudo agregar el producto a la DB.");
+            }
         }
 
         public int Eliminar(Producto identificacion)
@@ -83,5 +84,17 @@ namespace EntidadesDB
 
             return listaDeProductos;
         }
+
+        public void EstablecerParametros(SqlCommand command, Producto p)
+        {
+            command.Parameters.Clear();
+            command.Parameters.AddWithValue("@nombre", p.Nombre);
+            command.Parameters.AddWithValue("@tipo", p.Tipo);
+            command.Parameters.AddWithValue("@descripcion", p.Descripcion);
+            command.Parameters.AddWithValue("@marca", p.Marca);
+            command.Parameters.AddWithValue("@precio", p.Precio);
+            command.Parameters.AddWithValue("@stock", p.Stock);
+        }
     }
 }
+

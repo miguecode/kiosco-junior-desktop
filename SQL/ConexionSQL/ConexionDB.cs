@@ -11,21 +11,21 @@ namespace ConexionSQL
 {
     public abstract class ConexionDB
     {
-        private SqlConnection? _connection; //Lo usamos para conectarnos o desconectarnos a la DB
-        //private static SqlCommand _command; //Lo usamos para realizar consultas a la DB
-        private string _connectionString;
+        private SqlConnection _connection; //Lo usamos para conectarnos o desconectarnos a la DB
 
-        public SqlConnection? Connection { get => _connection ; }
+        //private string _connectionString;
+
+        public SqlConnection Connection { get => _connection ; }
 
         public ConexionDB(string connectionString)
         {
-            _connectionString = connectionString;
-            //_connection = new SqlConnection(connectionString);
+            //_connectionString = connectionString;
+            _connection = new SqlConnection(connectionString);
         }
 
         protected void Abrir()
         {
-            _connection = new SqlConnection(_connectionString);
+            //_connection = new SqlConnection(_connectionString);
 
             if (_connection is not null)
                 _connection.Open();
