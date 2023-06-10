@@ -13,26 +13,13 @@ namespace EntidadesDB
 {
     public class VentaDB : ConsultasSQL, IManipulable<Venta>
     {
-        public VentaDB() : base() { }
+        Dictionary<string, string> consultas = new Dictionary<string, string>();
 
-        public string NombreTabla { get => "ventas"; }
-        public string Identificador { get => "id"; }
-        public string Atributos 
-        {
-            get => "(nombre_cliente, valor_total, cantidad_productos," +
-                    " cantidad_cigarrillos, cantidad_bebidas, cantidad_snacks," +
-                    " cantidad_galletitas, cantidad_dulces, cantidad_comidas, cantidad_otros)";
-        }
-        public string Valores
-        {
-            get =>  "VALUES (@nombre_cliente, @valor_total, @cantidad_productos," +
-                    " @cantidad_cigarrillos, @cantidad_bebidas, @cantidad_snacks," +
-                    " @cantidad_galletitas, @cantidad_dulces, @cantidad_comidas, @cantidad_otros)"; 
-        }
+        public VentaDB() : base() { EscribirConsultas(); }
 
         public int Agregar(Venta venta)
         {
-            string consulta = $"INSERT INTO {NombreTabla} {Atributos} {Valores}";
+            string consulta = consultas["Agregar venta"];
 
             SqlCommand command = new SqlCommand(consulta, Connection);
 
@@ -41,21 +28,33 @@ namespace EntidadesDB
             return EjecutarConsultaNonQuery(command);
         }
 
-        public int Eliminar(Venta identificacion)
+        public int Eliminar(Venta venta)
         {
-            throw new NotImplementedException();
+            try
+            {
+                string consulta = consultas["Eliminar ventas"];
+
+                SqlCommand command = new SqlCommand(consulta, Connection);
+
+                return EjecutarConsultaNonQuery(command);
+            }
+            catch (Exception)
+            {
+                throw new Exception("No se pudieron eliminar las ventas de la DB");
+            }
         }
 
-        public int Modificar(Venta objeto)
+        public int Modificar(Venta venta)
         {
-            throw new NotImplementedException();
+            throw new Exception("No se modifican las ventas");
         }
 
         public List<Venta> TraerTodosLosRegistros()
         {
             List<Venta> listaDeVentas = new List<Venta>();
+            string consulta = consultas["Traer todas las ventas"];
 
-            using (var dataTable = EjecutarConsulta($"{TodosLosRegistrosDe} {NombreTabla}"))
+            using (var dataTable = EjecutarConsulta(consulta))
             {
                 foreach (DataRow row in dataTable.Rows)
                 {
@@ -72,7 +71,7 @@ namespace EntidadesDB
         public List<Venta> TraerUnRegistro(string id)
         {
             List<Venta> listaDeVentas = new List<Venta>();
-            string consulta = $"{TodosLosRegistrosDe} {NombreTabla} WHERE {Identificador} = {id}";
+            string consulta = $"SELECT * FROM ventas WHERE id = {id}";
 
             using (var dataTable = EjecutarConsulta(consulta))
             {
@@ -88,9 +87,27 @@ namespace EntidadesDB
             return listaDeVentas;
         }
 
-        public void EstablecerParametros(SqlCommand command, Venta v)
+        private void EscribirConsultas()
+        {
+            consultas.Add("Agregar venta",
+                "INSERT INTO ventas (nombre_cliente, valor_total, cantidad_productos," +
+                "cantidad_cigarrillos, cantidad_bebidas, cantidad_snacks," +
+                "cantidad_galletitas, cantidad_dulces, cantidad_comidas, cantidad_otros) " +
+                "VALUES(@nombre_cliente, @valor_total, @cantidad_productos," +
+                "@cantidad_cigarrillos, @cantidad_bebidas, @cantidad_snacks," +
+                "@cantidad_galletitas, @cantidad_dulces, @cantidad_comidas, @cantidad_otros)");
+
+            consultas.Add("Eliminar ventas", "DELETE FROM ventas");
+
+            consultas.Add("Traer todas las ventas", "SELECT * FROM ventas");
+
+            //consultas.Add("Traer venta que coincida", "");
+        }
+
+        private void EstablecerParametros(SqlCommand command, Venta v)
         {
             command.Parameters.Clear();
+            command.Parameters.AddWithValue("@id", v.IdDB);
             command.Parameters.AddWithValue("@nombre_cliente", v.NombreCliente);
             command.Parameters.AddWithValue("@valor_total", v.ValorTotal);
             command.Parameters.AddWithValue("@cantidad_productos", v.CantidadProductos);

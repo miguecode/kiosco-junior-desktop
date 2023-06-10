@@ -11,8 +11,6 @@ namespace ConexionSQL
 {
     public class ConsultasSQL : ConexionDB
     {
-        protected static string TodosLosRegistrosDe { get => "SELECT * FROM"; }
-
         public ConsultasSQL(string connectionString) : base(connectionString) {}
         public ConsultasSQL() : base("Server=.;Database=UTN_DB;Trusted_Connection=True;") {}
 

@@ -13,18 +13,15 @@ namespace EntidadesDB
 {
     public class ProductoDB : ConsultasSQL, IManipulable<Producto>
     {
-        public ProductoDB() : base(){}
+        Dictionary<string, string> consultas = new Dictionary<string, string>();
 
-        public string NombreTabla { get => "productos"; }
-        public string Identificador { get => "id"; }
-        public string Atributos { get => "(nombre, tipo, descripcion, marca, precio, stock)"; }
-        public string Valores { get => "VALUES (@nombre, @tipo, @descripcion, @marca, @precio, @stock)"; }
+        public ProductoDB() : base() { EscribirConsultas(); }
 
         public int Agregar(Producto producto)
         {
             try
             {
-                string consulta = $"INSERT INTO {NombreTabla} {Atributos} {Valores}";
+                string consulta = consultas["Agregar producto"];
 
                 SqlCommand command = new SqlCommand(consulta, Connection);
 
@@ -38,21 +35,47 @@ namespace EntidadesDB
             }
         }
 
-        public int Eliminar(Producto identificacion)
+        public int Eliminar(Producto producto)
         {
-            throw new NotImplementedException();
+            try
+            {
+                string consulta = consultas["Eliminar producto"];
+
+                SqlCommand command = new SqlCommand(consulta, Connection);
+                command.Parameters.AddWithValue("@id", producto.IdDB);
+
+                return EjecutarConsultaNonQuery(command);
+            }
+            catch (Exception)
+            {
+                throw new Exception("No se pudo eliminar el producto de la DB");
+            }
         }
 
-        public int Modificar(Producto objeto)
+        public int Modificar(Producto producto)
         {
-            throw new NotImplementedException();
+            try
+            {
+                string consulta = consultas["Modificar producto"];
+
+                SqlCommand command = new SqlCommand(consulta, Connection);
+
+                EstablecerParametros(command, producto);
+
+                return EjecutarConsultaNonQuery(command);
+            }
+            catch (Exception)
+            {
+                throw new Exception("No se pudo modificar el producto en la DB");
+            }
         }
 
         public List<Producto> TraerTodosLosRegistros()
         {
             List<Producto> listaDeProductos = new List<Producto>();
+            string consulta = consultas["Traer todos los productos"];
 
-            using (var dataTable = EjecutarConsulta($"{TodosLosRegistrosDe} {NombreTabla}"))
+            using (var dataTable = EjecutarConsulta(consulta))
             {
                 foreach (DataRow row in dataTable.Rows)
                 {
@@ -69,7 +92,7 @@ namespace EntidadesDB
         public List<Producto> TraerUnRegistro(string id)
         {
             List<Producto> listaDeProductos = new List<Producto>();
-            string consulta = $"{TodosLosRegistrosDe} {NombreTabla} WHERE {Identificador} = {id}";
+            string consulta = $"SELECT * FROM productos WHERE id = {id}";
 
             using (var dataTable = EjecutarConsulta(consulta))
             {
@@ -85,9 +108,28 @@ namespace EntidadesDB
             return listaDeProductos;
         }
 
-        public void EstablecerParametros(SqlCommand command, Producto p)
+        private void EscribirConsultas()
+        {
+            consultas.Add("Agregar producto",
+                "INSERT INTO productos (nombre, tipo, descripcion, marca, precio, stock )" +
+                "VALUES (@nombre, @tipo, @descripcion, @marca, @precio, @stock)");
+
+            consultas.Add("Eliminar producto",
+                "DELETE FROM productos WHERE id = @id");
+
+            consultas.Add("Modificar producto",
+                "UPDATE productos SET nombre = @nombre, tipo = @tipo, " +
+                "descripcion = @descripcion, marca = @marca, precio = @precio, stock = @stock " +
+                "WHERE id = @id");
+
+            consultas.Add("Traer todos los productos", "SELECT * FROM productos");
+            //consultas.Add("Traer producto que coincida", "");
+        }
+
+        private void EstablecerParametros(SqlCommand command, Producto p)
         {
             command.Parameters.Clear();
+            command.Parameters.AddWithValue("@id", p.IdDB);
             command.Parameters.AddWithValue("@nombre", p.Nombre);
             command.Parameters.AddWithValue("@tipo", p.Tipo);
             command.Parameters.AddWithValue("@descripcion", p.Descripcion);

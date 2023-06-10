@@ -12,18 +12,15 @@ namespace EntidadesDB
 {
     public class UsuarioDB : ConsultasSQL, IManipulable<Usuario>
     {
-        public UsuarioDB() : base() {}
+        Dictionary<string, string> consultas = new Dictionary<string, string>();
 
-        public string NombreTabla { get => "usuarios"; }
-        public string Identificador { get => "dni"; }
-        public string Atributos { get => "(nombre, apellido, dni, nombre_usuario, contrasenia, rol)"; }
-        public string Valores { get => "VALUES (@nombre, @apellido, @dni, @nombre_usuario, @contrasenia, @rol)"; }
+        public UsuarioDB() : base() { EscribirConsultas(); }
 
         public int Agregar(Usuario usuario)
         {
             try
             {
-                string consulta = $"INSERT INTO {NombreTabla} {Atributos} {Valores}";
+                string consulta = consultas["Agregar usuario"];
 
                 SqlCommand command = new SqlCommand(consulta, Connection);
 
@@ -37,35 +34,45 @@ namespace EntidadesDB
             }
         }
 
-        public int Eliminar(Usuario identificacion)
+        public int Eliminar(Usuario usuario)
         {
-            throw new NotImplementedException();
+            try
+            {
+                string consulta = consultas["Eliminar usuario"];
+
+                SqlCommand command = new SqlCommand(consulta, Connection);
+                command.Parameters.AddWithValue("@dni", usuario.Dni);
+
+                return EjecutarConsultaNonQuery(command);
+            }
+            catch (Exception)
+            {
+                throw new Exception("No se pudo eliminar el usuario de la DB");
+            }
         }
 
         public int Modificar(Usuario usuario)
         {
             try
             {
-                string consulta = $"UPDATE {NombreTabla} SET {Atributos} {Valores} ";
+                string consulta = consultas["Modificar usuario"];
 
                 SqlCommand command = new SqlCommand(consulta, Connection);
 
                 EstablecerParametros(command, usuario);
 
-                int filasAfectadas = EjecutarConsultaNonQuery(command);
-
-                return filasAfectadas;
+                return EjecutarConsultaNonQuery(command);
             }
             catch (Exception)
             {
-                throw new Exception("No se pudo agregar el usuario a la DB");
+                throw new Exception("No se pudo modificar el usuario en la DB");
             }
         }
 
         public List<Usuario> TraerTodosLosRegistros()
         {
             List<Usuario> listaUsuarios = new List<Usuario>();
-            string consulta = $"{TodosLosRegistrosDe} {NombreTabla}";
+            string consulta = consultas["Traer todos los usuarios"];
 
             using (var dataTable = EjecutarConsulta(consulta))
             {
@@ -84,7 +91,7 @@ namespace EntidadesDB
         public List<Usuario> TraerUnRegistro(string dni)
         {
             List<Usuario> listaUsuarios = new List<Usuario>();
-            string consulta = $"{TodosLosRegistrosDe} {NombreTabla} WHERE {Identificador} = {dni}";
+            string consulta = $"SELECT * FROM usuarios WHERE dni = {dni}";
 
             using (var dataTable = EjecutarConsulta(consulta))
             {
@@ -100,7 +107,25 @@ namespace EntidadesDB
             return listaUsuarios;
         }
 
-        public void EstablecerParametros(SqlCommand command, Usuario u)
+        private void EscribirConsultas()
+        {
+            consultas.Add("Agregar usuario",
+                "INSERT INTO usuarios (nombre, apellido, dni, nombre_usuario, contrasenia, rol )" +
+                "VALUES (@nombre, @apellido, @dni, @nombre_usuario, @contrasenia, @rol)");
+
+            consultas.Add("Eliminar usuario",
+                "DELETE FROM usuarios WHERE dni = @dni");
+
+            consultas.Add("Modificar usuario",
+                "UPDATE usuarios SET nombre = @nombre, apellido = @apellido, dni = @dni," +
+                "nombre_usuario = @nombre_usuario, contrasenia = @contrasenia, rol = @rol " +
+                "WHERE dni = @dni");
+
+            consultas.Add("Traer todos los usuarios", "SELECT * FROM usuarios");
+            //consultas.Add("Traer usuario que coincida", "");
+        }
+
+        private void EstablecerParametros(SqlCommand command, Usuario u)
         {
             command.Parameters.Clear();
             command.Parameters.AddWithValue("@nombre", u.Nombre);

@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using EntidadesDB;
 using Helper;
 using System;
 using System.CodeDom;
@@ -17,6 +18,7 @@ namespace Vista
 {
     public partial class FrmCompras : Form
     {
+        private VentaDB controladorDB;
         private Cliente clienteActual;
         private List<Producto> menu;
         private float precioTotal;
@@ -33,6 +35,7 @@ namespace Vista
         public FrmCompras(Usuario usuarioActual)
         {
             InitializeComponent();
+            controladorDB = new VentaDB();
             clienteActual = ConvertirUsuarioACliente(usuarioActual);
             ventaActual = new Venta();
             menu = new List<Producto>();
@@ -41,6 +44,7 @@ namespace Vista
 
         private void FrmCompras_Load(object sender, EventArgs e)
         {
+            Sistema.ListaDeVentas = controladorDB.TraerTodosLosRegistros();
             dtg_Productos.DataSource = null;
             dtg_Productos.DataSource = menu;
             OcultarProductosAgotados();
@@ -84,6 +88,8 @@ namespace Vista
 
                 Sistema.ListaDeVentas.Add(ventaActual);
 
+                controladorDB.Agregar(ventaActual);
+
                 MostrarMensajeVentaExitosa();
 
                 ReducirStockProducto();
@@ -91,6 +97,8 @@ namespace Vista
                 OcultarProductosAgotados();
 
                 ReiniciarCarrito();
+
+                //Sistema.ListaDeVentas = controladorDB.TraerTodosLosRegistros();
             }
         }
 
@@ -270,11 +278,17 @@ namespace Vista
             lbl_Total.Text = $"TOTAL: $ {precioTotal:0.00}";
         }
 
-        private static void ReducirStockProducto()
+        private void ReducirStockProducto()
         {
             foreach (Producto producto in Sistema.ListaDeProductos)
             {
-                producto.Stock -= producto.CantidadEnCarrito;
+                if (producto.CantidadEnCarrito > 0)
+                {
+                    producto.Stock -= producto.CantidadEnCarrito;
+
+                    ProductoDB controladorDB = new ProductoDB();
+                    controladorDB.Modificar(producto);
+                }
             }
         }
 

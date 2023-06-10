@@ -16,9 +16,9 @@ namespace Entidades
         private float precio;
         private ETipo tipo;
         private int stock;
-        private int id;
+        //private int id;
         private int idDB;
-        private static int idActual;
+        //private static int idActual;
         private int cantidadEnCarrito;
 
         public Producto()
@@ -29,7 +29,7 @@ namespace Entidades
             this.descripcion = String.Empty;
             this.precio = 1;
             this.stock = 1;
-            this.id = 0000;
+            //this.id = 0000;
             this.idDB = 0000;
             this.cantidadEnCarrito = 0;
         }
@@ -43,9 +43,9 @@ namespace Entidades
             this.descripcion = descripcion;
             this.precio = precio;
             this.stock = stock;
-            this.id = idActual;
+            //this.id = idActual;
             this.idDB = 0000;
-            idActual++;
+            //idActual++;
             this.cantidadEnCarrito = 0;
         }
 
@@ -55,10 +55,10 @@ namespace Entidades
             this.idDB = idDB;
         }
 
-        static Producto()
+        /*static Producto()
         {
             idActual = 1000;
-        }
+        }*/
 
         public string Nombre { get => nombre; set => nombre = value; }
         public ETipo Tipo { get => tipo; set => tipo = value; }
@@ -66,13 +66,13 @@ namespace Entidades
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public float Precio { get => precio; set => precio = value; }
         public int Stock { get => stock; set => stock = value; }
-        public int Id { get => id; }
+        //public int Id { get => id; }
         public int IdDB { get => idDB; }
         public int CantidadEnCarrito { get => cantidadEnCarrito; set => cantidadEnCarrito = value; }
 
         public override string GetParser()
         {
-            return $"{Id};{Nombre};{Tipo};{Descripcion};{Marca};{Precio};{Stock}";
+            return $"{IdDB};{Nombre};{Tipo};{Descripcion};{Marca};{Precio};{Stock}";
         }
 
         public override Producto CrearEntidadPorLista(List<string> dato)
@@ -115,12 +115,12 @@ namespace Entidades
 
         public static bool operator ==(Producto p1, Producto p2)
         {
-            return p1.Id == p2.Id;
+            return p1.IdDB == p2.IdDB;
         }
 
         public static bool operator !=(Producto p1, Producto p2)
         {
-            return !(p1.Id == p2.Id);
+            return !(p1.IdDB == p2.IdDB);
         }
 
         public override bool Equals(object? obj)
@@ -133,7 +133,7 @@ namespace Entidades
 
         public override int GetHashCode()
         {
-            return Id;
+            return IdDB;
         }
     }
 }

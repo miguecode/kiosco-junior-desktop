@@ -12,9 +12,9 @@ namespace Vista
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Archivo.CargarArchivos();
+            //Archivo.CargarArchivos();
             Application.Run(new FrmLogin());
-            Archivo.GuardarArchivos();
+            //Archivo.GuardarArchivos();
         }
     }
 }

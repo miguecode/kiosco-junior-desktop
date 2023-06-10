@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using EntidadesDB;
 using Helper;
 using System;
 using System.Collections;
@@ -82,6 +83,10 @@ namespace Vista
         private void LimpiarPantalla()
         {
             Sistema.ListaDeVentas.Clear();
+
+            VentaDB controladorDB = new VentaDB();
+            controladorDB.Eliminar(new Venta());
+
             dtg_Ventas.DataSource = null;
             dtg_Ventas.DataSource = Sistema.ListaDeVentas;
             EscribirIngresosTotales(Sistema.ListaDeVentas);

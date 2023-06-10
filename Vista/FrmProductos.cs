@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using EntidadesDB;
 using Helper;
 using System;
 using System.Collections;
@@ -15,9 +16,12 @@ namespace Vista
 {
     public partial class FrmProductos : Form
     {
+        ProductoDB controladorDB;
+
         public FrmProductos()
         {
             InitializeComponent();
+            controladorDB = new ProductoDB();
         }
 
         private void FrmProductos_Load(object sender, EventArgs e)
@@ -51,6 +55,9 @@ namespace Vista
             if (formAltaProducto.ShowDialog() == DialogResult.OK)
             {
                 Sistema.ListaDeProductos.Add(formAltaProducto.ProductoIngresado);
+
+                controladorDB.Agregar(formAltaProducto.ProductoIngresado);
+
                 ActualizarDataGrid(Sistema.ListaDeProductos);
             }else
                 formAltaProducto.Close();
@@ -62,6 +69,9 @@ namespace Vista
             {
                 Producto productoSeleccionado = SeleccionarProductoEspecifico(Sistema.ListaDeProductos);
                 Sistema.ListaDeProductos.Remove(productoSeleccionado);
+
+                controladorDB.Eliminar(productoSeleccionado);
+
                 ActualizarDataGrid(Sistema.ListaDeProductos);
             }
         }
@@ -74,7 +84,10 @@ namespace Vista
                 FrmAltaProducto formModificar = new FrmAltaProducto(productoSeleccionado, false);
 
                 if (formModificar.ShowDialog() == DialogResult.OK)
+                {
+                    controladorDB.Modificar(productoSeleccionado);
                     ActualizarDataGrid(Sistema.ListaDeProductos);
+                }
                 else
                     formModificar.Close();
             }
@@ -123,8 +136,11 @@ namespace Vista
         /// </summary>
         /// <param name="criterio"></param>
         /// <returns>Retorna la lista ordenada</returns>
-        private List<Producto> OrdenarListaProductos(string? criterio)
+        private static List<Producto> OrdenarListaProductos(string? criterio)
         {
+            ProductoDB productoDB = new ProductoDB();
+            Sistema.ListaDeProductos = productoDB.TraerTodosLosRegistros();
+
             List<Producto> listaOrdenada = new List<Producto>();
 
             switch (criterio)
@@ -133,7 +149,7 @@ namespace Vista
                     listaOrdenada = Sistema.ListaDeProductos;
                     break;
                 case "ID":
-                    listaOrdenada = Sistema.ListaDeProductos.OrderBy(p => p.Id).ToList();
+                    listaOrdenada = Sistema.ListaDeProductos.OrderBy(p => p.IdDB).ToList();
                     break;
                 case "Tipo":
                     listaOrdenada = Sistema.ListaDeProductos.OrderBy(p => p.Tipo).ToList();

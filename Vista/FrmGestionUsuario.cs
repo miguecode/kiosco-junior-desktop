@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using EntidadesDB;
 using Helper;
 using System;
 using System.Collections;
@@ -16,11 +17,13 @@ namespace Vista
     public partial class FrmGestionUsuario : Form
     {
         Usuario administradorActual;
+        UsuarioDB controladorDB;
 
         public FrmGestionUsuario(Usuario administradorActual)
         {
             InitializeComponent();
             this.administradorActual = administradorActual;
+            this.controladorDB = new UsuarioDB();
         }
 
         private void FrmGestionUsuario_Load(object sender, EventArgs e)
@@ -38,6 +41,9 @@ namespace Vista
             if (formAltaUsuario.ShowDialog() == DialogResult.OK)
             {
                 Sistema.ListaDeUsuarios.Add(formAltaUsuario.UsuarioIngresado);
+
+                controladorDB.Agregar(formAltaUsuario.UsuarioIngresado);
+
                 ActualizarDataGrid(Sistema.ListaDeUsuarios);
             }
             else
@@ -55,6 +61,9 @@ namespace Vista
                 {
                     Usuario usuarioSeleccionado = SeleccionarUsuarioEspecifico(Sistema.ListaDeUsuarios);
                     Sistema.ListaDeUsuarios.Remove(usuarioSeleccionado);
+
+                    controladorDB.Eliminar(usuarioSeleccionado);
+
                     ActualizarDataGrid(Sistema.ListaDeUsuarios);
                 }
             }
@@ -68,7 +77,10 @@ namespace Vista
                 FrmAltaUsuario formModificar = new FrmAltaUsuario(usuarioSeleccionado, false);
 
                 if (formModificar.ShowDialog() == DialogResult.OK)
+                {
+                    controladorDB.Modificar(usuarioSeleccionado);
                     ActualizarDataGrid(Sistema.ListaDeUsuarios);
+                }
                 else
                     formModificar.Close();
             }
@@ -133,6 +145,9 @@ namespace Vista
         /// <returns>Retorna la lista ordenada</returns>
         private static List<Usuario> OrdenarListaUsuarios(string? criterio)
         {
+            UsuarioDB usuarioDB = new UsuarioDB();
+            Sistema.ListaDeUsuarios = usuarioDB.TraerTodosLosRegistros();
+
             List<Usuario> listaOrdenada = new List<Usuario>();
 
             switch (criterio)

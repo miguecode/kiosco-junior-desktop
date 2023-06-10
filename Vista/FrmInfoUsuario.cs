@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using EntidadesDB;
 using Helper;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,12 @@ namespace Vista
             FrmAltaUsuario formModificar = new FrmAltaUsuario(usuarioIngresado, false);
 
             if (formModificar.ShowDialog() == DialogResult.OK)
+            {
+                UsuarioDB controladorDB = new UsuarioDB();
+                controladorDB.Modificar(usuarioIngresado);
+
                 EscribirDatos();
+            }
 
             else
                 formModificar.Close();
