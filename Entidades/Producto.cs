@@ -60,6 +60,7 @@ namespace Entidades
             idActual = 1000;
         }*/
 
+        public int IdDB { get => idDB; set => idDB = value; }
         public string Nombre { get => nombre; set => nombre = value; }
         public ETipo Tipo { get => tipo; set => tipo = value; }
         public string Marca { get => marca; set => marca = value; }
@@ -67,7 +68,6 @@ namespace Entidades
         public float Precio { get => precio; set => precio = value; }
         public int Stock { get => stock; set => stock = value; }
         //public int Id { get => id; }
-        public int IdDB { get => idDB; }
         public int CantidadEnCarrito { get => cantidadEnCarrito; set => cantidadEnCarrito = value; }
 
         public override string GetParser()

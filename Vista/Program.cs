@@ -13,8 +13,10 @@ namespace Vista
         {
             ApplicationConfiguration.Initialize();
             //Archivo.CargarArchivos();
+            ControladorSerial.DeserializarDatos();
             Application.Run(new FrmLogin());
             //Archivo.GuardarArchivos();
+            ControladorSerial.SerializarDatos();
         }
     }
 }

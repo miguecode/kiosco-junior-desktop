@@ -62,7 +62,7 @@ namespace Vista
                 StringBuilder sb = new StringBuilder();
 
                 sb.AppendLine("Detalles de la venta\n");
-                sb.AppendLine($"ID de la transacción: {ventaSeleccionada.Id}");
+                sb.AppendLine($"ID de la transacción: {ventaSeleccionada.IdDB}");
                 sb.AppendLine($"Comprador: {ventaSeleccionada.NombreCliente}\n");
                 sb.AppendLine($"Cantidad de productos comprados: {ventaSeleccionada.CantidadProductos}\n");
                 sb.AppendLine($"Cigarrillos comprados: {ventaSeleccionada.CantidadCigarrillos}");

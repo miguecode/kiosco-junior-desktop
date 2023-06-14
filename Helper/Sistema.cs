@@ -19,17 +19,13 @@ namespace Helper
 
         static Sistema()
         {
-            /*listaDeUsuarios = new List<Usuario>();
-            listaDeProductos = new List<Producto>();
-            listaDeVentas = new List<Venta>();*/
-
             UsuarioDB entidadUsuarioDB = new UsuarioDB();
             ProductoDB entidadProductoDB = new ProductoDB();
             VentaDB entidadVentaDB = new VentaDB();
 
-            listaDeUsuarios = entidadUsuarioDB.TraerTodosLosRegistros();
-            listaDeProductos = entidadProductoDB.TraerTodosLosRegistros();
-            listaDeVentas = entidadVentaDB.TraerTodosLosRegistros();
+            //listaDeUsuarios = entidadUsuarioDB.TraerTodosLosRegistros();
+            //listaDeProductos = entidadProductoDB.TraerTodosLosRegistros();
+            //listaDeVentas = entidadVentaDB.TraerTodosLosRegistros();
         }
     }
 }
