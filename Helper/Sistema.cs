@@ -23,9 +23,9 @@ namespace Helper
             ProductoDB entidadProductoDB = new ProductoDB();
             VentaDB entidadVentaDB = new VentaDB();
 
-            //listaDeUsuarios = entidadUsuarioDB.TraerTodosLosRegistros();
-            //listaDeProductos = entidadProductoDB.TraerTodosLosRegistros();
-            //listaDeVentas = entidadVentaDB.TraerTodosLosRegistros();
+            listaDeUsuarios = entidadUsuarioDB.TraerTodosLosRegistros();
+            listaDeProductos = entidadProductoDB.TraerTodosLosRegistros();
+            listaDeVentas = entidadVentaDB.TraerTodosLosRegistros();
         }
     }
 }

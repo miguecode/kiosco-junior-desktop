@@ -20,18 +20,30 @@ namespace Helper
             serializadorVenta = new Serializacion<Venta>("ventas.csv");
         }
 
-        public static void SerializarDatos()
+        public static void ExportarDatosCSV()
         {
             serializadorUsuario.SerializarCSV(Sistema.ListaDeUsuarios);
             serializadorProducto.SerializarCSV(Sistema.ListaDeProductos);
             serializadorVenta.SerializarCSV(Sistema.ListaDeVentas);
         }
 
-        public static void DeserializarDatos()
+        public static void ImportarDatosCSV()
         {
             Sistema.ListaDeUsuarios = serializadorUsuario.DeserializarCSV();
             Sistema.ListaDeProductos = serializadorProducto.DeserializarCSV();
             Sistema.ListaDeVentas = serializadorVenta.DeserializarCSV();
+        }
+
+        public static void ExportarDatosJSON()
+        {
+            Serializacion<Usuario>.SerializarJSON(Sistema.ListaDeUsuarios, "usuarios.json");
+            Serializacion<Producto>.SerializarJSON(Sistema.ListaDeProductos, "productos.json");
+            Serializacion<Venta>.SerializarJSON(Sistema.ListaDeVentas, "ventas.json");
+        }
+
+        public static void ImportarDatosJSON()
+        {
+            
         }
     }
 }

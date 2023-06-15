@@ -12,11 +12,10 @@ namespace Vista
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            //Archivo.CargarArchivos();
-            ControladorSerial.DeserializarDatos();
+            //ControladorSerial.DeserializarDatos();
             Application.Run(new FrmLogin());
-            //Archivo.GuardarArchivos();
-            ControladorSerial.SerializarDatos();
+            ControladorSerial.ExportarDatosCSV();
+            ControladorSerial.ExportarDatosJSON();
         }
     }
 }
