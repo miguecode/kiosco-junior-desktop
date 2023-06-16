@@ -32,7 +32,7 @@ namespace Vista
         private Venta ventaActual;
         private float aumento = 1.05f;
         private Eventos eventosCompras; 
-        private FrmCompraExitosa frmCompraExitosa;
+        //private readonly FrmCompraExitosa frmCompraExitosa;
 
         public FrmCompras(Usuario usuarioActual)
         {
@@ -43,7 +43,7 @@ namespace Vista
             menu = new List<Producto>();
             menu.AddRange(Sistema.ListaDeProductos);
             eventosCompras = new Eventos();
-            frmCompraExitosa = new FrmCompraExitosa(eventosCompras);
+            _ = new FrmCompraExitosa(eventosCompras);
         }
 
         private void FrmCompras_Load(object sender, EventArgs e)
