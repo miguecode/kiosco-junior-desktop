@@ -39,6 +39,7 @@
             this.tsm_VerDatos = new System.Windows.Forms.ToolStripMenuItem();
             this.tsm_CerrarSesion = new System.Windows.Forms.ToolStripMenuItem();
             this.smi_Cerrar = new System.Windows.Forms.ToolStripMenuItem();
+            this.smi_Informes = new System.Windows.Forms.ToolStripMenuItem();
             this.sta_Datos = new System.Windows.Forms.StatusStrip();
             this.sbl_NombreUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.sbl_DniUsuario = new System.Windows.Forms.ToolStripStatusLabel();
@@ -68,7 +69,8 @@
             this.smi_Compras,
             this.smi_Usuarios,
             this.smi_Cuenta,
-            this.smi_Cerrar});
+            this.smi_Cerrar,
+            this.smi_Informes});
             this.msp_Principal.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.msp_Principal.Location = new System.Drawing.Point(0, 0);
             this.msp_Principal.Name = "msp_Principal";
@@ -147,15 +149,15 @@
             // tsm_VerDatos
             // 
             this.tsm_VerDatos.Name = "tsm_VerDatos";
-            this.tsm_VerDatos.Size = new System.Drawing.Size(170, 26);
+            this.tsm_VerDatos.Size = new System.Drawing.Size(180, 26);
             this.tsm_VerDatos.Text = "Ver datos";
             this.tsm_VerDatos.Click += new System.EventHandler(this.tsm_VerDatos_Click);
             // 
             // tsm_CerrarSesion
             // 
-            this.tsm_CerrarSesion.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.tsm_CerrarSesion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.tsm_CerrarSesion.Name = "tsm_CerrarSesion";
-            this.tsm_CerrarSesion.Size = new System.Drawing.Size(170, 26);
+            this.tsm_CerrarSesion.Size = new System.Drawing.Size(180, 26);
             this.tsm_CerrarSesion.Text = "Cerrar sesión";
             this.tsm_CerrarSesion.Click += new System.EventHandler(this.tsm_CerrarSesion_Click);
             // 
@@ -171,6 +173,15 @@
             this.smi_Cerrar.Size = new System.Drawing.Size(60, 37);
             this.smi_Cerrar.Text = "Cerrar";
             this.smi_Cerrar.Click += new System.EventHandler(this.smi_Cerrar_Click);
+            // 
+            // smi_Informes
+            // 
+            this.smi_Informes.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.smi_Informes.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.smi_Informes.Name = "smi_Informes";
+            this.smi_Informes.Size = new System.Drawing.Size(90, 37);
+            this.smi_Informes.Text = "Informes";
+            this.smi_Informes.Visible = false;
             // 
             // sta_Datos
             // 
@@ -330,5 +341,6 @@
         private Label lbl_Kiosco;
         private System.Windows.Forms.Timer tim_HoraYFecha;
         private ToolStripMenuItem smi_Ventas;
+        private ToolStripMenuItem smi_Informes;
     }
 }

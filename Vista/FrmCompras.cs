@@ -31,6 +31,8 @@ namespace Vista
         private int cantidadOtros = 0;
         private Venta ventaActual;
         private float aumento = 1.05f;
+        private Eventos eventosCompras; 
+        private FrmCompraExitosa frmCompraExitosa;
 
         public FrmCompras(Usuario usuarioActual)
         {
@@ -40,6 +42,8 @@ namespace Vista
             ventaActual = new Venta();
             menu = new List<Producto>();
             menu.AddRange(Sistema.ListaDeProductos);
+            eventosCompras = new Eventos();
+            frmCompraExitosa = new FrmCompraExitosa(eventosCompras);
         }
 
         private void FrmCompras_Load(object sender, EventArgs e)
@@ -89,16 +93,14 @@ namespace Vista
                 Sistema.ListaDeVentas.Add(ventaActual);
 
                 controladorDB.Agregar(ventaActual);
-
-                MostrarMensajeVentaExitosa();
+ 
+                eventosCompras.NotificarCompraExitosa(GenerarMensajeCompraExitosa());
 
                 ReducirStockProducto();
 
                 OcultarProductosAgotados();
 
                 ReiniciarCarrito();
-
-                //Sistema.ListaDeVentas = controladorDB.TraerTodosLosRegistros();
             }
         }
 
@@ -292,24 +294,21 @@ namespace Vista
             }
         }
 
-        private void MostrarMensajeVentaExitosa()
+        private string GenerarMensajeCompraExitosa()
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine("¡Compra realizada con éxito!\n");
-            sb.AppendLine($"ID de la transacción: {ventaActual.IdDB}");
             sb.AppendLine($"Comprador: {clienteActual.NombreCompleto}\n");
-            sb.AppendLine($"Cantidad de productos comprados: {CalcularTamañoDeCarrito()}");
-            sb.AppendLine($"Cigarrillos comprados: {ventaActual.CantidadCigarrillos}");
-            sb.AppendLine($"Bebidas compradas: {ventaActual.CantidadBebidas}");
-            sb.AppendLine($"Snacks compradas: {ventaActual.CantidadSnacks}");
-            sb.AppendLine($"Galletitas compradas: {ventaActual.CantidadGalletitas}");
-            sb.AppendLine($"Dulces comprados: {ventaActual.CantidadDulces}");
-            sb.AppendLine($"Comidas compradas: {ventaActual.CantidadComidas}");
-            sb.AppendLine($"Otros productos comprados: {ventaActual.CantidadOtros}\n");
-            sb.AppendLine($"Importe Total: $ {ventaActual.ValorTotal.ToString("0.00")}");
+            sb.AppendLine($"Cantidad de productos comprados: {CalcularTamañoDeCarrito()}\n");
 
-            MessageBox.Show(sb.ToString(), "Kiosco Junior");
+            foreach (Producto producto in clienteActual.Carrito)
+            {
+                sb.AppendLine($"{producto.Nombre} (x{producto.CantidadEnCarrito})  -  ${producto.Precio}");
+            }
+
+            sb.AppendLine($"\nImporte Total: $ {ventaActual.ValorTotal.ToString("0.00")}");
+
+            return sb.ToString();
         }
 
         private int CalcularTamañoDeCarrito()

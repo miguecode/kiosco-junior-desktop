@@ -97,7 +97,8 @@ namespace EntidadesDB
                 "@cantidad_cigarrillos, @cantidad_bebidas, @cantidad_snacks," +
                 "@cantidad_galletitas, @cantidad_dulces, @cantidad_comidas, @cantidad_otros)");
 
-            consultas.Add("Eliminar ventas", "DELETE FROM ventas");
+            consultas.Add("Eliminar ventas", "DELETE FROM ventas\n" +
+                          "DBCC CHECKIDENT ('Ventas', RESEED, 1000)");
 
             consultas.Add("Traer todas las ventas", "SELECT * FROM ventas");
 

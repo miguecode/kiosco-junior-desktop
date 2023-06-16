@@ -32,6 +32,8 @@ namespace Vista
 
         private void Ventas_Load(object sender, EventArgs e)
         {
+            VentaDB ventaDB = new VentaDB();
+            Sistema.ListaDeVentas = ventaDB.TraerTodosLosRegistros();
             dtg_Ventas.DataSource = null;
             dtg_Ventas.DataSource = Sistema.ListaDeVentas;
             EscribirIngresosTotales(Sistema.ListaDeVentas);
@@ -43,7 +45,7 @@ namespace Vista
 
         private void btn_Borrar_Click(object sender, EventArgs e)
         {
-            if(Sistema.ListaDeVentas.Count > 0)
+            if (Sistema.ListaDeVentas.Count > 0)
             {
                 DialogResult respuesta = MessageBox.Show("¿Seguro de borrar todo el historial de ventas?" +
                     "\nNo podrás recuperarlo.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);

@@ -16,45 +16,42 @@ namespace Helper
 {
     public class Serializacion<T>
     {
-        private string path;
+        private string pathCSV;
+        private string pathJSON;
 
-        public Serializacion(string path)
+        public Serializacion(string pathCSV, string pathJSON)
         {
-            this.path = path;
+            this.pathCSV = pathCSV;
+            this.pathJSON = pathJSON;
         }
 
-        public static void SerializarJSON(List<T> objetos, string path)
+        public void SerializarJSON(List<T> objetos)
         {
             JsonSerializerOptions opciones = new JsonSerializerOptions();
             opciones.WriteIndented = true;
+
             string jsonString = JsonSerializer.Serialize(objetos, opciones);
 
-            File.WriteAllText(path, jsonString);
-
-            /*var listaDeserializada = JsonSerializer.Deserialize<T>(jsonString);
-
-            foreach (var obj in listaDeserializada)
-            {
-                Console.WriteLine(obj);
-            }*/
+            if (!string.IsNullOrWhiteSpace(jsonString))
+                File.WriteAllText(pathJSON, jsonString);
         }
 
-        /*public static List<T> DeserializarJSON(List <T> objetos)
+        public List<T> DeserializarJSON()
         {
-            string jsonString = JsonSerializer.Serialize(objetos);
+            string jsonString = File.ReadAllText(pathJSON);
 
-            var objetoDeserializado = JsonSerializer.Deserialize<T>(jsonString);
+            List<T>? listaDeserializada = JsonSerializer.Deserialize<List<T>>(jsonString);
 
-            List<T> listaDeserializada = new List<T>();
+            if (listaDeserializada is not null && listaDeserializada.Count > 0)
+                return listaDeserializada;
 
-            
-
-            return objetoDeserializado;
-        }*/
+            else
+                return _ = new List<T>();
+        }
 
         public void SerializarCSV(List<T> objetos)
         {
-            using (StreamWriter sw = new StreamWriter(path))
+            using (StreamWriter sw = new StreamWriter(pathCSV))
             {
                 PropertyInfo[] propiedades = typeof(T).GetProperties();
 
@@ -65,15 +62,15 @@ namespace Helper
 
         public List<T> DeserializarCSV()
         {
-            List<T> listaDeObjetos = new List<T>();
+            List<T> listaDeserializada = new List<T>();
 
-            using (StreamReader sr = new StreamReader(path))
+            using (StreamReader sr = new StreamReader(pathCSV))
             {
                 string[]? columnas = sr.ReadLine()?.Split(',');
-                AgregarEntidades(listaDeObjetos, sr, columnas);
+                AgregarEntidades(listaDeserializada, sr, columnas);
             }
 
-            return listaDeObjetos;
+            return listaDeserializada;
         }
 
         private void EscribirEncabezadoCSV(PropertyInfo[] propiedades, StreamWriter sw)

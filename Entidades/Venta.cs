@@ -13,7 +13,7 @@ namespace Entidades
 {
     public class Venta : Dato
     {
-        private int id;
+        //private int id;
         private string nombreCliente;
         private float valorTotal;
         private int cantidadProductos;
@@ -43,7 +43,7 @@ namespace Entidades
 
         public Venta()
         {
-            this.id = 0000;
+            //this.id = 0000;
             this.nombreCliente = String.Empty;
             this.valorTotal = 0;
             this.idDB = 0000;
@@ -53,7 +53,7 @@ namespace Entidades
             int cantidadCigarrillos, int cantidadBebidas, int cantidadSnacks,
             int cantidadGalletitas, int cantidadDulces, int cantidadComidas, int cantidadOtros)
         {
-            id = idActual;
+            //id = idActual;
             this.nombreCliente = nombreCliente;
             this.valorTotal = valorTotal;
             this.cantidadProductos = cantidadProductos;
@@ -64,7 +64,7 @@ namespace Entidades
             this.cantidadDulces = cantidadDulces;
             this.cantidadComidas = cantidadComidas;
             this.cantidadOtros = cantidadOtros;
-            idActual++;
+            //idActual++;
             this.idDB = 0000;
         }
 

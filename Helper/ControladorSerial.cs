@@ -15,9 +15,9 @@ namespace Helper
 
         static ControladorSerial()
         {
-            serializadorUsuario = new Serializacion<Usuario>("usuarios.csv");
-            serializadorProducto = new Serializacion<Producto>("productos.csv");
-            serializadorVenta = new Serializacion<Venta>("ventas.csv");
+            serializadorUsuario = new Serializacion<Usuario>("usuariosCSV.csv", "usuariosJSON.json");
+            serializadorProducto = new Serializacion<Producto>("productosCSV.csv", "productosJSON.json");
+            serializadorVenta = new Serializacion<Venta>("ventasCSV.csv", "ventasJSON.json");
         }
 
         public static void ExportarDatosCSV()
@@ -36,14 +36,16 @@ namespace Helper
 
         public static void ExportarDatosJSON()
         {
-            Serializacion<Usuario>.SerializarJSON(Sistema.ListaDeUsuarios, "usuarios.json");
-            Serializacion<Producto>.SerializarJSON(Sistema.ListaDeProductos, "productos.json");
-            Serializacion<Venta>.SerializarJSON(Sistema.ListaDeVentas, "ventas.json");
+            serializadorUsuario.SerializarJSON(Sistema.ListaDeUsuarios);
+            serializadorProducto.SerializarJSON(Sistema.ListaDeProductos);
+            serializadorVenta.SerializarJSON(Sistema.ListaDeVentas);
         }
 
         public static void ImportarDatosJSON()
         {
-            
+            Sistema.ListaDeUsuarios = serializadorUsuario.DeserializarJSON();
+            Sistema.ListaDeProductos = serializadorProducto.DeserializarJSON();
+            Sistema.ListaDeVentas = serializadorVenta.DeserializarJSON();
         }
     }
 }
