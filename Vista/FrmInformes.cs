@@ -20,7 +20,7 @@ namespace Vista
 
         private void FrmInformes_Load(object sender, EventArgs e)
         {
-            chk_ExportacionAutomatica.Checked = Sistema.ImportacionAutomatica;
+            chk_ExportacionAutomatica.Checked = Sistema.ExportacionAutomatica;
         }
 
         private void btn_ExportarCSV_Click(object sender, EventArgs e)
@@ -77,9 +77,9 @@ namespace Vista
         private void chk_ExportacionAutomatica_CheckedChanged(object sender, EventArgs e)
         {
             if (chk_ExportacionAutomatica.Checked)
-                Sistema.ImportacionAutomatica = true;
+                Sistema.ExportacionAutomatica = true;
             else
-                Sistema.ImportacionAutomatica = false;
+                Sistema.ExportacionAutomatica = false;
         }
     }
 }
