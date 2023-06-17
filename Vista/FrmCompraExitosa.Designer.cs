@@ -39,11 +39,11 @@
             this.lbl_CompraExitosa.AutoSize = true;
             this.lbl_CompraExitosa.Font = new System.Drawing.Font("Dosis", 37F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lbl_CompraExitosa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(170)))), ((int)(((byte)(61)))));
-            this.lbl_CompraExitosa.Location = new System.Drawing.Point(73, 9);
+            this.lbl_CompraExitosa.Location = new System.Drawing.Point(130, 9);
             this.lbl_CompraExitosa.Name = "lbl_CompraExitosa";
-            this.lbl_CompraExitosa.Size = new System.Drawing.Size(296, 64);
+            this.lbl_CompraExitosa.Size = new System.Drawing.Size(193, 64);
             this.lbl_CompraExitosa.TabIndex = 0;
-            this.lbl_CompraExitosa.Text = "Kiosco Junior";
+            this.lbl_CompraExitosa.Text = "¡Gracias!";
             // 
             // rtb_Mensaje
             // 

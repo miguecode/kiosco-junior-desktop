@@ -32,7 +32,6 @@ namespace Vista
         private Venta ventaActual;
         private float aumento = 1.05f;
         private Eventos eventosCompras; 
-        //private readonly FrmCompraExitosa frmCompraExitosa;
 
         public FrmCompras(Usuario usuarioActual)
         {
@@ -84,9 +83,9 @@ namespace Vista
             if (clienteActual.Carrito.Count > 0)
             {
                 CalcularCantidadDeProductosCompradosPorTipo();
-                int tamañoCarrito = CalcularTamañoDeCarrito();
+                int cantidadProductos = CalcularTamañoDeCarrito();
 
-                ventaActual = new Venta(clienteActual.NombreCompleto, precioTotal, tamañoCarrito,
+                ventaActual = new Venta(clienteActual.NombreCompleto, precioTotal, cantidadProductos,
                     cantidadCigarrillos, cantidadBebidas, cantidadSnacks,
                     cantidadGalletitas, cantidadDulces, cantidadComidas, cantidadOtros);
 
@@ -251,9 +250,7 @@ namespace Vista
                     precioTotal += producto.Precio * producto.CantidadEnCarrito;
 
                 else
-                {
                     precioTotal += (producto.Precio * aumento) * producto.CantidadEnCarrito;
-                }
             }
 
             lbl_Total.Text = $"TOTAL: $ {precioTotal:0.00}";
@@ -277,7 +274,7 @@ namespace Vista
             clienteActual.Carrito.Clear();
             ActualizarDataGrids(menu, clienteActual.Carrito);
             precioTotal = 0;
-            lbl_Total.Text = $"TOTAL: $ {precioTotal:0.00}";
+            lbl_Total.Text = $"TOTAL: $ {precioTotal:0.00f}";
         }
 
         private void ReducirStockProducto()

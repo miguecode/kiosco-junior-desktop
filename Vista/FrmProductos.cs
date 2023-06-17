@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -94,6 +95,15 @@ namespace Vista
             }
         }
 
+        private void btn_Stockear_Click(object sender, EventArgs e)
+        {
+            if (num_Stockear.Value >= 1)
+            {
+                ReestablecerProductos();
+                ActualizarDataGrid(Sistema.ListaDeProductos);
+            }
+        }
+
         private void cmb_OrdenarPor_SelectedIndexChanged(object sender, EventArgs e)
         {
             string? itemSeleccionado = cmb_OrdenarPor.SelectedItem.ToString();
@@ -139,8 +149,8 @@ namespace Vista
         /// <returns>Retorna la lista ordenada</returns>
         private static List<Producto> OrdenarListaProductos(string? criterio)
         {
-            ProductoDB productoDB = new ProductoDB();
-            Sistema.ListaDeProductos = productoDB.TraerTodosLosRegistros();
+            ProductoDB controladorDB = new ProductoDB();
+            Sistema.ListaDeProductos = controladorDB.TraerTodosLosRegistros();
 
             List<Producto> listaOrdenada = new List<Producto>();
 
@@ -180,6 +190,15 @@ namespace Vista
             dtg_Productos.DataSource = null;
             dtg_Productos.DataSource = Sistema.ListaDeProductos;
             cmb_OrdenarPor.SelectedItem = "Original";
+        }
+
+        private void ReestablecerProductos()
+        {
+            foreach (Producto producto in Sistema.ListaDeProductos)
+            {
+                producto.Stock += (int)num_Stockear.Value;
+                controladorDB.Modificar(producto);
+            }
         }
     }
 }

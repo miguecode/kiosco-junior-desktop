@@ -28,10 +28,12 @@ namespace Vista
             try
             {
                 ControladorSerial.ExportarDatosCSV();
-                MessageBox.Show("Exportación de datos CSV completada.", "Kiosco Junior");
+                MessageBox.Show("Exportación de datos CSV completada.", "Kiosco Junior",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             } catch(Exception)
             {
-                MessageBox.Show("Ocurrió un error en la exportación de datos CSV.", "Kiosco Junior");
+                MessageBox.Show("Ocurrió un error en la exportación de datos CSV.", "Kiosco Junior",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -40,11 +42,13 @@ namespace Vista
             try
             {
                 ControladorSerial.ExportarDatosJSON();
-                MessageBox.Show("Exportación de datos JSON completada.", "Kiosco Junior");
+                MessageBox.Show("Exportación de datos JSON completada.", "Kiosco Junior",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrió un error en la exportación de datos JSON.", "Kiosco Junior");
+                MessageBox.Show("Ocurrió un error en la exportación de datos JSON.", "Kiosco Junior",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -53,11 +57,13 @@ namespace Vista
             try
             {
                 ControladorSerial.ImportarDatosCSV();
-                MessageBox.Show("Importación de datos CSV completada.", "Kiosco Junior");
+                MessageBox.Show("Importación de datos CSV completada.", "Kiosco Junior",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrió un error en la importación de datos CSV.", "Kiosco Junior");
+                MessageBox.Show("Ocurrió un error en la importación de datos CSV.", "Kiosco Junior",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -66,11 +72,13 @@ namespace Vista
             try
             {
                 ControladorSerial.ImportarDatosJSON();
-                MessageBox.Show("Importación de datos JSON completada.", "Kiosco Junior");
+                MessageBox.Show("Importación de datos JSON completada.", "Kiosco Junior",
+                                MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception)
             {
-                MessageBox.Show("Ocurrió un error en la importación de datos JSON.", "Kiosco Junior");
+                MessageBox.Show("Ocurrió un error en la importación de datos JSON.", "Kiosco Junior",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

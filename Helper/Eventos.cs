@@ -12,6 +12,7 @@ namespace Helper
         public event Action<string>? SeConfirmoLaCompra;
         public static event Action? SeImportaronDatos;
 
+
         public void NotificarCompraExitosa(string mensaje)
         {
             SeConfirmoLaCompra?.Invoke(mensaje);
