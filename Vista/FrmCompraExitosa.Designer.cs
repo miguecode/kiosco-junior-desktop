@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.lbl_CompraExitosa = new System.Windows.Forms.Label();
-            this.rtb_Mensaje = new System.Windows.Forms.RichTextBox();
             this.pnl_Bordes = new System.Windows.Forms.Panel();
+            this.rtb_Mensaje = new System.Windows.Forms.RichTextBox();
             this.pnl_Bordes.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,19 +45,6 @@
             this.lbl_CompraExitosa.TabIndex = 0;
             this.lbl_CompraExitosa.Text = "¡Gracias!";
             // 
-            // rtb_Mensaje
-            // 
-            this.rtb_Mensaje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.rtb_Mensaje.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtb_Mensaje.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rtb_Mensaje.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.rtb_Mensaje.Location = new System.Drawing.Point(21, 16);
-            this.rtb_Mensaje.Name = "rtb_Mensaje";
-            this.rtb_Mensaje.ReadOnly = true;
-            this.rtb_Mensaje.Size = new System.Drawing.Size(364, 248);
-            this.rtb_Mensaje.TabIndex = 1;
-            this.rtb_Mensaje.Text = "";
-            // 
             // pnl_Bordes
             // 
             this.pnl_Bordes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
@@ -66,6 +53,20 @@
             this.pnl_Bordes.Name = "pnl_Bordes";
             this.pnl_Bordes.Size = new System.Drawing.Size(408, 278);
             this.pnl_Bordes.TabIndex = 2;
+            // 
+            // rtb_Mensaje
+            // 
+            this.rtb_Mensaje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
+            this.rtb_Mensaje.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtb_Mensaje.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.rtb_Mensaje.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.rtb_Mensaje.Location = new System.Drawing.Point(20, 17);
+            this.rtb_Mensaje.Name = "rtb_Mensaje";
+            this.rtb_Mensaje.ReadOnly = true;
+            this.rtb_Mensaje.Size = new System.Drawing.Size(369, 244);
+            this.rtb_Mensaje.TabIndex = 0;
+            this.rtb_Mensaje.TabStop = false;
+            this.rtb_Mensaje.Text = "Datos de la compra";
             // 
             // FrmCompraExitosa
             // 
@@ -92,7 +93,7 @@
         #endregion
 
         private Label lbl_CompraExitosa;
-        private RichTextBox rtb_Mensaje;
         private Panel pnl_Bordes;
+        private RichTextBox rtb_Mensaje;
     }
 }

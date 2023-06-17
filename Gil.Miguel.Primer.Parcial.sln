@@ -17,7 +17,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConexionSQL", "SQL\Conexion
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consola", "Consola\Consola.csproj", "{2A733D51-3EC5-44E3-86B1-1FEDF83C4DC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntidadesDB", "SQL\EntidadesDB\EntidadesDB.csproj", "{F6F4B4FD-319D-4661-B894-69E484EA6499}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntidadesDB", "SQL\EntidadesDB\EntidadesDB.csproj", "{F6F4B4FD-319D-4661-B894-69E484EA6499}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tester", "Tester\Tester.csproj", "{423583C7-8174-4FCB-A76C-0AFD89D3331C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{F6F4B4FD-319D-4661-B894-69E484EA6499}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6F4B4FD-319D-4661-B894-69E484EA6499}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6F4B4FD-319D-4661-B894-69E484EA6499}.Release|Any CPU.Build.0 = Release|Any CPU
+		{423583C7-8174-4FCB-A76C-0AFD89D3331C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{423583C7-8174-4FCB-A76C-0AFD89D3331C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{423583C7-8174-4FCB-A76C-0AFD89D3331C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{423583C7-8174-4FCB-A76C-0AFD89D3331C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

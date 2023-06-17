@@ -90,7 +90,6 @@ namespace Vista
                     cantidadGalletitas, cantidadDulces, cantidadComidas, cantidadOtros);
 
                 Sistema.ListaDeVentas.Add(ventaActual);
-
                 controladorDB.Agregar(ventaActual);
  
                 eventosCompras.NotificarCompraExitosa(GenerarMensajeCompraExitosa());
@@ -244,13 +243,15 @@ namespace Vista
         {
             precioTotal = 0;
 
-            foreach (Producto producto in clienteActual.Carrito)
+            Func<float, float, int, float> CalcularPrecioConAumento = (p, a, c) => p * a * c;
+            
+            foreach (Producto p in clienteActual.Carrito)
             {
                 if (rad_Efectivo.Checked)
-                    precioTotal += producto.Precio * producto.CantidadEnCarrito;
+                    precioTotal += p.Precio * p.CantidadEnCarrito;
 
                 else
-                    precioTotal += (producto.Precio * aumento) * producto.CantidadEnCarrito;
+                    precioTotal += CalcularPrecioConAumento(p.Precio, aumento, p.CantidadEnCarrito);
             }
 
             lbl_Total.Text = $"TOTAL: $ {precioTotal:0.00}";
@@ -274,7 +275,7 @@ namespace Vista
             clienteActual.Carrito.Clear();
             ActualizarDataGrids(menu, clienteActual.Carrito);
             precioTotal = 0;
-            lbl_Total.Text = $"TOTAL: $ {precioTotal:0.00f}";
+            lbl_Total.Text = $"TOTAL: $ {precioTotal:0.00}";
         }
 
         private void ReducirStockProducto()
