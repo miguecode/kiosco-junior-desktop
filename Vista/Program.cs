@@ -12,10 +12,8 @@ namespace Vista
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            //ControladorSerial.ImportarDatosJSON();
             Application.Run(new FrmLogin());
-            ControladorSerial.ExportarDatosCSV();
-            ControladorSerial.ExportarDatosJSON();
+            ControladorSerial.ExportarAutomaticamente();
         }
     }
 }

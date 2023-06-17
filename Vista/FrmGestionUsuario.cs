@@ -30,6 +30,7 @@ namespace Vista
         {
             cmb_OrdenarPor.SelectedItem = "Original";
             ActualizarDataGrid(Sistema.ListaDeUsuarios);
+            Eventos.SeImportaronDatos += ActualizarDatosPorImportacion;
         }
 
         private void btn_Agregar_Click(object sender, EventArgs e)
@@ -170,6 +171,13 @@ namespace Vista
             }
 
             return listaOrdenada;
+        }
+
+        private void ActualizarDatosPorImportacion()
+        {
+            dtg_Usuarios.DataSource = null;
+            dtg_Usuarios.DataSource = Sistema.ListaDeUsuarios;
+            cmb_OrdenarPor.SelectedItem = "Original";
         }
     }
 }

@@ -19,7 +19,7 @@ namespace Vista
         {
             InitializeComponent();
             this.eventosCompras = eventos;
-            eventosCompras.SeConfirmoLaCompra += EscribirMensaje;
+            eventosCompras.SeConfirmoLaCompra += MostrarMensaje;
         }
 
         private void FrmCompraExitosa_Load(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace Vista
 
         }
 
-        private void EscribirMensaje(string mensaje)
+        private void MostrarMensaje(string mensaje)
         {
             rtb_Mensaje.Text = mensaje;
             this.ShowDialog();

@@ -22,6 +22,7 @@ namespace Vista
         private FrmGestionUsuario? formGestionUsuario;
         private FrmCompras? formCompras;
         private FrmVentas? formVentas;
+        private FrmInformes? formInformes;
 
         public FrmPrincipal(FrmLogin formLoginRecibido)
         {
@@ -66,7 +67,10 @@ namespace Vista
 
         private void smi_Compras_Click(object sender, EventArgs e)
         {
-            Formularios.MostrarFormularioHijo(this, typeof(FrmCompras), pan_Inicio);
+            if (Sistema.ListaDeProductos.Count > 0)
+                Formularios.MostrarFormularioHijo(this, typeof(FrmCompras), pan_Inicio);
+
+            else { MessageBox.Show("Lo sentimos, sistema suspendido.", "Error"); }
         }
 
         private void smi_Ventas_Click(object sender, EventArgs e)
@@ -82,6 +86,11 @@ namespace Vista
         private void tsm_VerDatos_Click(object sender, EventArgs e)
         {
             Formularios.MostrarFormularioHijo(this, typeof(FrmInfoUsuario), pan_Inicio);
+        }
+
+        private void smi_Informes_Click(object sender, EventArgs e)
+        {
+            Formularios.MostrarFormularioHijo(this, typeof(FrmInformes), pan_Inicio);
         }
 
         private void tsm_CerrarSesion_Click(object sender, EventArgs e)
@@ -109,6 +118,8 @@ namespace Vista
             formCompras.MdiParent = this;
             formVentas = new FrmVentas();
             formVentas.MdiParent = this;
+            formInformes = new FrmInformes();
+            formInformes.MdiParent = this;
         }
 
         /// <summary>
@@ -123,7 +134,10 @@ namespace Vista
             sbl_RolUsuario.Text = usuarioRecibido.Rol.ToString();
 
             if (usuarioRecibido.Rol == ERol.SuperUsuario)
+            {
                 smi_Usuarios.Visible = true;
+                smi_Informes.Visible = true;
+            }
 
             else if (usuarioRecibido.Rol == ERol.Cliente)
             {

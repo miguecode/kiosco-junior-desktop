@@ -108,6 +108,22 @@ namespace EntidadesDB
             return listaDeProductos;
         }
 
+        public int EliminarTodos()
+        {
+            try
+            {
+                string consulta = consultas["Eliminar todos los productos"];
+
+                SqlCommand command = new SqlCommand(consulta, Connection);
+
+                return EjecutarConsultaNonQuery(command);
+            }
+            catch (Exception)
+            {
+                throw new Exception("No se pudieron eliminar los productos de la DB");
+            }
+        }
+
         private void EscribirConsultas()
         {
             consultas.Add("Agregar producto",
@@ -123,6 +139,9 @@ namespace EntidadesDB
                 "WHERE id = @id");
 
             consultas.Add("Traer todos los productos", "SELECT * FROM productos");
+
+            consultas.Add("Eliminar todos los productos", "DELETE FROM productos\n" +
+                "DBCC CHECKIDENT ('Productos', RESEED, 1000)");
             //consultas.Add("Traer producto que coincida", "");
         }
 

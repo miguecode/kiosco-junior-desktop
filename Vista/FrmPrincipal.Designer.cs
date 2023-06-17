@@ -149,7 +149,7 @@
             // tsm_VerDatos
             // 
             this.tsm_VerDatos.Name = "tsm_VerDatos";
-            this.tsm_VerDatos.Size = new System.Drawing.Size(180, 26);
+            this.tsm_VerDatos.Size = new System.Drawing.Size(178, 26);
             this.tsm_VerDatos.Text = "Ver datos";
             this.tsm_VerDatos.Click += new System.EventHandler(this.tsm_VerDatos_Click);
             // 
@@ -157,7 +157,7 @@
             // 
             this.tsm_CerrarSesion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.tsm_CerrarSesion.Name = "tsm_CerrarSesion";
-            this.tsm_CerrarSesion.Size = new System.Drawing.Size(180, 26);
+            this.tsm_CerrarSesion.Size = new System.Drawing.Size(178, 26);
             this.tsm_CerrarSesion.Text = "Cerrar sesión";
             this.tsm_CerrarSesion.Click += new System.EventHandler(this.tsm_CerrarSesion_Click);
             // 
@@ -182,6 +182,7 @@
             this.smi_Informes.Size = new System.Drawing.Size(90, 37);
             this.smi_Informes.Text = "Informes";
             this.smi_Informes.Visible = false;
+            this.smi_Informes.Click += new System.EventHandler(this.smi_Informes_Click);
             // 
             // sta_Datos
             // 

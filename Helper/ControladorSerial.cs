@@ -1,4 +1,6 @@
-﻿using Entidades;
+﻿using ConexionSQL;
+using Entidades;
+using EntidadesDB;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +34,8 @@ namespace Helper
             Sistema.ListaDeUsuarios = serializadorUsuario.DeserializarCSV();
             Sistema.ListaDeProductos = serializadorProducto.DeserializarCSV();
             Sistema.ListaDeVentas = serializadorVenta.DeserializarCSV();
+            TrasladarImportacionALaDB();
+            Eventos.ActualizarTodasLasListas();
         }
 
         public static void ExportarDatosJSON()
@@ -46,6 +50,44 @@ namespace Helper
             Sistema.ListaDeUsuarios = serializadorUsuario.DeserializarJSON();
             Sistema.ListaDeProductos = serializadorProducto.DeserializarJSON();
             Sistema.ListaDeVentas = serializadorVenta.DeserializarJSON();
+            TrasladarImportacionALaDB();
+            Eventos.ActualizarTodasLasListas();
+        }
+
+        public static void ExportarAutomaticamente()
+        {
+            if (Sistema.ExportacionAutomatica)
+            {
+                ExportarDatosJSON();
+                ExportarDatosCSV();
+            }
+        }
+
+        private static void TrasladarImportacionALaDB()
+        {
+            UsuarioDB controladorUsuarioDB = new UsuarioDB();
+            controladorUsuarioDB.EliminarTodos();
+
+            ProductoDB controladorProductoDB = new ProductoDB();
+            controladorProductoDB.EliminarTodos();
+
+            VentaDB controladorVentaDB = new VentaDB();
+            controladorVentaDB.EliminarTodos();
+
+            foreach (Usuario usuario in Sistema.ListaDeUsuarios)
+            {
+                controladorUsuarioDB.Agregar(usuario);
+            }            
+            
+            foreach (Producto producto in Sistema.ListaDeProductos)
+            {
+                controladorProductoDB.Agregar(producto);
+            }            
+            
+            foreach (Venta venta in Sistema.ListaDeVentas)
+            {
+                controladorVentaDB.Agregar(venta);
+            }
         }
     }
 }

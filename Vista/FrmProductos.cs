@@ -28,6 +28,7 @@ namespace Vista
         {
             cmb_OrdenarPor.SelectedItem = "Original";
             ActualizarDataGrid(Sistema.ListaDeProductos);
+            Eventos.SeImportaronDatos += ActualizarDatosPorImportacion;
         }
 
         private void btn_Detalles_Click(object sender, EventArgs e)
@@ -111,7 +112,7 @@ namespace Vista
         public void ActualizarDataGrid(List<Producto> lista)
         {
             string? itemSeleccionado = cmb_OrdenarPor.SelectedItem.ToString();
-            lista = OrdenarListaProductos(itemSeleccionado);
+            Sistema.ListaDeProductos = OrdenarListaProductos(itemSeleccionado);
 
             dtg_Productos.DataSource = null;
             dtg_Productos.DataSource = lista;
@@ -172,6 +173,13 @@ namespace Vista
             }
 
             return listaOrdenada;
+        }
+
+        private void ActualizarDatosPorImportacion()
+        {
+            dtg_Productos.DataSource = null;
+            dtg_Productos.DataSource = Sistema.ListaDeProductos;
+            cmb_OrdenarPor.SelectedItem = "Original";
         }
     }
 }

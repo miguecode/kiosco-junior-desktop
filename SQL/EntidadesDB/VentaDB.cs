@@ -32,15 +32,16 @@ namespace EntidadesDB
         {
             try
             {
-                string consulta = consultas["Eliminar ventas"];
+                string consulta = consultas["Eliminar venta"];
 
                 SqlCommand command = new SqlCommand(consulta, Connection);
+                command.Parameters.AddWithValue("@id", venta.IdDB);
 
                 return EjecutarConsultaNonQuery(command);
             }
             catch (Exception)
             {
-                throw new Exception("No se pudieron eliminar las ventas de la DB");
+                throw new Exception("No se pudo eliminar la venta de la DB");
             }
         }
 
@@ -87,6 +88,22 @@ namespace EntidadesDB
             return listaDeVentas;
         }
 
+        public int EliminarTodos()
+        {
+            try
+            {
+                string consulta = consultas["Eliminar todas las ventas"];
+
+                SqlCommand command = new SqlCommand(consulta, Connection);
+
+                return EjecutarConsultaNonQuery(command);
+            }
+            catch (Exception)
+            {
+                throw new Exception("No se pudieron eliminar las ventas de la DB");
+            }
+        }
+
         private void EscribirConsultas()
         {
             consultas.Add("Agregar venta",
@@ -97,10 +114,13 @@ namespace EntidadesDB
                 "@cantidad_cigarrillos, @cantidad_bebidas, @cantidad_snacks," +
                 "@cantidad_galletitas, @cantidad_dulces, @cantidad_comidas, @cantidad_otros)");
 
-            consultas.Add("Eliminar ventas", "DELETE FROM ventas\n" +
-                          "DBCC CHECKIDENT ('Ventas', RESEED, 1000)");
+            consultas.Add("Eliminar venta",
+                "DELETE FROM ventas WHERE id = @id");
 
             consultas.Add("Traer todas las ventas", "SELECT * FROM ventas");
+
+            consultas.Add("Eliminar todas las ventas", "DELETE FROM ventas\n" +
+              "DBCC CHECKIDENT ('Ventas', RESEED, 1000)");
 
             //consultas.Add("Traer venta que coincida", "");
         }

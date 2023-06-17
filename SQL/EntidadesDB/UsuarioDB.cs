@@ -107,6 +107,22 @@ namespace EntidadesDB
             return listaUsuarios;
         }
 
+        public int EliminarTodos()
+        {
+            try
+            {
+                string consulta = consultas["Eliminar todos los usuarios"];
+
+                SqlCommand command = new SqlCommand(consulta, Connection);
+
+                return EjecutarConsultaNonQuery(command);
+            }
+            catch (Exception)
+            {
+                throw new Exception("No se pudieron eliminar los usuarios de la DB");
+            }
+        }
+
         private void EscribirConsultas()
         {
             consultas.Add("Agregar usuario",
@@ -120,6 +136,8 @@ namespace EntidadesDB
                 "UPDATE usuarios SET nombre = @nombre, apellido = @apellido, dni = @dni," +
                 "nombre_usuario = @nombre_usuario, contrasenia = @contrasenia, rol = @rol " +
                 "WHERE dni = @dni");
+
+            consultas.Add("Eliminar todos los usuarios", "DELETE FROM usuarios");
 
             consultas.Add("Traer todos los usuarios", "SELECT * FROM usuarios");
             //consultas.Add("Traer usuario que coincida", "");

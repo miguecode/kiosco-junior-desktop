@@ -14,5 +14,6 @@ namespace ConexionSQL
         public int Eliminar(T identificacion);
         public List<T> TraerTodosLosRegistros();
         public List<T> TraerUnRegistro(string id);
+        public int EliminarTodos();
     }
 }

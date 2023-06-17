@@ -41,6 +41,7 @@ namespace Vista
             EscribirCompradorMasFrecuente(Sistema.ListaDeVentas);
             EscribirTipoMasVendido(Sistema.ListaDeVentas);
             EscribirVentasTotales(Sistema.ListaDeVentas);
+            Eventos.SeImportaronDatos += ActualizarDatosPorImportacion;
         }
 
         private void btn_Borrar_Click(object sender, EventArgs e)
@@ -87,7 +88,7 @@ namespace Vista
             Sistema.ListaDeVentas.Clear();
 
             VentaDB controladorDB = new VentaDB();
-            controladorDB.Eliminar(new Venta());
+            controladorDB.EliminarTodos();
 
             dtg_Ventas.DataSource = null;
             dtg_Ventas.DataSource = Sistema.ListaDeVentas;
@@ -210,6 +211,12 @@ namespace Vista
         private Venta SeleccionarVentaEspecifica(List<Venta> lista)
         {
             return lista[dtg_Ventas.CurrentRow.Index];
+        }
+
+        private void ActualizarDatosPorImportacion()
+        {
+            dtg_Ventas.DataSource = null;
+            dtg_Ventas.DataSource = Sistema.ListaDeVentas;
         }
     }
 }
