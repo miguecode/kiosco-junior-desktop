@@ -164,7 +164,7 @@ namespace Helper
             return true;
         }
 
-        private static bool ValidarStringSinEspacioOGuionSeguido(string cadena)
+        public static bool ValidarStringSinEspacioOGuionSeguido(string cadena)
         {
             for (int i = 0; i < cadena.Length - 1; i++)
             {
@@ -175,7 +175,7 @@ namespace Helper
             return true;
         }
 
-        private static bool ValidarStringLetraODigito(string cadena)
+        public static bool ValidarStringLetraODigito(string cadena)
         {
             foreach (char caracter in cadena)
             {

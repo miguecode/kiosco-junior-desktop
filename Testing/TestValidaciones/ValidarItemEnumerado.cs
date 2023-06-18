@@ -12,7 +12,7 @@ namespace TestValidaciones
     public class ValidarItemEnumerado
     {
         [TestMethod]
-        public void ItemNullRetornaFalse()
+        public void ItemNullLanzaExcepcion()
         {
             Object? item = null;
             Type tipoEnumerado = typeof(ERol);
