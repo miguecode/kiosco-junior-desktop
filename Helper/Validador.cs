@@ -83,10 +83,10 @@ namespace Helper
             if (!ValidarStringRango(descripcion, 4, 121))
                 sb.AppendLine("- Descripción");
 
-            if (!ValidarCantidadRango((float)stock, 0, 2001))
+            if (!ValidarFloatRango((float)stock, 0, 2001))
                 sb.AppendLine("- Stock");
 
-            if (!ValidarCantidadRango((float)precio, 0, 5001))
+            if (!ValidarFloatRango((float)precio, 0, 5001))
                 sb.AppendLine("- Precio");
 
             if (sb.Length > 19)
@@ -123,14 +123,14 @@ namespace Helper
             return (!string.IsNullOrEmpty(cadena)) && cadena.Length > minimo && cadena.Length < maximo;
         }
 
-        public static bool ValidarCantidadRango(float cantidad, float minimo, float maximo)
+        public static bool ValidarFloatRango(float cantidad, float minimo, float maximo)
         {
             return cantidad > minimo && cantidad < maximo;
         }
 
         public static bool ValidarStringNumericoRango(string cadena, int minimo, int maximo)
         {
-            if (!ValidarStringRango(cadena, 7, 9))
+            if (!ValidarStringRango(cadena, minimo, maximo))
                 return false;
 
             foreach (char caracter in cadena)
@@ -153,7 +153,7 @@ namespace Helper
             return true;
         }
 
-        private static bool ValidarStringConLetraGuionYEspacio(string cadena)
+        public static bool ValidarStringConLetraGuionYEspacio(string cadena)
         {
             foreach (char caracter in cadena) 
             {
