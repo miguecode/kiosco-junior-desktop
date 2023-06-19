@@ -1,7 +1,9 @@
 ﻿using ConexionSQL;
 using Entidades;
+using EntidadesDB;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
@@ -13,9 +15,11 @@ namespace Helper
     public class Logs : ConsultasSQL
     {
         private DateTime horaYFecha;
-        private string usuario;
-        private string accion;
+        private string? usuario;
+        private string? accion;
         private static Action? DelegadoRegistrarAccion;
+
+        public Logs() {}
 
         public Logs(DateTime horaYFecha, string usuario, string accion)
         {
@@ -39,6 +43,38 @@ namespace Helper
 
             SqlCommand command = new SqlCommand(consulta, Connection);
             EstablecerParametros(command);
+
+            EjecutarConsultaNonQuery(command);
+
+            Eventos.ActualizarSeccionLogs();
+        }
+
+        public string GetLogs()
+        {
+            string consulta = "SELECT * FROM logs";
+
+            StringBuilder sb = new StringBuilder();
+
+            using (var dataTable = EjecutarConsulta(consulta))
+            {
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    DateTime horaYFecha = Convert.ToDateTime(row["hora_y_fecha"]);
+                    string usuario = row["usuario"].ToString() ?? "";
+                    string accion = row["accion"].ToString() ?? "";
+
+                    sb.AppendLine($"[{horaYFecha}] - Usuario: {usuario} - {accion}");
+                }
+            }
+
+            return sb.ToString();
+        }
+
+        public void VaciarRegistros()
+        {
+            string consulta = "DELETE FROM logs";
+
+            SqlCommand command = new SqlCommand(consulta, Connection);
 
             EjecutarConsultaNonQuery(command);
         }

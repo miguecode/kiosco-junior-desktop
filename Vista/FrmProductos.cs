@@ -109,7 +109,7 @@ namespace Vista
             if (num_Stockear.Value >= 1)
             {
                 ReestablecerProductos();
-                Logs.CrearRegistro(usuario.NombreUsuario, $"Reestableció stock de los productos");
+                Logs.CrearRegistro(usuario.NombreUsuario, $"Reestableció Stock");
                 ActualizarDataGrid(Sistema.ListaDeProductos);
             }
         }

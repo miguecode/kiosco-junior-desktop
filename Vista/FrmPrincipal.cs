@@ -23,6 +23,7 @@ namespace Vista
         private FrmCompras? formCompras;
         private FrmVentas? formVentas;
         private FrmInformes? formInformes;
+        private FrmLogs? formLogs;
 
         public FrmPrincipal(FrmLogin formLoginRecibido)
         {
@@ -93,6 +94,11 @@ namespace Vista
             Formularios.MostrarFormularioHijo(this, typeof(FrmInformes), pan_Inicio);
         }
 
+        private void smi_Registros_Click(object sender, EventArgs e)
+        {
+            Formularios.MostrarFormularioHijo(this, typeof(FrmLogs), pan_Inicio);
+        }
+
         private void tsm_CerrarSesion_Click(object sender, EventArgs e)
         {
             formLogin.LimpiarDatos();
@@ -120,6 +126,8 @@ namespace Vista
             formVentas.MdiParent = this;
             formInformes = new FrmInformes(usuarioActual);
             formInformes.MdiParent = this;
+            formLogs = new FrmLogs();
+            formLogs.MdiParent = this;
         }
 
         /// <summary>
@@ -137,6 +145,7 @@ namespace Vista
             {
                 smi_Usuarios.Visible = true;
                 smi_Informes.Visible = true;
+                smi_Registros.Visible = true;
             }
 
             else if (usuarioRecibido.Rol == ERol.Cliente)

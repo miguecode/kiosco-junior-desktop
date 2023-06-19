@@ -11,7 +11,7 @@ namespace Helper
     {
         public event Action<string>? SeConfirmoLaCompra;
         public static event Action? SeImportaronDatos;
-
+        public static event Action? SeAgregaronRegistros;
 
         public void NotificarCompraExitosa(string mensaje)
         {
@@ -21,6 +21,11 @@ namespace Helper
         public static void ActualizarTodasLasListas()
         {
             SeImportaronDatos?.Invoke();
+        }
+
+        public static void ActualizarSeccionLogs()
+        {
+            SeAgregaronRegistros?.Invoke();
         }
     }
 }

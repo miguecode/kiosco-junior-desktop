@@ -32,5 +32,10 @@ namespace Vista
             rtb_Mensaje.Text = mensaje;
             this.ShowDialog();
         }
+
+        private void btn_Aceptar_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.OK;
+        }
     }
 }

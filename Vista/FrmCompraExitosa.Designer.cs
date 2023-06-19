@@ -31,6 +31,7 @@
             this.lbl_CompraExitosa = new System.Windows.Forms.Label();
             this.pnl_Bordes = new System.Windows.Forms.Panel();
             this.rtb_Mensaje = new System.Windows.Forms.RichTextBox();
+            this.btn_Aceptar = new System.Windows.Forms.Button();
             this.pnl_Bordes.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,12 +69,27 @@
             this.rtb_Mensaje.TabStop = false;
             this.rtb_Mensaje.Text = "Datos de la compra";
             // 
+            // btn_Aceptar
+            // 
+            this.btn_Aceptar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_Aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Aceptar.Font = new System.Drawing.Font("Dosis", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btn_Aceptar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(170)))), ((int)(((byte)(61)))));
+            this.btn_Aceptar.Location = new System.Drawing.Point(130, 373);
+            this.btn_Aceptar.Name = "btn_Aceptar";
+            this.btn_Aceptar.Size = new System.Drawing.Size(193, 55);
+            this.btn_Aceptar.TabIndex = 3;
+            this.btn_Aceptar.Text = "Aceptar";
+            this.btn_Aceptar.UseVisualStyleBackColor = true;
+            this.btn_Aceptar.Click += new System.EventHandler(this.btn_Aceptar_Click);
+            // 
             // FrmCompraExitosa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.ClientSize = new System.Drawing.Size(452, 384);
+            this.ClientSize = new System.Drawing.Size(452, 440);
+            this.Controls.Add(this.btn_Aceptar);
             this.Controls.Add(this.pnl_Bordes);
             this.Controls.Add(this.lbl_CompraExitosa);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -95,5 +111,6 @@
         private Label lbl_CompraExitosa;
         private Panel pnl_Bordes;
         private RichTextBox rtb_Mensaje;
+        private Button btn_Aceptar;
     }
 }

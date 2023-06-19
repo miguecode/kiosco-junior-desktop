@@ -40,6 +40,7 @@
             this.tsm_CerrarSesion = new System.Windows.Forms.ToolStripMenuItem();
             this.smi_Cerrar = new System.Windows.Forms.ToolStripMenuItem();
             this.smi_Informes = new System.Windows.Forms.ToolStripMenuItem();
+            this.smi_Registros = new System.Windows.Forms.ToolStripMenuItem();
             this.sta_Datos = new System.Windows.Forms.StatusStrip();
             this.sbl_NombreUsuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.sbl_DniUsuario = new System.Windows.Forms.ToolStripStatusLabel();
@@ -68,9 +69,10 @@
             this.smi_Ventas,
             this.smi_Compras,
             this.smi_Usuarios,
+            this.smi_Informes,
+            this.smi_Registros,
             this.smi_Cuenta,
-            this.smi_Cerrar,
-            this.smi_Informes});
+            this.smi_Cerrar});
             this.msp_Principal.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.msp_Principal.Location = new System.Drawing.Point(0, 0);
             this.msp_Principal.Name = "msp_Principal";
@@ -183,6 +185,16 @@
             this.smi_Informes.Text = "Informes";
             this.smi_Informes.Visible = false;
             this.smi_Informes.Click += new System.EventHandler(this.smi_Informes_Click);
+            // 
+            // smi_Registros
+            // 
+            this.smi_Registros.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.smi_Registros.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.smi_Registros.Name = "smi_Registros";
+            this.smi_Registros.Size = new System.Drawing.Size(92, 37);
+            this.smi_Registros.Text = "Registros";
+            this.smi_Registros.Visible = false;
+            this.smi_Registros.Click += new System.EventHandler(this.smi_Registros_Click);
             // 
             // sta_Datos
             // 
@@ -343,5 +355,6 @@
         private System.Windows.Forms.Timer tim_HoraYFecha;
         private ToolStripMenuItem smi_Ventas;
         private ToolStripMenuItem smi_Informes;
+        private ToolStripMenuItem smi_Registros;
     }
 }
