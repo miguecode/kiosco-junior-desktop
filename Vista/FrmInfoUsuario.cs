@@ -38,6 +38,8 @@ namespace Vista
                 UsuarioDB controladorDB = new UsuarioDB();
                 controladorDB.Modificar(usuarioIngresado);
 
+                Logs.CrearRegistro(usuarioIngresado.NombreUsuario, "Modificó sus propios datos");
+
                 EscribirDatos();
             }
 

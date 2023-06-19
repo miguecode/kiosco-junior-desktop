@@ -16,13 +16,13 @@ namespace Vista
 {
     public partial class FrmGestionUsuario : Form
     {
-        Usuario administradorActual;
+        Usuario adminActual;
         UsuarioDB controladorDB;
 
-        public FrmGestionUsuario(Usuario administradorActual)
+        public FrmGestionUsuario(Usuario adminActual)
         {
             InitializeComponent();
-            this.administradorActual = administradorActual;
+            this.adminActual = adminActual;
             this.controladorDB = new UsuarioDB();
         }
 
@@ -37,18 +37,20 @@ namespace Vista
         {
             Usuario usuarioNuevo = new Usuario();
 
-            FrmAltaUsuario formAltaUsuario = new FrmAltaUsuario(usuarioNuevo, true);
+            FrmAltaUsuario formAlta = new FrmAltaUsuario(usuarioNuevo, true);
 
-            if (formAltaUsuario.ShowDialog() == DialogResult.OK)
+            if (formAlta.ShowDialog() == DialogResult.OK)
             {
-                Sistema.ListaDeUsuarios.Add(formAltaUsuario.UsuarioIngresado);
+                Sistema.ListaDeUsuarios.Add(formAlta.UsuarioIngresado);
 
-                controladorDB.Agregar(formAltaUsuario.UsuarioIngresado);
+                controladorDB.Agregar(formAlta.UsuarioIngresado);
+
+                Logs.CrearRegistro(adminActual.NombreUsuario, $"Agregó un usuario [{formAlta.UsuarioIngresado.NombreUsuario}]");
 
                 ActualizarDataGrid(Sistema.ListaDeUsuarios);
             }
             else
-                formAltaUsuario.Close();
+                formAlta.Close();
         }
 
         private void btn_Eliminar_Click(object sender, EventArgs e)
@@ -65,6 +67,8 @@ namespace Vista
 
                     controladorDB.Eliminar(usuarioSeleccionado);
 
+                    Logs.CrearRegistro(adminActual.NombreUsuario, $"Eliminó un usuario [{usuarioSeleccionado.NombreUsuario}]");
+
                     ActualizarDataGrid(Sistema.ListaDeUsuarios);
                 }
             }
@@ -72,7 +76,7 @@ namespace Vista
 
         private void btn_Modificar_Click(object sender, EventArgs e)
         {
-            if (Sistema.ListaDeUsuarios.Count > 0)
+            if (Sistema.ListaDeUsuarios.Count > 0 && !UsuarioSeleccionadoASiMismo())
             {
                 Usuario usuarioSeleccionado = SeleccionarUsuarioEspecifico(Sistema.ListaDeUsuarios);
                 FrmAltaUsuario formModificar = new FrmAltaUsuario(usuarioSeleccionado, false);
@@ -80,6 +84,9 @@ namespace Vista
                 if (formModificar.ShowDialog() == DialogResult.OK)
                 {
                     controladorDB.Modificar(usuarioSeleccionado);
+
+                    Logs.CrearRegistro(adminActual.NombreUsuario, $"Modificó un usuario [{usuarioSeleccionado.NombreUsuario}]");
+
                     ActualizarDataGrid(Sistema.ListaDeUsuarios);
                 }
                 else
@@ -132,7 +139,7 @@ namespace Vista
         {
             Usuario usuarioSeleccionado = SeleccionarUsuarioEspecifico(Sistema.ListaDeUsuarios);
 
-            if (usuarioSeleccionado == administradorActual)
+            if (usuarioSeleccionado == adminActual)
                 return true;
             else
                 return false;

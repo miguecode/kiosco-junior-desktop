@@ -1,4 +1,5 @@
-﻿using Helper;
+﻿using Entidades;
+using Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,9 +14,12 @@ namespace Vista
 {
     public partial class FrmInformes : Form
     {
-        public FrmInformes()
+        Usuario usuario;
+
+        public FrmInformes(Usuario usuarioActual)
         {
             InitializeComponent();
+            usuario = usuarioActual;
         }
 
         private void FrmInformes_Load(object sender, EventArgs e)
@@ -30,6 +34,8 @@ namespace Vista
                 ControladorSerial.ExportarDatosCSV();
                 MessageBox.Show("Exportación de datos CSV completada.", "Kiosco Junior",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Logs.CrearRegistro(usuario.NombreUsuario, "Exportó datos en formato CSV");
             } catch(Exception)
             {
                 MessageBox.Show("Ocurrió un error en la exportación de datos CSV.", "Kiosco Junior",
@@ -44,6 +50,8 @@ namespace Vista
                 ControladorSerial.ExportarDatosJSON();
                 MessageBox.Show("Exportación de datos JSON completada.", "Kiosco Junior",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Logs.CrearRegistro(usuario.NombreUsuario, "Exportó datos en formato JSON");
             }
             catch (Exception)
             {
@@ -59,11 +67,14 @@ namespace Vista
                 ControladorSerial.ImportarDatosCSV();
                 MessageBox.Show("Importación de datos CSV completada.", "Kiosco Junior",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Logs.CrearRegistro(usuario.NombreUsuario, "Importó datos en formato CSV");
             }
             catch (Exception)
             {
                 MessageBox.Show("Ocurrió un error en la importación de datos CSV.", "Kiosco Junior",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
@@ -74,6 +85,8 @@ namespace Vista
                 ControladorSerial.ImportarDatosJSON();
                 MessageBox.Show("Importación de datos JSON completada.", "Kiosco Junior",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Logs.CrearRegistro(usuario.NombreUsuario, "Importó datos en formato JSON");
             }
             catch (Exception)
             {

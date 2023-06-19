@@ -17,12 +17,14 @@ namespace Vista
 {
     public partial class FrmProductos : Form
     {
-        ProductoDB controladorDB;
+        private ProductoDB controladorDB;
+        private Usuario usuario;
 
-        public FrmProductos()
+        public FrmProductos(Usuario usuarioActual)
         {
             InitializeComponent();
             controladorDB = new ProductoDB();
+            usuario = usuarioActual;            
         }
 
         private void FrmProductos_Load(object sender, EventArgs e)
@@ -52,17 +54,19 @@ namespace Vista
         {
             Producto productoNuevo = new Producto();
 
-            FrmAltaProducto formAltaProducto = new FrmAltaProducto(productoNuevo, true);
+            FrmAltaProducto formAlta = new FrmAltaProducto(productoNuevo, true);
 
-            if (formAltaProducto.ShowDialog() == DialogResult.OK)
+            if (formAlta.ShowDialog() == DialogResult.OK)
             {
-                Sistema.ListaDeProductos.Add(formAltaProducto.ProductoIngresado);
+                Sistema.ListaDeProductos.Add(formAlta.ProductoIngresado);
 
-                controladorDB.Agregar(formAltaProducto.ProductoIngresado);
+                controladorDB.Agregar(formAlta.ProductoIngresado);
+
+                Logs.CrearRegistro(usuario.NombreUsuario, $"Agregó un producto");
 
                 ActualizarDataGrid(Sistema.ListaDeProductos);
             }else
-                formAltaProducto.Close();
+                formAlta.Close();
         }
 
         private void btn_BajaProducto_Click(object sender, EventArgs e)
@@ -73,6 +77,8 @@ namespace Vista
                 Sistema.ListaDeProductos.Remove(productoSeleccionado);
 
                 controladorDB.Eliminar(productoSeleccionado);
+
+                Logs.CrearRegistro(usuario.NombreUsuario, $"Eliminó un producto [{productoSeleccionado.IdDB}]");
 
                 ActualizarDataGrid(Sistema.ListaDeProductos);
             }
@@ -88,6 +94,9 @@ namespace Vista
                 if (formModificar.ShowDialog() == DialogResult.OK)
                 {
                     controladorDB.Modificar(productoSeleccionado);
+
+                    Logs.CrearRegistro(usuario.NombreUsuario, $"Modificó un producto [{productoSeleccionado.IdDB}]");
+
                     ActualizarDataGrid(Sistema.ListaDeProductos);
                 }
                 else
@@ -100,6 +109,7 @@ namespace Vista
             if (num_Stockear.Value >= 1)
             {
                 ReestablecerProductos();
+                Logs.CrearRegistro(usuario.NombreUsuario, $"Reestableció stock de los productos");
                 ActualizarDataGrid(Sistema.ListaDeProductos);
             }
         }
@@ -122,7 +132,7 @@ namespace Vista
         public void ActualizarDataGrid(List<Producto> lista)
         {
             string? itemSeleccionado = cmb_OrdenarPor.SelectedItem.ToString();
-            Sistema.ListaDeProductos = OrdenarListaProductos(itemSeleccionado);
+            lista = OrdenarListaProductos(itemSeleccionado);
 
             dtg_Productos.DataSource = null;
             dtg_Productos.DataSource = lista;

@@ -108,7 +108,7 @@ namespace Vista
 
         private void CrearFormulariosMdi()
         {
-            formProductos = new FrmProductos();
+            formProductos = new FrmProductos(usuarioActual);
             formProductos.MdiParent = this;
             formInfoUsuario = new FrmInfoUsuario(usuarioActual);
             formInfoUsuario.MdiParent = this;
@@ -116,9 +116,9 @@ namespace Vista
             formGestionUsuario.MdiParent = this;
             formCompras = new FrmCompras(usuarioActual);
             formCompras.MdiParent = this;
-            formVentas = new FrmVentas();
+            formVentas = new FrmVentas(usuarioActual);
             formVentas.MdiParent = this;
-            formInformes = new FrmInformes();
+            formInformes = new FrmInformes(usuarioActual);
             formInformes.MdiParent = this;
         }
 

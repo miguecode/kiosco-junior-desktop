@@ -20,27 +20,32 @@ namespace Vista
         private int productosVendidosTotales;
         private string compradorMasFrecuente;
         private string tipoMasVendido;
+        private Usuario usuario;
 
-        public FrmVentas()
+        public FrmVentas(Usuario usuarioActual)
         {
             InitializeComponent();
             ingresosTotales = 0;
             productosVendidosTotales = 0;
             compradorMasFrecuente = String.Empty;
             tipoMasVendido = String.Empty;
+            usuario = usuarioActual;
         }
 
         private void Ventas_Load(object sender, EventArgs e)
         {
             VentaDB ventaDB = new VentaDB();
             Sistema.ListaDeVentas = ventaDB.TraerTodosLosRegistros();
+
             dtg_Ventas.DataSource = null;
             dtg_Ventas.DataSource = Sistema.ListaDeVentas;
+
             EscribirIngresosTotales(Sistema.ListaDeVentas);
             EscribirProductosVendidosTotales(Sistema.ListaDeVentas);
             EscribirCompradorMasFrecuente(Sistema.ListaDeVentas);
             EscribirTipoMasVendido(Sistema.ListaDeVentas);
             EscribirVentasTotales(Sistema.ListaDeVentas);
+
             Eventos.SeImportaronDatos += ActualizarDatosPorImportacion;
         }
 
@@ -52,7 +57,11 @@ namespace Vista
                     "\nNo podrás recuperarlo.", "Aviso", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
 
                 if (respuesta == DialogResult.OK)
+                {
                     LimpiarPantalla();
+
+                    Logs.CrearRegistro(usuario.NombreUsuario, "Borró el historial de ventas");
+                }
             }
         }
 

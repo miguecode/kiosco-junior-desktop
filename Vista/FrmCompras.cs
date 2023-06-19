@@ -99,6 +99,8 @@ namespace Vista
                 OcultarProductosAgotados();
 
                 ReiniciarCarrito();
+
+                Logs.CrearRegistro(clienteActual.NombreUsuario, $"Realizó una compra");
             }
         }
 
