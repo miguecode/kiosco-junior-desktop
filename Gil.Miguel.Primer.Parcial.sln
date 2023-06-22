@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consola", "Consola\Consola.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogicaSQL", "LogicaSQL\LogicaSQL.csproj", "{6B6ECCB0-C7E9-43E9-9F4F-C34B12BDC7A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestValidaciones", "TestValidaciones\TestValidaciones.csproj", "{1B3AAC3A-E91E-4BEF-A211-C74084200769}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestValidaciones", "TestValidaciones\TestValidaciones.csproj", "{1B3AAC3A-E91E-4BEF-A211-C74084200769}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logica", "Logica\Logica.csproj", "{2CC43137-B6F2-4B69-A64E-F0E9FAC0C24E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{1B3AAC3A-E91E-4BEF-A211-C74084200769}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B3AAC3A-E91E-4BEF-A211-C74084200769}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B3AAC3A-E91E-4BEF-A211-C74084200769}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CC43137-B6F2-4B69-A64E-F0E9FAC0C24E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CC43137-B6F2-4B69-A64E-F0E9FAC0C24E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CC43137-B6F2-4B69-A64E-F0E9FAC0C24E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CC43137-B6F2-4B69-A64E-F0E9FAC0C24E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

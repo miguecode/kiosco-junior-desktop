@@ -14,12 +14,12 @@ namespace LogicaSQL
 {
     public abstract class EntidadDB<T> : Consultas
     {
+        private Dictionary<string, string> consultas = new Dictionary<string, string>();
         private string tabla;
         private string columnas;
         private string valores;
         private string identificador;
         private string asignacion;
-        private Dictionary<string, string> consultas = new Dictionary<string, string>();
 
         public EntidadDB(string tabla, string columnas, string valores, string identificador, string asignacion)
         {
