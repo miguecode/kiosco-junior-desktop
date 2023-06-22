@@ -14,7 +14,7 @@ namespace TestValidaciones
         [TestMethod]
         public void ItemNullLanzaExcepcion()
         {
-            Object? item = null;
+            object? item = null;
             Type tipoEnumerado = typeof(ERol);
 
             bool resultado = Validador.ValidarItemEnumerado(item, tipoEnumerado);
@@ -25,7 +25,7 @@ namespace TestValidaciones
         [TestMethod]
         public void ItemNoDefinidoEnEnumeradoRetornaFalse()
         {
-            Object? item = "ItemNoDefinidoEnElEnumerado";
+            object? item = "ItemNoDefinidoEnElEnumerado";
             Type tipoEnumerado = typeof(ERol);
 
             bool resultado = Validador.ValidarItemEnumerado(item, tipoEnumerado);
@@ -36,7 +36,7 @@ namespace TestValidaciones
         [TestMethod]
         public void ItemDefinidoEnEnumeradoRetornaTrue()
         {
-            Object? item = ERol.Empleado;
+            object? item = ERol.Empleado;
             Type tipoEnumerado = typeof(ERol);
 
             bool resultado = Validador.ValidarItemEnumerado(item, tipoEnumerado);

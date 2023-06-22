@@ -45,7 +45,7 @@ namespace Vista
                 AsignarDatosAlUsuario();
 
                 if (esUsuarioNuevo)
-                    Dato.VerificarSiExisteEntidadOrThrow(Sistema.ListaDeUsuarios, usuarioIngresado);
+                    VerificarSiExiste(usuarioIngresado);
 
                 this.DialogResult = DialogResult.OK;
             }catch (Exception ex)
@@ -89,6 +89,15 @@ namespace Vista
             usuarioIngresado.Dni = dni;
             usuarioIngresado.NombreUsuario = nombreDeUsuario;
             usuarioIngresado.Contrasenia = contrasenia;
+        }
+
+        private static void VerificarSiExiste(Usuario usuarioIngresado)
+        {
+            foreach (Usuario usuario in Sistema.ListaDeUsuarios)
+            {
+                if (usuario == usuarioIngresado)
+                    throw new Exception("Ese usuario ya existe");
+            }
         }
     }
 }

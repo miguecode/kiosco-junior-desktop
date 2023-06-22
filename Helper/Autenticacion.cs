@@ -19,7 +19,7 @@ namespace Helper
         /// <exception cref="Exception"></exception>
         public static Usuario ConfirmarIngresoOrThrow(string nick, string contrasenia)
         {
-            if (!String.IsNullOrEmpty(nick) && !String.IsNullOrEmpty(contrasenia))
+            if (!string.IsNullOrEmpty(nick) && !string.IsNullOrEmpty(contrasenia))
             {
                 Usuario? usuarioExistente = ValidarUsuarioExistente(nick, contrasenia);
 
@@ -30,7 +30,7 @@ namespace Helper
                     throw new Exception("Usuario o contraseña incorrectos");
             }
 
-            throw new Exception(String.Empty);
+            throw new Exception(string.Empty);
         }
         
         /// <summary>

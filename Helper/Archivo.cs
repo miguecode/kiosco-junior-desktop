@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Helper
 {
-    public class Archivo
+    /*public class Archivo
     {
         /// <summary>
         /// Carga los archivos principales si es que existen, y sino, los crea por default.
@@ -86,7 +86,7 @@ namespace Helper
 
             foreach (Dato entidadLinea in entidadLista)
             {
-                sw.WriteLine(entidadLinea.GetParser());
+                //sw.WriteLine(entidadLinea.GetParser());
             }
 
             sw.Close();
@@ -144,7 +144,7 @@ namespace Helper
         /// <returns>Devuelve la entidad creada</returns>
         private static Dato CrearEntidadPorDatos(List<string> listaDatos, Dato entidad)
         {
-            Dato entidadCreada = entidad.CrearEntidadPorLista(listaDatos);
+            //Dato entidadCreada = entidad.CrearEntidadPorLista(listaDatos);
 
             return entidadCreada;
         }
@@ -164,5 +164,5 @@ namespace Helper
             if (entidad is Venta)
                 Sistema.ListaDeVentas.Add((Venta)entidad);
         }
-    }
+    }*/
 }

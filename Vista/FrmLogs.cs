@@ -37,7 +37,7 @@ namespace Vista
         private void btn_Vaciar_Click(object sender, EventArgs e)
         {
             controladorLogs.VaciarRegistros();
-            rtb_Logs.Text = String.Empty;
+            rtb_Logs.Text = string.Empty;
         }
     }
 }

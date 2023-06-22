@@ -1,6 +1,5 @@
-﻿using ConexionSQL;
-using Entidades;
-using EntidadesDB;
+﻿using Entidades;
+using LogicaSQL;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Helper
 {
-    public class Logs : ConsultasSQL
+    public class Logs : Consultas
     {
         private DateTime horaYFecha;
         private string? usuario;

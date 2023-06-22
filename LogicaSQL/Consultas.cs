@@ -1,18 +1,17 @@
-﻿using Entidades;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConexionSQL
+namespace LogicaSQL
 {
-    public class ConsultasSQL : ConexionDB
+    public class Consultas : Conexion
     {
-        public ConsultasSQL(string connectionString) : base(connectionString) {}
-        public ConsultasSQL() : base("Server=.;Database=UTN_DB;Trusted_Connection=True;") {}
+        public Consultas(string connectionString) : base(connectionString) { }
+        public Consultas() : base("Server=.;Database=UTN_DB;Trusted_Connection=True;") { }
 
         protected DataTable EjecutarConsulta(string consulta)
         {
@@ -30,18 +29,13 @@ namespace ConexionSQL
             return dataTable;
         }
 
-        protected int EjecutarConsultaNonQuery(SqlCommand command)
+        protected void EjecutarConsultaNonQuery(SqlCommand command)
         {
             Abrir();
-            //Connection.Open();
 
-            //SqlCommand command = new SqlCommand(consulta, Connection);
-
-            int filasAfectadas = command.ExecuteNonQuery();
+            command.ExecuteNonQuery();
 
             Cerrar();
-
-            return filasAfectadas;
         }
     }
 }

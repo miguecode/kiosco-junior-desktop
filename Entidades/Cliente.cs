@@ -19,11 +19,6 @@ namespace Entidades
             carrito = new List<Producto>();
         }
 
-        public override string GetParser()
-        {
-            return $"{Rol};{NombreUsuario};{Contrasenia};{Dni};{Nombre};{Apellido}";
-        }
-
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();

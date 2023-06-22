@@ -5,11 +5,11 @@ using Helper;
 
 namespace Consola
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Serializacion<Usuario>.SerializarJSON(Sistema.ListaDeUsuarios, "usuarios.json");
+            //Serializacion<Usuario>.SerializarJSON(Sistema.ListaDeUsuarios, "usuarios.json");
 
             /*UsuarioDB entidadUsuarioDB = new UsuarioDB();
             ProductoDB entidadProductoDB = new ProductoDB();

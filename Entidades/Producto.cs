@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data;
 using System.Linq;
 using System.Net;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Producto : Dato
+    public class Producto
     {
         private string nombre;
         private string marca;
@@ -16,9 +17,7 @@ namespace Entidades
         private float precio;
         private ETipo tipo;
         private int stock;
-        //private int id;
         private int idDB;
-        //private static int idActual;
         private int cantidadEnCarrito;
 
         public Producto()
@@ -29,7 +28,6 @@ namespace Entidades
             this.descripcion = String.Empty;
             this.precio = 1;
             this.stock = 1;
-            //this.id = 0000;
             this.idDB = 0000;
             this.cantidadEnCarrito = 0;
         }
@@ -43,9 +41,7 @@ namespace Entidades
             this.descripcion = descripcion;
             this.precio = precio;
             this.stock = stock;
-            //this.id = idActual;
             this.idDB = 0000;
-            //idActual++;
             this.cantidadEnCarrito = 0;
         }
 
@@ -55,54 +51,21 @@ namespace Entidades
             this.idDB = idDB;
         }
 
-        /*static Producto()
-        {
-            idActual = 1000;
-        }*/
-
+        [Column("id")]
         public int IdDB { get => idDB; set => idDB = value; }
+        [Column("nombre")]
         public string Nombre { get => nombre; set => nombre = value; }
+        [Column("tipo")]
         public ETipo Tipo { get => tipo; set => tipo = value; }
+        [Column("marca")]
         public string Marca { get => marca; set => marca = value; }
+        [Column("descripcion")]
         public string Descripcion { get => descripcion; set => descripcion = value; }
+        [Column("precio")]
         public float Precio { get => precio; set => precio = value; }
+        [Column("stock")]
         public int Stock { get => stock; set => stock = value; }
-        //public int Id { get => id; }
         public int CantidadEnCarrito { get => cantidadEnCarrito; set => cantidadEnCarrito = value; }
-
-        public override string GetParser()
-        {
-            return $"{IdDB};{Nombre};{Tipo};{Descripcion};{Marca};{Precio};{Stock}";
-        }
-
-        public override Producto CrearEntidadPorLista(List<string> dato)
-        {
-            string nombre = dato[1];
-            _ = Enum.TryParse(dato[2], out ETipo tipo);
-            string descripcion = dato[3];
-            string marca = dato[4];
-            float precio = float.Parse(dato[5]);
-            int stock = int.Parse(dato[6]);
-
-            Producto productoCreado = new Producto(nombre, tipo, marca, descripcion, precio, stock);
-
-            return productoCreado;
-        }
-
-        public override Producto CrearEntidadPorBaseDeDatos(DataRow row)
-        {
-            int id = Convert.ToInt32(row["id"].ToString());
-            string nombre = row["nombre"].ToString() ?? "";
-            string marca = row["marca"].ToString() ?? "";
-            string descripcion = row["descripcion"].ToString() ?? "";
-            float precio = Convert.ToSingle(row["precio"].ToString());
-            _ = Enum.TryParse(row["tipo"].ToString() ?? "", out ETipo tipo);
-            int stock = Convert.ToInt32(row["stock"].ToString());
-
-            Producto productoCreado = new Producto(id, nombre, tipo, marca, descripcion, precio, stock);
-
-            return productoCreado;
-        }
 
         public override string ToString()
         {

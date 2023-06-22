@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -9,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Usuario : Dato
+    public class Usuario
     {
         private string nombre;
         private string apellido;
@@ -18,12 +19,18 @@ namespace Entidades
         private string contrasenia;
         private ERol rol;
 
+        [Column("nombre")]
         public string Nombre { get => nombre; set => nombre = value; }
+        [Column("apellido")]
         public string Apellido { get => apellido; set => apellido = value; }
+        [Column("dni")]
         public int Dni { get => dni; set => dni = value; }
+        [Column("nombre_usuario")]
         public string NombreUsuario { get => nombreUsuario; set => nombreUsuario = value; }
+        [Column("contrasenia")]
         public string Contrasenia { get => contrasenia; set => contrasenia = value; }
         public string NombreCompleto { get => $"{Nombre} {Apellido}"; }
+        [Column("rol")]
         public ERol Rol { get => rol; set => rol = value; }
 
         public Usuario()
@@ -44,39 +51,6 @@ namespace Entidades
             this.nombreUsuario = nombreUsuario;
             this.contrasenia = contrasenia;
             this.rol = rol;
-        }
-
-        public override string GetParser()
-        {
-            return $"{Rol};{NombreUsuario};{Contrasenia};{Dni};{Nombre};{Apellido}";
-        }
-
-        public override Usuario CrearEntidadPorLista(List<string> dato)
-        {
-            _ = Enum.TryParse(dato[0], out ERol rol);
-            string nombreUsuario = dato[1];
-            string contrasenia = dato[2];
-            int dni = int.Parse(dato[3]);
-            string nombre = dato[4];
-            string apellido = dato[5];
-
-            Usuario usuarioCreado = new Usuario(nombre, apellido, dni, nombreUsuario, contrasenia, rol);
-
-            return usuarioCreado;
-        }
-
-        public override Usuario CrearEntidadPorBaseDeDatos(DataRow row)
-        {
-            string nombre = row["nombre"].ToString() ?? "";
-            string apellido = row["apellido"].ToString() ?? "";
-            int dni = Convert.ToInt32(row["dni"].ToString());
-            string nombreUsuario = row["nombre_usuario"].ToString() ?? "";
-            string contrasenia = row["contrasenia"].ToString() ?? "";
-            _ = Enum.TryParse(row["rol"].ToString() ?? "", out ERol rol);
-
-            Usuario usuarioCreado = new Usuario(nombre, apellido, dni, nombreUsuario, contrasenia, rol);
-
-            return usuarioCreado;
         }
 
         public override string ToString()

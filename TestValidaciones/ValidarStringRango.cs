@@ -1,4 +1,4 @@
-using Helper;
+﻿using Helper;
 using System.Runtime.Versioning;
 
 namespace TestValidaciones
@@ -9,7 +9,7 @@ namespace TestValidaciones
         [TestMethod]
         public void CadenaVaciaRetornaFalse()
         {
-            string cadena = String.Empty;
+            string cadena = string.Empty;
             int minimo = 1;
             int maximo = 5;
 

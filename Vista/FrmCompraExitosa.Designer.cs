@@ -99,7 +99,6 @@
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kiosco Junior";
-            this.Load += new System.EventHandler(this.FrmCompraExitosa_Load);
             this.pnl_Bordes.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

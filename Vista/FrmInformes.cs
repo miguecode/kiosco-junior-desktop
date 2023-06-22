@@ -14,7 +14,7 @@ namespace Vista
 {
     public partial class FrmInformes : Form
     {
-        Usuario usuario;
+        private Usuario usuario;
 
         public FrmInformes(Usuario usuarioActual)
         {

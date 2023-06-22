@@ -1,6 +1,6 @@
 ﻿using Entidades;
-using EntidadesDB;
 using Helper;
+using LogicaSQL.EntidadesDerivadas;
 using System;
 using System.CodeDom;
 using System.Collections;

@@ -1,6 +1,6 @@
 ﻿using Entidades;
-using EntidadesDB;
 using Helper;
+using LogicaSQL.EntidadesDerivadas;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -16,8 +16,8 @@ namespace Vista
 {
     public partial class FrmGestionUsuario : Form
     {
-        Usuario adminActual;
-        UsuarioDB controladorDB;
+        private Usuario adminActual;
+        private UsuarioDB controladorDB;
 
         public FrmGestionUsuario(Usuario adminActual)
         {
@@ -65,7 +65,7 @@ namespace Vista
                     Usuario usuarioSeleccionado = SeleccionarUsuarioEspecifico(Sistema.ListaDeUsuarios);
                     Sistema.ListaDeUsuarios.Remove(usuarioSeleccionado);
 
-                    controladorDB.Eliminar(usuarioSeleccionado);
+                    controladorDB.Eliminar(usuarioSeleccionado, usuarioSeleccionado.Dni.ToString());
 
                     Logs.CrearRegistro(adminActual.NombreUsuario, $"Eliminó un usuario [{usuarioSeleccionado.NombreUsuario}]");
 

@@ -147,7 +147,6 @@ namespace Vista
                 smi_Informes.Visible = true;
                 smi_Registros.Visible = true;
             }
-
             else if (usuarioRecibido.Rol == ERol.Cliente)
             {
                 smi_Compras.Visible = true;

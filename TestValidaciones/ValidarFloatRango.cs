@@ -33,7 +33,7 @@ namespace TestValidaciones
 
             Assert.IsFalse(resultado);
         }
-        
+
         [TestMethod]
         public void FloatDentroDelRangoRetornaTrue()
         {

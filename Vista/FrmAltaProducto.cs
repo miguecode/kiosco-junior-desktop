@@ -43,7 +43,7 @@ namespace Vista
                 AsignarDatosAlProducto();
 
                 if (esProductoNuevo)
-                    Dato.VerificarSiExisteEntidadOrThrow(Sistema.ListaDeProductos, productoIngresado);
+                    VerificarSiExiste(productoIngresado);
 
                 this.DialogResult = DialogResult.OK;
             }catch(Exception ex)
@@ -82,6 +82,15 @@ namespace Vista
                 productoIngresado.Precio = precio;
                 productoIngresado.Stock = stock;
             }          
+        }
+
+        private static void VerificarSiExiste(Producto productoRecibido)
+        {
+            foreach (Producto producto in Sistema.ListaDeProductos)
+            {
+                if (producto == productoRecibido)
+                    throw new Exception("Ese producto ya existe");
+            }
         }
     }
 }

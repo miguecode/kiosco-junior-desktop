@@ -12,6 +12,7 @@
     <ProjectReference Include="..\Entidades\Entidades.csproj" />
     <ProjectReference Include="..\HelperFormularios\HelperFormularios.csproj" />
     <ProjectReference Include="..\Helper\Helper.csproj" />
+    <ProjectReference Include="..\LogicaSQL\LogicaSQL.csproj" />
   </ItemGroup>
 
   <ItemGroup>

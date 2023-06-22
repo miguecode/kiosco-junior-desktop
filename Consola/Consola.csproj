@@ -10,8 +10,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Entidades\Entidades.csproj" />
     <ProjectReference Include="..\Helper\Helper.csproj" />
-    <ProjectReference Include="..\SQL\ConexionSQL\ConexionSQL.csproj" />
-    <ProjectReference Include="..\SQL\EntidadesDB\EntidadesDB.csproj" />
   </ItemGroup>
 
 </Project>

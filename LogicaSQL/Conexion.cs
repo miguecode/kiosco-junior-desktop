@@ -7,26 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConexionSQL
+namespace LogicaSQL
 {
-    public abstract class ConexionDB
+    public abstract class Conexion
     {
-        private SqlConnection _connection; //Lo usamos para conectarnos o desconectarnos a la DB
+        private SqlConnection _connection;
+        public SqlConnection Connection { get => _connection; }
 
-        //private string _connectionString;
-
-        public SqlConnection Connection { get => _connection ; }
-
-        public ConexionDB(string connectionString)
+        public Conexion(string connectionString)
         {
-            //_connectionString = connectionString;
             _connection = new SqlConnection(connectionString);
         }
 
         protected void Abrir()
         {
-            //_connection = new SqlConnection(_connectionString);
-
             if (_connection is not null)
                 _connection.Open();
         }

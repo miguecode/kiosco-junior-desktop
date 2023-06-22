@@ -22,11 +22,6 @@ namespace Vista
             eventosCompras.SeConfirmoLaCompra += MostrarMensaje;
         }
 
-        private void FrmCompraExitosa_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void MostrarMensaje(string mensaje)
         {
             rtb_Mensaje.Text = mensaje;

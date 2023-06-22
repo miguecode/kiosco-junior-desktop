@@ -1,6 +1,5 @@
-﻿using ConexionSQL;
-using Entidades;
-using EntidadesDB;
+﻿using Entidades;
+using LogicaSQL.EntidadesDerivadas;
 using System;
 using System.Collections.Generic;
 using System.Linq;

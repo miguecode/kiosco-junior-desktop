@@ -52,7 +52,7 @@ namespace TestValidaciones
 
         public void CadenaVaciaRetornaTrue()
         {
-            string cadena = String.Empty;
+            string cadena = string.Empty;
 
             bool resultado = Validador.ValidarStringConLetraGuionYEspacio(cadena);
 

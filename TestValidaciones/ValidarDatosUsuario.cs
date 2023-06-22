@@ -15,21 +15,21 @@ namespace TestValidaciones
         [ExpectedException(typeof(Exception))]
         public void RolNoValidoLanzaExcepcion()
         {
-            Object? rol = null;
+            object? rol = null;
             string nombre = "Juan";
             string apellido = "Ramirez";
             string dni = "50388176";
             string nombreUsuario = "JuuanR12";
             string contrasenia = "130802jnr";
 
-            Validador.ValidarDatosUsuario(rol, nombre, apellido, dni, nombreUsuario, contrasenia);   
+            Validador.ValidarDatosUsuario(rol, nombre, apellido, dni, nombreUsuario, contrasenia);
         }
 
         [TestMethod]
         [ExpectedException(typeof(Exception))]
         public void NombreNoValidoLanzaExcepcion()
         {
-            Object? rol = ERol.SuperUsuario;
+            object? rol = ERol.SuperUsuario;
             string nombre = "12345??";
             string apellido = "Ramirez";
             string dni = "50388176";
@@ -43,9 +43,9 @@ namespace TestValidaciones
         [ExpectedException(typeof(Exception))]
         public void ApellidoNoValidoLanzaExcepcion()
         {
-            Object? rol = ERol.Cliente;
+            object? rol = ERol.Cliente;
             string nombre = "Juan";
-            string apellido = String.Empty;
+            string apellido = string.Empty;
             string dni = "50388176";
             string nombreUsuario = "JuuanR12";
             string contrasenia = "130802jnr";
@@ -57,7 +57,7 @@ namespace TestValidaciones
         [ExpectedException(typeof(Exception))]
         public void DniNoValidoLanzaExcepcion()
         {
-            Object? rol = ERol.Empleado;
+            object? rol = ERol.Empleado;
             string nombre = "Juan";
             string apellido = "Ramirez";
             string dni = "ABCDEFGHI";
@@ -71,7 +71,7 @@ namespace TestValidaciones
         [ExpectedException(typeof(Exception))]
         public void NombreUsuarioNoValidoLanzaExcepcion()
         {
-            Object? rol = ERol.Cliente;
+            object? rol = ERol.Cliente;
             string nombre = "Juan";
             string apellido = "Ramirez";
             string dni = "50388176";
@@ -85,12 +85,12 @@ namespace TestValidaciones
         [ExpectedException(typeof(Exception))]
         public void ContraseniaNoValidaLanzaExcepcion()
         {
-            Object? rol = ERol.SuperUsuario;
+            object? rol = ERol.SuperUsuario;
             string nombre = "Juan";
             string apellido = "Ramirez";
             string dni = "50388176";
             string nombreUsuario = "JuuanR12";
-            string contrasenia = String.Empty;
+            string contrasenia = string.Empty;
 
             Validador.ValidarDatosUsuario(rol, nombre, apellido, dni, nombreUsuario, contrasenia);
         }

@@ -15,7 +15,7 @@ namespace TestValidaciones
         [ExpectedException(typeof(Exception))]
         public void TipoNoValidoLanzaExcepcion()
         {
-            Object? tipo = null;
+            object? tipo = null;
             string nombre = "Obleas";
             string marca = "Terrabusi";
             float precio = 200;
@@ -29,8 +29,8 @@ namespace TestValidaciones
         [ExpectedException(typeof(Exception))]
         public void NombreNoValidoLanzaExcepcion()
         {
-            Object tipo = ETipo.Galletitas;
-            string nombre = String.Empty;
+            object tipo = ETipo.Galletitas;
+            string nombre = string.Empty;
             string marca = "Terrabusi";
             float precio = 200;
             float stock = 20;
@@ -43,7 +43,7 @@ namespace TestValidaciones
         [ExpectedException(typeof(Exception))]
         public void MarcaNoValidoLanzaExcepcion()
         {
-            Object tipo = ETipo.Galletitas;
+            object tipo = ETipo.Galletitas;
             string nombre = "Obleas";
             string marca = "--";
             float precio = 200;
@@ -57,7 +57,7 @@ namespace TestValidaciones
         [ExpectedException(typeof(Exception))]
         public void PrecioNoValidoLanzaExcepcion()
         {
-            Object tipo = ETipo.Galletitas;
+            object tipo = ETipo.Galletitas;
             string nombre = "Obleas";
             string marca = "Terrabusi";
             float precio = -1;
@@ -71,7 +71,7 @@ namespace TestValidaciones
         [ExpectedException(typeof(Exception))]
         public void StockNoValidoLanzaExcepcion()
         {
-            Object tipo = ETipo.Galletitas;
+            object tipo = ETipo.Galletitas;
             string nombre = "Obleas";
             string marca = "Terrabusi";
             float precio = 200;
@@ -85,7 +85,7 @@ namespace TestValidaciones
         [ExpectedException(typeof(Exception))]
         public void DescripcionNoValidoLanzaExcepcion()
         {
-            Object tipo = ETipo.Galletitas;
+            object tipo = ETipo.Galletitas;
             string nombre = "Obleas";
             string marca = "Terrabusi";
             float precio = 200;

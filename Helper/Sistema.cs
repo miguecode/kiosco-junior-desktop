@@ -1,5 +1,5 @@
 ﻿using Entidades;
-using EntidadesDB;
+using LogicaSQL.EntidadesDerivadas;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +13,7 @@ namespace Helper
         private static List<Usuario> listaDeUsuarios;
         private static List<Producto> listaDeProductos;
         private static List<Venta> listaDeVentas;
-        public static bool exportacionAutomatica;
+        private static bool exportacionAutomatica;
          
         public static List<Usuario> ListaDeUsuarios { get => listaDeUsuarios; set => listaDeUsuarios = value; }
         public static List<Producto> ListaDeProductos { get => listaDeProductos; set => listaDeProductos = value; }

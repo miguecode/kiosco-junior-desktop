@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -11,9 +12,8 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    public class Venta : Dato
+    public class Venta
     {
-        //private int id;
         private string nombreCliente;
         private float valorTotal;
         private int cantidadProductos;
@@ -24,26 +24,33 @@ namespace Entidades
         private int cantidadDulces;
         private int cantidadComidas;
         private int cantidadOtros;
-        private static int idActual;
         private int idDB;
 
-        //public int Id { get => id; }
+        [Column("id")]
         public int IdDB { get => idDB; set => idDB = value; }
+        [Column("nombre_cliente")]
         public string NombreCliente { get => nombreCliente; set => nombreCliente = value; }
+        [Column("valor_total")]
         public float ValorTotal { get => valorTotal; set => valorTotal = value; }
+        [Column("cantidad_productos")]
         public int CantidadProductos { get => cantidadProductos; set => cantidadProductos = value; }
+        [Column("cantidad_cigarrillos")]
         public int CantidadCigarrillos { get => cantidadCigarrillos; set => cantidadCigarrillos = value; }
+        [Column("cantidad_bebidas")]
         public int CantidadBebidas { get => cantidadBebidas; set => cantidadBebidas = value; }
+        [Column("cantidad_snacks")]
         public int CantidadSnacks { get => cantidadSnacks; set => cantidadSnacks = value; }
+        [Column("cantidad_galletitas")]
         public int CantidadGalletitas { get => cantidadGalletitas; set => cantidadGalletitas = value; }
+        [Column("cantidad_dulces")]
         public int CantidadDulces { get => cantidadDulces; set => cantidadDulces = value; }
+        [Column("cantidad_comidas")]
         public int CantidadComidas { get => cantidadComidas; set => cantidadComidas = value; }
+        [Column("cantidad_otros")]
         public int CantidadOtros { get => cantidadOtros; set => cantidadOtros = value; }
-
 
         public Venta()
         {
-            //this.id = 0000;
             this.nombreCliente = String.Empty;
             this.valorTotal = 0;
             this.idDB = 0000;
@@ -53,7 +60,6 @@ namespace Entidades
             int cantidadCigarrillos, int cantidadBebidas, int cantidadSnacks,
             int cantidadGalletitas, int cantidadDulces, int cantidadComidas, int cantidadOtros)
         {
-            //id = idActual;
             this.nombreCliente = nombreCliente;
             this.valorTotal = valorTotal;
             this.cantidadProductos = cantidadProductos;
@@ -64,7 +70,6 @@ namespace Entidades
             this.cantidadDulces = cantidadDulces;
             this.cantidadComidas = cantidadComidas;
             this.cantidadOtros = cantidadOtros;
-            //idActual++;
             this.idDB = 0000;
         }
 
@@ -77,37 +82,7 @@ namespace Entidades
             this.idDB = idDB;
         }
 
-        static Venta()
-        {
-            idActual = 1000;
-        }
-
-        public override string GetParser()
-        {
-            return $"{IdDB};{NombreCliente};{ValorTotal};{cantidadProductos};{cantidadCigarrillos};" +
-                $"{cantidadBebidas};{cantidadSnacks};{cantidadGalletitas};{cantidadDulces};{cantidadComidas};{cantidadOtros}";
-        }
-
-        public override Dato CrearEntidadPorLista(List<string> dato)
-        {
-            string nombreCliente = dato[1];
-            float valor = float.Parse(dato[2]);
-            int cantidadProductos = int.Parse(dato[3]);
-            int cantidadCigarrillos = int.Parse(dato[4]);
-            int cantidadBebidas = int.Parse(dato[5]);
-            int cantidadSnacks = int.Parse(dato[6]);
-            int cantidadGalletitas = int.Parse(dato[7]);
-            int cantidadDulces = int.Parse(dato[8]);
-            int cantidadComidas = int.Parse(dato[9]);
-            int cantidadOtros = int.Parse(dato[10]);
-
-            Venta ventaCreada = new Venta(nombreCliente, valor, cantidadProductos, cantidadCigarrillos,
-                cantidadBebidas, cantidadSnacks, cantidadGalletitas, cantidadDulces, cantidadComidas, cantidadOtros);
-
-            return ventaCreada;
-        }
-
-        public override Venta CrearEntidadPorBaseDeDatos(DataRow row)
+        public Venta CrearEntidadPorBaseDeDatos(DataRow row)
         {
             int id = Convert.ToInt32(row["id"].ToString());
             string nombreCliente = row["nombre_cliente"].ToString() ?? "";

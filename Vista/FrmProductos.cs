@@ -1,6 +1,6 @@
 ﻿using Entidades;
-using EntidadesDB;
 using Helper;
+using LogicaSQL.EntidadesDerivadas;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -76,7 +76,7 @@ namespace Vista
                 Producto productoSeleccionado = SeleccionarProductoEspecifico(Sistema.ListaDeProductos);
                 Sistema.ListaDeProductos.Remove(productoSeleccionado);
 
-                controladorDB.Eliminar(productoSeleccionado);
+                controladorDB.Eliminar(productoSeleccionado, productoSeleccionado.IdDB.ToString());
 
                 Logs.CrearRegistro(usuario.NombreUsuario, $"Eliminó un producto [{productoSeleccionado.IdDB}]");
 
