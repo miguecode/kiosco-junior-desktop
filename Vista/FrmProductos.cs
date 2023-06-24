@@ -76,9 +76,9 @@ namespace Vista
                 Producto productoSeleccionado = SeleccionarProductoEspecifico(Sistema.ListaDeProductos);
                 Sistema.ListaDeProductos.Remove(productoSeleccionado);
 
-                controladorDB.Eliminar(productoSeleccionado, productoSeleccionado.IdDB.ToString());
+                controladorDB.Eliminar(productoSeleccionado, productoSeleccionado.Id.ToString());
 
-                Logs.CrearRegistro(usuario.NombreUsuario, $"Eliminó un producto [{productoSeleccionado.IdDB}]");
+                Logs.CrearRegistro(usuario.NombreUsuario, $"Eliminó un producto [{productoSeleccionado.Id}]");
 
                 ActualizarDataGrid(Sistema.ListaDeProductos);
             }
@@ -95,7 +95,7 @@ namespace Vista
                 {
                     controladorDB.Modificar(productoSeleccionado);
 
-                    Logs.CrearRegistro(usuario.NombreUsuario, $"Modificó un producto [{productoSeleccionado.IdDB}]");
+                    Logs.CrearRegistro(usuario.NombreUsuario, $"Modificó un producto [{productoSeleccionado.Id}]");
 
                     ActualizarDataGrid(Sistema.ListaDeProductos);
                 }
@@ -170,7 +170,7 @@ namespace Vista
                     listaOrdenada = Sistema.ListaDeProductos;
                     break;
                 case "ID":
-                    listaOrdenada = Sistema.ListaDeProductos.OrderBy(p => p.IdDB).ToList();
+                    listaOrdenada = Sistema.ListaDeProductos.OrderBy(p => p.Id).ToList();
                     break;
                 case "Tipo":
                     listaOrdenada = Sistema.ListaDeProductos.OrderBy(p => p.Tipo).ToList();

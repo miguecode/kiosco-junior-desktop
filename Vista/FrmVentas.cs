@@ -27,8 +27,8 @@ namespace Vista
             InitializeComponent();
             ingresosTotales = 0;
             productosVendidosTotales = 0;
-            compradorMasFrecuente = String.Empty;
-            tipoMasVendido = String.Empty;
+            compradorMasFrecuente = string.Empty;
+            tipoMasVendido = string.Empty;
             usuario = usuarioActual;
         }
 
@@ -74,7 +74,7 @@ namespace Vista
                 StringBuilder sb = new StringBuilder();
 
                 sb.AppendLine("Detalles de la venta\n");
-                sb.AppendLine($"ID de la transacción: {ventaSeleccionada.IdDB}");
+                sb.AppendLine($"ID de la transacción: {ventaSeleccionada.Id}");
                 sb.AppendLine($"Comprador: {ventaSeleccionada.NombreCliente}\n");
                 sb.AppendLine($"Cantidad de productos comprados: {ventaSeleccionada.CantidadProductos}\n");
                 sb.AppendLine($"Cigarrillos comprados: {ventaSeleccionada.CantidadCigarrillos}");
@@ -153,7 +153,7 @@ namespace Vista
         /// <param name="lista"></param>
         private void EscribirCompradorMasFrecuente(List<Venta> lista)
         {
-            compradorMasFrecuente = String.Empty;
+            compradorMasFrecuente = string.Empty;
             lbl_CompradorFrecuente.Text = compradorMasFrecuente;
 
             if (lista.Count > 0)
@@ -167,7 +167,7 @@ namespace Vista
 
         private void EscribirTipoMasVendido(List<Venta> lista)
         {
-            tipoMasVendido = String.Empty;
+            tipoMasVendido = string.Empty;
             lbl_TipoMasVendido.Text = tipoMasVendido;
 
             if (lista.Count > 0)

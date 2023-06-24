@@ -50,7 +50,7 @@ namespace Helper
 
         public string GetLogs()
         {
-            string consulta = "SELECT * FROM logs";
+            string consulta = "SELECT * FROM logs ORDER BY hora_y_fecha ASC;";
 
             StringBuilder sb = new StringBuilder();
 

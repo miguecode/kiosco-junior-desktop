@@ -45,7 +45,7 @@ namespace Vista
                 if (esProductoNuevo)
                     VerificarSiExiste(productoIngresado);
 
-                this.DialogResult = DialogResult.OK;
+                DialogResult = DialogResult.OK;
             }catch(Exception ex)
             {
                 lbl_Error.Visible = true;
@@ -55,7 +55,7 @@ namespace Vista
 
         private void btn_Cancelar_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Cancel;
+            DialogResult = DialogResult.Cancel;
         }
 
         /// <summary>

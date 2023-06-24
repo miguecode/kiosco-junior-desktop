@@ -280,7 +280,7 @@ namespace Vista
             lbl_Total.Text = $"TOTAL: $ {precioTotal:0.00}";
         }
 
-        private void ReducirStockProducto()
+        private static void ReducirStockProducto()
         {
             foreach (Producto producto in Sistema.ListaDeProductos)
             {

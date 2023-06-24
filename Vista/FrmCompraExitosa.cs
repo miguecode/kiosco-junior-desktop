@@ -18,19 +18,19 @@ namespace Vista
         public FrmCompraExitosa(Eventos eventos)
         {
             InitializeComponent();
-            this.eventosCompras = eventos;
+            eventosCompras = eventos;
             eventosCompras.SeConfirmoLaCompra += MostrarMensaje;
         }
 
         private void MostrarMensaje(string mensaje)
         {
             rtb_Mensaje.Text = mensaje;
-            this.ShowDialog();
+            ShowDialog();
         }
 
         private void btn_Aceptar_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.OK;
+            DialogResult = DialogResult.OK;
         }
     }
 }

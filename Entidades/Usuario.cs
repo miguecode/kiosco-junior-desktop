@@ -35,11 +35,11 @@ namespace Entidades
 
         public Usuario()
         {
-            nombre = String.Empty;
-            apellido = String.Empty;
+            nombre = string.Empty;
+            apellido = string.Empty;
             dni = 00000000;
-            nombreUsuario = String.Empty;
-            contrasenia = String.Empty;
+            nombreUsuario = string.Empty;
+            contrasenia = string.Empty;
             rol = ERol.Cliente;
         }
         

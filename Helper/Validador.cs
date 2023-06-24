@@ -24,7 +24,7 @@ namespace Helper
         /// <param name="nombreUsuario"></param>
         /// <param name="contrasenia"></param>
         /// <exception cref="Exception"></exception>
-        public static void ValidarDatosUsuario(Object rol, string nombre, string apellido,
+        public static void ValidarDatosUsuario(object rol, string nombre, string apellido,
                                                  string dni, string nombreUsuario, string contrasenia)
         {
             StringBuilder sb = new StringBuilder();
@@ -65,7 +65,7 @@ namespace Helper
         /// <param name="stock"></param>
         /// <param name="descripcion"></param>
         /// <exception cref="Exception"></exception>
-        public static void ValidarDatosProducto(Object tipo, string nombre, string marca, float precio,
+        public static void ValidarDatosProducto(object tipo, string nombre, string marca, float precio,
                                             float stock, string descripcion)
         {
             StringBuilder sb = new StringBuilder();
@@ -142,7 +142,7 @@ namespace Helper
             return true;
         }
 
-        public static bool ValidarItemEnumerado(Object itemSeleccionado, Type tipoEnumerado)
+        public static bool ValidarItemEnumerado(object itemSeleccionado, Type tipoEnumerado)
         {
             if (itemSeleccionado is null)
                 return false;

@@ -99,7 +99,7 @@ namespace Helper
         {
             string? linea;
 
-            while ((linea = sr.ReadLine()) != null)
+            while ((linea = sr.ReadLine()) is not null)
             {
                 T objeto = Activator.CreateInstance<T>();
 
@@ -117,7 +117,7 @@ namespace Helper
             {
                 PropertyInfo? propiedad = typeof(T).GetProperty(columnas[i]);
 
-                if (propiedad != null && propiedad.CanWrite)
+                if (propiedad is not null && propiedad.CanWrite)
                 {
                     if (!propiedad.PropertyType.IsEnum)
                     {

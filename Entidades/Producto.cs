@@ -17,19 +17,19 @@ namespace Entidades
         private float precio;
         private ETipo tipo;
         private int stock;
-        private int idDB;
+        private int id;
         private int cantidadEnCarrito;
 
         public Producto()
         {
-            this.nombre = String.Empty;
-            this.tipo = ETipo.Otros;
-            this.marca = String.Empty;
-            this.descripcion = String.Empty;
-            this.precio = 1;
-            this.stock = 1;
-            this.idDB = 0000;
-            this.cantidadEnCarrito = 0;
+            nombre = string.Empty;
+            tipo = ETipo.Otros;
+            marca = string.Empty;
+            descripcion = string.Empty;
+            precio = 1;
+            stock = 1;
+            id = 0000;
+            cantidadEnCarrito = 0;
         }
 
         public Producto(string nombre, ETipo tipo, string marca, string descripcion,
@@ -41,18 +41,18 @@ namespace Entidades
             this.descripcion = descripcion;
             this.precio = precio;
             this.stock = stock;
-            this.idDB = 0000;
-            this.cantidadEnCarrito = 0;
+            id = 0000;
+            cantidadEnCarrito = 0;
         }
 
-        public Producto(int idDB, string nombre, ETipo tipo, string marca, string descripcion,float precio, int stock)
+        public Producto(int id, string nombre, ETipo tipo, string marca, string descripcion,float precio, int stock)
                                  : this(nombre, tipo, marca, descripcion, precio, stock)
         {
-            this.idDB = idDB;
+            this.id = id;
         }
 
         [Column("id")]
-        public int IdDB { get => idDB; set => idDB = value; }
+        public int Id { get => id; set => id = value; }
         [Column("nombre")]
         public string Nombre { get => nombre; set => nombre = value; }
         [Column("tipo")]
@@ -71,19 +71,19 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.Append($"ID: {IdDB} NOMBRE: {Nombre} - PRECIO: {Precio}");
+            sb.Append($"ID: {Id} NOMBRE: {Nombre} - PRECIO: {Precio}");
 
             return sb.ToString();
         }
 
         public static bool operator ==(Producto p1, Producto p2)
         {
-            return p1.IdDB == p2.IdDB;
+            return p1.Id == p2.Id;
         }
 
         public static bool operator !=(Producto p1, Producto p2)
         {
-            return !(p1.IdDB == p2.IdDB);
+            return !(p1.Id == p2.Id);
         }
 
         public override bool Equals(object? obj)
@@ -96,7 +96,7 @@ namespace Entidades
 
         public override int GetHashCode()
         {
-            return IdDB;
+            return Id;
         }
     }
 }

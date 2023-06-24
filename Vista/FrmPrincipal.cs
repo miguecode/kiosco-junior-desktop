@@ -42,7 +42,7 @@ namespace Vista
 
         private void smi_Inicio_Click(object sender, EventArgs e)
         {
-            foreach (var formularioHijo in this.MdiChildren)
+            foreach (var formularioHijo in MdiChildren)
             {
                 formularioHijo.Hide();
                 pan_Inicio.BringToFront();
@@ -103,7 +103,7 @@ namespace Vista
         {
             formLogin.LimpiarDatos();
             formLogin.Show();
-            this.Close();
+            Close();
         }
 
         private void smi_Cerrar_Click(object sender, EventArgs e)

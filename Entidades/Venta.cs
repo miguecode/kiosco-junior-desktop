@@ -24,10 +24,10 @@ namespace Entidades
         private int cantidadDulces;
         private int cantidadComidas;
         private int cantidadOtros;
-        private int idDB;
+        private int id;
 
         [Column("id")]
-        public int IdDB { get => idDB; set => idDB = value; }
+        public int Id { get => id; set => id = value; }
         [Column("nombre_cliente")]
         public string NombreCliente { get => nombreCliente; set => nombreCliente = value; }
         [Column("valor_total")]
@@ -51,9 +51,9 @@ namespace Entidades
 
         public Venta()
         {
-            this.nombreCliente = String.Empty;
-            this.valorTotal = 0;
-            this.idDB = 0000;
+            nombreCliente = string.Empty;
+            valorTotal = 0;
+            id = 0000;
         }
 
         public Venta(string nombreCliente, float valorTotal, int cantidadProductos,
@@ -70,16 +70,16 @@ namespace Entidades
             this.cantidadDulces = cantidadDulces;
             this.cantidadComidas = cantidadComidas;
             this.cantidadOtros = cantidadOtros;
-            this.idDB = 0000;
+            this.id = 0000;
         }
 
-        public Venta(int idDB, string nombreCliente, float valorTotal, int cantidadProductos,
+        public Venta(int id, string nombreCliente, float valorTotal, int cantidadProductos,
             int cantidadCigarrillos, int cantidadBebidas, int cantidadSnacks,
             int cantidadGalletitas, int cantidadDulces, int cantidadComidas, int cantidadOtros) : this(nombreCliente,
                 valorTotal, cantidadProductos, cantidadCigarrillos, cantidadBebidas ,cantidadSnacks,
                 cantidadGalletitas, cantidadDulces, cantidadComidas, cantidadOtros)
         {
-            this.idDB = idDB;
+            this.id = id;
         }
 
         public Venta CrearEntidadPorBaseDeDatos(DataRow row)
@@ -106,7 +106,7 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine($"ID: {IdDB}");
+            sb.AppendLine($"ID: {Id}");
             sb.AppendLine($"COMPRADOR: {NombreCliente}");
             sb.AppendLine($"VALOR TOTAL: {ValorTotal}");
             sb.AppendLine($"CANTIDAD PRODUCTOS: {CantidadProductos}");

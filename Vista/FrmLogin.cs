@@ -30,7 +30,7 @@ namespace Vista
                 usuarioIngresado = Autenticacion.ConfirmarIngresoOrThrow(txt_Nombre.Text, txt_Contrasenia.Text);
                 FrmPrincipal formPrincipal = new FrmPrincipal(this);
                 formPrincipal.Show();
-                this.Hide();
+                Hide();
             }
             catch(Exception ex)
             {
@@ -98,8 +98,8 @@ namespace Vista
 
         public void LimpiarDatos()
         {
-            txt_Nombre.Text = String.Empty;
-            txt_Contrasenia.Text = String.Empty;
+            txt_Nombre.Text = string.Empty;
+            txt_Contrasenia.Text = string.Empty;
             lbl_Error.Visible = false;
             txt_Contrasenia.UseSystemPasswordChar = true;
         }
@@ -115,7 +115,7 @@ namespace Vista
             usuarioIngresado = usuario;
             FrmPrincipal formPrincipal = new FrmPrincipal(this);
             formPrincipal.Show();
-            this.Hide();
+            Hide();
         }
     }
 }
