@@ -28,12 +28,25 @@ namespace Helper
             DelegadoRegistrarAccion = RegistrarAccion;
         }
 
+        /// <summary>
+        /// Crea un objeto de tipo Logs pasando por parámetro el momento actual
+        /// en el tiempo, el usuario recibido y la acción recibida.
+        /// Después, llama al delegado de registrar acción para usar su método.
+        /// </summary>
+        /// <param name="usuario"></param>
+        /// <param name="accion"></param>
         public static void CrearRegistro(string usuario, string accion)
         {
             _ = new Logs(DateTime.Now, usuario, accion);
             DelegadoRegistrarAccion?.Invoke();
         }
 
+        /// <summary>
+        /// Le envía una consulta a la base de datos la cual agrega un nuevo
+        /// registro en la tabla logs. Lo hace con los parámetros que están 
+        /// establecidos en los atributos del objeto actual. Después, llama al
+        /// evento de actualizar la sección logs, para que muestre el registro agregado.
+        /// </summary>
         public void RegistrarAccion()
         {
             string consulta =
@@ -48,6 +61,13 @@ namespace Helper
             Eventos.ActualizarSeccionLogs();
         }
 
+        /// <summary>
+        /// Le envía una consulta a la base de datos la cual recibe todos los 
+        /// registros de la tabla ordenados ascendentemente por fecha y hora.
+        /// Crea una DataTable con cada registro y con cada fila obtiene los valores
+        /// que debe escribir en una línea.
+        /// </summary>
+        /// <returns>Retorna todas las líneas escritas (registros)</returns>
         public string GetLogs()
         {
             string consulta = "SELECT * FROM logs ORDER BY hora_y_fecha ASC;";

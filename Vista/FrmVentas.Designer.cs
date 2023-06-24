@@ -47,7 +47,7 @@
             this.lbl_ProductosVendidosTotales = new System.Windows.Forms.Label();
             this.lbl_TipoMasVendido = new System.Windows.Forms.Label();
             this.lbl_TituloTipo = new System.Windows.Forms.Label();
-            this.IdDB = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreClienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valorTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtg_Ventas)).BeginInit();
@@ -76,7 +76,7 @@
             this.dtg_Ventas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dtg_Ventas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_Ventas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdDB,
+            this.Id,
             this.nombreClienteDataGridViewTextBoxColumn,
             this.valorTotalDataGridViewTextBoxColumn});
             this.dtg_Ventas.DataSource = this.ventaBindingSource;
@@ -253,14 +253,14 @@
             this.lbl_TituloTipo.TabIndex = 12;
             this.lbl_TituloTipo.Text = "Tipo de producto más vendido:";
             // 
-            // IdDB
+            // Id
             // 
-            this.IdDB.DataPropertyName = "IdDB";
-            this.IdDB.HeaderText = "ID";
-            this.IdDB.Name = "IdDB";
-            this.IdDB.ReadOnly = true;
-            this.IdDB.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.IdDB.Width = 40;
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "ID";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Id.Width = 40;
             // 
             // nombreClienteDataGridViewTextBoxColumn
             // 
@@ -336,7 +336,7 @@
         private Label lbl_ProductosVendidosTotales;
         private Label lbl_TipoMasVendido;
         private Label lbl_TituloTipo;
-        private DataGridViewTextBoxColumn IdDB;
+        private DataGridViewTextBoxColumn Id;
         private DataGridViewTextBoxColumn nombreClienteDataGridViewTextBoxColumn;
         private DataGridViewTextBoxColumn valorTotalDataGridViewTextBoxColumn;
     }

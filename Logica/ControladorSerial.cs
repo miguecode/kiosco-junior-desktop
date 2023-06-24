@@ -62,6 +62,10 @@ namespace Helper
             }
         }
 
+        /// <summary>
+        /// Primero vacía cada tabla. Después las carga otra vez con los datos
+        /// que tenga cada lista en el sistema.
+        /// </summary>
         private static void TrasladarImportacionALaDB()
         {
             UsuarioDB controladorUsuarioDB = new UsuarioDB();

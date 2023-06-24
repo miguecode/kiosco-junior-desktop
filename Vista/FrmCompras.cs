@@ -294,6 +294,10 @@ namespace Vista
             }
         }
 
+        /// <summary>
+        /// Genera una cadena de texto con los datos del cliente y los productos de su carrito.
+        /// </summary>
+        /// <returns>Retorna la cadena</returns>
         private string GenerarMensajeCompraExitosa()
         {
             StringBuilder sb = new StringBuilder();

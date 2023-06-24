@@ -31,6 +31,13 @@ namespace LogicaSQL
             EscribirConsultas();
         }
 
+        /// <summary>
+        /// Crea una consulta para Agregar registro y se la pasa a un comando SQL.
+        /// Parametriza valores y ejecuta la consulta con el comando creado.
+        /// Si esto lanza una excepción, la atrapa y y la lanza con un mensaje.
+        /// </summary>
+        /// <param name="entidad"></param>
+        /// <exception cref="Exception"></exception>
         public void Agregar(T entidad)
         {
             try
@@ -49,6 +56,15 @@ namespace LogicaSQL
             }
         }
 
+        /// <summary>
+        /// Crea una consulta para Eliminar registro y se la pasa a un comando SQL.
+        /// Verifica si la entidad recibida es un usuario. Si lo es, el identificador será 'dni'.
+        /// Parametriza al comando con el valor del identificador y lo ejecuta.
+        /// Si esto lanza una excepción, la atrapa y y la lanza con un mensaje.
+        /// </summary>
+        /// <param name="entidad"></param>
+        /// <param name="identificacion"></param>
+        /// <exception cref="Exception"></exception>
         public void Eliminar(T entidad, string identificacion)
         {
             try
@@ -70,6 +86,13 @@ namespace LogicaSQL
             }
         }
 
+        /// <summary>
+        /// Crea una consulta para Modificar registro y se la pasa a un comando SQL.
+        /// Parametriza valores y ejecuta la consulta con el comando creado.
+        /// Si esto lanza una excepción, la atrapa y y la lanza con un mensaje.
+        /// </summary>
+        /// <param name="entidad"></param>
+        /// <exception cref="Exception"></exception>
         public void Modificar(T entidad)
         {
             try
@@ -88,6 +111,12 @@ namespace LogicaSQL
             }
         }
 
+        /// <summary>
+        /// Crea una consulta para Traer todos los registros y se la pasa a un comando SQL.
+        /// Crea una DataTable y le carga el valor que devuelva la ejecución del a consulta.
+        /// Recorre cada una de sus filas, y por cada una crea una entidad la cual agrega a una lista.
+        /// </summary>
+        /// <returns>Retorna la lista de registros creada</returns>
         public List<T> TraerTodosLosRegistros()
         {
             string consulta = consultas["Traer todos los registros"];
@@ -106,6 +135,12 @@ namespace LogicaSQL
             return registros;
         }
 
+        /// <summary>
+        /// Crea una consulta para Eliminar todos los registros y se la pasa a un comando SQL.
+        /// Ejecuta el comando con la consulta.
+        /// Si esto lanza una excepción, la atrapa y y la lanza con un mensaje.
+        /// </summary>
+        /// <exception cref="Exception"></exception>
         public void EliminarTodos()
         {
             try
@@ -122,6 +157,11 @@ namespace LogicaSQL
             }
         }
 
+        /// <summary>
+        /// Le agrega elementos al diccionario consultas. Las keys son el nombre de la
+        /// acción a realizar por la consulta, y los values son el código SQL que debe ejecutar.
+        /// Reutiliza los valores de las tablas, columnas, identificadores y asignaciones.
+        /// </summary>
         private void EscribirConsultas()
         {
             consultas.Add("Agregar registro",
@@ -142,6 +182,16 @@ namespace LogicaSQL
                 $"DBCC CHECKIDENT ('ventas', RESEED, 1000)");
         }
 
+        /// <summary>
+        /// Guarda el tipo de la entidad que recibe para saber con qué clase se está trabajando.
+        /// Toma todas las propiedades de esa entidad y las guarda en un array propiedades.
+        /// Recorre cada propiedad del array; toma cada columna en base a la propiedad
+        /// usando el CustomAttribute para la columna (el nombre que le corresponde a la DB).
+        /// Si esta columna no es nula, toma como parámetro su nombre, y como valor, el valor
+        /// propio de la entidad en esa propiedad. Después, agrega el parámetro con estos valores.
+        /// </summary>
+        /// <param name="command"></param>
+        /// <param name="entidad"></param>
         private static void Parametrizar(SqlCommand command, T entidad)
         {
             Type tipoEntidad = typeof(T);
