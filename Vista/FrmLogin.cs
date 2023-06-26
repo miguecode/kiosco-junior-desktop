@@ -1,5 +1,6 @@
 ﻿using Entidades;
 using Helper;
+using LogicaSQL.EntidadesDerivadas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,6 +32,7 @@ namespace Vista
                 FrmPrincipal formPrincipal = new FrmPrincipal(this);
                 formPrincipal.Show();
                 Hide();
+                Logs.CrearRegistro(usuarioIngresado.NombreUsuario, $"Inició sesión");
             }
             catch(Exception ex)
             {
@@ -116,6 +118,7 @@ namespace Vista
             FrmPrincipal formPrincipal = new FrmPrincipal(this);
             formPrincipal.Show();
             Hide();
+            Logs.CrearRegistro(usuario.NombreUsuario, $"Inició sesión");
         }
     }
 }

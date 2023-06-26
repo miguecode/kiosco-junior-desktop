@@ -109,7 +109,7 @@
             this.lbl_InfoExportar.Size = new System.Drawing.Size(316, 60);
             this.lbl_InfoExportar.TabIndex = 6;
             this.lbl_InfoExportar.Text = "Esto actualizará los archivos correspondientes \r\ncon la información actual de los" +
-    " usuarios, \r\nproductos y ventas.";
+                                             " usuarios, \r\nproductos y ventas.";
             // 
             // pan_Importar
             // 
