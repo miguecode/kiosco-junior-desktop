@@ -36,6 +36,10 @@ namespace LogicaSQL
             return dataTable;
         }
 
+        /// <summary>
+        /// Abre la conexión, ejecuta el comando NonQuery y cierra la conexión.
+        /// </summary>
+        /// <param name="command"></param>
         protected void EjecutarConsultaNonQuery(SqlCommand command)
         {
             Abrir();
