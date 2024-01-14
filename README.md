@@ -24,15 +24,15 @@ Los clientes no tienen ninguna de esas funciones, estos solo podrán realizar co
 Cada cliente tiene una lista de productos (Carrito), la cual va a crear agregándole los productos del sistema  
 que seleccione. Cabe destacar que los productos tienen su propio Stock, por lo tanto, pueden agotarse.  
 
-#### Base de datos SQL
+#### - Base de datos SQL
 Ahora, los datos del programa persisten en una base de datos SQL Server. Tiene 3 tablas principales,  
 para usuarios, productos y ventas. También contiene una tabla para los registros del programa.  
 
-#### Informes (CSV y JSON)
+#### - Informes (CSV y JSON)
 El SuperUsuario tiene acceso a la sección Informes. En ella, tiene la opción de importar y exportar datos,  
 ya sea en formato CSV o JSON.  
 
-#### Archivos (Inactivo)
+#### - Archivos (Inactivo)
 Se utilizan 3 archivos .txt para cargar las listas principales del proyecto. Estas 3 listas son manejadas por  
 una clase estática llamada Sistema. Al clonar el repositorio estos archivos no existen, por lo tanto, el programa  
 se encarga de crearlos por default (con un SuperUsuario).  
