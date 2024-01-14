@@ -36,4 +36,6 @@ ya sea en formato CSV o JSON.
 Se utilizan 3 archivos .txt para cargar las listas principales del proyecto. Estas 3 listas son manejadas por  
 una clase estática llamada Sistema. Al clonar el repositorio estos archivos no existen, por lo tanto, el programa  
 se encarga de crearlos por default (con un SuperUsuario).  
-  
+
+> [!NOTE]
+> Universidad Tecnológica Nacional, 2023.
