@@ -1,12 +1,13 @@
-# Primer y Segundo Parcial - Laboratorio II
+# Proyecto Kiosco Junior
 
-## Datos
-- Nombre: Gil Miguel Ángel
-- Correo: junmigue7@gmail.com
-- División 1E
+## Introducción
+Este repositorio contiene un proyecto que corresponde los dos parciales de las materias Programacion II y Laboratorio II, pertenecientes a la carrera Tecnicatura Universitaria en Programación.
 
-### Proyecto Kiosco Junior
-Mi aplicación simula la gestión de un kiosco. Tiene usuarios con distintos roles, cada uno con su función.  
+
+## Aplicación
+La aplicación es un Windows Form, hecho en .NET con C#.
+
+Simula la gestión de un kiosco. Tiene usuarios con distintos roles, cada uno con su función.  
 Maneja tres listas principales: usuarios, productos y ventas. Los usuarios manejadores (SuperUsuarios y Empleados)  
 controlan estas tres colecciones. Los clientes utilizan un sistema de compras.
 
