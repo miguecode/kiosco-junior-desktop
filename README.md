@@ -1,15 +1,42 @@
-# Proyecto Kiosco Junior
+# 🏪 Maxikiosco Junior - Aplicación de escritorio en .NET con C#
 
-## Introducción
-Este repositorio contiene un proyecto que corresponde los dos parciales de las materias Programacion II y Laboratorio II, pertenecientes a la carrera Tecnicatura Universitaria en Programación.
+Este proyecto es una aplicación de escritorio en .NET (Windows Forms), con C#. Fue hecho en 2023 y se trata de un sistema de gestión e interacción en un kiosco. Trabaja con una base de datos SQL y usuarios predeterminados.
+
+## 📘 Descripción
+
+Maxikiosco Junior es una aplicación de escritorio hecha en .NET con C#. Para acceder a las funcionalidades del sistema, es necesario iniciar sesión. El login tiene opciones de ingreso rápido para no tener que hacerlo manualmente. Hay 3 tipos de usuario: los administradores, los empleados, y los clientes. Los primeros van a acceder a las opciones de gestión del kiosco (productos, ventas, informes), mientras que los clientes van a poder comprar productos en la sección de compras.
 
 
-## Aplicación
-La aplicación es un Windows Form, hecho en .NET con C#.
+## 👨‍💼 Funcionalidades del Administrador
 
-Simula la gestión de un kiosco. Tiene usuarios con distintos roles, cada uno con su función.  
-Maneja tres listas principales: usuarios, productos y ventas. Los usuarios manejadores (SuperUsuarios y Empleados)  
-controlan estas tres colecciones. Los clientes utilizan un sistema de compras.
+- **Gestión de Productos**: Muestra la lista de productos del sistema con sus detalles. También permite agregar, modificar o eliminar los que quiera.
+- **Gestión de Usuarios**: Muestra la lista de usuarios del sistema con sus datos. También permite crear nuevos, eliminarlos, o modificar sus datos.
+- **Ver estadísticas**: Muestra el historial de ventas (el cual puede vaciar), y ver estadísticas como la cantidad de ventas o de ingresos totales.
+- **Exportación e importación**: Permite exportar o importar datos de usuarios productos y ventas, desde archivos de tipo CSV o JSON.
+- **Ver registros**: Muestra el historial de acciones realizadas por los distintos usuarios del sistema, con su fecha y hora específica.
+
+## 🧑 Funcionalidades de Empleados o Clientes
+
+- **Los empleados** son como administradores pero con funcionalidades limitadas. Estos sólo van a tener acceso a la gestión de productos, y a ver las estadísticas de ventas.
+- **Los clientes** no tendrán acceso a ninguna de las funcionalidades anteriores. Lo único que puede hacer un cliente es acceder al menú de compras, y realizar las compras que guste.
+
+## 🖥️ Pantallas
+
+- **Login**
+
+  En esta pantalla, el usuario debe ingresar sesión. Con el boton "Auto.", se autocompleta con datos aleatorios (funcionales), y con los ingresos rápidos se ingresa automáticamente.
+
+  <img src="https://github.com/user-attachments/assets/4f8a2399-d031-4021-9092-815cb39892d2" width="600"/>
+
+- **Menú Principal**
+  
+  Esta es la pantalla principal que ve cualquier usuario, con la diferencia de las opciones del menú. En este caso, estamos viendo la vista de un administrador, el cual tiene acceso a todas las secciones. La del empleado es igual pero sin "Gestión Usuarios", "Informes", ni "Registros". 
+
+  <img src="" width="600"/>
+
+-- --
+
+
 
 ### Detalles generales
 La aplicación inicia con un Login, tiene un botón 'Auto.' el cual autocompleta los datos de algún  
