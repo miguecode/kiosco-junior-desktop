@@ -1,6 +1,6 @@
-# 🏪 Maxikiosco Junior - Aplicación de escritorio en .NET con C#
+# 🏪 Maxikiosco Junior - Aplicación de escritorio
 
-Este proyecto es una aplicación de escritorio en .NET (Windows Forms), con C#. Fue hecho en 2023 y se trata de un sistema de gestión e interacción en un kiosco. Trabaja con una base de datos SQL y usuarios predeterminados.
+Este proyecto es una aplicación de escritorio realizada con .NET (Windows Forms), y C#. Fue hecho en 2023 y se trata de un sistema de gestión e interacción en un kiosco. Trabaja con una base de datos SQL y usuarios predeterminados.
 
 ## 📘 Descripción
 
