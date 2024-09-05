@@ -4,7 +4,7 @@ Este proyecto es una aplicación de escritorio realizada con .NET (Windows Forms
 
 ## 📘 Descripción
 
-Maxikiosco Junior es una aplicación de escritorio hecha en .NET con C#. Para acceder a las funcionalidades del sistema, es necesario iniciar sesión. El login tiene opciones de ingreso rápido para no tener que hacerlo manualmente. Hay 3 tipos de usuario: los administradores, los empleados, y los clientes. Los primeros van a acceder a las opciones de gestión del kiosco (productos, ventas, informes), mientras que los clientes van a poder comprar productos en la sección de compras.
+Maxikiosco Junior es una aplicación de escritorio hecha en .NET con C#. Para acceder a las funcionalidades del sistema, es necesario iniciar sesión. El login tiene opciones de ingreso rápido para no tener que hacerlo manualmente. Hay 3 tipos de usuario: los administradores, los empleados, y los clientes. Los primeros van a acceder a las opciones de gestión del kiosco (productos, ventas, informes), mientras que los clientes van a poder comprar productos en la sección de compras. Todos los datos del sistema persisten en una base de datos SQL.
 
 
 ## 👨‍💼 Funcionalidades del Administrador
@@ -30,39 +30,82 @@ Maxikiosco Junior es una aplicación de escritorio hecha en .NET con C#. Para ac
 
 - **Menú Principal**
   
-  Esta es la pantalla principal que ve cualquier usuario, con la diferencia de las opciones del menú. En este caso, estamos viendo la vista de un administrador, el cual tiene acceso a todas las secciones. La del empleado es igual pero sin "Gestión Usuarios", "Informes", ni "Registros". 
+  Esta es la pantalla principal que ve cualquier usuario, con la diferencia de las opciones del menú. En este caso, estamos viendo la vista de un administrador, el cual tiene acceso a       todas las secciones. La del empleado es igual pero sin "Gestión Usuarios", "Informes", ni "Registros". 
 
-  <img src="" width="600"/>
+  <img src="https://github.com/user-attachments/assets/b76aaa67-d958-4d25-8870-dc111b34bb37" width="600"/>
+
+- **Gestión de Productos**
+
+  - En esta pantalla es donde los administradores y empleados van a poder ver la lista entera de productos, tengan o no stock. Pueden ver sus datos, y seleccionar alguno de toda la lista. Al seleccionar alguno (en este caso el primer elemento de ID 1001), el usuario podrá pulsar en **Detalles** para ver la descripción del producto, o también puede **modificarlo o eliminarlo**.
+  - La lista puede ordenarse según el criterio que se elija (puede ser por cualquier dato).
+  - El botón **Agregar** es para hacer un alta de un producto.
+  - El botón **Stockear** aumentará el stock de todos los productos de la lista en la cantidad que se le indique. Por defecto, son 10.
+  
+    <img src="https://github.com/user-attachments/assets/2f30e1f3-4174-41fc-893b-b8385ba41b78" width="600"/>
+ 
+- **Formulario para Productos**
+
+  En esta pantalla, el administrador o empleado podrá crear un nuevo producto, o modificar el producto existente que haya seleccionado. Para confirmar el ingreso, debe completar todos los campos correspondientes sin excepción. 
+    
+  <img src="https://github.com/user-attachments/assets/eab15816-8dfb-4b52-b3d8-174e9947248a" width="600"/>
+
+- **Gestión de Ventas**
+
+  En esta pantalla, el administrador o empleado pueden ver el historial de ventas realizadas, y estadísticas varias. El historial se puede borrar, y también se puede seleccionar alguna venta de la lista para ver su información más específica.
+
+  <img src="https://github.com/user-attachments/assets/1bce28fc-4aac-45d4-b530-0e6d35fac538" width="600"/>
+
+- **Gestión de Usuarios**
+
+  En esta pantalla, a la que sólo puede acceder un administrador, podrá ver la lista entera de usuarios. Al seleccionar alguno, podrá decidir **eliminarlo o modificarlo**. Con el botón **Agregar**, puede crear un nuevo usuario. La lista se puede ordenar por el criterio seleccionado.
+
+  <img src="https://github.com/user-attachments/assets/8aee34b9-e952-4443-aa6a-8717f6bf6656" width="600"/>
+
+- **Formulario para Usuarios**
+
+  En esta pantalla, el administrador podrá crear un nuevo usuario, o modificar los datos de algún usuario existente que haya seleccionado. Para confirmar el ingreso, debe completar todos los campos correspondientes sin excepción. 
+
+  <img src="https://github.com/user-attachments/assets/08eb8dab-892a-45cb-a258-cdba3c234cb1" width="600"/>
+
+- **Importación/Exportación**
+
+  En esta pantalla, el administrador tiene la posibilidad de exportar o importar datos, ya sea con archivos CSV o JSON.
+
+  <img src="https://github.com/user-attachments/assets/903adff7-e1e9-415f-b17d-977d336ed052" width="600"/>
+
+- **Registros**
+
+  En esta pantalla, el administrador puede ver el historial de acciones realizadas por los distintos usuarios del sistema. También puede vaciar el historial si lo desea.
+
+  <img src="https://github.com/user-attachments/assets/4c405be6-bbcf-4926-938f-8915ef0f075d" width="600"/>
+
+- **Ver datos propios**
+
+  Cada usuario, sea administrador, empleado o cliente, tendrá la posibilidad de ver y modificar sus propios datos.
+
+  <img src="https://github.com/user-attachments/assets/b9e1f8d9-6331-4ed1-a3d8-fa7c4f9ee1eb" width="600"/>
+
+- **Sección de Compras**
+
+  Cada cliente puede acceder a esta pantalla, en la cual tiene 2 listas: una con todos los productos, de los cuales sólo se muestran los que tengan stock disponibles. Y la lista de productos que haya seleccionado, es decir, su carrito. El usuario puede quitar individualmente los productos que se haya arrepentido de seleccionar, o también puede vaciar el carrito entero. A la hora de pagar, puede elegir hacerlo en efectivo o por Mercado Pago (con un 5% de aumento).
+
+  <img src="https://github.com/user-attachments/assets/14921b15-c7bf-4304-956d-4a69d4842eac" width="600"/>
+
+- **Compra realizada**
+
+  Cuando el cliente realiza el pago, se muestra esta pantalla con el detalle de los productos seleccionados.
+
+  <img src="https://github.com/user-attachments/assets/269cdc3c-f8ed-4345-91e3-486ecbc6443c" width="600"/>
+
 
 -- --
 
 
+## - Base de datos SQL
+Los datos del sistema persisten en una base de datos SQL.
 
-### Detalles generales
-La aplicación inicia con un Login, tiene un botón 'Auto.' el cual autocompleta los datos de algún  
-usuario aleatorio del sistema. También tiene botones de ingresos rápidos, para agilizar la corrección.  
-Los SuperUsuarios y los Empleados tienen acceso a la ventana 'Productos', en la que pueden usar un ABM.  
-También tienen la ventana de 'Ventas', en la cual verán el historial de ventas del sistema, con algunos datos extra.  
+## 📌 Aclaraciones
 
-La diferencia entre el SuperUsuario y el Empleado es que el primero tiene acceso a la Gestión de Usuarios, a la  
-sección de Informes, y al historial de Registros.  
 
-Los clientes no tienen ninguna de esas funciones, estos solo podrán realizar compras en la ventana 'Compras'.  
-Cada cliente tiene una lista de productos (Carrito), la cual va a crear agregándole los productos del sistema  
-que seleccione. Cabe destacar que los productos tienen su propio Stock, por lo tanto, pueden agotarse.  
-
-#### - Base de datos SQL
-Ahora, los datos del programa persisten en una base de datos SQL Server. Tiene 3 tablas principales,  
-para usuarios, productos y ventas. También contiene una tabla para los registros del programa.  
-
-#### - Informes (CSV y JSON)
-El SuperUsuario tiene acceso a la sección Informes. En ella, tiene la opción de importar y exportar datos,  
-ya sea en formato CSV o JSON.  
-
-#### - Archivos (Inactivo)
-Se utilizan 3 archivos .txt para cargar las listas principales del proyecto. Estas 3 listas son manejadas por  
-una clase estática llamada Sistema. Al clonar el repositorio estos archivos no existen, por lo tanto, el programa  
-se encarga de crearlos por default (con un SuperUsuario).  
-
-> [!NOTE]
-> Universidad Tecnológica Nacional, 2023.
+## 🗃️ Otros proyectos similares
+- [ABM de Pasajeros - Aplicación de consola en C](https://github.com/Leumig/C-ABM-Pasajeros)
