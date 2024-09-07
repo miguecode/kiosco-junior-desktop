@@ -1,5 +1,6 @@
 ﻿using Entidades;
 using Helper;
+using LogicaSQL;
 using LogicaSQL.EntidadesDerivadas;
 using System;
 using System.Collections.Generic;
@@ -21,7 +22,20 @@ namespace Vista
         public FrmLogin()
         {
             InitializeComponent();
-            usuarioIngresado = new Usuario();
+
+            try
+            {
+                Consultas conexionBD = new Consultas();
+                conexionBD.ProbarConexion();
+                usuarioIngresado = new Usuario();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al conectar a la base de datos: {ex.Message}");
+                FrmErrorConexion formErrorConexion = new FrmErrorConexion();
+                formErrorConexion.ShowDialog();
+                Close();
+            }
         }
 
         private void btn_Ingresar_Click(object sender, EventArgs e)
@@ -34,7 +48,7 @@ namespace Vista
                 Hide();
                 Logs.CrearRegistro(usuarioIngresado.NombreUsuario, $"Inició sesión");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 lbl_Error.Text = ex.Message;
                 lbl_Error.Visible = true;
@@ -66,7 +80,7 @@ namespace Vista
         {
             foreach (Usuario usuario in Sistema.ListaDeUsuarios)
             {
-                if(usuario.Rol == ERol.SuperUsuario)
+                if (usuario.Rol == ERol.SuperUsuario)
                 {
                     IngresarRapidoPorUsuario(usuario);
                     break;

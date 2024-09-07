@@ -11,7 +11,7 @@ namespace LogicaSQL
     public class Consultas : Conexion
     {
         public Consultas(string connectionString) : base(connectionString) { }
-        public Consultas() : base("Server=.;Database=UTN_DB;Trusted_Connection=True;") { }
+        public Consultas() : base("Server=.;Database=KIOSCO_JUNIOR;Trusted_Connection=True;") { }
 
         /// <summary>
         /// Abre la conexión SQL y crea un comando al cual le pasa la conexión y una consulta.
@@ -48,5 +48,29 @@ namespace LogicaSQL
 
             Cerrar();
         }
+
+        /// <summary>
+        /// Intenta abrir la conexión, y hace una consulta simple para 
+        /// comprobar que funciona la conexión.
+        /// </summary>
+        /// <exception cref="Exception"></exception>
+        public void ProbarConexion()
+        {
+            try
+            {
+                Abrir();
+
+                SqlCommand command = new SqlCommand("SELECT 1", Connection);
+                command.ExecuteNonQuery();
+
+                Cerrar();
+            }
+            catch (Exception ex)
+            {
+                Cerrar();
+                throw new Exception("No se pudo establecer la conexión con la base de datos", ex);
+            }
+        }
+
     }
 }

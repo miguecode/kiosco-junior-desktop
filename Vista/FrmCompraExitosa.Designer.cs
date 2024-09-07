@@ -28,81 +28,81 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lbl_CompraExitosa = new System.Windows.Forms.Label();
-            this.pnl_Bordes = new System.Windows.Forms.Panel();
-            this.rtb_Mensaje = new System.Windows.Forms.RichTextBox();
-            this.btn_Aceptar = new System.Windows.Forms.Button();
-            this.pnl_Bordes.SuspendLayout();
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCompraExitosa));
+            lbl_CompraExitosa = new Label();
+            pnl_Bordes = new Panel();
+            rtb_Mensaje = new RichTextBox();
+            btn_Aceptar = new Button();
+            pnl_Bordes.SuspendLayout();
+            SuspendLayout();
             // 
             // lbl_CompraExitosa
             // 
-            this.lbl_CompraExitosa.AutoSize = true;
-            this.lbl_CompraExitosa.Font = new System.Drawing.Font("Dosis", 37F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_CompraExitosa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(170)))), ((int)(((byte)(61)))));
-            this.lbl_CompraExitosa.Location = new System.Drawing.Point(130, 9);
-            this.lbl_CompraExitosa.Name = "lbl_CompraExitosa";
-            this.lbl_CompraExitosa.Size = new System.Drawing.Size(193, 64);
-            this.lbl_CompraExitosa.TabIndex = 0;
-            this.lbl_CompraExitosa.Text = "¡Gracias!";
+            lbl_CompraExitosa.AutoSize = true;
+            lbl_CompraExitosa.Font = new Font("Dosis", 37F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_CompraExitosa.ForeColor = Color.FromArgb(55, 170, 61);
+            lbl_CompraExitosa.Location = new Point(130, 9);
+            lbl_CompraExitosa.Name = "lbl_CompraExitosa";
+            lbl_CompraExitosa.Size = new Size(193, 64);
+            lbl_CompraExitosa.TabIndex = 0;
+            lbl_CompraExitosa.Text = "¡Gracias!";
             // 
             // pnl_Bordes
             // 
-            this.pnl_Bordes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.pnl_Bordes.Controls.Add(this.rtb_Mensaje);
-            this.pnl_Bordes.Location = new System.Drawing.Point(23, 89);
-            this.pnl_Bordes.Name = "pnl_Bordes";
-            this.pnl_Bordes.Size = new System.Drawing.Size(408, 278);
-            this.pnl_Bordes.TabIndex = 2;
+            pnl_Bordes.BackColor = Color.FromArgb(10, 10, 10);
+            pnl_Bordes.Controls.Add(rtb_Mensaje);
+            pnl_Bordes.Location = new Point(23, 89);
+            pnl_Bordes.Name = "pnl_Bordes";
+            pnl_Bordes.Size = new Size(408, 278);
+            pnl_Bordes.TabIndex = 2;
             // 
             // rtb_Mensaje
             // 
-            this.rtb_Mensaje.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(10)))), ((int)(((byte)(10)))));
-            this.rtb_Mensaje.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rtb_Mensaje.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.rtb_Mensaje.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.rtb_Mensaje.Location = new System.Drawing.Point(20, 17);
-            this.rtb_Mensaje.Name = "rtb_Mensaje";
-            this.rtb_Mensaje.ReadOnly = true;
-            this.rtb_Mensaje.Size = new System.Drawing.Size(369, 244);
-            this.rtb_Mensaje.TabIndex = 0;
-            this.rtb_Mensaje.TabStop = false;
-            this.rtb_Mensaje.Text = "Datos de la compra";
+            rtb_Mensaje.BackColor = Color.FromArgb(10, 10, 10);
+            rtb_Mensaje.BorderStyle = BorderStyle.None;
+            rtb_Mensaje.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            rtb_Mensaje.ForeColor = SystemColors.HighlightText;
+            rtb_Mensaje.Location = new Point(20, 17);
+            rtb_Mensaje.Name = "rtb_Mensaje";
+            rtb_Mensaje.ReadOnly = true;
+            rtb_Mensaje.Size = new Size(369, 244);
+            rtb_Mensaje.TabIndex = 0;
+            rtb_Mensaje.TabStop = false;
+            rtb_Mensaje.Text = "Datos de la compra";
             // 
             // btn_Aceptar
             // 
-            this.btn_Aceptar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_Aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Aceptar.Font = new System.Drawing.Font("Dosis", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btn_Aceptar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(170)))), ((int)(((byte)(61)))));
-            this.btn_Aceptar.Location = new System.Drawing.Point(130, 373);
-            this.btn_Aceptar.Name = "btn_Aceptar";
-            this.btn_Aceptar.Size = new System.Drawing.Size(193, 55);
-            this.btn_Aceptar.TabIndex = 3;
-            this.btn_Aceptar.Text = "Aceptar";
-            this.btn_Aceptar.UseVisualStyleBackColor = true;
-            this.btn_Aceptar.Click += new System.EventHandler(this.btn_Aceptar_Click);
+            btn_Aceptar.Cursor = Cursors.Hand;
+            btn_Aceptar.FlatStyle = FlatStyle.Flat;
+            btn_Aceptar.Font = new Font("Dosis", 22F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_Aceptar.ForeColor = Color.FromArgb(55, 170, 61);
+            btn_Aceptar.Location = new Point(130, 373);
+            btn_Aceptar.Name = "btn_Aceptar";
+            btn_Aceptar.Size = new Size(193, 55);
+            btn_Aceptar.TabIndex = 3;
+            btn_Aceptar.Text = "Aceptar";
+            btn_Aceptar.UseVisualStyleBackColor = true;
+            btn_Aceptar.Click += btn_Aceptar_Click;
             // 
             // FrmCompraExitosa
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(24)))), ((int)(((byte)(24)))));
-            this.ClientSize = new System.Drawing.Size(452, 440);
-            this.Controls.Add(this.btn_Aceptar);
-            this.Controls.Add(this.pnl_Bordes);
-            this.Controls.Add(this.lbl_CompraExitosa);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "FrmCompraExitosa";
-            this.ShowIcon = false;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Kiosco Junior";
-            this.pnl_Bordes.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(24, 24, 24);
+            ClientSize = new Size(452, 440);
+            Controls.Add(btn_Aceptar);
+            Controls.Add(pnl_Bordes);
+            Controls.Add(lbl_CompraExitosa);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "FrmCompraExitosa";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Kiosco Junior";
+            pnl_Bordes.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

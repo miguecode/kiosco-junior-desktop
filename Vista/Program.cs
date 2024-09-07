@@ -1,5 +1,3 @@
-using Helper;
-
 namespace Vista
 {
     internal static class Program
@@ -11,8 +9,14 @@ namespace Vista
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new FrmLogin());
-            ControladorSerial.ExportarAutomaticamente();
+            try
+            {
+                Application.Run(new FrmLogin());
+            } catch(Exception ex)
+            {
+                Console.Write(ex.ToString());
+            }
+            //ControladorSerial.ExportarAutomaticamente();
         }
     }
 }
