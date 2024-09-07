@@ -1,11 +1,10 @@
 # 🏪 Maxikiosco Junior - Aplicación de escritorio
 
-Este proyecto es una aplicación de escritorio realizada con .NET (Windows Forms), y C#. Fue hecho en 2023 y se trata de un sistema de gestión e interacción en un kiosco. Trabaja con una base de datos SQL y usuarios predeterminados.
+Este proyecto es una aplicación de escritorio realizada con .NET (Windows Forms), y C#. Fue hecho en 2023 y se trata de un sistema de gestión e interacción en un kiosco. Para funcionar, requiere la creación y la estructura de una base de datos específica.
 
 ## 📘 Descripción
 
-Maxikiosco Junior es una aplicación de escritorio hecha en .NET con C#. Para acceder a las funcionalidades del sistema, es necesario iniciar sesión. El login tiene opciones de ingreso rápido para no tener que hacerlo manualmente. Hay 3 tipos de usuario: los administradores, los empleados, y los clientes. Los primeros van a acceder a las opciones de gestión del kiosco (productos, ventas, informes), mientras que los clientes van a poder comprar productos en la sección de compras. Todos los datos del sistema persisten en una base de datos SQL.
-
+Maxikiosco Junior es una aplicación de escritorio hecha en .NET con C#. Para acceder a las funcionalidades del sistema, es necesario iniciar sesión. El login tiene opciones de ingreso rápido para no tener que hacerlo manualmente. Hay 3 tipos de usuario: los administradores, los empleados, y los clientes. Los primeros van a acceder a las opciones de gestión del kiosco (productos, ventas, informes), mientras que los clientes van a poder comprar productos en la sección de compras. Todos los datos del sistema persisten en una base de datos SQL la cual es necesario crearla antes de usar la aplicación (se explica más adelante).
 
 ## 👨‍💼 Funcionalidades del Administrador
 
@@ -101,11 +100,27 @@ Maxikiosco Junior es una aplicación de escritorio hecha en .NET con C#. Para ac
 -- --
 
 
-## - Base de datos SQL
-Los datos del sistema persisten en una base de datos SQL.
+## 🚀 Cómo hacer funcionar la aplicación
+
+Para que la aplicación se pueda usar, el usuario debe cumplir estos requisitos obligatoriamente:
+
+- Tener instalado [SQL Server](https://www.microsoft.com/es-ar/sql-server/sql-server-downloads) de forma local en su máquina.
+- Tener una base de datos llamada **MAXIKIOSCO_JUNIOR**, con una estructura específica acorde a lo que necesita el sistema.
+
+Para hacer este último punto, dentro de este proyecto (dentro de la carpeta ***'db'***) hay 2 archivos .SQL, que son los siguientes:
+
+- script.sql
+- inserciones.sql
+
+Estos archivos son consultas SQL, y tenemos que ejecutarlos. Primero ejecutamos **script.sql**, el cual se encarga de crear la base de datos, y establecer toda su esctructura (tablas y relaciones). Una vez hecho esto, hay que ejecutar **inserciones.sql**, el cual le carga datos básicos a la base de datos (como usuarios, roles, productos, tipos de productos). 
+
+Una vez que se creó la base de datos y se le cargaron datos para inicializarla, ya se puede usar la aplicación correctamente (después de cerrarla y volverla a abrir si es necesario).
 
 ## 📌 Aclaraciones
-
+- Como se vio en el punto anterior, la aplicación requiere un proceso previo de creación e inicialización de una base de datos SQL Server.
+- En caso de fallar ese proceso, la aplicación no se rompe, sino que te muestra un cartel informando el problema.
+- Fue creado en 2023, mientras cursaba la carrera de Tecnicatura Universitaria en Programación, en la Universidad Tecnológica Nacional.
+- No se aceptan contribuciones ni está bajo ninguna licencia específica.
 
 ## 🗃️ Otros proyectos similares
-- [ABM de Pasajeros - Aplicación de consola en C](https://github.com/Leumig/C-ABM-Pasajeros)
+- [Juego de Ahorcado - Aplicación de consola en C#](https://github.com/Leumig/CSharp-Ahorcado-Consola)
