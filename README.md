@@ -120,7 +120,7 @@ Una vez que se creó la base de datos y se le cargaron datos para inicializarla,
 - Como se vio en el punto anterior, la aplicación requiere un proceso previo de creación e inicialización de una base de datos SQL Server.
 - En caso de fallar ese proceso, la aplicación no se rompe, sino que te muestra un cartel informando el problema.
 - Fue creado en 2023, mientras cursaba la carrera de Tecnicatura Universitaria en Programación, en la Universidad Tecnológica Nacional.
-- No se aceptan contribuciones ni está bajo ninguna licencia específica.
+- El proyecto está bajo la licencia MIT.
 
 ## 🗃️ Otros proyectos similares
 - [Juego de Ahorcado - Aplicación de consola en C#](https://github.com/Leumig/CSharp-Ahorcado-Consola)
