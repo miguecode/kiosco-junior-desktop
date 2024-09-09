@@ -116,6 +116,24 @@ Estos archivos son consultas SQL, y tenemos que ejecutarlos. Primero ejecutamos 
 
 Una vez que se creó la base de datos y se le cargaron datos para inicializarla, ya se puede usar la aplicación correctamente (después de cerrarla y volverla a abrir si es necesario).
 
+### Usando Visual Studio (Recomendado)
+
+1. **Clonar el repositorio**: Primero que nada hay que clonar el repositorio o en su defecto descargar el ZIP.
+   
+2. **Abrir el proyecto en Visual Studio**: Abrir Visual Studio y seleccionar "Abrir un proyecto o solución". Después, ir hasta la carpeta del proyecto y elegir el archivo `Buffet-Consola.sln`. O más rápido, simplemente hacer doble clic en `Buffet-Consola.sln`.
+
+3. **Compilar y ejecutar**: Con el proyecto cargado, ya se puede compilar y ejecutar normalmente. Esto abrirá la aplicación de consola.
+
+### Usando Visual Studio Code
+
+1. **Instalar .NET SDK**: Antes que nada, hay que tener instalado [SDK de .NET 6.0](https://dotnet.microsoft.com/download/dotnet/6.0) en tu máquina.
+
+2. **Clonar el repositorio**: Después, clonar el repositorio o en su defecto descargar el ZIP.
+
+3. **Abrir el proyecto en Visual Studio Code**: Abrir Visual Studio Code y abrir la carpeta del proyecto.
+
+4. **Compilar y ejecutar**: Ya en el VSC, abrir la terminal integrada (`Ctrl + ñ`) y navegar hasta la carpeta del proyecto. Por último, usar el comando `dotnet run` para compilar y ejecutar la aplicación.
+
 ## 📌 Aclaraciones
 - Como se vio en el punto anterior, la aplicación requiere un proceso previo de creación e inicialización de una base de datos SQL Server.
 - En caso de fallar ese proceso, la aplicación no se rompe, sino que te muestra un cartel informando el problema.
@@ -124,3 +142,4 @@ Una vez que se creó la base de datos y se le cargaron datos para inicializarla,
 
 ## 🗃️ Otros proyectos similares
 - [Juego de Ahorcado - Aplicación de consola en C#](https://github.com/Leumig/CSharp-Ahorcado-Consola)
+- [Buffet - Aplicación de consola en C#](https://github.com/Leumig/CSharp-Buffet-Consola)
