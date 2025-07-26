@@ -141,5 +141,5 @@ Una vez que se creó la base de datos y se le cargaron datos para inicializarla,
 - El proyecto está bajo la licencia MIT.
 
 ## 🗃️ Otros proyectos similares
-- [Juego de Ahorcado - Aplicación de consola en C#](https://github.com/Leumig/juego-ahorcado-consola)
-- [Buffet - Aplicación de consola en C#](https://github.com/Leumig/buffet-consola)
+- [Juego de Ahorcado - Aplicación de consola en C#](https://github.com/miguecode/juego-ahorcado-consola)
+- [Buffet - Aplicación de consola en C#](https://github.com/miguecode/buffet-consola)
